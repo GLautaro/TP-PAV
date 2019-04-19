@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TP_PAV
 {
-    public partial class escritorio : Form
+    public partial class Escritorio : Form
     {
-        public escritorio()
+        public Escritorio()
         {
             InitializeComponent();
         }

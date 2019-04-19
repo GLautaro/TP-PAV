@@ -16,7 +16,7 @@ namespace TP_PAV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new escritorio());
+            Application.Run(new Escritorio());
         }
     }
 }
