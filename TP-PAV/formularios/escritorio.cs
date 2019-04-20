@@ -32,23 +32,7 @@ namespace TP_PAV
 
         private void btn_menuProductos_Click(object sender, EventArgs e)
         {
-            //FORMA 1
-            uc_ABM_Producto uc_producto = new uc_ABM_Producto();
-            SidePanel.Show();
-            SidePanel.Height = btn_menuProductos.Height;
-            SidePanel.Top = btn_menuProductos.Top;
-            if (!main_panel.Controls.Contains(uc_producto))
-            {
-                main_panel.Controls.Add(uc_producto);
-                uc_producto.BringToFront();
-               
-
-            }
-            else
-            {
-                uc_producto.BringToFront();
-             
-            }
+            
           // frm_ABM_Producto frm_producto = new frm_ABM_Producto();
            //frm_producto.ShowDialog();
             
@@ -64,7 +48,6 @@ namespace TP_PAV
 
         private void btn_menuFranquicias_Click(object sender, EventArgs e)
         {
-            //FORMA 2 VER codigo uc_abm_franquicia
             SidePanel.Show();
             SidePanel.Height = btn_menuFranquicias.Height;
             SidePanel.Top = btn_menuFranquicias.Top;
@@ -72,6 +55,7 @@ namespace TP_PAV
              if (!main_panel.Controls.Contains(uc_ABM_Franquicia.pub_instance))
             {
                 main_panel.Controls.Add(uc_ABM_Franquicia.pub_instance);
+                uc_ABM_Franquicia.pub_instance.Dock = DockStyle.Fill;
                 uc_ABM_Franquicia.pub_instance.BringToFront();
                 
 

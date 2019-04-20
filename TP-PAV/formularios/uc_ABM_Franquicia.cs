@@ -269,6 +269,12 @@ namespace TP_PAV.formularios
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_TipoFranquicia form_tipo_franquicia = new frm_TipoFranquicia();
+            form_tipo_franquicia.ShowDialog();
+        }
+
 
     }
 }

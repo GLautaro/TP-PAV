@@ -66,6 +66,12 @@
     <Compile Include="formularios\frm_ABM_Producto.Designer.cs">
       <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\frm_TipoFranquicia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_TipoFranquicia.Designer.cs">
+      <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\uc_ABM_Franquicia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_ABM_Producto.resx">
       <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_TipoFranquicia.resx">
+      <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\uc_ABM_Franquicia.resx">
       <DependentUpon>uc_ABM_Franquicia.cs</DependentUpon>

@@ -38,5 +38,37 @@ namespace TP_PAV.clases
             string query = @"SELECT * FROM tipo_franquicia";
             return priv_acceso_db.ejecutarConsulta(query);
         }
+        public bool altaTipoFranquicia()
+        {
+            string noConsulta = String.Format(@"INSERT INTO tipo_franquicia (monto_minimo_compra, porcentaje_descuento, nombre_tipo_franquicia) 
+                                                VALUES ({0}, {1}, '{2}') ",
+                                                pub_monto_minimo_compra, pub_porcentaje_descuento, pub_nombre_tipo_franquicia);
+            if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
+            {
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+        public bool modificarTipoFranquicia()
+        {
+            string noConsulta = String.Format(@"UPDATE tipo_franquicia 
+                                    SET monto_minimo_compra={0},
+	                                    porcentaje_descuento={1},
+	                                    nombre_tipo_franquicia = '{2}'                           
+		                                        WHERE id_tipo_franquicia = {3}",
+                                        pub_monto_minimo_compra.ToString(),pub_porcentaje_descuento.ToString(),pub_nombre_tipo_franquicia,pub_id_tipo_franquicia.ToString()
+                                        );
+            if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }
