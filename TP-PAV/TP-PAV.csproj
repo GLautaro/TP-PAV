@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clases\AccesoBD.cs" />
+    <Compile Include="clases\Barrio.cs" />
     <Compile Include="clases\Franquicia.cs" />
+    <Compile Include="clases\TipoFranquicia.cs" />
     <Compile Include="formularios\Escritorio.cs">
       <SubType>Form</SubType>
     </Compile>

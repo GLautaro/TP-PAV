@@ -68,16 +68,18 @@ namespace TP_PAV
             SidePanel.Show();
             SidePanel.Height = btn_menuFranquicias.Height;
             SidePanel.Top = btn_menuFranquicias.Top;
+            
              if (!main_panel.Controls.Contains(uc_ABM_Franquicia.pub_instance))
             {
                 main_panel.Controls.Add(uc_ABM_Franquicia.pub_instance);
                 uc_ABM_Franquicia.pub_instance.BringToFront();
-           
+                
 
             }
             else
             {
                 uc_ABM_Franquicia.pub_instance.BringToFront();
+                
             
             }
         }
@@ -96,10 +98,7 @@ namespace TP_PAV
             SidePanel.Top = btn_menuReportes.Top;
         }
 
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
     }
 }
