@@ -8,6 +8,7 @@ namespace TP_PAV.clases
 {
     class Franquicia
     {
+        
         AccesoBD priv_acceso_db = new AccesoBD();
         private int priv_id_franquicia = -1;
         private string priv_nombre_responsable;
