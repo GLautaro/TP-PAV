@@ -58,10 +58,22 @@
     <Compile Include="formularios\frm_ABM_Franquicia.Designer.cs">
       <DependentUpon>frm_ABM_Franquicia.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\frm_ABM_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_ABM_Producto.Designer.cs">
+      <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formularios\Escritorio.resx">
+      <DependentUpon>Escritorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_ABM_Franquicia.resx">
       <DependentUpon>frm_ABM_Franquicia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_ABM_Producto.resx">
+      <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
