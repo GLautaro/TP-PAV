@@ -37,7 +37,6 @@ namespace TP_PAV.formularios
             txt_apellidoResponsable.Enabled = false;
             txt_calle.Enabled = false;
             txt_legajoVendedor.Enabled = false;
-            txt_montoMinimoCompra.Enabled = false;
             txt_nombreResponsable.Enabled = false;
             txt_nroCalle.Enabled = false;
             cmb_barrio.Enabled = false;
@@ -51,7 +50,6 @@ namespace TP_PAV.formularios
             txt_apellidoResponsable.Enabled = true;
             txt_calle.Enabled = true;
             txt_legajoVendedor.Enabled = true;
-            txt_montoMinimoCompra.Enabled = true;
             txt_nombreResponsable.Enabled = true;
             txt_nroCalle.Enabled = true;
             cmb_barrio.Enabled = true;
@@ -79,7 +77,6 @@ namespace TP_PAV.formularios
             txt_apellidoResponsable.Clear();
             txt_calle.Clear();
             txt_legajoVendedor.Clear();
-            txt_montoMinimoCompra.Clear();
             txt_nombreResponsable.Clear();
             txt_nroCalle.Clear();
             cmb_tipoFranquicia.SelectedIndex = -1;
@@ -103,10 +100,6 @@ namespace TP_PAV.formularios
             if (txt_legajoVendedor.Text != "")
             {
                 priv_franquicia.pub_legajo_vendedor = int.Parse(txt_legajoVendedor.Text);
-            }
-            if (txt_montoMinimoCompra.Text != "")
-            {
-                priv_franquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimoCompra.Text);
             }
             if (txt_nroCalle.Text != "")
             {
@@ -154,7 +147,6 @@ namespace TP_PAV.formularios
             priv_franquiciaNueva.pub_calle = txt_calle.Text;
             priv_franquiciaNueva.pub_nro_calle = int.Parse(txt_nroCalle.Text);
             priv_franquiciaNueva.pub_id_barrio = int.Parse(cmb_barrio.SelectedValue.ToString());
-            priv_franquiciaNueva.pub_monto_minimo_compra = int.Parse(txt_montoMinimoCompra.Text);
             priv_franquiciaNueva.pub_id_tipo_franquicia = int.Parse(cmb_tipoFranquicia.SelectedValue.ToString());
             priv_franquiciaNueva.pub_legajo_vendedor = int.Parse(txt_legajoVendedor.Text);
             
@@ -198,7 +190,6 @@ namespace TP_PAV.formularios
                 txt_apellidoResponsable.Text = dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
                 txt_calle.Text = dgv_franquicias.CurrentRow.Cells["calle"].Value.ToString();
                 txt_nroCalle.Text = dgv_franquicias.CurrentRow.Cells["nro_calle"].Value.ToString();
-                txt_montoMinimoCompra.Text = dgv_franquicias.CurrentRow.Cells["monto_minimo_compra"].Value.ToString();
                 txt_legajoVendedor.Text = dgv_franquicias.CurrentRow.Cells["legajo_vendedor"].Value.ToString();
 
                 cmb_tipoFranquicia.SelectedIndex = cmb_tipoFranquicia.FindStringExact(dgv_franquicias.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString());
@@ -257,7 +248,7 @@ namespace TP_PAV.formularios
                 priv_franquiciaNueva.pub_calle = dgv_franquicias.CurrentRow.Cells["calle"].Value.ToString();
                 priv_franquiciaNueva.pub_nro_calle = int.Parse(dgv_franquicias.CurrentRow.Cells["nro_calle"].Value.ToString());
                 priv_franquiciaNueva.pub_legajo_vendedor = int.Parse(dgv_franquicias.CurrentRow.Cells["legajo_vendedor"].Value.ToString());
-                priv_franquiciaNueva.pub_monto_minimo_compra = int.Parse(dgv_franquicias.CurrentRow.Cells["monto_minimo_compra"].Value.ToString());
+                
 
                 priv_franquiciaNueva.pub_id_barrio = int.Parse(dgv_franquicias.CurrentRow.Cells["id_barrio"].Value.ToString());
                 priv_franquiciaNueva.pub_id_tipo_franquicia = int.Parse(dgv_franquicias.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());

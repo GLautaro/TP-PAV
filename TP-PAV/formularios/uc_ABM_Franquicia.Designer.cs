@@ -36,27 +36,14 @@
             this.btn_habilitarModificarFranquicia = new System.Windows.Forms.Button();
             this.btn_habilitarAñadirFranquicia = new System.Windows.Forms.Button();
             this.dgv_franquicias = new System.Windows.Forms.DataGridView();
-            this.id_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_minimo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_buscarVendedor = new System.Windows.Forms.Button();
             this.txt_legajoVendedor = new System.Windows.Forms.TextBox();
-            this.txt_montoMinimoCompra = new System.Windows.Forms.TextBox();
             this.txt_nroCalle = new System.Windows.Forms.TextBox();
             this.txt_calle = new System.Windows.Forms.TextBox();
             this.txt_apellidoResponsable = new System.Windows.Forms.TextBox();
             this.txt_nombreResponsable = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbl_barrio = new System.Windows.Forms.Label();
             this.lbl_nro_calle = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +52,16 @@
             this.btn_guardarNuevaFranquicia = new System.Windows.Forms.Button();
             this.cmb_tipoFranquicia = new System.Windows.Forms.ComboBox();
             this.cmb_barrio = new System.Windows.Forms.ComboBox();
+            this.id_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_franquicias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +80,7 @@
             // 
             this.btn_modificarFranquicia.Enabled = false;
             this.btn_modificarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificarFranquicia.Location = new System.Drawing.Point(711, 424);
+            this.btn_modificarFranquicia.Location = new System.Drawing.Point(709, 404);
             this.btn_modificarFranquicia.Name = "btn_modificarFranquicia";
             this.btn_modificarFranquicia.Size = new System.Drawing.Size(169, 37);
             this.btn_modificarFranquicia.TabIndex = 50;
@@ -96,7 +93,7 @@
             // 
             this.btn_cancelarModificaciones.Enabled = false;
             this.btn_cancelarModificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarModificaciones.Location = new System.Drawing.Point(1039, 424);
+            this.btn_cancelarModificaciones.Location = new System.Drawing.Point(1037, 404);
             this.btn_cancelarModificaciones.Name = "btn_cancelarModificaciones";
             this.btn_cancelarModificaciones.Size = new System.Drawing.Size(98, 37);
             this.btn_cancelarModificaciones.TabIndex = 49;
@@ -109,7 +106,7 @@
             // 
             this.btn_cancelarGuardado.Enabled = false;
             this.btn_cancelarGuardado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarGuardado.Location = new System.Drawing.Point(1039, 424);
+            this.btn_cancelarGuardado.Location = new System.Drawing.Point(1037, 404);
             this.btn_cancelarGuardado.Name = "btn_cancelarGuardado";
             this.btn_cancelarGuardado.Size = new System.Drawing.Size(98, 37);
             this.btn_cancelarGuardado.TabIndex = 48;
@@ -165,7 +162,6 @@
             this.calle,
             this.nro_calle,
             this.nombre_barrio,
-            this.monto_minimo_compra,
             this.legajo_vendedor,
             this.nombre_tipo_franquicia,
             this.id_barrio,
@@ -178,80 +174,11 @@
             this.dgv_franquicias.TabIndex = 44;
             this.dgv_franquicias.VirtualMode = true;
             // 
-            // id_franquicia
-            // 
-            this.id_franquicia.DataPropertyName = "id_franquicia";
-            this.id_franquicia.HeaderText = "ID Franquicia";
-            this.id_franquicia.Name = "id_franquicia";
-            // 
-            // nombre_responsable
-            // 
-            this.nombre_responsable.DataPropertyName = "nombre_responsable";
-            this.nombre_responsable.HeaderText = "Nombre del Responsable";
-            this.nombre_responsable.Name = "nombre_responsable";
-            // 
-            // apellido_responsable
-            // 
-            this.apellido_responsable.DataPropertyName = "apellido_responsable";
-            this.apellido_responsable.HeaderText = "Apellido del Responsable";
-            this.apellido_responsable.Name = "apellido_responsable";
-            // 
-            // calle
-            // 
-            this.calle.DataPropertyName = "calle";
-            this.calle.HeaderText = "Calle";
-            this.calle.Name = "calle";
-            // 
-            // nro_calle
-            // 
-            this.nro_calle.DataPropertyName = "nro_calle";
-            this.nro_calle.HeaderText = "Nro de Calle";
-            this.nro_calle.Name = "nro_calle";
-            // 
-            // nombre_barrio
-            // 
-            this.nombre_barrio.DataPropertyName = "nombre_barrio";
-            this.nombre_barrio.HeaderText = "Barrio";
-            this.nombre_barrio.Name = "nombre_barrio";
-            // 
-            // monto_minimo_compra
-            // 
-            this.monto_minimo_compra.DataPropertyName = "monto_minimo_compra";
-            this.monto_minimo_compra.HeaderText = "Monto Minimo de Compra";
-            this.monto_minimo_compra.Name = "monto_minimo_compra";
-            // 
-            // legajo_vendedor
-            // 
-            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
-            this.legajo_vendedor.HeaderText = "Legajo del Vendedor";
-            this.legajo_vendedor.Name = "legajo_vendedor";
-            // 
-            // nombre_tipo_franquicia
-            // 
-            this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
-            this.nombre_tipo_franquicia.HeaderText = "Tipo de Franquicia";
-            this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
-            this.nombre_tipo_franquicia.Width = 150;
-            // 
-            // id_barrio
-            // 
-            this.id_barrio.DataPropertyName = "id_barrio";
-            this.id_barrio.HeaderText = "id_barrio";
-            this.id_barrio.Name = "id_barrio";
-            this.id_barrio.Visible = false;
-            // 
-            // id_tipo_franquicia
-            // 
-            this.id_tipo_franquicia.DataPropertyName = "id_tipo_franquicia";
-            this.id_tipo_franquicia.HeaderText = "id_tipo_franquicia";
-            this.id_tipo_franquicia.Name = "id_tipo_franquicia";
-            this.id_tipo_franquicia.Visible = false;
-            // 
             // btn_buscarVendedor
             // 
             this.btn_buscarVendedor.Enabled = false;
             this.btn_buscarVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarVendedor.Location = new System.Drawing.Point(977, 384);
+            this.btn_buscarVendedor.Location = new System.Drawing.Point(977, 343);
             this.btn_buscarVendedor.Name = "btn_buscarVendedor";
             this.btn_buscarVendedor.Size = new System.Drawing.Size(129, 24);
             this.btn_buscarVendedor.TabIndex = 43;
@@ -264,19 +191,10 @@
             // 
             this.txt_legajoVendedor.Enabled = false;
             this.txt_legajoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_legajoVendedor.Location = new System.Drawing.Point(877, 384);
+            this.txt_legajoVendedor.Location = new System.Drawing.Point(877, 343);
             this.txt_legajoVendedor.Name = "txt_legajoVendedor";
             this.txt_legajoVendedor.Size = new System.Drawing.Size(70, 21);
             this.txt_legajoVendedor.TabIndex = 42;
-            // 
-            // txt_montoMinimoCompra
-            // 
-            this.txt_montoMinimoCompra.Enabled = false;
-            this.txt_montoMinimoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_montoMinimoCompra.Location = new System.Drawing.Point(968, 282);
-            this.txt_montoMinimoCompra.Name = "txt_montoMinimoCompra";
-            this.txt_montoMinimoCompra.Size = new System.Drawing.Size(104, 21);
-            this.txt_montoMinimoCompra.TabIndex = 41;
             // 
             // txt_nroCalle
             // 
@@ -318,7 +236,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(722, 385);
+            this.label7.Location = new System.Drawing.Point(722, 344);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 15);
             this.label7.TabIndex = 36;
@@ -328,21 +246,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(722, 337);
+            this.label8.Location = new System.Drawing.Point(722, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 15);
             this.label8.TabIndex = 35;
             this.label8.Text = "Tipo de Franquicia";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(722, 288);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 15);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Monto Minimo de Compra";
             // 
             // lbl_barrio
             // 
@@ -398,7 +306,7 @@
             // 
             this.btn_guardarNuevaFranquicia.Enabled = false;
             this.btn_guardarNuevaFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardarNuevaFranquicia.Location = new System.Drawing.Point(711, 424);
+            this.btn_guardarNuevaFranquicia.Location = new System.Drawing.Point(709, 404);
             this.btn_guardarNuevaFranquicia.Name = "btn_guardarNuevaFranquicia";
             this.btn_guardarNuevaFranquicia.Size = new System.Drawing.Size(167, 37);
             this.btn_guardarNuevaFranquicia.TabIndex = 28;
@@ -412,7 +320,7 @@
             this.cmb_tipoFranquicia.Enabled = false;
             this.cmb_tipoFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_tipoFranquicia.FormattingEnabled = true;
-            this.cmb_tipoFranquicia.Location = new System.Drawing.Point(891, 330);
+            this.cmb_tipoFranquicia.Location = new System.Drawing.Point(891, 289);
             this.cmb_tipoFranquicia.Name = "cmb_tipoFranquicia";
             this.cmb_tipoFranquicia.Size = new System.Drawing.Size(181, 23);
             this.cmb_tipoFranquicia.TabIndex = 27;
@@ -427,6 +335,69 @@
             this.cmb_barrio.Size = new System.Drawing.Size(170, 23);
             this.cmb_barrio.TabIndex = 26;
             // 
+            // id_franquicia
+            // 
+            this.id_franquicia.DataPropertyName = "id_franquicia";
+            this.id_franquicia.HeaderText = "ID Franquicia";
+            this.id_franquicia.Name = "id_franquicia";
+            // 
+            // nombre_responsable
+            // 
+            this.nombre_responsable.DataPropertyName = "nombre_responsable";
+            this.nombre_responsable.HeaderText = "Nombre del Responsable";
+            this.nombre_responsable.Name = "nombre_responsable";
+            // 
+            // apellido_responsable
+            // 
+            this.apellido_responsable.DataPropertyName = "apellido_responsable";
+            this.apellido_responsable.HeaderText = "Apellido del Responsable";
+            this.apellido_responsable.Name = "apellido_responsable";
+            // 
+            // calle
+            // 
+            this.calle.DataPropertyName = "calle";
+            this.calle.HeaderText = "Calle";
+            this.calle.Name = "calle";
+            // 
+            // nro_calle
+            // 
+            this.nro_calle.DataPropertyName = "nro_calle";
+            this.nro_calle.HeaderText = "Nro de Calle";
+            this.nro_calle.Name = "nro_calle";
+            // 
+            // nombre_barrio
+            // 
+            this.nombre_barrio.DataPropertyName = "nombre_barrio";
+            this.nombre_barrio.HeaderText = "Barrio";
+            this.nombre_barrio.Name = "nombre_barrio";
+            // 
+            // legajo_vendedor
+            // 
+            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
+            this.legajo_vendedor.HeaderText = "Legajo del Vendedor";
+            this.legajo_vendedor.Name = "legajo_vendedor";
+            // 
+            // nombre_tipo_franquicia
+            // 
+            this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
+            this.nombre_tipo_franquicia.HeaderText = "Tipo de Franquicia";
+            this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
+            this.nombre_tipo_franquicia.Width = 150;
+            // 
+            // id_barrio
+            // 
+            this.id_barrio.DataPropertyName = "id_barrio";
+            this.id_barrio.HeaderText = "ID Barrio";
+            this.id_barrio.Name = "id_barrio";
+            this.id_barrio.Visible = false;
+            // 
+            // id_tipo_franquicia
+            // 
+            this.id_tipo_franquicia.DataPropertyName = "id_tipo_franquicia";
+            this.id_tipo_franquicia.HeaderText = "ID Tipo Franquicia";
+            this.id_tipo_franquicia.Name = "id_tipo_franquicia";
+            this.id_tipo_franquicia.Visible = false;
+            // 
             // uc_ABM_Franquicia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -440,14 +411,12 @@
             this.Controls.Add(this.dgv_franquicias);
             this.Controls.Add(this.btn_buscarVendedor);
             this.Controls.Add(this.txt_legajoVendedor);
-            this.Controls.Add(this.txt_montoMinimoCompra);
             this.Controls.Add(this.txt_nroCalle);
             this.Controls.Add(this.txt_calle);
             this.Controls.Add(this.txt_apellidoResponsable);
             this.Controls.Add(this.txt_nombreResponsable);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.lbl_barrio);
             this.Controls.Add(this.lbl_nro_calle);
             this.Controls.Add(this.label4);
@@ -478,27 +447,14 @@
         private System.Windows.Forms.Button btn_habilitarModificarFranquicia;
         private System.Windows.Forms.Button btn_habilitarAñadirFranquicia;
         private System.Windows.Forms.DataGridView dgv_franquicias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_franquicia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_responsable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_responsable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nro_calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto_minimo_compra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
         private System.Windows.Forms.Button btn_buscarVendedor;
         private System.Windows.Forms.TextBox txt_legajoVendedor;
-        private System.Windows.Forms.TextBox txt_montoMinimoCompra;
         private System.Windows.Forms.TextBox txt_nroCalle;
         private System.Windows.Forms.TextBox txt_calle;
         private System.Windows.Forms.TextBox txt_apellidoResponsable;
         private System.Windows.Forms.TextBox txt_nombreResponsable;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_barrio;
         private System.Windows.Forms.Label lbl_nro_calle;
         private System.Windows.Forms.Label label4;
@@ -507,5 +463,15 @@
         private System.Windows.Forms.Button btn_guardarNuevaFranquicia;
         private System.Windows.Forms.ComboBox cmb_tipoFranquicia;
         private System.Windows.Forms.ComboBox cmb_barrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_franquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_responsable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_responsable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nro_calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
     }
 }
