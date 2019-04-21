@@ -15,6 +15,11 @@ namespace TP_PAV.formularios
         Franquicia priv_franquicia = new Franquicia();
         Barrio priv_barrio = new Barrio();
         TipoFranquicia priv_tipoFranquicia = new TipoFranquicia();
+        public ComboBox pub_cmb_tipoFranquicia
+        {
+            get { return this.cmb_tipoFranquicia; }
+        }
+        
 
         //FORMA 2
         private static uc_ABM_Franquicia priv_instance;
@@ -27,12 +32,13 @@ namespace TP_PAV.formularios
             }
 
         }
+        
         public uc_ABM_Franquicia()
         {
             InitializeComponent();
         }
 
-        private void bloquearCajasTexto()
+        public void bloquearCajasTexto()
         {
             txt_apellidoResponsable.Enabled = false;
             txt_calle.Enabled = false;
@@ -43,9 +49,10 @@ namespace TP_PAV.formularios
             cmb_tipoFranquicia.Enabled = false;
             btn_buscarVendedor.Enabled = false;
             btn_guardarNuevaFranquicia.Enabled = false;
+            btn_agregarTipoFranquicia.Enabled = false;
         }
 
-        private void desbloquearCajasTexto()
+        public void desbloquearCajasTexto()
         {
             txt_apellidoResponsable.Enabled = true;
             txt_calle.Enabled = true;
@@ -56,6 +63,7 @@ namespace TP_PAV.formularios
             cmb_tipoFranquicia.Enabled = true;
             btn_buscarVendedor.Enabled = true;
             btn_guardarNuevaFranquicia.Enabled = true;
+            btn_agregarTipoFranquicia.Enabled = true;
         }
         
         private void uc_ABM_Franquicia_Load(object sender, EventArgs e)
@@ -212,6 +220,7 @@ namespace TP_PAV.formularios
             btn_cancelarModificaciones.Enabled = false;
             btn_cancelarModificaciones.Visible = false;
             btn_buscarVendedor.Enabled = false;
+            btn_agregarTipoFranquicia.Enabled = false;
             dgv_franquicias.Enabled = true;
         }
         
@@ -233,12 +242,13 @@ namespace TP_PAV.formularios
             btn_cancelarGuardado.Visible = false;
             btn_cancelarGuardado.Enabled = false;
             btn_buscarVendedor.Enabled = false;
+            btn_agregarTipoFranquicia.Enabled = false;
 
         }
 
         private void btn_eliminarFranquicia_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Esta seguro que desea eliminar esta franquicia. Esta accion no se puede revertir", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("¿Esta seguro que desea eliminar esta franquicia?. Esta accion no se puede revertir", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
                 Franquicia priv_franquiciaNueva = new Franquicia();
@@ -269,10 +279,14 @@ namespace TP_PAV.formularios
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_agregarTipoFranquicia_click(object sender, EventArgs e)
         {
             frm_TipoFranquicia form_tipo_franquicia = new frm_TipoFranquicia();
+            form_tipo_franquicia.pub_formularioPadre = this;
+            form_tipo_franquicia.pub_selectedIndex = cmb_tipoFranquicia.SelectedIndex;
             form_tipo_franquicia.ShowDialog();
+            
+            
         }
 
 

@@ -70,5 +70,19 @@ namespace TP_PAV.clases
             }
 
         }
+
+        internal bool eliminarFranquicia()
+        {
+            string noConsulta = @"DELETE FROM tipo_franquicia WHERE id_tipo_franquicia=" + priv_id_tipo_franquicia.ToString();
+            if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

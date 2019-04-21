@@ -62,7 +62,8 @@
             this.btn_guardarNuevaFranquicia = new System.Windows.Forms.Button();
             this.cmb_tipoFranquicia = new System.Windows.Forms.ComboBox();
             this.cmb_barrio = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_agregarTipoFranquicia = new System.Windows.Forms.Button();
+            this.btn_agregarBarrio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_franquicias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 32);
+            this.label1.Size = new System.Drawing.Size(122, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Franquicias";
             // 
@@ -81,7 +82,7 @@
             // 
             this.btn_modificarFranquicia.Enabled = false;
             this.btn_modificarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificarFranquicia.Location = new System.Drawing.Point(709, 404);
+            this.btn_modificarFranquicia.Location = new System.Drawing.Point(730, 404);
             this.btn_modificarFranquicia.Name = "btn_modificarFranquicia";
             this.btn_modificarFranquicia.Size = new System.Drawing.Size(169, 37);
             this.btn_modificarFranquicia.TabIndex = 50;
@@ -94,7 +95,7 @@
             // 
             this.btn_cancelarModificaciones.Enabled = false;
             this.btn_cancelarModificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarModificaciones.Location = new System.Drawing.Point(1037, 404);
+            this.btn_cancelarModificaciones.Location = new System.Drawing.Point(1017, 404);
             this.btn_cancelarModificaciones.Name = "btn_cancelarModificaciones";
             this.btn_cancelarModificaciones.Size = new System.Drawing.Size(98, 37);
             this.btn_cancelarModificaciones.TabIndex = 49;
@@ -107,7 +108,7 @@
             // 
             this.btn_cancelarGuardado.Enabled = false;
             this.btn_cancelarGuardado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarGuardado.Location = new System.Drawing.Point(1037, 404);
+            this.btn_cancelarGuardado.Location = new System.Drawing.Point(1017, 404);
             this.btn_cancelarGuardado.Name = "btn_cancelarGuardado";
             this.btn_cancelarGuardado.Size = new System.Drawing.Size(98, 37);
             this.btn_cancelarGuardado.TabIndex = 48;
@@ -119,9 +120,9 @@
             // btn_eliminarFranquicia
             // 
             this.btn_eliminarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminarFranquicia.Location = new System.Drawing.Point(525, 379);
+            this.btn_eliminarFranquicia.Location = new System.Drawing.Point(410, 375);
             this.btn_eliminarFranquicia.Name = "btn_eliminarFranquicia";
-            this.btn_eliminarFranquicia.Size = new System.Drawing.Size(148, 25);
+            this.btn_eliminarFranquicia.Size = new System.Drawing.Size(148, 30);
             this.btn_eliminarFranquicia.TabIndex = 47;
             this.btn_eliminarFranquicia.Text = "Eliminar Franquicia";
             this.btn_eliminarFranquicia.UseVisualStyleBackColor = true;
@@ -130,9 +131,9 @@
             // btn_habilitarModificarFranquicia
             // 
             this.btn_habilitarModificarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_habilitarModificarFranquicia.Location = new System.Drawing.Point(254, 377);
+            this.btn_habilitarModificarFranquicia.Location = new System.Drawing.Point(222, 375);
             this.btn_habilitarModificarFranquicia.Name = "btn_habilitarModificarFranquicia";
-            this.btn_habilitarModificarFranquicia.Size = new System.Drawing.Size(139, 28);
+            this.btn_habilitarModificarFranquicia.Size = new System.Drawing.Size(139, 30);
             this.btn_habilitarModificarFranquicia.TabIndex = 46;
             this.btn_habilitarModificarFranquicia.Text = "Modificar Franquicia";
             this.btn_habilitarModificarFranquicia.UseVisualStyleBackColor = true;
@@ -242,67 +243,66 @@
             // 
             this.btn_buscarVendedor.Enabled = false;
             this.btn_buscarVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarVendedor.Location = new System.Drawing.Point(977, 343);
+            this.btn_buscarVendedor.Location = new System.Drawing.Point(1004, 343);
             this.btn_buscarVendedor.Name = "btn_buscarVendedor";
-            this.btn_buscarVendedor.Size = new System.Drawing.Size(129, 24);
+            this.btn_buscarVendedor.Size = new System.Drawing.Size(111, 24);
             this.btn_buscarVendedor.TabIndex = 43;
             this.btn_buscarVendedor.Text = "Buscar vendedor";
             this.btn_buscarVendedor.UseVisualStyleBackColor = true;
-            this.btn_buscarVendedor.Visible = false;
             this.btn_buscarVendedor.Click += new System.EventHandler(this.btn_buscarVendedor_Click);
             // 
             // txt_legajoVendedor
             // 
             this.txt_legajoVendedor.Enabled = false;
             this.txt_legajoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_legajoVendedor.Location = new System.Drawing.Point(877, 343);
+            this.txt_legajoVendedor.Location = new System.Drawing.Point(891, 343);
             this.txt_legajoVendedor.Name = "txt_legajoVendedor";
-            this.txt_legajoVendedor.Size = new System.Drawing.Size(70, 24);
+            this.txt_legajoVendedor.Size = new System.Drawing.Size(92, 21);
             this.txt_legajoVendedor.TabIndex = 42;
             // 
             // txt_nroCalle
             // 
             this.txt_nroCalle.Enabled = false;
             this.txt_nroCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nroCalle.Location = new System.Drawing.Point(926, 177);
+            this.txt_nroCalle.Location = new System.Drawing.Point(891, 177);
             this.txt_nroCalle.Name = "txt_nroCalle";
-            this.txt_nroCalle.Size = new System.Drawing.Size(145, 24);
+            this.txt_nroCalle.Size = new System.Drawing.Size(180, 21);
             this.txt_nroCalle.TabIndex = 40;
             // 
             // txt_calle
             // 
             this.txt_calle.Enabled = false;
             this.txt_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_calle.Location = new System.Drawing.Point(933, 128);
+            this.txt_calle.Location = new System.Drawing.Point(891, 128);
             this.txt_calle.Name = "txt_calle";
-            this.txt_calle.Size = new System.Drawing.Size(139, 24);
+            this.txt_calle.Size = new System.Drawing.Size(181, 21);
             this.txt_calle.TabIndex = 39;
             // 
             // txt_apellidoResponsable
             // 
             this.txt_apellidoResponsable.Enabled = false;
             this.txt_apellidoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellidoResponsable.Location = new System.Drawing.Point(933, 82);
+            this.txt_apellidoResponsable.Location = new System.Drawing.Point(891, 82);
             this.txt_apellidoResponsable.Name = "txt_apellidoResponsable";
-            this.txt_apellidoResponsable.Size = new System.Drawing.Size(138, 24);
+            this.txt_apellidoResponsable.Size = new System.Drawing.Size(180, 21);
             this.txt_apellidoResponsable.TabIndex = 38;
             // 
             // txt_nombreResponsable
             // 
             this.txt_nombreResponsable.Enabled = false;
             this.txt_nombreResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombreResponsable.Location = new System.Drawing.Point(933, 34);
+            this.txt_nombreResponsable.Location = new System.Drawing.Point(891, 34);
             this.txt_nombreResponsable.Name = "txt_nombreResponsable";
-            this.txt_nombreResponsable.Size = new System.Drawing.Size(139, 24);
+            this.txt_nombreResponsable.Size = new System.Drawing.Size(181, 21);
             this.txt_nombreResponsable.TabIndex = 37;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(722, 344);
+            this.label7.Location = new System.Drawing.Point(727, 341);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(142, 18);
+            this.label7.Size = new System.Drawing.Size(121, 15);
             this.label7.TabIndex = 36;
             this.label7.Text = "Legajo del Vendedor";
             // 
@@ -310,9 +310,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(722, 296);
+            this.label8.Location = new System.Drawing.Point(727, 293);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 18);
+            this.label8.Size = new System.Drawing.Size(109, 15);
             this.label8.TabIndex = 35;
             this.label8.Text = "Tipo de Franquicia";
             // 
@@ -322,7 +322,7 @@
             this.lbl_barrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_barrio.Location = new System.Drawing.Point(727, 239);
             this.lbl_barrio.Name = "lbl_barrio";
-            this.lbl_barrio.Size = new System.Drawing.Size(48, 18);
+            this.lbl_barrio.Size = new System.Drawing.Size(40, 15);
             this.lbl_barrio.TabIndex = 33;
             this.lbl_barrio.Text = "Barrio";
             // 
@@ -332,7 +332,7 @@
             this.lbl_nro_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nro_calle.Location = new System.Drawing.Point(727, 177);
             this.lbl_nro_calle.Name = "lbl_nro_calle";
-            this.lbl_nro_calle.Size = new System.Drawing.Size(119, 18);
+            this.lbl_nro_calle.Size = new System.Drawing.Size(100, 15);
             this.lbl_nro_calle.TabIndex = 32;
             this.lbl_nro_calle.Text = "Numero de Calle";
             // 
@@ -340,9 +340,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(874, 134);
+            this.label4.Location = new System.Drawing.Point(727, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 18);
+            this.label4.Size = new System.Drawing.Size(41, 15);
             this.label4.TabIndex = 31;
             this.label4.Text = "Calle: ";
             // 
@@ -352,7 +352,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(727, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 18);
+            this.label2.Size = new System.Drawing.Size(130, 15);
             this.label2.TabIndex = 30;
             this.label2.Text = "Apellido Responsable:";
             // 
@@ -362,7 +362,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(727, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 18);
+            this.label3.Size = new System.Drawing.Size(134, 15);
             this.label3.TabIndex = 29;
             this.label3.Text = "Nombre Responsable: ";
             // 
@@ -370,7 +370,7 @@
             // 
             this.btn_guardarNuevaFranquicia.Enabled = false;
             this.btn_guardarNuevaFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardarNuevaFranquicia.Location = new System.Drawing.Point(709, 404);
+            this.btn_guardarNuevaFranquicia.Location = new System.Drawing.Point(730, 404);
             this.btn_guardarNuevaFranquicia.Name = "btn_guardarNuevaFranquicia";
             this.btn_guardarNuevaFranquicia.Size = new System.Drawing.Size(167, 37);
             this.btn_guardarNuevaFranquicia.TabIndex = 28;
@@ -386,7 +386,7 @@
             this.cmb_tipoFranquicia.FormattingEnabled = true;
             this.cmb_tipoFranquicia.Location = new System.Drawing.Point(891, 289);
             this.cmb_tipoFranquicia.Name = "cmb_tipoFranquicia";
-            this.cmb_tipoFranquicia.Size = new System.Drawing.Size(181, 26);
+            this.cmb_tipoFranquicia.Size = new System.Drawing.Size(181, 23);
             this.cmb_tipoFranquicia.TabIndex = 27;
             // 
             // cmb_barrio
@@ -394,26 +394,38 @@
             this.cmb_barrio.Enabled = false;
             this.cmb_barrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_barrio.FormattingEnabled = true;
-            this.cmb_barrio.Location = new System.Drawing.Point(902, 235);
+            this.cmb_barrio.Location = new System.Drawing.Point(891, 235);
             this.cmb_barrio.Name = "cmb_barrio";
-            this.cmb_barrio.Size = new System.Drawing.Size(170, 26);
+            this.cmb_barrio.Size = new System.Drawing.Size(181, 23);
             this.cmb_barrio.TabIndex = 26;
             // 
-            // button1
+            // btn_agregarTipoFranquicia
             // 
-            this.button1.Location = new System.Drawing.Point(1078, 289);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 23);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_agregarTipoFranquicia.Enabled = false;
+            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(1078, 289);
+            this.btn_agregarTipoFranquicia.Name = "btn_agregarTipoFranquicia";
+            this.btn_agregarTipoFranquicia.Size = new System.Drawing.Size(37, 23);
+            this.btn_agregarTipoFranquicia.TabIndex = 51;
+            this.btn_agregarTipoFranquicia.Text = "+";
+            this.btn_agregarTipoFranquicia.UseVisualStyleBackColor = true;
+            this.btn_agregarTipoFranquicia.Click += new System.EventHandler(this.btn_agregarTipoFranquicia_click);
+            // 
+            // btn_agregarBarrio
+            // 
+            this.btn_agregarBarrio.Enabled = false;
+            this.btn_agregarBarrio.Location = new System.Drawing.Point(1078, 235);
+            this.btn_agregarBarrio.Name = "btn_agregarBarrio";
+            this.btn_agregarBarrio.Size = new System.Drawing.Size(37, 23);
+            this.btn_agregarBarrio.TabIndex = 52;
+            this.btn_agregarBarrio.Text = "+";
+            this.btn_agregarBarrio.UseVisualStyleBackColor = true;
             // 
             // uc_ABM_Franquicia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_agregarBarrio);
+            this.Controls.Add(this.btn_agregarTipoFranquicia);
             this.Controls.Add(this.btn_modificarFranquicia);
             this.Controls.Add(this.btn_cancelarModificaciones);
             this.Controls.Add(this.btn_cancelarGuardado);
@@ -485,6 +497,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_agregarTipoFranquicia;
+        private System.Windows.Forms.Button btn_agregarBarrio;
     }
 }
