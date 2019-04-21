@@ -43,7 +43,18 @@ namespace TP_PAV
             SidePanel.Show();
             SidePanel.Height = btn_menuVendedores.Height;
             SidePanel.Top = btn_menuVendedores.Top;
-           
+            if (!main_panel.Controls.Contains(uc_ABM_Vendedor.pub_instance))
+            {
+                main_panel.Controls.Add(uc_ABM_Vendedor.pub_instance);
+                uc_ABM_Vendedor.pub_instance.Dock = DockStyle.Fill;
+                uc_ABM_Vendedor.pub_instance.BringToFront();
+
+
+            }
+            else
+            {
+                uc_ABM_Vendedor.pub_instance.BringToFront();
+            }
         }
 
         private void btn_menuFranquicias_Click(object sender, EventArgs e)

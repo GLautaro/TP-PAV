@@ -48,6 +48,7 @@
     <Compile Include="clases\Barrio.cs" />
     <Compile Include="clases\Franquicia.cs" />
     <Compile Include="clases\TipoFranquicia.cs" />
+    <Compile Include="clases\Vendedor.cs" />
     <Compile Include="formularios\Escritorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,12 @@
     <Compile Include="formularios\frm_ABM_Producto.Designer.cs">
       <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\frm_ABM_vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_ABM_vendedor.Designer.cs">
+      <DependentUpon>frm_ABM_vendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\frm_TipoFranquicia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +90,12 @@
     </Compile>
     <Compile Include="formularios\uc_ABM_Producto.Designer.cs">
       <DependentUpon>uc_ABM_Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\uc_ABM_Vendedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="formularios\uc_ABM_Vendedor.Designer.cs">
+      <DependentUpon>uc_ABM_Vendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\uc_ABM_Producto.resx">
       <DependentUpon>uc_ABM_Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\uc_ABM_Vendedor.resx">
+      <DependentUpon>uc_ABM_Vendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
