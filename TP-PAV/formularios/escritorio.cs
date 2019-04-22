@@ -59,8 +59,7 @@ namespace TP_PAV
                 main_panel.Controls.Add(uc_ABM_Vendedor.pub_instance);
                 uc_ABM_Vendedor.pub_instance.Dock = DockStyle.Fill;
                 uc_ABM_Vendedor.pub_instance.BringToFront();
-
-
+  
             }
             else
             {

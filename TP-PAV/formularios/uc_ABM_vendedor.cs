@@ -46,6 +46,7 @@ namespace TP_PAV.formularios
             this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
             this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
             this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
+            this.label_informacion.Visible = false;
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
@@ -56,6 +57,13 @@ namespace TP_PAV.formularios
         private void txt_busqueda_KeyUp(object sender, KeyEventArgs e)
         {
             this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_busqueda.Text);
+        }
+
+        private void ocultar_label_informacion(object sender, KeyEventArgs e)
+        {
+            this.label_informacion.ForeColor = Color.Red;
+            this.label_informacion.Text = "";
+            this.label_informacion.Visible = false;
         }
 
         private void btn_nuevoVendedor_Click(object sender, EventArgs e)
@@ -70,11 +78,7 @@ namespace TP_PAV.formularios
             }
             else
             {
-                if (this.txt_nombre.Text == "" || this.txt_apellido.Text == "" || this.txt_comision.Text == "")
-                {
-                    MessageBox.Show("Ingrese todos los datos que corresponden para realizar el registro");
-                }
-                else
+                if (validarFormulario())
                 {
                     vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
                     this.txt_legajo.Enabled = false;
@@ -85,24 +89,52 @@ namespace TP_PAV.formularios
                     this.txt_apellido.Clear();
                     this.txt_comision.Clear();
 
+                    this.label_informacion.ForeColor = Color.YellowGreen;
+                    this.label_informacion.Text = "Usuario cargado correctamente";
+                    this.label_informacion.Visible = true;
                 }
-
             }
+        }
+
+        private bool validarFormulario()
+        {
+            if (this.txt_nombre.Text == "")
+            {
+                this.label_informacion.Text = "Ingrese nombre de vendedor";
+                this.label_informacion.Visible = true;
+                this.txt_nombre.Focus();
+                return false;
+            }
+            if (this.txt_apellido.Text == "")
+            {
+                this.label_informacion.Text = "Ingrese apellido de vendedor";
+                this.label_informacion.Visible = true;
+                this.txt_apellido.Focus();
+                return false;
+            }
+            if (this.txt_comision.Text == "")
+            {
+                this.label_informacion.Text = "Ingrese comision de vendedor";
+                this.label_informacion.Visible = true;
+                this.txt_comision.Focus();
+                return false;
+            }
+            return true;
         }
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             if (this.txt_legajo.Text != "")
             {
-                if (this.txt_nombre.Text == "" || this.txt_apellido.Text == "" || this.txt_comision.Text == "")
-                {
-                    MessageBox.Show("Ingrese todos los datos que corresponden para realizar la modificacion");
-                }
-                else
+                if (validarFormulario())
                 {
                     vendedor.modificarVendedor(this.txt_legajo.Text, this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
                     this.txt_legajo.Enabled = false;
                     this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_legajo.Text);
+
+                    this.label_informacion.ForeColor = Color.YellowGreen;
+                    this.label_informacion.Text = "Usuario modificado correctamente";
+                    this.label_informacion.Visible = true;
                 }
             }
         }
@@ -118,8 +150,7 @@ namespace TP_PAV.formularios
             this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
             this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
             this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
+            this.btn_modificar.Visible = true;
         }
-
-
     }
 }
