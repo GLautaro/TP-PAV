@@ -54,14 +54,26 @@ namespace TP_PAV.formularios
             txt_nombre.Clear();
         }
 
+        public void habilitarBotones()
+        {
+            btn_habilitarAgregarTipoProducto.Enabled = true;
+            btn_habilitarModificarTipoProducto.Enabled = true;
+            btn_eliminarTipoProducto.Enabled = true;
+        }
+
         private void btn_habilitarAgregarTipoProducto_Click(object sender, EventArgs e)
         {
             desbloquearCajasTexto();
             btn_agregarTipoProducto.Visible = true;
+            btn_habilitarModificarTipoProducto.Enabled = false;
+            btn_eliminarTipoProducto.Enabled = false;
+            msj_error.Visible = false;
         }
 
         private void btn_agregarTipoProducto_Click(object sender, EventArgs e)
         {
+            msj_error.Visible = false;
+
             if (txt_nombre.Text != "")
             {
                 if (priv_tipoProducto.altaTipoProducto(txt_nombre.Text, txt_descripcion.Text))
@@ -78,10 +90,12 @@ namespace TP_PAV.formularios
             }
             else
             {
-                MessageBox.Show("Debe cargar un nombre.");
+                msj_error.Visible = true;
             }
+
             limpiarCajasTexto();
             bloquearCajasTexto();
+            habilitarBotones();
             btn_agregarTipoProducto.Visible = false;
             dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
         }
@@ -90,10 +104,15 @@ namespace TP_PAV.formularios
         {
             desbloquearCajasTexto();
             btn_modificarTipoProducto.Enabled = true;
+            btn_habilitarAgregarTipoProducto.Enabled = false;
+            btn_eliminarTipoProducto.Enabled = false;
+            msj_error.Visible = false;
         }
 
         private void btn_modificarTipoProducto_Click(object sender, EventArgs e)
         {
+            msj_error.Visible = false;
+
             int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["Código"].Value.ToString());
 
             if (txt_nombre.Text != "")
@@ -111,15 +130,18 @@ namespace TP_PAV.formularios
             }
             else
             {
-                MessageBox.Show("Debe cargar un nombre.");
+                msj_error.Visible = true;
             }
 
             limpiarCajasTexto();
             bloquearCajasTexto();
+            habilitarBotones();
         }
 
         private void btn_eliminarTipoProducto_Click(object sender, EventArgs e)
         {
+            msj_error.Visible = false;
+
             int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["Código"].Value.ToString());
 
             DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar el tipo de producto código " + priv_id_tipo_producto + " ?",
@@ -142,6 +164,8 @@ namespace TP_PAV.formularios
         {
             bloquearCajasTexto();
             limpiarCajasTexto();
+            habilitarBotones();
+            btn_agregarTipoProducto.Visible = false;
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_tipoProducto = new System.Windows.Forms.DataGridView();
             this.btn_agregarTipoProducto = new System.Windows.Forms.Button();
             this.btn_habilitarAgregarTipoProducto = new System.Windows.Forms.Button();
@@ -44,6 +44,7 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.msj_error = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,36 +59,36 @@
             this.dgv_tipoProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_tipoProducto.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_tipoProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgv_tipoProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tipoProducto.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgv_tipoProducto.EnableHeadersVisualStyles = false;
             this.dgv_tipoProducto.GridColor = System.Drawing.Color.Black;
-            this.dgv_tipoProducto.Location = new System.Drawing.Point(50, 178);
+            this.dgv_tipoProducto.Location = new System.Drawing.Point(38, 201);
             this.dgv_tipoProducto.MultiSelect = false;
             this.dgv_tipoProducto.Name = "dgv_tipoProducto";
             this.dgv_tipoProducto.ReadOnly = true;
             this.dgv_tipoProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgv_tipoProducto.RowHeadersVisible = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgv_tipoProducto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_tipoProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tipoProducto.Size = new System.Drawing.Size(477, 150);
@@ -108,22 +109,22 @@
             // 
             // btn_habilitarAgregarTipoProducto
             // 
-            this.btn_habilitarAgregarTipoProducto.Location = new System.Drawing.Point(51, 85);
+            this.btn_habilitarAgregarTipoProducto.Location = new System.Drawing.Point(38, 85);
             this.btn_habilitarAgregarTipoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btn_habilitarAgregarTipoProducto.Name = "btn_habilitarAgregarTipoProducto";
-            this.btn_habilitarAgregarTipoProducto.Size = new System.Drawing.Size(109, 28);
+            this.btn_habilitarAgregarTipoProducto.Size = new System.Drawing.Size(104, 28);
             this.btn_habilitarAgregarTipoProducto.TabIndex = 38;
             this.btn_habilitarAgregarTipoProducto.TabStop = false;
-            this.btn_habilitarAgregarTipoProducto.Text = "Añadir Nuevo";
+            this.btn_habilitarAgregarTipoProducto.Text = "Nuevo";
             this.btn_habilitarAgregarTipoProducto.UseVisualStyleBackColor = true;
             this.btn_habilitarAgregarTipoProducto.Click += new System.EventHandler(this.btn_habilitarAgregarTipoProducto_Click);
             // 
             // btn_eliminarTipoProducto
             // 
-            this.btn_eliminarTipoProducto.Location = new System.Drawing.Point(374, 85);
+            this.btn_eliminarTipoProducto.Location = new System.Drawing.Point(413, 85);
             this.btn_eliminarTipoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminarTipoProducto.Name = "btn_eliminarTipoProducto";
-            this.btn_eliminarTipoProducto.Size = new System.Drawing.Size(124, 28);
+            this.btn_eliminarTipoProducto.Size = new System.Drawing.Size(102, 28);
             this.btn_eliminarTipoProducto.TabIndex = 37;
             this.btn_eliminarTipoProducto.TabStop = false;
             this.btn_eliminarTipoProducto.Text = "Eliminar";
@@ -132,7 +133,7 @@
             // 
             // btn_habilitarModificarTipoProducto
             // 
-            this.btn_habilitarModificarTipoProducto.Location = new System.Drawing.Point(224, 85);
+            this.btn_habilitarModificarTipoProducto.Location = new System.Drawing.Point(228, 85);
             this.btn_habilitarModificarTipoProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btn_habilitarModificarTipoProducto.Name = "btn_habilitarModificarTipoProducto";
             this.btn_habilitarModificarTipoProducto.Size = new System.Drawing.Size(104, 28);
@@ -220,11 +221,25 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "Administrar tipos de productos";
             // 
+            // msj_error
+            // 
+            this.msj_error.AutoSize = true;
+            this.msj_error.BackColor = System.Drawing.Color.Red;
+            this.msj_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msj_error.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.msj_error.Location = new System.Drawing.Point(193, 172);
+            this.msj_error.Name = "msj_error";
+            this.msj_error.Size = new System.Drawing.Size(151, 15);
+            this.msj_error.TabIndex = 43;
+            this.msj_error.Text = "Debe ingresar un nombre.";
+            this.msj_error.Visible = false;
+            // 
             // frm_ABM_TipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 340);
+            this.ClientSize = new System.Drawing.Size(552, 363);
+            this.Controls.Add(this.msj_error);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_tipoProducto);
@@ -262,5 +277,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label msj_error;
     }
 }
