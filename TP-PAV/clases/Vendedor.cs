@@ -13,7 +13,7 @@ namespace TP_PAV.clases
 
         public DataTable traerVendedores()
         {
-            string consulta = @"SELECT legajo_vendedor as Legajo, nombre_vendedor as Nombre, apellido_vendedor as Apellido, porcentaje_comision as Comisión FROM Vendedor";
+            string consulta = @"SELECT * FROM Vendedor";
 
             return db.ejecutarConsulta(consulta);
 
@@ -21,7 +21,7 @@ namespace TP_PAV.clases
 
         public DataTable buscarVendedores(string texto)
         {
-            string consulta = @"SELECT legajo_vendedor as Legajo, nombre_vendedor as Nombre, apellido_vendedor as Apellido, porcentaje_comision as Comisión FROM Vendedor WHERE nombre_vendedor LIKE '%" + texto + "%' OR apellido_vendedor LIKE '%" + texto + "%' OR legajo_vendedor LIKE '" + texto + "%';";
+            string consulta = @"SELECT * FROM Vendedor WHERE nombre_vendedor LIKE '%" + texto + "%' OR apellido_vendedor LIKE '%" + texto + "%' OR legajo_vendedor LIKE '" + texto + "%';";
 
             return db.ejecutarConsulta(consulta);
 
