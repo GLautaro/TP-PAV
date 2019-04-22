@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_nuevoVendedor = new System.Windows.Forms.Button();
             this.txt_comision = new System.Windows.Forms.TextBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
@@ -44,12 +45,12 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_busqueda = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgv_vendedores = new System.Windows.Forms.DataGridView();
-            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
+            this.dgv_vendedores = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,107 +180,6 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "Buscar:";
             // 
-            // dgv_vendedores
-            // 
-            this.dgv_vendedores.AllowUserToAddRows = false;
-            this.dgv_vendedores.AllowUserToDeleteRows = false;
-            this.dgv_vendedores.AllowUserToResizeColumns = false;
-            this.dgv_vendedores.AllowUserToResizeRows = false;
-            this.dgv_vendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_vendedores.BackgroundColor = System.Drawing.Color.YellowGreen;
-            this.dgv_vendedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_vendedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgv_vendedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_vendedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.legajo_vendedor,
-            this.nombre_vendedor,
-            this.apellido_vendedor,
-            this.Comision});
-            this.dgv_vendedores.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dgv_vendedores.EnableHeadersVisualStyles = false;
-            this.dgv_vendedores.GridColor = System.Drawing.Color.Black;
-            this.dgv_vendedores.Location = new System.Drawing.Point(18, 177);
-            this.dgv_vendedores.MultiSelect = false;
-            this.dgv_vendedores.Name = "dgv_vendedores";
-            this.dgv_vendedores.ReadOnly = true;
-            this.dgv_vendedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vendedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_vendedores.RowHeadersVisible = false;
-            this.dgv_vendedores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_vendedores.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_vendedores.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgv_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_vendedores.Size = new System.Drawing.Size(565, 202);
-            this.dgv_vendedores.TabIndex = 22;
-            this.dgv_vendedores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_vendedores_CellMouseClick);
-            // 
-            // legajo_vendedor
-            // 
-            this.legajo_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
-            this.legajo_vendedor.Frozen = true;
-            this.legajo_vendedor.HeaderText = "Legajo";
-            this.legajo_vendedor.Name = "legajo_vendedor";
-            this.legajo_vendedor.ReadOnly = true;
-            this.legajo_vendedor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.legajo_vendedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.legajo_vendedor.Width = 60;
-            // 
-            // nombre_vendedor
-            // 
-            this.nombre_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
-            this.nombre_vendedor.Frozen = true;
-            this.nombre_vendedor.HeaderText = "Nombre";
-            this.nombre_vendedor.Name = "nombre_vendedor";
-            this.nombre_vendedor.ReadOnly = true;
-            this.nombre_vendedor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombre_vendedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nombre_vendedor.Width = 67;
-            // 
-            // apellido_vendedor
-            // 
-            this.apellido_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.apellido_vendedor.DataPropertyName = "apellido_vendedor";
-            this.apellido_vendedor.Frozen = true;
-            this.apellido_vendedor.HeaderText = "Apellido";
-            this.apellido_vendedor.Name = "apellido_vendedor";
-            this.apellido_vendedor.ReadOnly = true;
-            this.apellido_vendedor.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.apellido_vendedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.apellido_vendedor.Width = 70;
-            // 
-            // Comision
-            // 
-            this.Comision.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Comision.DataPropertyName = "porcentaje_comision";
-            this.Comision.Frozen = true;
-            this.Comision.HeaderText = "Comision (%)";
-            this.Comision.Name = "Comision";
-            this.Comision.ReadOnly = true;
-            this.Comision.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Comision.Width = 93;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -291,10 +191,92 @@
             this.label5.TabIndex = 50;
             this.label5.Text = "Vendedores";
             // 
+            // dgv_vendedores
+            // 
+            this.dgv_vendedores.AllowUserToAddRows = false;
+            this.dgv_vendedores.AllowUserToDeleteRows = false;
+            this.dgv_vendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_vendedores.BackgroundColor = System.Drawing.Color.YellowGreen;
+            this.dgv_vendedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_vendedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_vendedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_vendedores.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_vendedores.GridColor = System.Drawing.Color.YellowGreen;
+            this.dgv_vendedores.Location = new System.Drawing.Point(30, 184);
+            this.dgv_vendedores.Name = "dgv_vendedores";
+            this.dgv_vendedores.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vendedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_vendedores.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_vendedores.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_vendedores.Size = new System.Drawing.Size(521, 205);
+            this.dgv_vendedores.TabIndex = 51;
+            this.dgv_vendedores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_vendedores_CellMouseClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "legajo_vendedor";
+            this.Column1.HeaderText = "Legajo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nombre_vendedor";
+            this.Column2.HeaderText = "Nombre";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "apellido_vendedor";
+            this.Column3.HeaderText = "Apellido";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "porcentaje_comision";
+            this.Column4.HeaderText = "Comision";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // uc_ABM_Vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgv_vendedores);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_busqueda);
@@ -309,7 +291,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_modificar);
-            this.Controls.Add(this.dgv_vendedores);
             this.Name = "uc_ABM_Vendedor";
             this.Size = new System.Drawing.Size(972, 538);
             this.Load += new System.EventHandler(this.uc_ABM_vendedor_Load);
@@ -334,11 +315,11 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox txt_busqueda;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgv_vendedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comision;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgv_vendedores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
