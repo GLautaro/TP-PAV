@@ -271,6 +271,7 @@
             this.btn_agregarEstado.TabIndex = 17;
             this.btn_agregarEstado.Text = "+";
             this.btn_agregarEstado.UseVisualStyleBackColor = true;
+            this.btn_agregarEstado.Click += new System.EventHandler(this.btn_agregarEstado_Click);
             // 
             // btn_habilitarAñadirProducto
             // 
