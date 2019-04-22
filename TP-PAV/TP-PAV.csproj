@@ -55,24 +55,6 @@
     <Compile Include="formularios\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="formularios\frm_ABM_Franquicia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\frm_ABM_Franquicia.Designer.cs">
-      <DependentUpon>frm_ABM_Franquicia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularios\frm_ABM_Producto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\frm_ABM_Producto.Designer.cs">
-      <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formularios\frm_ABM_vendedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formularios\frm_ABM_vendedor.Designer.cs">
-      <DependentUpon>frm_ABM_vendedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="formularios\frm_TipoFranquicia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formularios\Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frm_ABM_Franquicia.resx">
-      <DependentUpon>frm_ABM_Franquicia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formularios\frm_ABM_Producto.resx">
-      <DependentUpon>frm_ABM_Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_TipoFranquicia.resx">
       <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>

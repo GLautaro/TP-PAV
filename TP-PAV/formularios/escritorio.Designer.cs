@@ -169,7 +169,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.YellowGreen;
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(849, 7);
+            this.panel3.Location = new System.Drawing.Point(1226, 7);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(104, 106);
             this.panel3.TabIndex = 2;
@@ -188,20 +188,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(254, 46);
+            this.label1.Location = new System.Drawing.Point(207, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(531, 50);
+            this.label1.Size = new System.Drawing.Size(998, 25);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Bienvenidos al Sistema de Administracion de pedidos,\r\n clientes y vendedores de D" +
-    "on Cayetano Pastas.\r\n";
+            this.label1.Text = "Bienvenidos al Sistema de Administracion de pedidos, clientes y vendedores de Don" +
+    " Cayetano Pastas.\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // main_panel
             // 
-            this.main_panel.Location = new System.Drawing.Point(202, 124);
+            this.main_panel.Location = new System.Drawing.Point(190, 124);
             this.main_panel.Margin = new System.Windows.Forms.Padding(2);
             this.main_panel.Name = "main_panel";
-            this.main_panel.Size = new System.Drawing.Size(1205, 601);
+            this.main_panel.Size = new System.Drawing.Size(1217, 601);
             this.main_panel.TabIndex = 5;
             // 
             // Escritorio

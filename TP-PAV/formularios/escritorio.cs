@@ -32,9 +32,20 @@ namespace TP_PAV
 
         private void btn_menuProductos_Click(object sender, EventArgs e)
         {
-            
-          // frm_ABM_Producto frm_producto = new frm_ABM_Producto();
-           //frm_producto.ShowDialog();
+            SidePanel.Show();
+            SidePanel.Height = btn_menuProductos.Height;
+            SidePanel.Top = btn_menuProductos.Top;
+
+            if (!main_panel.Controls.Contains(uc_ABM_Producto.pub_instance)) 
+            {
+                main_panel.Controls.Add(uc_ABM_Producto.pub_instance);
+                uc_ABM_Producto.pub_instance.Dock = DockStyle.Fill;
+                uc_ABM_Producto.pub_instance.BringToFront();
+            }
+            else 
+            {
+                uc_ABM_Producto.pub_instance.BringToFront();
+            }
             
         }
 

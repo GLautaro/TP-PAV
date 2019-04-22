@@ -12,6 +12,20 @@ namespace TP_PAV.formularios
 {
     public partial class uc_ABM_Producto : UserControl
     {
+
+        private static uc_ABM_Producto priv_instance;
+        public static uc_ABM_Producto pub_instance
+        {
+            get
+            {
+                if (priv_instance == null)
+                    priv_instance = new uc_ABM_Producto();
+                return priv_instance;
+            }
+        }
+
+
+
         public uc_ABM_Producto()
         {
             InitializeComponent();
