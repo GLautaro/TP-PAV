@@ -107,6 +107,19 @@ namespace TP_PAV.formularios
             }
         }
 
+        private void dgv_vendedores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //obtiene el valor de la primera celda del dataGridView. En este caso es el legajo del vendedor
+            //MessageBox.Show(this.dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            //cargar los datos del dataGridView en el formulario de modificacion
+            this.txt_legajo.Enabled = false;
+            this.txt_legajo.Text = this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString();
+            this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
+            this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
+            this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
+        }
+
 
     }
 }

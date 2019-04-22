@@ -56,7 +56,7 @@
             // btn_nuevoVendedor
             // 
             this.btn_nuevoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_nuevoVendedor.Location = new System.Drawing.Point(32, 327);
+            this.btn_nuevoVendedor.Location = new System.Drawing.Point(30, 408);
             this.btn_nuevoVendedor.Name = "btn_nuevoVendedor";
             this.btn_nuevoVendedor.Size = new System.Drawing.Size(173, 39);
             this.btn_nuevoVendedor.TabIndex = 45;
@@ -67,7 +67,7 @@
             // txt_comision
             // 
             this.txt_comision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_comision.Location = new System.Drawing.Point(705, 276);
+            this.txt_comision.Location = new System.Drawing.Point(697, 297);
             this.txt_comision.Name = "txt_comision";
             this.txt_comision.Size = new System.Drawing.Size(186, 22);
             this.txt_comision.TabIndex = 44;
@@ -75,7 +75,7 @@
             // txt_apellido
             // 
             this.txt_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellido.Location = new System.Drawing.Point(705, 246);
+            this.txt_apellido.Location = new System.Drawing.Point(697, 267);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(186, 22);
             this.txt_apellido.TabIndex = 43;
@@ -83,7 +83,7 @@
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(705, 210);
+            this.txt_nombre.Location = new System.Drawing.Point(697, 231);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(186, 22);
             this.txt_nombre.TabIndex = 42;
@@ -92,7 +92,7 @@
             // 
             this.txt_legajo.Enabled = false;
             this.txt_legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_legajo.Location = new System.Drawing.Point(705, 177);
+            this.txt_legajo.Location = new System.Drawing.Point(697, 198);
             this.txt_legajo.Name = "txt_legajo";
             this.txt_legajo.Size = new System.Drawing.Size(186, 22);
             this.txt_legajo.TabIndex = 41;
@@ -101,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(635, 177);
+            this.label4.Location = new System.Drawing.Point(627, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 40;
@@ -111,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(635, 279);
+            this.label3.Location = new System.Drawing.Point(627, 300);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 39;
@@ -121,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(635, 249);
+            this.label2.Location = new System.Drawing.Point(627, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 38;
@@ -131,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(635, 213);
+            this.label1.Location = new System.Drawing.Point(627, 234);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 37;
@@ -140,7 +140,7 @@
             // btn_modificar
             // 
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificar.Location = new System.Drawing.Point(782, 327);
+            this.btn_modificar.Location = new System.Drawing.Point(774, 348);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(109, 41);
             this.btn_modificar.TabIndex = 36;
@@ -152,7 +152,7 @@
             // btn_buscar
             // 
             this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscar.Location = new System.Drawing.Point(846, 126);
+            this.btn_buscar.Location = new System.Drawing.Point(362, 116);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(67, 30);
             this.btn_buscar.TabIndex = 49;
@@ -163,7 +163,7 @@
             // txt_busqueda
             // 
             this.txt_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_busqueda.Location = new System.Drawing.Point(674, 130);
+            this.txt_busqueda.Location = new System.Drawing.Point(190, 120);
             this.txt_busqueda.Name = "txt_busqueda";
             this.txt_busqueda.Size = new System.Drawing.Size(160, 22);
             this.txt_busqueda.TabIndex = 48;
@@ -173,7 +173,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(614, 133);
+            this.label6.Location = new System.Drawing.Point(130, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 47;
@@ -207,7 +207,7 @@
             this.dgv_vendedores.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgv_vendedores.EnableHeadersVisualStyles = false;
             this.dgv_vendedores.GridColor = System.Drawing.Color.Black;
-            this.dgv_vendedores.Location = new System.Drawing.Point(20, 96);
+            this.dgv_vendedores.Location = new System.Drawing.Point(18, 177);
             this.dgv_vendedores.MultiSelect = false;
             this.dgv_vendedores.Name = "dgv_vendedores";
             this.dgv_vendedores.ReadOnly = true;
@@ -230,7 +230,7 @@
             this.dgv_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_vendedores.Size = new System.Drawing.Size(565, 202);
             this.dgv_vendedores.TabIndex = 22;
-            this.dgv_vendedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vendedores_CellContentClick);
+            this.dgv_vendedores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_vendedores_CellMouseClick);
             // 
             // legajo_vendedor
             // 
@@ -311,7 +311,7 @@
             this.Controls.Add(this.btn_modificar);
             this.Controls.Add(this.dgv_vendedores);
             this.Name = "uc_ABM_Vendedor";
-            this.Size = new System.Drawing.Size(972, 430);
+            this.Size = new System.Drawing.Size(972, 538);
             this.Load += new System.EventHandler(this.uc_ABM_vendedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).EndInit();
             this.ResumeLayout(false);
