@@ -46,12 +46,17 @@ namespace TP_PAV.formularios
             txt_descripcion.Enabled = true;
             btn_modificarTipoProducto.Enabled = true;
             btn_cancelar.Enabled = true;
+            msj_error.Visible = false;
+            msj_registro_ok.Visible = false;
+            msj_modificado_ok.Visible = false;
+            msj_eliminado_ok.Visible = false;
         }
 
         private void limpiarCajasTexto()
         {
             txt_descripcion.Clear();
             txt_nombre.Clear();
+
         }
 
         public void habilitarBotones()
@@ -67,19 +72,17 @@ namespace TP_PAV.formularios
             btn_agregarTipoProducto.Visible = true;
             btn_habilitarModificarTipoProducto.Enabled = false;
             btn_eliminarTipoProducto.Enabled = false;
-            msj_error.Visible = false;
         }
 
         private void btn_agregarTipoProducto_Click(object sender, EventArgs e)
         {
-            msj_error.Visible = false;
 
             if (txt_nombre.Text != "")
             {
                 if (priv_tipoProducto.altaTipoProducto(txt_nombre.Text, txt_descripcion.Text))
                 {
 
-                    MessageBox.Show("Tipo de producto registrado correctamente.");
+                    msj_registro_ok.Visible = true;
 
                 }
                 else
@@ -106,13 +109,10 @@ namespace TP_PAV.formularios
             btn_modificarTipoProducto.Enabled = true;
             btn_habilitarAgregarTipoProducto.Enabled = false;
             btn_eliminarTipoProducto.Enabled = false;
-            msj_error.Visible = false;
         }
 
         private void btn_modificarTipoProducto_Click(object sender, EventArgs e)
         {
-            msj_error.Visible = false;
-
             int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["Código"].Value.ToString());
 
             if (txt_nombre.Text != "")
@@ -120,7 +120,7 @@ namespace TP_PAV.formularios
                 if (priv_tipoProducto.modificarTipoProducto(priv_id_tipo_producto, txt_nombre.Text, txt_descripcion.Text))
                 {
                     dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
-                    MessageBox.Show("Tipo de producto modificado con éxito.");
+                    msj_modificado_ok.Visible = true;
 
                 }
                 else
@@ -150,7 +150,7 @@ namespace TP_PAV.formularios
             {
                 if (priv_tipoProducto.eliminarTipoProducto(priv_id_tipo_producto))
                 {
-                    MessageBox.Show("Se ha eliminado el tipo de producto correctamente.");
+                    msj_eliminado_ok.Visible = true;
                     dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
                 }
                 else

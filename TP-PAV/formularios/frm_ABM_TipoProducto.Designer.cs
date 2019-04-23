@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_tipoProducto = new System.Windows.Forms.DataGridView();
             this.btn_agregarTipoProducto = new System.Windows.Forms.Button();
             this.btn_habilitarAgregarTipoProducto = new System.Windows.Forms.Button();
@@ -45,6 +45,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.msj_error = new System.Windows.Forms.Label();
+            this.msj_registro_ok = new System.Windows.Forms.Label();
+            this.msj_modificado_ok = new System.Windows.Forms.Label();
+            this.msj_eliminado_ok = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,14 +62,14 @@
             this.dgv_tipoProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_tipoProducto.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_tipoProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_tipoProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tipoProducto.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgv_tipoProducto.EnableHeadersVisualStyles = false;
@@ -76,19 +79,19 @@
             this.dgv_tipoProducto.Name = "dgv_tipoProducto";
             this.dgv_tipoProducto.ReadOnly = true;
             this.dgv_tipoProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_tipoProducto.RowHeadersVisible = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Khaki;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Khaki;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_tipoProducto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_tipoProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tipoProducto.Size = new System.Drawing.Size(477, 150);
@@ -225,20 +228,62 @@
             // 
             this.msj_error.AutoSize = true;
             this.msj_error.BackColor = System.Drawing.Color.Red;
-            this.msj_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msj_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msj_error.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.msj_error.Location = new System.Drawing.Point(193, 172);
             this.msj_error.Name = "msj_error";
-            this.msj_error.Size = new System.Drawing.Size(151, 15);
+            this.msj_error.Size = new System.Drawing.Size(175, 15);
             this.msj_error.TabIndex = 43;
             this.msj_error.Text = "Debe ingresar un nombre.";
             this.msj_error.Visible = false;
+            // 
+            // msj_registro_ok
+            // 
+            this.msj_registro_ok.AutoSize = true;
+            this.msj_registro_ok.BackColor = System.Drawing.Color.LawnGreen;
+            this.msj_registro_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msj_registro_ok.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.msj_registro_ok.Location = new System.Drawing.Point(152, 172);
+            this.msj_registro_ok.Name = "msj_registro_ok";
+            this.msj_registro_ok.Size = new System.Drawing.Size(250, 15);
+            this.msj_registro_ok.TabIndex = 44;
+            this.msj_registro_ok.Text = "Tipo de producto registrado con éxito.";
+            this.msj_registro_ok.Visible = false;
+            // 
+            // msj_modificado_ok
+            // 
+            this.msj_modificado_ok.AutoSize = true;
+            this.msj_modificado_ok.BackColor = System.Drawing.Color.LawnGreen;
+            this.msj_modificado_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msj_modificado_ok.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.msj_modificado_ok.Location = new System.Drawing.Point(152, 172);
+            this.msj_modificado_ok.Name = "msj_modificado_ok";
+            this.msj_modificado_ok.Size = new System.Drawing.Size(256, 15);
+            this.msj_modificado_ok.TabIndex = 45;
+            this.msj_modificado_ok.Text = "Tipo de producto modificado con éxito.";
+            this.msj_modificado_ok.Visible = false;
+            // 
+            // msj_eliminado_ok
+            // 
+            this.msj_eliminado_ok.AutoSize = true;
+            this.msj_eliminado_ok.BackColor = System.Drawing.Color.LawnGreen;
+            this.msj_eliminado_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msj_eliminado_ok.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.msj_eliminado_ok.Location = new System.Drawing.Point(152, 172);
+            this.msj_eliminado_ok.Name = "msj_eliminado_ok";
+            this.msj_eliminado_ok.Size = new System.Drawing.Size(249, 15);
+            this.msj_eliminado_ok.TabIndex = 46;
+            this.msj_eliminado_ok.Text = "Tipo de producto eliminado con éxito.";
+            this.msj_eliminado_ok.Visible = false;
             // 
             // frm_ABM_TipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 363);
+            this.Controls.Add(this.msj_eliminado_ok);
+            this.Controls.Add(this.msj_modificado_ok);
+            this.Controls.Add(this.msj_registro_ok);
             this.Controls.Add(this.msj_error);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -278,5 +323,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label msj_error;
+        private System.Windows.Forms.Label msj_registro_ok;
+        private System.Windows.Forms.Label msj_modificado_ok;
+        private System.Windows.Forms.Label msj_eliminado_ok;
     }
 }
