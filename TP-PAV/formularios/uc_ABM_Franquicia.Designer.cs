@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.Size = new System.Drawing.Size(159, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Franquicias";
             // 
@@ -257,7 +257,7 @@
             this.txt_legajoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_legajoVendedor.Location = new System.Drawing.Point(891, 343);
             this.txt_legajoVendedor.Name = "txt_legajoVendedor";
-            this.txt_legajoVendedor.Size = new System.Drawing.Size(92, 21);
+            this.txt_legajoVendedor.Size = new System.Drawing.Size(92, 24);
             this.txt_legajoVendedor.TabIndex = 42;
             // 
             // txt_nroCalle
@@ -266,7 +266,7 @@
             this.txt_nroCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nroCalle.Location = new System.Drawing.Point(891, 177);
             this.txt_nroCalle.Name = "txt_nroCalle";
-            this.txt_nroCalle.Size = new System.Drawing.Size(180, 21);
+            this.txt_nroCalle.Size = new System.Drawing.Size(180, 24);
             this.txt_nroCalle.TabIndex = 40;
             // 
             // txt_calle
@@ -275,7 +275,7 @@
             this.txt_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_calle.Location = new System.Drawing.Point(891, 128);
             this.txt_calle.Name = "txt_calle";
-            this.txt_calle.Size = new System.Drawing.Size(181, 21);
+            this.txt_calle.Size = new System.Drawing.Size(181, 24);
             this.txt_calle.TabIndex = 39;
             // 
             // txt_apellidoResponsable
@@ -284,7 +284,7 @@
             this.txt_apellidoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellidoResponsable.Location = new System.Drawing.Point(891, 82);
             this.txt_apellidoResponsable.Name = "txt_apellidoResponsable";
-            this.txt_apellidoResponsable.Size = new System.Drawing.Size(180, 21);
+            this.txt_apellidoResponsable.Size = new System.Drawing.Size(180, 24);
             this.txt_apellidoResponsable.TabIndex = 38;
             // 
             // txt_nombreResponsable
@@ -293,7 +293,7 @@
             this.txt_nombreResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombreResponsable.Location = new System.Drawing.Point(891, 34);
             this.txt_nombreResponsable.Name = "txt_nombreResponsable";
-            this.txt_nombreResponsable.Size = new System.Drawing.Size(181, 21);
+            this.txt_nombreResponsable.Size = new System.Drawing.Size(181, 24);
             this.txt_nombreResponsable.TabIndex = 37;
             // 
             // label7
@@ -302,7 +302,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(727, 341);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 15);
+            this.label7.Size = new System.Drawing.Size(142, 18);
             this.label7.TabIndex = 36;
             this.label7.Text = "Legajo del Vendedor";
             // 
@@ -312,7 +312,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(727, 293);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 15);
+            this.label8.Size = new System.Drawing.Size(129, 18);
             this.label8.TabIndex = 35;
             this.label8.Text = "Tipo de Franquicia";
             // 
@@ -322,7 +322,7 @@
             this.lbl_barrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_barrio.Location = new System.Drawing.Point(727, 239);
             this.lbl_barrio.Name = "lbl_barrio";
-            this.lbl_barrio.Size = new System.Drawing.Size(40, 15);
+            this.lbl_barrio.Size = new System.Drawing.Size(48, 18);
             this.lbl_barrio.TabIndex = 33;
             this.lbl_barrio.Text = "Barrio";
             // 
@@ -332,7 +332,7 @@
             this.lbl_nro_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nro_calle.Location = new System.Drawing.Point(727, 177);
             this.lbl_nro_calle.Name = "lbl_nro_calle";
-            this.lbl_nro_calle.Size = new System.Drawing.Size(100, 15);
+            this.lbl_nro_calle.Size = new System.Drawing.Size(119, 18);
             this.lbl_nro_calle.TabIndex = 32;
             this.lbl_nro_calle.Text = "Numero de Calle";
             // 
@@ -342,7 +342,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(727, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.Size = new System.Drawing.Size(49, 18);
             this.label4.TabIndex = 31;
             this.label4.Text = "Calle: ";
             // 
@@ -352,7 +352,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(727, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 15);
+            this.label2.Size = new System.Drawing.Size(154, 18);
             this.label2.TabIndex = 30;
             this.label2.Text = "Apellido Responsable:";
             // 
@@ -362,7 +362,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(727, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 15);
+            this.label3.Size = new System.Drawing.Size(161, 18);
             this.label3.TabIndex = 29;
             this.label3.Text = "Nombre Responsable: ";
             // 
@@ -386,7 +386,7 @@
             this.cmb_tipoFranquicia.FormattingEnabled = true;
             this.cmb_tipoFranquicia.Location = new System.Drawing.Point(891, 289);
             this.cmb_tipoFranquicia.Name = "cmb_tipoFranquicia";
-            this.cmb_tipoFranquicia.Size = new System.Drawing.Size(181, 23);
+            this.cmb_tipoFranquicia.Size = new System.Drawing.Size(181, 26);
             this.cmb_tipoFranquicia.TabIndex = 27;
             // 
             // cmb_barrio
@@ -396,7 +396,7 @@
             this.cmb_barrio.FormattingEnabled = true;
             this.cmb_barrio.Location = new System.Drawing.Point(891, 235);
             this.cmb_barrio.Name = "cmb_barrio";
-            this.cmb_barrio.Size = new System.Drawing.Size(181, 23);
+            this.cmb_barrio.Size = new System.Drawing.Size(181, 26);
             this.cmb_barrio.TabIndex = 26;
             // 
             // btn_agregarTipoFranquicia
@@ -419,10 +419,11 @@
             this.btn_agregarBarrio.TabIndex = 52;
             this.btn_agregarBarrio.Text = "+";
             this.btn_agregarBarrio.UseVisualStyleBackColor = true;
+            this.btn_agregarBarrio.Click += new System.EventHandler(this.btn_agregarBarrio_Click);
             // 
             // uc_ABM_Franquicia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_agregarBarrio);
             this.Controls.Add(this.btn_agregarTipoFranquicia);
