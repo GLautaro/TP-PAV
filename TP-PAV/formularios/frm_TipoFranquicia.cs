@@ -16,6 +16,8 @@ namespace TP_PAV.formularios
         TipoFranquicia priv_tipoFranquicia = new TipoFranquicia();
         uc_ABM_Franquicia priv_formularioPadre = new uc_ABM_Franquicia();
         int priv_selectedCmbIndex;
+        
+        
         public frm_TipoFranquicia()
         {
             InitializeComponent();
@@ -30,15 +32,20 @@ namespace TP_PAV.formularios
         }
         private void bloquearCajasTexto()
         {
+            
             txt_nombre.Enabled = false;
             txt_montoMinimo.Enabled = false;
             txt_porcentajeDescuento.Enabled = false;
             btn_modificarTipoFranquicia.Enabled = false;
-            btn_modificarTipoFranquicia.Visible = false;
             btn_cancelar.Enabled = false;
-            btn_cancelar.Visible = false;
         }
+        private void desbloquearBotonesPrincipales(bool value)
+        {
+            btn_habilitarModificarTipoFranquicia.Enabled = value;
+            btn_eliminarFranquicia.Enabled = value;
+            btn_habilitarAgregarTipoFranquicia.Enabled = value;
 
+        }
         private void limpiarCajasTexto()
         {
             txt_montoMinimo.Clear();
@@ -70,37 +77,45 @@ namespace TP_PAV.formularios
             btn_agregarTipoFranquicia.Visible = true;
             btn_agregarTipoFranquicia.Enabled = true;
             dgv_tipoFranquicia.Enabled = false;
+            desbloquearBotonesPrincipales(false);
         }
-
         private void btn_agregarTipoFranquicia_Click(object sender, EventArgs e)
         {
-            priv_tipoFranquicia.pub_nombre_tipo_franquicia = txt_nombre.Text;
-            if (txt_porcentajeDescuento.Text != "")
-            {
-                priv_tipoFranquicia.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text);
-            }
-            if (txt_montoMinimo.Text != "")
-            {
-                priv_tipoFranquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text);
-                
-            }
-            
-            if (priv_tipoFranquicia.altaTipoFranquicia())
-            {
-  
-                MessageBox.Show("Se cargo correctamente!");
+           
+                    priv_tipoFranquicia.pub_nombre_tipo_franquicia = txt_nombre.Text;
+                    if (txt_montoMinimo.Text != "" && txt_porcentajeDescuento.Text != "")
+                    {
+                        priv_tipoFranquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text.ToString());
+                        priv_tipoFranquicia.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text.ToString());
 
-            }
-            else
-            {
-             
-                MessageBox.Show("Error!");
-            }
-            limpiarCajasTexto();
-            bloquearCajasTexto();
-            btn_agregarTipoFranquicia.Visible = false;
-            dgv_tipoFranquicia.Enabled = true;
-            dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia(); 
+                        if (priv_tipoFranquicia.validarDatos())
+                        {
+                            if (priv_tipoFranquicia.altaTipoFranquicia())
+                            {
+
+                                MessageBox.Show("Se cargo correctamente!");
+
+                            }
+                            else
+                            {
+
+                                MessageBox.Show("Error!");
+                            }
+                            limpiarCajasTexto();
+                            bloquearCajasTexto();
+                            btn_agregarTipoFranquicia.Visible = false;
+                            dgv_tipoFranquicia.Enabled = true;
+                            dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+                            desbloquearBotonesPrincipales(true);
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Existen campos vacios!");
+                    }
+
+           
 
         }
 
@@ -110,6 +125,7 @@ namespace TP_PAV.formularios
             bloquearCajasTexto();
             dgv_tipoFranquicia.Enabled = true;
             btn_agregarTipoFranquicia.Visible = false;
+            desbloquearBotonesPrincipales(true);
         }
 
         private void btn_habilitarModificarTipoFranquicia_Click(object sender, EventArgs e)
@@ -121,7 +137,7 @@ namespace TP_PAV.formularios
             dgv_tipoFranquicia.Enabled = false;
             btn_modificarTipoFranquicia.Enabled = true;
             btn_modificarTipoFranquicia.Visible = true;
-            
+            desbloquearBotonesPrincipales(false);
 
         }
 
@@ -135,28 +151,36 @@ namespace TP_PAV.formularios
 
         private void btn_modificarTipoFranquicia_Click(object sender, EventArgs e)
         {
-            priv_tipoFranquicia.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
-            priv_tipoFranquicia.pub_nombre_tipo_franquicia = txt_nombre.Text;
-            priv_tipoFranquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text);
-            priv_tipoFranquicia.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text);
-            if (priv_tipoFranquicia.modificarTipoFranquicia())
-            {
-                dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia(); 
-                MessageBox.Show("Se Modifico");
+          
+                priv_tipoFranquicia.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
+                priv_tipoFranquicia.pub_nombre_tipo_franquicia = txt_nombre.Text;
+                if (txt_montoMinimo.Text != "" && txt_porcentajeDescuento.Text != "")
+                {
+                    priv_tipoFranquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text.ToString());
+                    priv_tipoFranquicia.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text.ToString());
+                    if (priv_tipoFranquicia.validarDatos())
+                    {
+                        if (priv_tipoFranquicia.modificarTipoFranquicia())
+                        {
+                            dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+                            MessageBox.Show("Se modificó correctamente.");
 
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-            limpiarCajasTexto();
-            bloquearCajasTexto();
-        }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al tratar de modificar los datos.");
+                        }
+                        limpiarCajasTexto();
+                        bloquearCajasTexto();
+                        dgv_tipoFranquicia.Enabled = true;
+                        desbloquearBotonesPrincipales(true);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Existen campos vacios!");
+                }
 
-        private void frm_TipoFranquicia_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            priv_formularioPadre.pub_cmb_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
-            priv_formularioPadre.pub_cmb_tipoFranquicia.SelectedIndex = priv_selectedCmbIndex;
         }
 
         private void btn_eliminarFranquicia_Click(object sender, EventArgs e)
@@ -178,7 +202,36 @@ namespace TP_PAV.formularios
                 }
             }
         }
+        private void frm_TipoFranquicia_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            priv_formularioPadre.pub_cmb_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+            priv_formularioPadre.pub_cmb_tipoFranquicia.SelectedIndex = priv_selectedCmbIndex;
+        }
 
+        private void txt_montoMinimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
+            {
+                MessageBox.Show("No es un valor permitido");
+                //borra el caracter no permitido
+                e.Handled = true;
+            }
+        }
+
+
+        private void txt_porcentajeDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
+            {
+                MessageBox.Show("No es un valor permitido");
+                //borra el caracter no permitido
+                e.Handled = true;
+            }
+        }
+
+  
+
+        
         
 
      

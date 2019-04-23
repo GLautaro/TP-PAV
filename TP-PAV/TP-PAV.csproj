@@ -56,6 +56,12 @@
     <Compile Include="formularios\Escritorio.Designer.cs">
       <DependentUpon>Escritorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\frm_ABM_Barrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_ABM_Barrio.Designer.cs">
+      <DependentUpon>frm_ABM_Barrio.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\frm_ABM_TipoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formularios\Escritorio.resx">
       <DependentUpon>Escritorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_ABM_Barrio.resx">
+      <DependentUpon>frm_ABM_Barrio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_ABM_TipoProducto.resx">
       <DependentUpon>frm_ABM_TipoProducto.cs</DependentUpon>

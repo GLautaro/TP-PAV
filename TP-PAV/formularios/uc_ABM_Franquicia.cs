@@ -19,8 +19,11 @@ namespace TP_PAV.formularios
         {
             get { return this.cmb_tipoFranquicia; }
         }
-        
-
+        public ComboBox pub_cmb_barrio
+        {
+            get { return this.cmb_barrio; }
+        }
+     
         //FORMA 2
         private static uc_ABM_Franquicia priv_instance;
         public static uc_ABM_Franquicia pub_instance {
@@ -50,6 +53,7 @@ namespace TP_PAV.formularios
             btn_buscarVendedor.Enabled = false;
             btn_guardarNuevaFranquicia.Enabled = false;
             btn_agregarTipoFranquicia.Enabled = false;
+            btn_agregarBarrio.Enabled = false;
         }
 
         public void desbloquearCajasTexto()
@@ -64,6 +68,7 @@ namespace TP_PAV.formularios
             btn_buscarVendedor.Enabled = true;
             btn_guardarNuevaFranquicia.Enabled = true;
             btn_agregarTipoFranquicia.Enabled = true;
+            btn_agregarBarrio.Enabled = true;
         }
         
         private void uc_ABM_Franquicia_Load(object sender, EventArgs e)
@@ -287,6 +292,14 @@ namespace TP_PAV.formularios
             form_tipo_franquicia.ShowDialog();
             
             
+        }
+
+        private void btn_agregarBarrio_Click(object sender, EventArgs e)
+        {
+            frm_ABM_Barrio frm_barrio = new frm_ABM_Barrio();
+            frm_barrio.pub_formularioPadre = this;
+            frm_barrio.ShowDialog();
+
         }
 
 
