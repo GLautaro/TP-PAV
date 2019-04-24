@@ -9,14 +9,14 @@ namespace TP_PAV.clases
     class Franquicia
     {
         AccesoBD priv_acceso_db = new AccesoBD();
-        private int priv_id_franquicia = -1;
-        private string priv_nombre_responsable = "";
-        private string priv_apellido_responsable = "";
-        private string priv_calle = "";
-        private int priv_nro_calle = -1;
-        private int priv_id_barrio = -1;
-        private int priv_legajo_vendedor = -1;
-        private int priv_id_tipo_franquicia = -1;
+        private int priv_id_franquicia;
+        private string priv_nombre_responsable;
+        private string priv_apellido_responsable;
+        private string priv_calle;
+        private int priv_nro_calle;
+        private int priv_id_barrio;
+        private int priv_legajo_vendedor;
+        private int priv_id_tipo_franquicia;
         
         public int pub_id_franquicia
         {
@@ -60,20 +60,23 @@ namespace TP_PAV.clases
             set { this.priv_id_tipo_franquicia = value; }
         }
 
-        public Franquicia(){}
+        
         public Franquicia(int id_franquicia, string nombre_responsable, string apellido_responsable, string calle, int nro_calle, int id_barrio, int legajo_vendedor, int id_tipo_franquicia)
         {
-            int priv_id_franquicia = id_franquicia;
-            string priv_nombre_responsable = nombre_responsable;
-            string priv_apellido_responsable = apellido_responsable;
-            string priv_calle = calle;
-            int priv_nro_calle = nro_calle;
-            int priv_id_barrio = id_barrio;
-            int priv_legajo_vendedor = legajo_vendedor;
-            int priv_id_tipo_franquicia = id_tipo_franquicia;
+            priv_id_franquicia = id_franquicia;
+            priv_nombre_responsable = nombre_responsable;
+            priv_apellido_responsable = apellido_responsable;
+            priv_calle = calle;
+            priv_nro_calle = nro_calle;
+            priv_id_barrio = id_barrio;
+            priv_legajo_vendedor = legajo_vendedor;
+            priv_id_tipo_franquicia = id_tipo_franquicia;
             
         }
-        
+        public Franquicia()
+        {
+            
+        }
         
         
         public bool altaFranquicia(string nombre_responsable,string apellido_responsable,string calle,
@@ -101,15 +104,7 @@ namespace TP_PAV.clases
         
         public bool modificarFranquicia()
         {
-            string nonQuery = String.Format(@"UPDATE franquicia 
-                                    SET nombre_responsable='{0}',
-	                                    apellido_responsable='{1}',
-	                                    calle='{2}',
-	                                    nro_calle={3},
-	                                    id_barrio={4},
-                                    	id_tipo_franquicia={5},
-	                                    legajo_vendedor={6} 
-		                                        WHERE id_franquicia = {7}",
+            string nonQuery = String.Format(@"UPDATE franquicia SET nombre_responsable='{0}',apellido_responsable='{1}',calle='{2}',nro_calle={3},id_barrio={4},id_tipo_franquicia={5},legajo_vendedor={6} WHERE id_franquicia={7}",
                                         priv_nombre_responsable,
                                         priv_apellido_responsable,
                                         priv_calle,
@@ -131,7 +126,7 @@ namespace TP_PAV.clases
 
         public bool eliminarFranquicia()
         {
-            string noQuery = @"DELETE FROM franquicia WHERE id_franquicia=" + priv_id_franquicia;
+            string noQuery = @"DELETE FROM franquicia WHERE id_franquicia=" + priv_id_franquicia.ToString();
             if (priv_acceso_db.ejecutarNoConsulta(noQuery) == 1)
             {
                 return true;

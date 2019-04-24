@@ -40,43 +40,44 @@ namespace TP_PAV.formularios
         {
             InitializeComponent();
         }
-        private void validarDatosFranquicia()
+        private bool validarDatosFranquicia()
         {
             if (txt_apellidoResponsable.Text == "")
             {
                 MessageBox.Show("No ha cargado un apellido");
-                return;
+                return false;
             }
             if (txt_nombreResponsable.Text == "")
             {
                 MessageBox.Show("No ha cargado un nombre");
-                return;
+                return false;
             }
             if (txt_calle.Text == "")
             {
                 MessageBox.Show("No ha cargado una calle");
-                return;
+                return false;
             }
             if (cmb_barrio.SelectedIndex == -1)
             {
                 MessageBox.Show("No ha seleccionado un barrio");
-                return;
+                return false;
             }
             if (cmb_tipoFranquicia.SelectedIndex == -1)
             {
                 MessageBox.Show("No ha seleccionado un tipo de franquicia");
-                return;
+                return false;
             }
             if (txt_legajoVendedor.Text == "")
             {
                 MessageBox.Show("No ha cargado un legajo de vendedor");
-                return;
+                return false;
             }
             if (txt_nroCalle.Text == "")
             {
                 MessageBox.Show("No ha cargado un numero de calle");
-                return;
+                return false;
             }
+                return true;
         }
 
         public void bloquearCajasTexto()
@@ -136,7 +137,8 @@ namespace TP_PAV.formularios
 
         private void btn_guardarNuevaFranquicia_Click(object sender, EventArgs e)
         {
-            validarDatosFranquicia();
+            if(!validarDatosFranquicia()){return;}
+            
             
 
             if (priv_franquicia.altaFranquicia(txt_nombreResponsable.Text, txt_apellidoResponsable.Text, txt_calle.Text,
@@ -176,7 +178,7 @@ namespace TP_PAV.formularios
 
         private void btn_modificarFranquicia_Click(object sender, EventArgs e)
         {
-
+            if (!validarDatosFranquicia()) { return; }
             Franquicia priv_franquiciaModificar = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()),
                                                                        txt_nombreResponsable.Text,
                                                                        txt_apellidoResponsable.Text,
