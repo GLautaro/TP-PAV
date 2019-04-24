@@ -31,9 +31,9 @@ namespace TP_PAV.clases
             return priv_acceso_bd.ejecutarConsulta(query);
         }
 
-        public bool addBarrio()
+        public bool addBarrio(string nombre)
         {
-            string consulta = String.Format(@"INSERT INTO barrio (nombre_barrio) VALUES ('{0}')", pub_nombre_barrio);
+            string consulta = String.Format(@"INSERT INTO barrio (nombre_barrio) VALUES ('{0}')", nombre);
             return priv_acceso_bd.ejecutarNoConsulta(consulta) == 1 ? true :   false;
 
         }

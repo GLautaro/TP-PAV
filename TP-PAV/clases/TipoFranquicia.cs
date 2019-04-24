@@ -34,26 +34,7 @@ namespace TP_PAV.clases
             get { return this.priv_nombre_tipo_franquicia; }
             set { this.priv_nombre_tipo_franquicia = value; }
         }
-
-        public Boolean validarDatos()
-        {
-            if (pub_nombre_tipo_franquicia == "")
-            {
-                MessageBox.Show("Error en el nombre de Tipo de Franquicia");
-                return false;
-            }
-            if (pub_monto_minimo_compra < 0)
-            {
-                MessageBox.Show("Error en el valor Monto Minimo de compra");
-                return false;
-            }
-            if (pub_porcentaje_descuento < 0 || pub_porcentaje_descuento > 100)
-            {
-                MessageBox.Show("Error en el valor Porcentaje de Descuento");
-                return false;
-            }
-            return true;
-        }
+       
 
         public DataTable recuperarTiposFranquicia()
         {
@@ -61,11 +42,11 @@ namespace TP_PAV.clases
             return priv_acceso_db.ejecutarConsulta(query);
         }
      
-        public bool altaTipoFranquicia()
+        public bool altaTipoFranquicia(int montoMinimo, int porcentajeDescuento, string nombre)
         {
             string noConsulta = String.Format(@"INSERT INTO tipo_franquicia (monto_minimo_compra, porcentaje_descuento, nombre_tipo_franquicia) 
                                                 VALUES ({0}, {1}, '{2}') ",
-                                                pub_monto_minimo_compra, pub_porcentaje_descuento, pub_nombre_tipo_franquicia);
+                                                montoMinimo, porcentajeDescuento, nombre);
             if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
             {
                 return true;

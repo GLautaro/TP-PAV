@@ -30,6 +30,29 @@ namespace TP_PAV.formularios
         {
             set { priv_selectedCmbIndex = value; }
         }
+
+        public Boolean validarDatos()
+        {
+            if (txt_nombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Error en el nombre de Tipo de Franquicia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nombre.Focus();
+                return false;
+            }
+            if (txt_montoMinimo.Text == "" || (int.Parse(txt_montoMinimo.Text) < 0))
+            {
+                MessageBox.Show("Error en el valor Monto Minimo de compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_montoMinimo.Focus();
+                return false;
+            }
+            if (txt_porcentajeDescuento.Text == "" || (int.Parse(txt_porcentajeDescuento.Text) < 0 || int.Parse(txt_porcentajeDescuento.Text) > 100))
+            {
+                MessageBox.Show("Error en el valor Porcentaje de Descuento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_porcentajeDescuento.Focus();
+                return false;
+            }
+            return true;
+        }
         private void bloquearCajasTexto()
         {
             
@@ -81,41 +104,35 @@ namespace TP_PAV.formularios
         }
         private void btn_agregarTipoFranquicia_Click(object sender, EventArgs e)
         {
-           
-                    priv_tipoFranquicia.pub_nombre_tipo_franquicia = txt_nombre.Text;
-                    if (txt_montoMinimo.Text != "" && txt_porcentajeDescuento.Text != "")
-                    {
-                        priv_tipoFranquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text.ToString());
-                        priv_tipoFranquicia.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text.ToString());
-
-                        if (priv_tipoFranquicia.validarDatos())
+                        if (validarDatos())
                         {
-                            if (priv_tipoFranquicia.altaTipoFranquicia())
+                            if (priv_tipoFranquicia.altaTipoFranquicia(int.Parse(txt_montoMinimo.Text), int.Parse(txt_porcentajeDescuento.Text), txt_nombre.Text))
                             {
 
-                                MessageBox.Show("Se cargo correctamente!");
+                                DialogResult result = MessageBox.Show("Tipo de Franquicia cargada correctamente\n¿Desea cargar otra franquicia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                                if (result == DialogResult.No)
+                                {
+                                    limpiarCajasTexto();
+                                    bloquearCajasTexto();
+                                    btn_agregarTipoFranquicia.Visible = false;
+                                    dgv_tipoFranquicia.Enabled = true;
+                                    dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+                                    desbloquearBotonesPrincipales(true);
+                                }
+                                else
+                                {
+                                    limpiarCajasTexto();
+                                    txt_nombre.Focus();
+                                    dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+                                }
 
                             }
                             else
                             {
-
-                                MessageBox.Show("Error!");
+                                MessageBox.Show("Error al cargar el nuevo tipo de franquicia!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                            limpiarCajasTexto();
-                            bloquearCajasTexto();
-                            btn_agregarTipoFranquicia.Visible = false;
-                            dgv_tipoFranquicia.Enabled = true;
-                            dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
-                            desbloquearBotonesPrincipales(true);
+                           
                         }
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Existen campos vacios!");
-                    }
-
-           
 
         }
 
@@ -130,6 +147,11 @@ namespace TP_PAV.formularios
 
         private void btn_habilitarModificarTipoFranquicia_Click(object sender, EventArgs e)
         {
+            if (dgv_tipoFranquicia.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             desbloquearCajasTexto();
             txt_montoMinimo.Text = dgv_tipoFranquicia.CurrentRow.Cells["monto_minimo_compra"].Value.ToString();
             txt_nombre.Text = dgv_tipoFranquicia.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString();
@@ -151,54 +173,56 @@ namespace TP_PAV.formularios
 
         private void btn_modificarTipoFranquicia_Click(object sender, EventArgs e)
         {
-          
-                priv_tipoFranquicia.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
-                priv_tipoFranquicia.pub_nombre_tipo_franquicia = txt_nombre.Text;
-                if (txt_montoMinimo.Text != "" && txt_porcentajeDescuento.Text != "")
-                {
-                    priv_tipoFranquicia.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text.ToString());
-                    priv_tipoFranquicia.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text.ToString());
-                    if (priv_tipoFranquicia.validarDatos())
-                    {
-                        if (priv_tipoFranquicia.modificarTipoFranquicia())
-                        {
-                            dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
-                            MessageBox.Show("Se modificó correctamente.");
+       
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al tratar de modificar los datos.");
-                        }
-                        limpiarCajasTexto();
-                        bloquearCajasTexto();
-                        dgv_tipoFranquicia.Enabled = true;
-                        desbloquearBotonesPrincipales(true);
-                    }
+            if (validarDatos())
+            {   
+                TipoFranquicia priv_tipoFranquiciaModificar = new TipoFranquicia();
+                priv_tipoFranquiciaModificar.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text);
+                priv_tipoFranquiciaModificar.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text);
+                priv_tipoFranquiciaModificar.pub_nombre_tipo_franquicia = txt_nombre.Text;
+                priv_tipoFranquiciaModificar.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
+                if (priv_tipoFranquiciaModificar.modificarTipoFranquicia())
+                {
+                    dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+                    MessageBox.Show("Se modificó correctamente.");
+
                 }
                 else
                 {
-                    MessageBox.Show("Existen campos vacios!");
+                    MessageBox.Show("Error al tratar de modificar los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                limpiarCajasTexto();
+                bloquearCajasTexto();
+                dgv_tipoFranquicia.Enabled = true;
+                desbloquearBotonesPrincipales(true);
+            }
+            
+             
 
         }
 
         private void btn_eliminarFranquicia_Click(object sender, EventArgs e)
         {
-
+            if (dgv_tipoFranquicia.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DialogResult resultado = MessageBox.Show("¿Esta seguro que desea eliminar este tipo de franquicia\n La accion no se puede deshacer?",
                                                      "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
             {
-                priv_tipoFranquicia.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
-                if (priv_tipoFranquicia.eliminarFranquicia())
+                TipoFranquicia priv_tipoFranquiciaEliminar = new TipoFranquicia();
+                priv_tipoFranquiciaEliminar.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
+                if (priv_tipoFranquiciaEliminar.eliminarFranquicia())
                 {
                     MessageBox.Show("Se ha eliminado correctamente");
                     dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error");
+                    MessageBox.Show("Error al tratar de eliminar el tipo de franquicia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
