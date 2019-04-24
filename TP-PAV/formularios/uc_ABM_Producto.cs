@@ -36,5 +36,15 @@ namespace TP_PAV.formularios
             frm_ABM_TipoProducto frm_ABM_TipoProducto = new frm_ABM_TipoProducto();
             frm_ABM_TipoProducto.ShowDialog();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_guardarModProducto_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

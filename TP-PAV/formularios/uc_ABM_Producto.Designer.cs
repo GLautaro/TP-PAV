@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_IdProducto = new System.Windows.Forms.Label();
             this.lbl_NomProducto = new System.Windows.Forms.Label();
             this.lbl_cantidad = new System.Windows.Forms.Label();
@@ -56,10 +51,21 @@
             this.btn_habilitarAñadirProducto = new System.Windows.Forms.Button();
             this.btn_modificarProducto = new System.Windows.Forms.Button();
             this.btn_eliminarProducto = new System.Windows.Forms.Button();
-            this.btn_guardarModProducto = new System.Windows.Forms.Button();
             this.btn_cancelarModProducto = new System.Windows.Forms.Button();
             this.btn_buscarProducto = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgv_productos = new System.Windows.Forms.DataGridView();
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmb_tipoProducto = new System.Windows.Forms.ComboBox();
+            this.lbl_tipoProducto = new System.Windows.Forms.Label();
+            this.btn_guardarModProducto = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,59 +78,6 @@
             this.label1.Size = new System.Drawing.Size(111, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Productos";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_producto,
-            this.nombre_producto,
-            this.cantidad_u_medida,
-            this.id_u_medida,
-            this.descripcion,
-            this.precio_unitario,
-            this.estado_producto});
-            this.dataGridView1.Location = new System.Drawing.Point(14, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(643, 318);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // id_producto
-            // 
-            this.id_producto.HeaderText = "ID Producto";
-            this.id_producto.Name = "id_producto";
-            // 
-            // nombre_producto
-            // 
-            this.nombre_producto.HeaderText = "Nombre de Producto";
-            this.nombre_producto.Name = "nombre_producto";
-            // 
-            // cantidad_u_medida
-            // 
-            this.cantidad_u_medida.HeaderText = "Cantidad";
-            this.cantidad_u_medida.Name = "cantidad_u_medida";
-            // 
-            // id_u_medida
-            // 
-            this.id_u_medida.HeaderText = "Unidad de Medida";
-            this.id_u_medida.Name = "id_u_medida";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.HeaderText = "Precio Unitario";
-            this.precio_unitario.Name = "precio_unitario";
-            // 
-            // estado_producto
-            // 
-            this.estado_producto.HeaderText = "Estado de Producto";
-            this.estado_producto.Name = "estado_producto";
             // 
             // lbl_IdProducto
             // 
@@ -160,7 +113,7 @@
             // 
             this.lbl_precioUnitario.AutoSize = true;
             this.lbl_precioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precioUnitario.Location = new System.Drawing.Point(721, 264);
+            this.lbl_precioUnitario.Location = new System.Drawing.Point(721, 304);
             this.lbl_precioUnitario.Name = "lbl_precioUnitario";
             this.lbl_precioUnitario.Size = new System.Drawing.Size(96, 16);
             this.lbl_precioUnitario.TabIndex = 5;
@@ -190,7 +143,7 @@
             // 
             this.lbl_estadoProducto.AutoSize = true;
             this.lbl_estadoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estadoProducto.Location = new System.Drawing.Point(721, 309);
+            this.lbl_estadoProducto.Location = new System.Drawing.Point(721, 358);
             this.lbl_estadoProducto.Name = "lbl_estadoProducto";
             this.lbl_estadoProducto.Size = new System.Drawing.Size(130, 16);
             this.lbl_estadoProducto.TabIndex = 8;
@@ -239,7 +192,7 @@
             // txt_precioUnitario
             // 
             this.txt_precioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precioUnitario.Location = new System.Drawing.Point(929, 264);
+            this.txt_precioUnitario.Location = new System.Drawing.Point(929, 315);
             this.txt_precioUnitario.Name = "txt_precioUnitario";
             this.txt_precioUnitario.Size = new System.Drawing.Size(143, 21);
             this.txt_precioUnitario.TabIndex = 14;
@@ -247,7 +200,7 @@
             // cmb_estadoProducto
             // 
             this.cmb_estadoProducto.FormattingEnabled = true;
-            this.cmb_estadoProducto.Location = new System.Drawing.Point(929, 309);
+            this.cmb_estadoProducto.Location = new System.Drawing.Point(929, 358);
             this.cmb_estadoProducto.Name = "cmb_estadoProducto";
             this.cmb_estadoProducto.Size = new System.Drawing.Size(143, 21);
             this.cmb_estadoProducto.TabIndex = 15;
@@ -265,7 +218,7 @@
             // btn_agregarEstado
             // 
             this.btn_agregarEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregarEstado.Location = new System.Drawing.Point(1096, 304);
+            this.btn_agregarEstado.Location = new System.Drawing.Point(1096, 260);
             this.btn_agregarEstado.Name = "btn_agregarEstado";
             this.btn_agregarEstado.Size = new System.Drawing.Size(33, 26);
             this.btn_agregarEstado.TabIndex = 17;
@@ -303,20 +256,10 @@
             this.btn_eliminarProducto.Text = "Eliminar Producto";
             this.btn_eliminarProducto.UseVisualStyleBackColor = true;
             // 
-            // btn_guardarModProducto
-            // 
-            this.btn_guardarModProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardarModProducto.Location = new System.Drawing.Point(724, 368);
-            this.btn_guardarModProducto.Name = "btn_guardarModProducto";
-            this.btn_guardarModProducto.Size = new System.Drawing.Size(162, 30);
-            this.btn_guardarModProducto.TabIndex = 49;
-            this.btn_guardarModProducto.Text = "Guardar Modificaciones";
-            this.btn_guardarModProducto.UseVisualStyleBackColor = true;
-            // 
             // btn_cancelarModProducto
             // 
             this.btn_cancelarModProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarModProducto.Location = new System.Drawing.Point(951, 368);
+            this.btn_cancelarModProducto.Location = new System.Drawing.Point(951, 417);
             this.btn_cancelarModProducto.Name = "btn_cancelarModProducto";
             this.btn_cancelarModProducto.Size = new System.Drawing.Size(162, 30);
             this.btn_cancelarModProducto.TabIndex = 50;
@@ -333,10 +276,154 @@
             this.btn_buscarProducto.Text = "Buscar";
             this.btn_buscarProducto.UseVisualStyleBackColor = true;
             // 
+            // dgv_productos
+            // 
+            this.dgv_productos.AllowUserToAddRows = false;
+            this.dgv_productos.AllowUserToDeleteRows = false;
+            this.dgv_productos.AllowUserToResizeColumns = false;
+            this.dgv_productos.AllowUserToResizeRows = false;
+            this.dgv_productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_productos.BackgroundColor = System.Drawing.Color.YellowGreen;
+            this.dgv_productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_productos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgv_productos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_producto,
+            this.nombre_producto,
+            this.cantidad_u_medida,
+            this.id_u_medida,
+            this.descripcion,
+            this.id_tipo_producto,
+            this.precio_unitario,
+            this.estado_producto});
+            this.dgv_productos.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dgv_productos.EnableHeadersVisualStyles = false;
+            this.dgv_productos.GridColor = System.Drawing.Color.Black;
+            this.dgv_productos.Location = new System.Drawing.Point(8, 41);
+            this.dgv_productos.MultiSelect = false;
+            this.dgv_productos.Name = "dgv_productos";
+            this.dgv_productos.ReadOnly = true;
+            this.dgv_productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgv_productos.RowHeadersVisible = false;
+            this.dgv_productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_productos.Size = new System.Drawing.Size(690, 337);
+            this.dgv_productos.TabIndex = 57;
+            // 
+            // id_producto
+            // 
+            this.id_producto.HeaderText = "Id Producto";
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            this.id_producto.Width = 85;
+            // 
+            // nombre_producto
+            // 
+            this.nombre_producto.HeaderText = "Nombre Producto";
+            this.nombre_producto.Name = "nombre_producto";
+            this.nombre_producto.ReadOnly = true;
+            this.nombre_producto.Width = 116;
+            // 
+            // cantidad_u_medida
+            // 
+            this.cantidad_u_medida.HeaderText = "Cantidad";
+            this.cantidad_u_medida.Name = "cantidad_u_medida";
+            this.cantidad_u_medida.ReadOnly = true;
+            this.cantidad_u_medida.Width = 79;
+            // 
+            // id_u_medida
+            // 
+            this.id_u_medida.HeaderText = "Unidad de Medida";
+            this.id_u_medida.Name = "id_u_medida";
+            this.id_u_medida.ReadOnly = true;
+            this.id_u_medida.Width = 121;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 95;
+            // 
+            // id_tipo_producto
+            // 
+            this.id_tipo_producto.HeaderText = "Tipo Producto";
+            this.id_tipo_producto.Name = "id_tipo_producto";
+            this.id_tipo_producto.ReadOnly = true;
+            this.id_tipo_producto.Width = 97;
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.HeaderText = "Precio Unitario";
+            this.precio_unitario.Name = "precio_unitario";
+            this.precio_unitario.ReadOnly = true;
+            this.precio_unitario.Width = 102;
+            // 
+            // estado_producto
+            // 
+            this.estado_producto.HeaderText = "Estado del Producto";
+            this.estado_producto.Name = "estado_producto";
+            this.estado_producto.ReadOnly = true;
+            this.estado_producto.Width = 128;
+            // 
+            // cmb_tipoProducto
+            // 
+            this.cmb_tipoProducto.FormattingEnabled = true;
+            this.cmb_tipoProducto.Location = new System.Drawing.Point(929, 263);
+            this.cmb_tipoProducto.Name = "cmb_tipoProducto";
+            this.cmb_tipoProducto.Size = new System.Drawing.Size(143, 21);
+            this.cmb_tipoProducto.TabIndex = 59;
+            this.cmb_tipoProducto.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lbl_tipoProducto
+            // 
+            this.lbl_tipoProducto.AutoSize = true;
+            this.lbl_tipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tipoProducto.Location = new System.Drawing.Point(721, 264);
+            this.lbl_tipoProducto.Name = "lbl_tipoProducto";
+            this.lbl_tipoProducto.Size = new System.Drawing.Size(112, 16);
+            this.lbl_tipoProducto.TabIndex = 58;
+            this.lbl_tipoProducto.Text = "Tipo de Producto";
+            // 
+            // btn_guardarModProducto
+            // 
+            this.btn_guardarModProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardarModProducto.Location = new System.Drawing.Point(724, 417);
+            this.btn_guardarModProducto.Name = "btn_guardarModProducto";
+            this.btn_guardarModProducto.Size = new System.Drawing.Size(162, 30);
+            this.btn_guardarModProducto.TabIndex = 49;
+            this.btn_guardarModProducto.Text = "Guardar Modificaciones";
+            this.btn_guardarModProducto.UseVisualStyleBackColor = true;
+            this.btn_guardarModProducto.Click += new System.EventHandler(this.btn_guardarModProducto_Click);
+            // 
             // uc_ABM_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmb_tipoProducto);
+            this.Controls.Add(this.lbl_tipoProducto);
+            this.Controls.Add(this.dgv_productos);
             this.Controls.Add(this.btn_buscarProducto);
             this.Controls.Add(this.btn_cancelarModProducto);
             this.Controls.Add(this.btn_guardarModProducto);
@@ -359,12 +446,11 @@
             this.Controls.Add(this.lbl_cantidad);
             this.Controls.Add(this.lbl_NomProducto);
             this.Controls.Add(this.lbl_IdProducto);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uc_ABM_Producto";
             this.Size = new System.Drawing.Size(1145, 477);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,14 +459,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
         private System.Windows.Forms.Label lbl_IdProducto;
         private System.Windows.Forms.Label lbl_NomProducto;
         private System.Windows.Forms.Label lbl_cantidad;
@@ -400,8 +478,19 @@
         private System.Windows.Forms.Button btn_habilitarAñadirProducto;
         private System.Windows.Forms.Button btn_modificarProducto;
         private System.Windows.Forms.Button btn_eliminarProducto;
-        private System.Windows.Forms.Button btn_guardarModProducto;
         private System.Windows.Forms.Button btn_cancelarModProducto;
         private System.Windows.Forms.Button btn_buscarProducto;
+        private System.Windows.Forms.DataGridView dgv_productos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
+        private System.Windows.Forms.ComboBox cmb_tipoProducto;
+        private System.Windows.Forms.Label lbl_tipoProducto;
+        private System.Windows.Forms.Button btn_guardarModProducto;
     }
 }

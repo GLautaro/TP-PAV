@@ -9,14 +9,14 @@ namespace TP_PAV.clases
     class Franquicia
     {
         AccesoBD priv_acceso_db = new AccesoBD();
-        private int priv_id_franquicia = -1;
-        private string priv_nombre_responsable = "";
-        private string priv_apellido_responsable = "";
-        private string priv_calle = "";
-        private int priv_nro_calle = -1;
-        private int priv_id_barrio = -1;
-        private int priv_legajo_vendedor = -1;
-        private int priv_id_tipo_franquicia = -1;
+        private int priv_id_franquicia;
+        private string priv_nombre_responsable;
+        private string priv_apellido_responsable;
+        private string priv_calle;
+        private int priv_nro_calle;
+        private int priv_id_barrio;
+        private int priv_legajo_vendedor;
+        private int priv_id_tipo_franquicia;
         
         public int pub_id_franquicia
         {
@@ -60,88 +60,59 @@ namespace TP_PAV.clases
             set { this.priv_id_tipo_franquicia = value; }
         }
 
-        private bool validarFranquicia()
+        
+        public Franquicia(int id_franquicia, string nombre_responsable, string apellido_responsable, string calle, int nro_calle, int id_barrio, int legajo_vendedor, int id_tipo_franquicia)
         {
-            if (this.pub_apellido_responsable == "")
-            {
-                return false;
-            }
-            if (this.pub_calle == "")
-            {
-                return false;
-            }
-            if (this.pub_id_barrio == -1)
-            {
-                return false;
-            }
-            if (this.pub_legajo_vendedor == -1)
-            {
-                return false;
-            }
+            priv_id_franquicia = id_franquicia;
+            priv_nombre_responsable = nombre_responsable;
+            priv_apellido_responsable = apellido_responsable;
+            priv_calle = calle;
+            priv_nro_calle = nro_calle;
+            priv_id_barrio = id_barrio;
+            priv_legajo_vendedor = legajo_vendedor;
+            priv_id_tipo_franquicia = id_tipo_franquicia;
             
-            if (this.pub_nombre_responsable == "")
-            {
-                return false;
-            }
-            if (this.pub_nro_calle == -1)
-            {
-                return false;
-            }
-            if (this.pub_id_tipo_franquicia == -1)
-            {
-                return false;
-            }
-            return true;
-
+        }
+        public Franquicia()
+        {
+            
         }
         
         
-        public bool altaFranquicia()
+        public bool altaFranquicia(string nombre_responsable,string apellido_responsable,string calle,
+                                                int nro_calle, int id_barrio, 
+                                                int id_tipo_franquicia, int legajo_vendedor)
         {
             string noConsulta = String.Format(@"INSERT INTO franquicia (nombre_responsable, apellido_responsable, calle, nro_calle, 
-                                                                            id_barrio, monto_minimo_compra, id_tipo_franquicia, legajo_vendedor) 
+                                                                            id_barrio, id_tipo_franquicia, legajo_vendedor) 
                                                 VALUES ('{0}', '{1}', '{2}', {3}, {4}, {5}, {6}) ", 
-                                                pub_nombre_responsable,pub_apellido_responsable,pub_calle,
-                                                pub_nro_calle, pub_id_barrio, 
-                                                pub_id_tipo_franquicia, pub_legajo_vendedor);
+                                                nombre_responsable,apellido_responsable,calle,
+                                                nro_calle, id_barrio, 
+                                                id_tipo_franquicia, legajo_vendedor);
 
-            if (validarFranquicia())
+            if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
             {
-                if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
             {
                 return false;
             }
             
+            
         }
         
         public bool modificarFranquicia()
         {
-            string nonQuery = String.Format(@"UPDATE franquicia 
-                                    SET nombre_responsable='{0}',
-	                                    apellido_responsable='{1}',
-	                                    calle='{2}',
-	                                    nro_calle={3},
-	                                    id_barrio={4},
-                                    	id_tipo_franquicia={5},
-	                                    legajo_vendedor={6} 
-		                                        WHERE id_franquicia = {7}",
-                                        pub_nombre_responsable,
-                                        pub_apellido_responsable,
-                                        pub_calle,
-                                        pub_nro_calle.ToString(),
-                                        pub_id_barrio.ToString(),
-                                        pub_id_tipo_franquicia.ToString(),
-                                        pub_legajo_vendedor.ToString(),
-                                        pub_id_franquicia.ToString()
+            string nonQuery = String.Format(@"UPDATE franquicia SET nombre_responsable='{0}',apellido_responsable='{1}',calle='{2}',nro_calle={3},id_barrio={4},id_tipo_franquicia={5},legajo_vendedor={6} WHERE id_franquicia={7}",
+                                        priv_nombre_responsable,
+                                        priv_apellido_responsable,
+                                        priv_calle,
+                                        priv_nro_calle.ToString(),
+                                        priv_id_barrio.ToString(),
+                                        priv_id_tipo_franquicia.ToString(),
+                                        priv_legajo_vendedor.ToString(),
+                                        priv_id_franquicia.ToString()
                                         );
             if (priv_acceso_db.ejecutarNoConsulta(nonQuery) == 1)
             {
@@ -155,17 +126,10 @@ namespace TP_PAV.clases
 
         public bool eliminarFranquicia()
         {
-            string noQuery = @"DELETE FROM franquicia WHERE id_franquicia=" + pub_id_franquicia;
-            if (validarFranquicia())
+            string noQuery = @"DELETE FROM franquicia WHERE id_franquicia=" + priv_id_franquicia.ToString();
+            if (priv_acceso_db.ejecutarNoConsulta(noQuery) == 1)
             {
-                if (priv_acceso_db.ejecutarNoConsulta(noQuery) == 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
             {
@@ -189,6 +153,32 @@ namespace TP_PAV.clases
 	                                                JOIN vendedor ON vendedor.legajo_vendedor=franquicia.legajo_vendedor
 	                                                JOIN barrio ON barrio.id_barrio=franquicia.id_barrio
 	                                                JOIN tipo_franquicia ON tipo_franquicia.id_tipo_franquicia=franquicia.id_tipo_franquicia";
+            return priv_acceso_db.ejecutarConsulta(query);
+        }
+        
+        public DataTable buscarFranquicias(string text)
+        {
+            string query = String.Format(@"SELECT franquicia.id_franquicia,
+                                                  franquicia.nombre_responsable,
+                                                  franquicia.apellido_responsable,
+                                                  franquicia.calle,
+                                                  franquicia.nro_calle,
+                                                  barrio.nombre_barrio,
+                                                  vendedor.legajo_vendedor,
+                                                  tipo_franquicia.nombre_tipo_franquicia,
+                                                  barrio.id_barrio,
+                                                  tipo_franquicia.id_tipo_franquicia 
+                                                        FROM franquicia JOIN vendedor ON vendedor.legajo_vendedor=franquicia.legajo_vendedor 
+                                                                        JOIN barrio ON barrio.id_barrio=franquicia.id_barrio 
+                                                                        JOIN tipo_franquicia ON tipo_franquicia.id_tipo_franquicia=franquicia.id_tipo_franquicia 
+                                                        WHERE franquicia.nombre_responsable LIKE '%{0}%' 
+                                                           OR franquicia.apellido_responsable LIKE '%{1}%' 
+                                                           OR franquicia.calle LIKE '%{2}%' 
+                                                           OR barrio.nombre_barrio LIKE '%{4}%' 
+                                                           OR tipo_franquicia.nombre_tipo_franquicia LIKE '%{6}%' 
+                                                           OR barrio.nombre_barrio LIKE '%{7}%' 
+                                                           OR tipo_franquicia.nombre_tipo_franquicia LIKE '%{8}%';", text, text, text, text, text, text, text, text, text);
+
             return priv_acceso_db.ejecutarConsulta(query);
         }
     }

@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgv_tipoFranquicia = new System.Windows.Forms.DataGridView();
-            this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_minimo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porcentaje_descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +45,11 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_montoMinimo = new System.Windows.Forms.TextBox();
             this.txt_porcentajeDescuento = new System.Windows.Forms.TextBox();
+            this.dgv_tipoFranquicia = new System.Windows.Forms.DataGridView();
+            this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_minimo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.porcentaje_descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoFranquicia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,58 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(694, 39);
             this.panel1.TabIndex = 1;
-            // 
-            // dgv_tipoFranquicia
-            // 
-            this.dgv_tipoFranquicia.AllowUserToAddRows = false;
-            this.dgv_tipoFranquicia.AllowUserToDeleteRows = false;
-            this.dgv_tipoFranquicia.AllowUserToResizeRows = false;
-            this.dgv_tipoFranquicia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tipoFranquicia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_tipo_franquicia,
-            this.nombre_tipo_franquicia,
-            this.monto_minimo_compra,
-            this.porcentaje_descuento});
-            this.dgv_tipoFranquicia.Location = new System.Drawing.Point(12, 174);
-            this.dgv_tipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgv_tipoFranquicia.MultiSelect = false;
-            this.dgv_tipoFranquicia.Name = "dgv_tipoFranquicia";
-            this.dgv_tipoFranquicia.ReadOnly = true;
-            this.dgv_tipoFranquicia.RowTemplate.Height = 24;
-            this.dgv_tipoFranquicia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tipoFranquicia.Size = new System.Drawing.Size(655, 220);
-            this.dgv_tipoFranquicia.TabIndex = 2;
-            this.dgv_tipoFranquicia.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_tipoFranquicia_CellMouseClick);
-            // 
-            // id_tipo_franquicia
-            // 
-            this.id_tipo_franquicia.DataPropertyName = "id_tipo_franquicia";
-            this.id_tipo_franquicia.HeaderText = "ID Tipo Franquicia";
-            this.id_tipo_franquicia.Name = "id_tipo_franquicia";
-            this.id_tipo_franquicia.ReadOnly = true;
-            this.id_tipo_franquicia.Width = 50;
-            // 
-            // nombre_tipo_franquicia
-            // 
-            this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
-            this.nombre_tipo_franquicia.HeaderText = "Nombre del Tipo de Franquicia";
-            this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
-            this.nombre_tipo_franquicia.ReadOnly = true;
-            this.nombre_tipo_franquicia.Width = 200;
-            // 
-            // monto_minimo_compra
-            // 
-            this.monto_minimo_compra.DataPropertyName = "monto_minimo_compra";
-            this.monto_minimo_compra.HeaderText = "Monto Minimo de Compra";
-            this.monto_minimo_compra.Name = "monto_minimo_compra";
-            this.monto_minimo_compra.ReadOnly = true;
-            // 
-            // porcentaje_descuento
-            // 
-            this.porcentaje_descuento.DataPropertyName = "porcentaje_descuento";
-            this.porcentaje_descuento.HeaderText = "Porcentaje de Descuento";
-            this.porcentaje_descuento.Name = "porcentaje_descuento";
-            this.porcentaje_descuento.ReadOnly = true;
             // 
             // label1
             // 
@@ -215,9 +166,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 32);
+            this.label4.Size = new System.Drawing.Size(430, 32);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Tipo Franquicia";
+            this.label4.Text = "Administrar Tipos de Franquicias";
             // 
             // txt_nombre
             // 
@@ -242,11 +193,108 @@
             this.txt_porcentajeDescuento.TabIndex = 18;
             this.txt_porcentajeDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_porcentajeDescuento_KeyPress);
             // 
+            // dgv_tipoFranquicia
+            // 
+            this.dgv_tipoFranquicia.AllowUserToAddRows = false;
+            this.dgv_tipoFranquicia.AllowUserToDeleteRows = false;
+            this.dgv_tipoFranquicia.AllowUserToResizeColumns = false;
+            this.dgv_tipoFranquicia.AllowUserToResizeRows = false;
+            this.dgv_tipoFranquicia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_tipoFranquicia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_tipoFranquicia.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_tipoFranquicia.BackgroundColor = System.Drawing.Color.YellowGreen;
+            this.dgv_tipoFranquicia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_tipoFranquicia.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgv_tipoFranquicia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoFranquicia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_tipoFranquicia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tipoFranquicia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_tipo_franquicia,
+            this.nombre_tipo_franquicia,
+            this.monto_minimo_compra,
+            this.porcentaje_descuento});
+            this.dgv_tipoFranquicia.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dgv_tipoFranquicia.EnableHeadersVisualStyles = false;
+            this.dgv_tipoFranquicia.GridColor = System.Drawing.Color.Black;
+            this.dgv_tipoFranquicia.Location = new System.Drawing.Point(12, 170);
+            this.dgv_tipoFranquicia.MultiSelect = false;
+            this.dgv_tipoFranquicia.Name = "dgv_tipoFranquicia";
+            this.dgv_tipoFranquicia.ReadOnly = true;
+            this.dgv_tipoFranquicia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoFranquicia.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_tipoFranquicia.RowHeadersVisible = false;
+            this.dgv_tipoFranquicia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_tipoFranquicia.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgv_tipoFranquicia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_tipoFranquicia.Size = new System.Drawing.Size(654, 219);
+            this.dgv_tipoFranquicia.TabIndex = 57;
+            this.dgv_tipoFranquicia.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_tipoFranquicia_CellMouseClick);
+            // 
+            // id_tipo_franquicia
+            // 
+            this.id_tipo_franquicia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_tipo_franquicia.DataPropertyName = "id_tipo_franquicia";
+            this.id_tipo_franquicia.HeaderText = "ID Tipo Franquicia";
+            this.id_tipo_franquicia.Name = "id_tipo_franquicia";
+            this.id_tipo_franquicia.ReadOnly = true;
+            this.id_tipo_franquicia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id_tipo_franquicia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // nombre_tipo_franquicia
+            // 
+            this.nombre_tipo_franquicia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
+            this.nombre_tipo_franquicia.HeaderText = "Nombre";
+            this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
+            this.nombre_tipo_franquicia.ReadOnly = true;
+            this.nombre_tipo_franquicia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nombre_tipo_franquicia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // monto_minimo_compra
+            // 
+            this.monto_minimo_compra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.monto_minimo_compra.DataPropertyName = "monto_minimo_compra";
+            this.monto_minimo_compra.HeaderText = "Monto Minimo Compra";
+            this.monto_minimo_compra.Name = "monto_minimo_compra";
+            this.monto_minimo_compra.ReadOnly = true;
+            this.monto_minimo_compra.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.monto_minimo_compra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // porcentaje_descuento
+            // 
+            this.porcentaje_descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.porcentaje_descuento.DataPropertyName = "porcentaje_descuento";
+            this.porcentaje_descuento.HeaderText = "Porcentaje de Descuento";
+            this.porcentaje_descuento.Name = "porcentaje_descuento";
+            this.porcentaje_descuento.ReadOnly = true;
+            this.porcentaje_descuento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.porcentaje_descuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // frm_TipoFranquicia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 479);
+            this.Controls.Add(this.dgv_tipoFranquicia);
             this.Controls.Add(this.txt_porcentajeDescuento);
             this.Controls.Add(this.txt_montoMinimo);
             this.Controls.Add(this.txt_nombre);
@@ -260,7 +308,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgv_tipoFranquicia);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_TipoFranquicia";
@@ -276,7 +323,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgv_tipoFranquicia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -286,14 +332,15 @@
         private System.Windows.Forms.Button btn_modificarTipoFranquicia;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_agregarTipoFranquicia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto_minimo_compra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn porcentaje_descuento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_montoMinimo;
         private System.Windows.Forms.TextBox txt_porcentajeDescuento;
+        private System.Windows.Forms.DataGridView dgv_tipoFranquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_minimo_compra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn porcentaje_descuento;
 
     }
 }

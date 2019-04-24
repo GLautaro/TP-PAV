@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label33 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombre_barrio = new System.Windows.Forms.TextBox();
-            this.dgv_barrio = new System.Windows.Forms.DataGridView();
             this.btn_habilitarAgregarBarrio = new System.Windows.Forms.Button();
             this.btn_habilitarModificarBarrio = new System.Windows.Forms.Button();
             this.btn_eliminarBarrio = new System.Windows.Forms.Button();
             this.btn_modificarBarrio = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_agregarBarrio = new System.Windows.Forms.Button();
+            this.dgv_barrio = new System.Windows.Forms.DataGridView();
             this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_barrio)).BeginInit();
@@ -81,22 +84,6 @@
             this.txt_nombre_barrio.Name = "txt_nombre_barrio";
             this.txt_nombre_barrio.Size = new System.Drawing.Size(119, 22);
             this.txt_nombre_barrio.TabIndex = 46;
-            // 
-            // dgv_barrio
-            // 
-            this.dgv_barrio.AllowUserToAddRows = false;
-            this.dgv_barrio.AllowUserToDeleteRows = false;
-            this.dgv_barrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_barrio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_barrio,
-            this.nombre_barrio});
-            this.dgv_barrio.Location = new System.Drawing.Point(12, 172);
-            this.dgv_barrio.Name = "dgv_barrio";
-            this.dgv_barrio.ReadOnly = true;
-            this.dgv_barrio.RowTemplate.Height = 24;
-            this.dgv_barrio.Size = new System.Drawing.Size(757, 241);
-            this.dgv_barrio.TabIndex = 47;
-            this.dgv_barrio.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_barrio_CellMouseClick);
             // 
             // btn_habilitarAgregarBarrio
             // 
@@ -161,32 +148,92 @@
             this.btn_agregarBarrio.Visible = false;
             this.btn_agregarBarrio.Click += new System.EventHandler(this.btn_agregarBarrio_Click);
             // 
+            // dgv_barrio
+            // 
+            this.dgv_barrio.AllowUserToAddRows = false;
+            this.dgv_barrio.AllowUserToDeleteRows = false;
+            this.dgv_barrio.AllowUserToResizeColumns = false;
+            this.dgv_barrio.AllowUserToResizeRows = false;
+            this.dgv_barrio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_barrio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_barrio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_barrio.BackgroundColor = System.Drawing.Color.YellowGreen;
+            this.dgv_barrio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_barrio.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgv_barrio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_barrio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_barrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_barrio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_barrio,
+            this.nombre_barrio});
+            this.dgv_barrio.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dgv_barrio.EnableHeadersVisualStyles = false;
+            this.dgv_barrio.GridColor = System.Drawing.Color.Black;
+            this.dgv_barrio.Location = new System.Drawing.Point(12, 166);
+            this.dgv_barrio.MultiSelect = false;
+            this.dgv_barrio.Name = "dgv_barrio";
+            this.dgv_barrio.ReadOnly = true;
+            this.dgv_barrio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_barrio.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_barrio.RowHeadersVisible = false;
+            this.dgv_barrio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_barrio.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_barrio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_barrio.Size = new System.Drawing.Size(757, 235);
+            this.dgv_barrio.TabIndex = 58;
+            this.dgv_barrio.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_barrio_CellMouseClick);
+            // 
             // id_barrio
             // 
+            this.id_barrio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.id_barrio.DataPropertyName = "id_barrio";
-            this.id_barrio.HeaderText = "ID";
+            this.id_barrio.HeaderText = "ID Barrio";
             this.id_barrio.Name = "id_barrio";
             this.id_barrio.ReadOnly = true;
+            this.id_barrio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id_barrio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // nombre_barrio
             // 
+            this.nombre_barrio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombre_barrio.DataPropertyName = "nombre_barrio";
             this.nombre_barrio.HeaderText = "Nombre";
             this.nombre_barrio.Name = "nombre_barrio";
             this.nombre_barrio.ReadOnly = true;
+            this.nombre_barrio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nombre_barrio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // frm_ABM_Barrio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 481);
+            this.Controls.Add(this.dgv_barrio);
             this.Controls.Add(this.btn_agregarBarrio);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_modificarBarrio);
             this.Controls.Add(this.btn_eliminarBarrio);
             this.Controls.Add(this.btn_habilitarModificarBarrio);
             this.Controls.Add(this.btn_habilitarAgregarBarrio);
-            this.Controls.Add(this.dgv_barrio);
             this.Controls.Add(this.txt_nombre_barrio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label33);
@@ -207,13 +254,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nombre_barrio;
-        private System.Windows.Forms.DataGridView dgv_barrio;
         private System.Windows.Forms.Button btn_habilitarAgregarBarrio;
         private System.Windows.Forms.Button btn_habilitarModificarBarrio;
         private System.Windows.Forms.Button btn_eliminarBarrio;
         private System.Windows.Forms.Button btn_modificarBarrio;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_agregarBarrio;
+        private System.Windows.Forms.DataGridView dgv_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
     }
