@@ -44,7 +44,7 @@ namespace TP_PAV.clases
             }
             if (pub_monto_minimo_compra < 0)
             {
-                MessageBox.Show("Error en el valor Monto Minitmo de compra");
+                MessageBox.Show("Error en el valor Monto Minimo de compra");
                 return false;
             }
             if (pub_porcentaje_descuento < 0 || pub_porcentaje_descuento > 100)

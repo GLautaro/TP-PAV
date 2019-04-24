@@ -40,6 +40,44 @@ namespace TP_PAV.formularios
         {
             InitializeComponent();
         }
+        private void validarDatosFranquicia()
+        {
+            if (txt_apellidoResponsable.Text == "")
+            {
+                MessageBox.Show("No ha cargado un apellido");
+                return;
+            }
+            if (txt_nombreResponsable.Text == "")
+            {
+                MessageBox.Show("No ha cargado un nombre");
+                return;
+            }
+            if (txt_calle.Text == "")
+            {
+                MessageBox.Show("No ha cargado una calle");
+                return;
+            }
+            if (cmb_barrio.SelectedIndex == -1)
+            {
+                MessageBox.Show("No ha seleccionado un barrio");
+                return;
+            }
+            if (cmb_tipoFranquicia.SelectedIndex == -1)
+            {
+                MessageBox.Show("No ha seleccionado un tipo de franquicia");
+                return;
+            }
+            if (txt_legajoVendedor.Text == "")
+            {
+                MessageBox.Show("No ha cargado un legajo de vendedor");
+                return;
+            }
+            if (txt_nroCalle.Text == "")
+            {
+                MessageBox.Show("No ha cargado un numero de calle");
+                return;
+            }
+        }
 
         public void bloquearCajasTexto()
         {
@@ -50,7 +88,7 @@ namespace TP_PAV.formularios
             txt_nroCalle.Enabled = false;
             cmb_barrio.Enabled = false;
             cmb_tipoFranquicia.Enabled = false;
-            btn_buscarVendedor.Enabled = false;
+
             btn_guardarNuevaFranquicia.Enabled = false;
             btn_agregarTipoFranquicia.Enabled = false;
             btn_agregarBarrio.Enabled = false;
@@ -65,7 +103,6 @@ namespace TP_PAV.formularios
             txt_nroCalle.Enabled = true;
             cmb_barrio.Enabled = true;
             cmb_tipoFranquicia.Enabled = true;
-            btn_buscarVendedor.Enabled = true;
             btn_guardarNuevaFranquicia.Enabled = true;
             btn_agregarTipoFranquicia.Enabled = true;
             btn_agregarBarrio.Enabled = true;
@@ -99,28 +136,12 @@ namespace TP_PAV.formularios
 
         private void btn_guardarNuevaFranquicia_Click(object sender, EventArgs e)
         {
-            priv_franquicia.pub_apellido_responsable = txt_apellidoResponsable.Text;
-            priv_franquicia.pub_nombre_responsable = txt_nombreResponsable.Text;
-            priv_franquicia.pub_calle = txt_calle.Text;
-            if (cmb_barrio.SelectedIndex != -1)
-            {
-                priv_franquicia.pub_id_barrio = int.Parse(cmb_barrio.SelectedValue.ToString());
-            }
-            if (cmb_tipoFranquicia.SelectedIndex != -1)
-            {
-                priv_franquicia.pub_id_tipo_franquicia = int.Parse(cmb_tipoFranquicia.SelectedValue.ToString());
-            }
-            if (txt_legajoVendedor.Text != "")
-            {
-                priv_franquicia.pub_legajo_vendedor = int.Parse(txt_legajoVendedor.Text);
-            }
-            if (txt_nroCalle.Text != "")
-            {
-                priv_franquicia.pub_nro_calle = int.Parse(txt_nroCalle.Text);
-            }
+            validarDatosFranquicia();
             
 
-            if (priv_franquicia.altaFranquicia())
+            if (priv_franquicia.altaFranquicia(txt_nombreResponsable.Text, txt_apellidoResponsable.Text, txt_calle.Text,
+                                                int.Parse(txt_nroCalle.Text), int.Parse(cmb_barrio.SelectedValue.ToString()), int.Parse(cmb_tipoFranquicia.SelectedValue.ToString()),
+                                                int.Parse(txt_legajoVendedor.Text)))
             {
                 limpiarFormularioFranquicias();
                 dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
@@ -132,6 +153,10 @@ namespace TP_PAV.formularios
                     btn_cancelarGuardado.Visible = false;
                     btn_guardarNuevaFranquicia.Enabled = false;
                     btn_guardarNuevaFranquicia.Visible = false;
+                }
+                else
+                {
+                    limpiarFormularioFranquicias();
                 }
                 
                 
@@ -145,25 +170,23 @@ namespace TP_PAV.formularios
 
         
 
-        private void btn_buscarVendedor_Click(object sender, EventArgs e)
-        {
-            return;
-        }
+        
+
+        
 
         private void btn_modificarFranquicia_Click(object sender, EventArgs e)
         {
+
+            Franquicia priv_franquiciaModificar = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()),
+                                                                       txt_nombreResponsable.Text,
+                                                                       txt_apellidoResponsable.Text,
+                                                                       txt_calle.Text,
+                                                                       int.Parse(txt_nroCalle.Text),
+                                                                       int.Parse(cmb_barrio.SelectedValue.ToString()),
+                                                                       int.Parse(txt_legajoVendedor.Text),
+                                                                       int.Parse(cmb_tipoFranquicia.SelectedValue.ToString()));
             
-            Franquicia priv_franquiciaNueva = new Franquicia();
-            priv_franquiciaNueva.pub_id_franquicia = int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString());
-            priv_franquiciaNueva.pub_nombre_responsable = txt_nombreResponsable.Text;
-            priv_franquiciaNueva.pub_apellido_responsable = txt_apellidoResponsable.Text;
-            priv_franquiciaNueva.pub_calle = txt_calle.Text;
-            priv_franquiciaNueva.pub_nro_calle = int.Parse(txt_nroCalle.Text);
-            priv_franquiciaNueva.pub_id_barrio = int.Parse(cmb_barrio.SelectedValue.ToString());
-            priv_franquiciaNueva.pub_id_tipo_franquicia = int.Parse(cmb_tipoFranquicia.SelectedValue.ToString());
-            priv_franquiciaNueva.pub_legajo_vendedor = int.Parse(txt_legajoVendedor.Text);
-            
-            if (priv_franquiciaNueva.modificarFranquicia())
+            if (priv_franquiciaModificar.modificarFranquicia())
             {
                 MessageBox.Show("Los datos han sido modificados correctamente.");
                 dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
@@ -187,6 +210,11 @@ namespace TP_PAV.formularios
 
         private void btn_habilitarModificarFranquicia_Click(object sender, EventArgs e)
         {
+            if (dgv_franquicias.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             string mensaje = @"¿Esta seguro que desea editar la franquicia con ID: " + dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString() +
                                 ".\nA cargo de " + dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString() + " " + dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
             DialogResult result = MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -197,7 +225,6 @@ namespace TP_PAV.formularios
                 btn_modificarFranquicia.Visible = true;
                 btn_cancelarModificaciones.Enabled = true;
                 btn_cancelarModificaciones.Visible = true;
-                btn_buscarVendedor.Enabled = true;
                 desbloquearCajasTexto();
                 txt_nombreResponsable.Text = dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString();
                 txt_apellidoResponsable.Text = dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
@@ -224,7 +251,6 @@ namespace TP_PAV.formularios
             btn_modificarFranquicia.Visible = false;
             btn_cancelarModificaciones.Enabled = false;
             btn_cancelarModificaciones.Visible = false;
-            btn_buscarVendedor.Enabled = false;
             btn_agregarTipoFranquicia.Enabled = false;
             dgv_franquicias.Enabled = true;
         }
@@ -246,28 +272,29 @@ namespace TP_PAV.formularios
             btn_guardarNuevaFranquicia.Enabled = false;
             btn_cancelarGuardado.Visible = false;
             btn_cancelarGuardado.Enabled = false;
-            btn_buscarVendedor.Enabled = false;
             btn_agregarTipoFranquicia.Enabled = false;
 
         }
 
         private void btn_eliminarFranquicia_Click(object sender, EventArgs e)
         {
+            if (dgv_franquicias.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DialogResult result = MessageBox.Show("¿Esta seguro que desea eliminar esta franquicia?. Esta accion no se puede revertir", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
-                Franquicia priv_franquiciaNueva = new Franquicia();
-                priv_franquiciaNueva.pub_id_franquicia = int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString());
-                priv_franquiciaNueva.pub_nombre_responsable = dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString();
-                priv_franquiciaNueva.pub_apellido_responsable = dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
-                priv_franquiciaNueva.pub_calle = dgv_franquicias.CurrentRow.Cells["calle"].Value.ToString();
-                priv_franquiciaNueva.pub_nro_calle = int.Parse(dgv_franquicias.CurrentRow.Cells["nro_calle"].Value.ToString());
-                priv_franquiciaNueva.pub_legajo_vendedor = int.Parse(dgv_franquicias.CurrentRow.Cells["legajo_vendedor"].Value.ToString());
-                
-
-                priv_franquiciaNueva.pub_id_barrio = int.Parse(dgv_franquicias.CurrentRow.Cells["id_barrio"].Value.ToString());
-                priv_franquiciaNueva.pub_id_tipo_franquicia = int.Parse(dgv_franquicias.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
-                if (priv_franquiciaNueva.eliminarFranquicia())
+                Franquicia priv_franquiciaEliminar = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()),
+                                                                              dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString(),
+                                                                              dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString(),
+                                                                              dgv_franquicias.CurrentRow.Cells["calle"].Value.ToString(),
+                                                                    int.Parse(dgv_franquicias.CurrentRow.Cells["nro_calle"].Value.ToString()),
+                                                                    int.Parse(dgv_franquicias.CurrentRow.Cells["id_barrio"].Value.ToString()),
+                                                                    int.Parse(dgv_franquicias.CurrentRow.Cells["legajo_vendedor"].Value.ToString()),
+                                                                    int.Parse(dgv_franquicias.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString()));
+                if (priv_franquiciaEliminar.eliminarFranquicia())
                 {
                     MessageBox.Show("La franquicia fue eliminada correctamente");
                     dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
@@ -297,10 +324,31 @@ namespace TP_PAV.formularios
         private void btn_agregarBarrio_Click(object sender, EventArgs e)
         {
             frm_ABM_Barrio frm_barrio = new frm_ABM_Barrio();
-            frm_barrio.pub_formularioPadre = this;
+            frm_barrio.pub_selectedIndex = cmb_barrio.SelectedIndex;
+            frm_barrio.pub_cmb_barrios = pub_cmb_barrio;
             frm_barrio.ShowDialog();
 
         }
+
+
+        private void btn_buscarFranquicia_Click(object sender, EventArgs e)
+        {
+            dgv_franquicias.DataSource = priv_franquicia.buscarFranquicias(txt_buscarFranquicia.Text);
+        }
+
+       
+
+        private void txt_buscarFranquicia_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txt_buscarFranquicia.Text == "")
+            {
+                dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
+                return;
+            }
+            dgv_franquicias.DataSource = priv_franquicia.buscarFranquicias(txt_buscarFranquicia.Text);
+        }
+
+        
 
 
     }

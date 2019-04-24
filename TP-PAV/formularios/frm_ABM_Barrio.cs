@@ -14,10 +14,11 @@ namespace TP_PAV.formularios
     {
         Barrio priv_barrio = new Barrio();
         uc_ABM_Franquicia priv_formularioPadre = new uc_ABM_Franquicia();
-        int priv_selectedCmbIndex;
-        public uc_ABM_Franquicia pub_formularioPadre
+        private int priv_selectedCmbIndex;
+        private ComboBox priv_cmb_barrios;
+        public ComboBox pub_cmb_barrios
         {
-            set { priv_formularioPadre = value; }
+            set { priv_cmb_barrios = value; }
         }
         public int pub_selectedIndex
         {
@@ -52,6 +53,7 @@ namespace TP_PAV.formularios
         private void frm_ABM_Barrio_Load(object sender, EventArgs e)
         {
             dgv_barrio.DataSource = priv_barrio.recuperarBarrios();
+            
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -161,7 +163,8 @@ namespace TP_PAV.formularios
 
         private void frm_ABM_Barrio_FormClosing(object sender, FormClosingEventArgs e)
         {
-            priv_formularioPadre.pub_cmb_barrio.DataSource = priv_barrio.recuperarBarrios();
+            priv_cmb_barrios.DataSource = priv_barrio.recuperarBarrios();
+            priv_cmb_barrios.SelectedIndex = priv_selectedCmbIndex;
      
         }
 
