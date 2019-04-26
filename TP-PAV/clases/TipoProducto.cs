@@ -14,7 +14,7 @@ namespace TP_PAV.clases
 
         public DataTable traerTipoProducto()
         {
-            string query = @"SELECT id_tipo_producto AS Código, nombre_tipo_producto AS Nombre, descripcion AS Descripción FROM tipo_producto";
+            string query = @"SELECT * FROM tipo_producto";
             return priv_acceso_db.ejecutarConsulta(query);
         }
 

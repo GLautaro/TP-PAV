@@ -22,8 +22,8 @@ namespace TP_PAV.formularios
 
         private void dgv_tipoProducto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txt_nombre.Text = dgv_tipoProducto.CurrentRow.Cells["Nombre"].Value.ToString();
-            txt_descripcion.Text = dgv_tipoProducto.CurrentRow.Cells["Descripción"].Value.ToString();
+            txt_nombre.Text = dgv_tipoProducto.CurrentRow.Cells["nombre_tipo_producto"].Value.ToString();
+            txt_descripcion.Text = dgv_tipoProducto.CurrentRow.Cells["descripcion"].Value.ToString();
         }
 
         private void frm_ABM_TipoProducto_Load(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace TP_PAV.formularios
 
         private void btn_modificarTipoProducto_Click(object sender, EventArgs e)
         {
-            int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["Código"].Value.ToString());
+            int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["id_tipo_producto"].Value.ToString());
 
             if (txt_nombre.Text != "")
             {
@@ -142,7 +142,7 @@ namespace TP_PAV.formularios
         {
             msj_error.Visible = false;
 
-            int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["Código"].Value.ToString());
+            int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["id_tipo_producto"].Value.ToString());
 
             DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar el tipo de producto código " + priv_id_tipo_producto + " ?",
                                                      "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
