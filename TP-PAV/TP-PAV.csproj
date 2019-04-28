@@ -47,6 +47,7 @@
     <Compile Include="clases\AccesoBD.cs" />
     <Compile Include="clases\Barrio.cs" />
     <Compile Include="clases\Franquicia.cs" />
+    <Compile Include="clases\Producto.cs" />
     <Compile Include="clases\TipoFranquicia.cs" />
     <Compile Include="clases\TipoProducto.cs" />
     <Compile Include="clases\UnidadMedida.cs" />

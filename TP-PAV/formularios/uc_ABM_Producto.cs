@@ -31,7 +31,7 @@ namespace TP_PAV.formularios
             InitializeComponent();
         }
 
-        private void btn_agregarEstado_Click(object sender, EventArgs e)
+        private void btn_agregarTipo_Click(object sender, EventArgs e)
         {
             frm_ABM_TipoProducto frm_ABM_TipoProducto = new frm_ABM_TipoProducto();
             frm_ABM_TipoProducto.ShowDialog();
@@ -51,6 +51,11 @@ namespace TP_PAV.formularios
         {
             frm_ABM_UnidadMedida frm_ABM_UnidadMedida = new frm_ABM_UnidadMedida();
             frm_ABM_UnidadMedida.ShowDialog();
+        }
+
+        private void uc_ABM_Producto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
