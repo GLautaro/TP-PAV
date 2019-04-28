@@ -27,15 +27,15 @@ namespace TP_PAV.clases
 
         }
 
-        public DataTable insertarVendedor(string nombre, string apellido, string comision)
+        public DataTable insertarVendedor(string nombre, string apellido, string comision, int estado)
         {
-            string consulta = @"INSERT INTO Vendedor (nombre_vendedor, apellido_vendedor, porcentaje_comision) VALUES ('" + nombre + "','" + apellido + "','" + comision + "')";
+            string consulta = @"INSERT INTO Vendedor (nombre_vendedor, apellido_vendedor, porcentaje_comision, habilitado) VALUES ('" + nombre + "','" + apellido + "','" + comision + "'," + estado + ")";
             return db.ejecutarConsulta(consulta);
         }
 
-        public DataTable modificarVendedor(string legajo, string nombre, string apellido, string comision)
+        public DataTable modificarVendedor(string legajo, string nombre, string apellido, string comision, int estado)
         {
-            string consulta = @"UPDATE Vendedor SET nombre_vendedor = '" + nombre + "', apellido_vendedor = '" + apellido + "', porcentaje_comision = '" + comision + "' WHERE legajo_vendedor = " + legajo;
+            string consulta = @"UPDATE Vendedor SET nombre_vendedor = '" + nombre + "', apellido_vendedor = '" + apellido + "', porcentaje_comision = '" + comision + "' , habilitado = " + estado + " WHERE legajo_vendedor = " + legajo;
             return db.ejecutarConsulta(consulta);
         }
     }

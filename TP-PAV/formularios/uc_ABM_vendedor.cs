@@ -106,6 +106,14 @@ namespace TP_PAV.formularios
             this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
             this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
             this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
+            if (this.dgv_vendedores.CurrentRow.Cells[4].Value.ToString() == "True")
+            {
+                this.cmb_habilitado.SelectedIndex = 1;
+            }
+            else
+            {
+                this.cmb_habilitado.SelectedIndex = 0;
+            }
             this.label_informacion.Visible = false;
             this.btn_guardar.Visible = true;
             this.btn_cancelar.Visible = true;
@@ -119,7 +127,7 @@ namespace TP_PAV.formularios
             {
                 if (this.txt_legajo.Text != "")
                 {
-                    vendedor.modificarVendedor(this.txt_legajo.Text, this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
+                    vendedor.modificarVendedor(this.txt_legajo.Text, this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text, this.cmb_habilitado.SelectedIndex);
                     this.txt_legajo.Enabled = false;
                     this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_legajo.Text);
 
@@ -129,7 +137,7 @@ namespace TP_PAV.formularios
 
                 }else
                 {
-                    vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
+                    vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text, this.cmb_habilitado.SelectedIndex);
                     this.txt_legajo.Enabled = false;
                     MessageBox.Show("Usuario registrado con exito");
                     this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_nombre.Text);
@@ -170,6 +178,7 @@ namespace TP_PAV.formularios
             this.txt_nombre.Enabled = estado;
             this.txt_apellido.Enabled = estado;
             this.txt_comision.Enabled = estado;
+            this.cmb_habilitado.Enabled = estado;
         }
     }
 }

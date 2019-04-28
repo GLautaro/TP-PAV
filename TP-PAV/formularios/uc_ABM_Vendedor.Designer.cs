@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.txt_comision = new System.Windows.Forms.TextBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
@@ -47,14 +47,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_vendedores = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_informacion = new System.Windows.Forms.Label();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_busquedaAvanzada = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmb_habilitado = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             // 
             this.txt_comision.Enabled = false;
             this.txt_comision.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_comision.Location = new System.Drawing.Point(865, 406);
+            this.txt_comision.Location = new System.Drawing.Point(865, 391);
             this.txt_comision.Name = "txt_comision";
             this.txt_comision.Size = new System.Drawing.Size(186, 22);
             this.txt_comision.TabIndex = 44;
@@ -123,7 +126,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(795, 409);
+            this.label3.Location = new System.Drawing.Point(795, 394);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 39;
@@ -209,50 +212,117 @@
             this.dgv_vendedores.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_vendedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_vendedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_vendedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_vendedores.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4,
+            this.Column5});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_vendedores.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_vendedores.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_vendedores.Location = new System.Drawing.Point(15, 200);
             this.dgv_vendedores.MultiSelect = false;
             this.dgv_vendedores.Name = "dgv_vendedores";
             this.dgv_vendedores.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vendedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vendedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_vendedores.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_vendedores.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_vendedores.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_vendedores.Size = new System.Drawing.Size(700, 350);
             this.dgv_vendedores.TabIndex = 51;
+            // 
+            // label_informacion
+            // 
+            this.label_informacion.AutoSize = true;
+            this.label_informacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_informacion.ForeColor = System.Drawing.Color.Red;
+            this.label_informacion.Location = new System.Drawing.Point(810, 494);
+            this.label_informacion.Name = "label_informacion";
+            this.label_informacion.Size = new System.Drawing.Size(51, 16);
+            this.label_informacion.TabIndex = 52;
+            this.label_informacion.Text = "label7";
+            this.label_informacion.Visible = false;
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Location = new System.Drawing.Point(865, 527);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_guardar.TabIndex = 53;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Visible = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Location = new System.Drawing.Point(976, 527);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.TabIndex = 54;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Visible = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_busquedaAvanzada
+            // 
+            this.btn_busquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_busquedaAvanzada.Location = new System.Drawing.Point(507, 56);
+            this.btn_busquedaAvanzada.Name = "btn_busquedaAvanzada";
+            this.btn_busquedaAvanzada.Size = new System.Drawing.Size(146, 30);
+            this.btn_busquedaAvanzada.TabIndex = 55;
+            this.btn_busquedaAvanzada.Text = "Busqueda avanzada";
+            this.btn_busquedaAvanzada.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(797, 450);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "Habilitado";
+            // 
+            // cmb_habilitado
+            // 
+            this.cmb_habilitado.Enabled = false;
+            this.cmb_habilitado.FormattingEnabled = true;
+            this.cmb_habilitado.Items.AddRange(new object[] {
+            "No habilitado",
+            "Habilitado"});
+            this.cmb_habilitado.Location = new System.Drawing.Point(865, 449);
+            this.cmb_habilitado.Name = "cmb_habilitado";
+            this.cmb_habilitado.Size = new System.Drawing.Size(186, 21);
+            this.cmb_habilitado.TabIndex = 57;
             // 
             // Column1
             // 
@@ -282,54 +352,19 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // label_informacion
+            // Column5
             // 
-            this.label_informacion.AutoSize = true;
-            this.label_informacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_informacion.ForeColor = System.Drawing.Color.Red;
-            this.label_informacion.Location = new System.Drawing.Point(810, 457);
-            this.label_informacion.Name = "label_informacion";
-            this.label_informacion.Size = new System.Drawing.Size(51, 16);
-            this.label_informacion.TabIndex = 52;
-            this.label_informacion.Text = "label7";
-            this.label_informacion.Visible = false;
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Location = new System.Drawing.Point(865, 490);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(75, 23);
-            this.btn_guardar.TabIndex = 53;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = true;
-            this.btn_guardar.Visible = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Location = new System.Drawing.Point(976, 490);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelar.TabIndex = 54;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Visible = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
-            // btn_busquedaAvanzada
-            // 
-            this.btn_busquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busquedaAvanzada.Location = new System.Drawing.Point(507, 56);
-            this.btn_busquedaAvanzada.Name = "btn_busquedaAvanzada";
-            this.btn_busquedaAvanzada.Size = new System.Drawing.Size(146, 30);
-            this.btn_busquedaAvanzada.TabIndex = 55;
-            this.btn_busquedaAvanzada.Text = "Busqueda avanzada";
-            this.btn_busquedaAvanzada.UseVisualStyleBackColor = true;
+            this.Column5.DataPropertyName = "habilitado";
+            this.Column5.HeaderText = "Habilitado";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // uc_ABM_Vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmb_habilitado);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_busquedaAvanzada);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_guardar);
@@ -375,13 +410,16 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_vendedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label_informacion;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_busquedaAvanzada;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmb_habilitado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
     }
 }
