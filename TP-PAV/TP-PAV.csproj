@@ -49,6 +49,7 @@
     <Compile Include="clases\Franquicia.cs" />
     <Compile Include="clases\TipoFranquicia.cs" />
     <Compile Include="clases\TipoProducto.cs" />
+    <Compile Include="clases\UnidadMedida.cs" />
     <Compile Include="clases\Vendedor.cs" />
     <Compile Include="formularios\Escritorio.cs">
       <SubType>Form</SubType>
@@ -67,6 +68,12 @@
     </Compile>
     <Compile Include="formularios\frm_ABM_TipoProducto.Designer.cs">
       <DependentUpon>frm_ABM_TipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frm_ABM_UnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_ABM_UnidadMedida.Designer.cs">
+      <DependentUpon>frm_ABM_UnidadMedida.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\frm_TipoFranquicia.cs">
       <SubType>Form</SubType>
@@ -102,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_ABM_TipoProducto.resx">
       <DependentUpon>frm_ABM_TipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_ABM_UnidadMedida.resx">
+      <DependentUpon>frm_ABM_UnidadMedida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_TipoFranquicia.resx">
       <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>

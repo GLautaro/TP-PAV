@@ -46,5 +46,11 @@ namespace TP_PAV.formularios
         {
            
         }
+
+        private void btn_agregarUdeMedida_Click(object sender, EventArgs e)
+        {
+            frm_ABM_UnidadMedida frm_ABM_UnidadMedida = new frm_ABM_UnidadMedida();
+            frm_ABM_UnidadMedida.ShowDialog();
+        }
     }
 }

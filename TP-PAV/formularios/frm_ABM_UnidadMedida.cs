@@ -11,40 +11,37 @@ using TP_PAV.clases;
 
 namespace TP_PAV.formularios
 {
-    public partial class frm_ABM_TipoProducto : Form
+    public partial class frm_ABM_UnidadMedida : Form
     {
-        TipoProducto priv_tipoProducto = new TipoProducto();
+        UnidadMedida priv_UnidadMedida = new UnidadMedida();
 
-        public frm_ABM_TipoProducto()
+        public frm_ABM_UnidadMedida()
         {
             InitializeComponent();
         }
 
         private void dgv_tipoProducto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txt_nombre.Text = dgv_tipoProducto.CurrentRow.Cells["nombre_tipo_producto"].Value.ToString();
-            txt_descripcion.Text = dgv_tipoProducto.CurrentRow.Cells["descripcion"].Value.ToString();
+            txt_nombre.Text = dgv_unidadMedida.CurrentRow.Cells["nombre_u_medida"].Value.ToString();
         }
 
-        private void frm_ABM_TipoProducto_Load(object sender, EventArgs e)
+        private void frm_ABM_UnidadMedida_Load(object sender, EventArgs e)
         {
             bloquearCajasTexto();
-            dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
+            dgv_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
         }
 
         private void bloquearCajasTexto()
         {
             txt_nombre.Enabled = false;
-            txt_descripcion.Enabled = false;
-            btn_modificarTipoProducto.Enabled = false;
+            btn_modificarUnidadMedida.Enabled = false;
             btn_cancelar.Enabled = false;
         }
 
         private void desbloquearCajasTexto()
         {
             txt_nombre.Enabled = true;
-            txt_descripcion.Enabled = true;
-            btn_modificarTipoProducto.Enabled = true;
+            btn_modificarUnidadMedida.Enabled = true;
             btn_cancelar.Enabled = true;
             msj_error.Visible = false;
             msj_registro_ok.Visible = false;
@@ -54,32 +51,29 @@ namespace TP_PAV.formularios
 
         private void limpiarCajasTexto()
         {
-            txt_descripcion.Clear();
             txt_nombre.Clear();
-
         }
 
         public void habilitarBotones()
         {
-            btn_habilitarAgregarTipoProducto.Enabled = true;
-            btn_habilitarModificarTipoProducto.Enabled = true;
-            btn_eliminarTipoProducto.Enabled = true;
+            btn_habilitarAgregarUnidadMedida.Enabled = true;
+            btn_habilitarModificarUnidadMedida.Enabled = true;
+            btn_eliminarUnidadMedida.Enabled = true;
         }
 
-        private void btn_habilitarAgregarTipoProducto_Click(object sender, EventArgs e)
+        private void btn_habilitarAgregarUnidadMedida_Click(object sender, EventArgs e)
         {
             desbloquearCajasTexto();
-            btn_agregarTipoProducto.Visible = true;
-            btn_habilitarModificarTipoProducto.Enabled = false;
-            btn_eliminarTipoProducto.Enabled = false;
+            btn_agregarUnidadMedida.Visible = true;
+            btn_habilitarModificarUnidadMedida.Enabled = false;
+            btn_eliminarUnidadMedida.Enabled = false;
         }
 
-        private void btn_agregarTipoProducto_Click(object sender, EventArgs e)
+        private void btn_agregarUnidadMedida_Click(object sender, EventArgs e)
         {
-
             if (txt_nombre.Text != "")
             {
-                if (priv_tipoProducto.altaTipoProducto(txt_nombre.Text, txt_descripcion.Text))
+                if (priv_UnidadMedida.altaUnidadMedida(txt_nombre.Text))
                 {
 
                     msj_registro_ok.Visible = true;
@@ -99,27 +93,27 @@ namespace TP_PAV.formularios
             limpiarCajasTexto();
             bloquearCajasTexto();
             habilitarBotones();
-            btn_agregarTipoProducto.Visible = false;
-            dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
+            btn_agregarUnidadMedida.Visible = false;
+            dgv_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
         }
 
-        private void btn_habilitarModificarTipoProducto_Click(object sender, EventArgs e)
+        private void btn_habilitarModificarUnidadMedida_Click(object sender, EventArgs e)
         {
             desbloquearCajasTexto();
-            btn_modificarTipoProducto.Enabled = true;
-            btn_habilitarAgregarTipoProducto.Enabled = false;
-            btn_eliminarTipoProducto.Enabled = false;
+            btn_modificarUnidadMedida.Enabled = true;
+            btn_habilitarAgregarUnidadMedida.Enabled = false;
+            btn_eliminarUnidadMedida.Enabled = false;
         }
 
-        private void btn_modificarTipoProducto_Click(object sender, EventArgs e)
+        private void btn_modificarUnidadMedida_Click(object sender, EventArgs e)
         {
-            int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["id_tipo_producto"].Value.ToString());
+            int priv_id_unidad_medida = int.Parse(dgv_unidadMedida.CurrentRow.Cells["id_u_medida"].Value.ToString());
 
             if (txt_nombre.Text != "")
             {
-                if (priv_tipoProducto.modificarTipoProducto(priv_id_tipo_producto, txt_nombre.Text, txt_descripcion.Text))
+                if (priv_UnidadMedida.modificarUnidadMedida(priv_id_unidad_medida, txt_nombre.Text))
                 {
-                    dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
+                    dgv_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
                     msj_modificado_ok.Visible = true;
 
                 }
@@ -138,20 +132,20 @@ namespace TP_PAV.formularios
             habilitarBotones();
         }
 
-        private void btn_eliminarTipoProducto_Click(object sender, EventArgs e)
+        private void btn_eliminarUnidadMedida_Click(object sender, EventArgs e)
         {
             msj_error.Visible = false;
 
-            int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["id_tipo_producto"].Value.ToString());
+            int priv_id_unidad_medida = int.Parse(dgv_unidadMedida.CurrentRow.Cells["id_u_medida"].Value.ToString());
 
-            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar el tipo de producto código " + priv_id_tipo_producto + " ?",
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar la undiad de medida código " + priv_id_unidad_medida + " ?",
                                                      "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
             {
-                if (priv_tipoProducto.eliminarTipoProducto(priv_id_tipo_producto))
+                if (priv_UnidadMedida.eliminarUnidadMedida(priv_id_unidad_medida))
                 {
                     msj_eliminado_ok.Visible = true;
-                    dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
+                    dgv_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
                     limpiarCajasTexto();
                 }
                 else
@@ -166,7 +160,9 @@ namespace TP_PAV.formularios
             bloquearCajasTexto();
             limpiarCajasTexto();
             habilitarBotones();
-            btn_agregarTipoProducto.Visible = false;
+            btn_agregarUnidadMedida.Visible = false;
         }
+    
+
     }
 }
