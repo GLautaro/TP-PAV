@@ -167,7 +167,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(552, 32);
+            this.panel1.Size = new System.Drawing.Size(584, 32);
             this.panel1.TabIndex = 41;
             // 
             // label3
@@ -263,7 +263,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_tipoProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_tipoProducto.GridColor = System.Drawing.Color.YellowGreen;
-            this.dgv_tipoProducto.Location = new System.Drawing.Point(38, 212);
+            this.dgv_tipoProducto.Location = new System.Drawing.Point(40, 200);
             this.dgv_tipoProducto.Name = "dgv_tipoProducto";
             this.dgv_tipoProducto.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -281,7 +281,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_tipoProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tipoProducto.Size = new System.Drawing.Size(477, 167);
+            this.dgv_tipoProducto.Size = new System.Drawing.Size(500, 230);
             this.dgv_tipoProducto.TabIndex = 52;
             this.dgv_tipoProducto.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_tipoProducto_CellMouseClick);
             // 
@@ -310,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 406);
+            this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.dgv_tipoProducto);
             this.Controls.Add(this.msj_eliminado_ok);
             this.Controls.Add(this.msj_modificado_ok);

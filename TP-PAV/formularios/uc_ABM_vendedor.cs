@@ -35,20 +35,6 @@ namespace TP_PAV.formularios
             this.dgv_vendedores.DataSource = vendedor.traerVendedores();
         }
 
-        private void dgv_vendedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //obtiene el valor de la primera celda del dataGridView. En este caso es el legajo del vendedor
-            //MessageBox.Show(this.dataGrid.CurrentRow.Cells[0].Value.ToString());
-
-            //cargar los datos del dataGridView en el formulario de modificacion
-            this.txt_legajo.Enabled = false;
-            this.txt_legajo.Text = this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString();
-            this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
-            this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
-            this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
-            this.label_informacion.Visible = false;
-        }
-
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_busqueda.Text);
@@ -76,24 +62,10 @@ namespace TP_PAV.formularios
                 this.txt_apellido.Clear();
                 this.txt_comision.Clear();
             }
-            else
-            {
-                if (validarFormulario())
-                {
-                    vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
-                    this.txt_legajo.Enabled = false;
-                    MessageBox.Show("Usuario registrado con exito");
-                    this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_nombre.Text);
-                    this.txt_legajo.Clear();
-                    this.txt_nombre.Clear();
-                    this.txt_apellido.Clear();
-                    this.txt_comision.Clear();
-
-                    this.label_informacion.ForeColor = Color.YellowGreen;
-                    this.label_informacion.Text = "Usuario cargado correctamente";
-                    this.label_informacion.Visible = true;
-                }
-            }
+            this.label_informacion.Visible = false;
+            this.btn_guardar.Visible = true;
+            this.btn_cancelar.Visible = true;
+            modificarEstadoCajasDeTexto(true);
         }
 
         private bool validarFormulario()
@@ -124,9 +96,28 @@ namespace TP_PAV.formularios
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            if (this.txt_legajo.Text != "")
+            //obtiene el valor de la primera celda del dataGridView. En este caso es el legajo del vendedor
+            //MessageBox.Show(this.dataGrid.CurrentRow.Cells[0].Value.ToString());
+
+            //cargar los datos del dataGridView en el formulario de modificacion
+            this.btn_registrar.Visible = false;
+            this.txt_legajo.Enabled = false;
+            this.txt_legajo.Text = this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString();
+            this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
+            this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
+            this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
+            this.label_informacion.Visible = false;
+            this.btn_guardar.Visible = true;
+            this.btn_cancelar.Visible = true;
+            modificarEstadoCajasDeTexto(true);
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            // Dependiendo el valor del <textBox> de legajo este completado, se realizara la modificacion o el registro
+            if (validarFormulario())
             {
-                if (validarFormulario())
+                if (this.txt_legajo.Text != "")
                 {
                     vendedor.modificarVendedor(this.txt_legajo.Text, this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
                     this.txt_legajo.Enabled = false;
@@ -135,22 +126,50 @@ namespace TP_PAV.formularios
                     this.label_informacion.ForeColor = Color.YellowGreen;
                     this.label_informacion.Text = "Usuario modificado correctamente";
                     this.label_informacion.Visible = true;
+
+                }else
+                {
+                    vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text);
+                    this.txt_legajo.Enabled = false;
+                    MessageBox.Show("Usuario registrado con exito");
+                    this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_nombre.Text);
+                    this.txt_legajo.Clear();
+                    this.txt_nombre.Clear();
+                    this.txt_apellido.Clear();
+                    this.txt_comision.Clear();
+
+                    this.label_informacion.ForeColor = Color.YellowGreen;
+                    this.label_informacion.Text = "Usuario cargado correctamente";
+                    this.label_informacion.Visible = true;
                 }
+                //desactivar botones de guardado y reactivar boton de modificacion y registro
+                this.btn_guardar.Visible = false;
+                this.btn_cancelar.Visible = false;
+                this.btn_registrar.Visible = true;
+                this.btn_modificar.Visible = true;
+                modificarEstadoCajasDeTexto(false);
             }
         }
 
-        private void dgv_vendedores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            //obtiene el valor de la primera celda del dataGridView. En este caso es el legajo del vendedor
-            //MessageBox.Show(this.dataGrid.CurrentRow.Cells[0].Value.ToString());
-
-            //cargar los datos del dataGridView en el formulario de modificacion
-            this.txt_legajo.Enabled = false;
-            this.txt_legajo.Text = this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString();
-            this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
-            this.txt_apellido.Text = this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
-            this.txt_comision.Text = this.dgv_vendedores.CurrentRow.Cells[3].Value.ToString();
+            this.txt_legajo.Clear();
+            this.txt_nombre.Clear();
+            this.txt_apellido.Clear();
+            this.txt_comision.Clear();
+            this.label_informacion.Visible = false;
+            this.btn_guardar.Visible = false;
+            this.btn_cancelar.Visible = false;
             this.btn_modificar.Visible = true;
+            this.btn_registrar.Visible = true;
+            modificarEstadoCajasDeTexto(false);
+        }
+
+        private void modificarEstadoCajasDeTexto(bool estado)
+        {
+            this.txt_nombre.Enabled = estado;
+            this.txt_apellido.Enabled = estado;
+            this.txt_comision.Enabled = estado;
         }
     }
 }
