@@ -155,6 +155,10 @@ namespace TP_PAV.formularios
                     btn_cancelarGuardado.Visible = false;
                     btn_guardarNuevaFranquicia.Enabled = false;
                     btn_guardarNuevaFranquicia.Visible = false;
+                    btn_habilitarAñadirFranquicia.Enabled = true;
+                    btn_habilitarModificarFranquicia.Enabled = true;
+                    btn_modificarFranquicia.Enabled = true;
+                    btn_eliminarFranquicia.Enabled = true;
                 }
                 else
                 {
@@ -198,6 +202,10 @@ namespace TP_PAV.formularios
                 btn_cancelarModificaciones.Enabled = false;
                 btn_modificarFranquicia.Visible = false;
                 btn_modificarFranquicia.Enabled = false;
+                btn_habilitarAñadirFranquicia.Enabled = true;
+                btn_habilitarModificarFranquicia.Enabled = true;
+                btn_modificarFranquicia.Enabled = true;
+                btn_eliminarFranquicia.Enabled = true;
                 
             }
             else
@@ -212,6 +220,7 @@ namespace TP_PAV.formularios
 
         private void btn_habilitarModificarFranquicia_Click(object sender, EventArgs e)
         {
+
             if (dgv_franquicias.SelectedRows.Count < 1)
             {
                 MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -223,10 +232,14 @@ namespace TP_PAV.formularios
             if (result == DialogResult.Yes)
             {
                 desbloquearCajasTexto();
+                btn_habilitarAñadirFranquicia.Enabled = false;
+                btn_habilitarModificarFranquicia.Enabled = false;
+                btn_modificarFranquicia.Enabled = false;
                 btn_modificarFranquicia.Enabled = true;
                 btn_modificarFranquicia.Visible = true;
                 btn_cancelarModificaciones.Enabled = true;
                 btn_cancelarModificaciones.Visible = true;
+                btn_eliminarFranquicia.Enabled = false;
                 desbloquearCajasTexto();
                 txt_nombreResponsable.Text = dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString();
                 txt_apellidoResponsable.Text = dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
@@ -255,6 +268,10 @@ namespace TP_PAV.formularios
             btn_cancelarModificaciones.Visible = false;
             btn_agregarTipoFranquicia.Enabled = false;
             dgv_franquicias.Enabled = true;
+            btn_habilitarAñadirFranquicia.Enabled = true;
+            btn_habilitarModificarFranquicia.Enabled = true;
+            btn_modificarFranquicia.Enabled = true;
+            btn_eliminarFranquicia.Enabled = true;
         }
         
 
@@ -265,6 +282,11 @@ namespace TP_PAV.formularios
             btn_cancelarGuardado.Visible = true;
             btn_guardarNuevaFranquicia.Enabled = true;
             btn_guardarNuevaFranquicia.Visible = true;
+            btn_habilitarAñadirFranquicia.Enabled = false;
+            btn_habilitarModificarFranquicia.Enabled = false;
+            btn_modificarFranquicia.Enabled = false;
+            btn_eliminarFranquicia.Enabled = false;
+            
         }
         private void btn_cancelarGuardado_Click(object sender, EventArgs e)
         {
@@ -275,7 +297,10 @@ namespace TP_PAV.formularios
             btn_cancelarGuardado.Visible = false;
             btn_cancelarGuardado.Enabled = false;
             btn_agregarTipoFranquicia.Enabled = false;
-
+            btn_habilitarAñadirFranquicia.Enabled = true;
+            btn_habilitarModificarFranquicia.Enabled = true;
+            btn_modificarFranquicia.Enabled = true;
+            btn_eliminarFranquicia.Enabled = true;
         }
 
         private void btn_eliminarFranquicia_Click(object sender, EventArgs e)

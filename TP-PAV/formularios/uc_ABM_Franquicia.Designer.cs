@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_modificarFranquicia = new System.Windows.Forms.Button();
             this.btn_cancelarModificaciones = new System.Windows.Forms.Button();
@@ -64,10 +65,12 @@
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro_calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_franquicias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 13);
+            this.label1.Location = new System.Drawing.Point(15, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 25);
@@ -86,7 +89,7 @@
             // 
             this.btn_modificarFranquicia.Enabled = false;
             this.btn_modificarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificarFranquicia.Location = new System.Drawing.Point(776, 417);
+            this.btn_modificarFranquicia.Location = new System.Drawing.Point(780, 513);
             this.btn_modificarFranquicia.Name = "btn_modificarFranquicia";
             this.btn_modificarFranquicia.Size = new System.Drawing.Size(169, 37);
             this.btn_modificarFranquicia.TabIndex = 50;
@@ -99,7 +102,7 @@
             // 
             this.btn_cancelarModificaciones.Enabled = false;
             this.btn_cancelarModificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarModificaciones.Location = new System.Drawing.Point(1063, 417);
+            this.btn_cancelarModificaciones.Location = new System.Drawing.Point(1067, 513);
             this.btn_cancelarModificaciones.Name = "btn_cancelarModificaciones";
             this.btn_cancelarModificaciones.Size = new System.Drawing.Size(98, 37);
             this.btn_cancelarModificaciones.TabIndex = 49;
@@ -112,7 +115,7 @@
             // 
             this.btn_cancelarGuardado.Enabled = false;
             this.btn_cancelarGuardado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelarGuardado.Location = new System.Drawing.Point(1063, 417);
+            this.btn_cancelarGuardado.Location = new System.Drawing.Point(1067, 513);
             this.btn_cancelarGuardado.Name = "btn_cancelarGuardado";
             this.btn_cancelarGuardado.Size = new System.Drawing.Size(98, 37);
             this.btn_cancelarGuardado.TabIndex = 48;
@@ -124,7 +127,7 @@
             // btn_eliminarFranquicia
             // 
             this.btn_eliminarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminarFranquicia.Location = new System.Drawing.Point(424, 420);
+            this.btn_eliminarFranquicia.Location = new System.Drawing.Point(567, 79);
             this.btn_eliminarFranquicia.Name = "btn_eliminarFranquicia";
             this.btn_eliminarFranquicia.Size = new System.Drawing.Size(148, 30);
             this.btn_eliminarFranquicia.TabIndex = 47;
@@ -135,7 +138,7 @@
             // btn_habilitarModificarFranquicia
             // 
             this.btn_habilitarModificarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_habilitarModificarFranquicia.Location = new System.Drawing.Point(236, 420);
+            this.btn_habilitarModificarFranquicia.Location = new System.Drawing.Point(301, 79);
             this.btn_habilitarModificarFranquicia.Name = "btn_habilitarModificarFranquicia";
             this.btn_habilitarModificarFranquicia.Size = new System.Drawing.Size(139, 30);
             this.btn_habilitarModificarFranquicia.TabIndex = 46;
@@ -146,7 +149,7 @@
             // btn_habilitarAñadirFranquicia
             // 
             this.btn_habilitarAñadirFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_habilitarAñadirFranquicia.Location = new System.Drawing.Point(28, 420);
+            this.btn_habilitarAñadirFranquicia.Location = new System.Drawing.Point(15, 79);
             this.btn_habilitarAñadirFranquicia.Name = "btn_habilitarAñadirFranquicia";
             this.btn_habilitarAñadirFranquicia.Size = new System.Drawing.Size(162, 30);
             this.btn_habilitarAñadirFranquicia.TabIndex = 45;
@@ -158,7 +161,7 @@
             // 
             this.txt_legajoVendedor.Enabled = false;
             this.txt_legajoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_legajoVendedor.Location = new System.Drawing.Point(937, 356);
+            this.txt_legajoVendedor.Location = new System.Drawing.Point(939, 442);
             this.txt_legajoVendedor.Name = "txt_legajoVendedor";
             this.txt_legajoVendedor.Size = new System.Drawing.Size(181, 21);
             this.txt_legajoVendedor.TabIndex = 42;
@@ -167,16 +170,16 @@
             // 
             this.txt_nroCalle.Enabled = false;
             this.txt_nroCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nroCalle.Location = new System.Drawing.Point(937, 190);
+            this.txt_nroCalle.Location = new System.Drawing.Point(939, 280);
             this.txt_nroCalle.Name = "txt_nroCalle";
-            this.txt_nroCalle.Size = new System.Drawing.Size(180, 21);
+            this.txt_nroCalle.Size = new System.Drawing.Size(181, 21);
             this.txt_nroCalle.TabIndex = 40;
             // 
             // txt_calle
             // 
             this.txt_calle.Enabled = false;
             this.txt_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_calle.Location = new System.Drawing.Point(937, 141);
+            this.txt_calle.Location = new System.Drawing.Point(939, 227);
             this.txt_calle.Name = "txt_calle";
             this.txt_calle.Size = new System.Drawing.Size(181, 21);
             this.txt_calle.TabIndex = 39;
@@ -185,16 +188,16 @@
             // 
             this.txt_apellidoResponsable.Enabled = false;
             this.txt_apellidoResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellidoResponsable.Location = new System.Drawing.Point(937, 95);
+            this.txt_apellidoResponsable.Location = new System.Drawing.Point(939, 180);
             this.txt_apellidoResponsable.Name = "txt_apellidoResponsable";
-            this.txt_apellidoResponsable.Size = new System.Drawing.Size(180, 21);
+            this.txt_apellidoResponsable.Size = new System.Drawing.Size(181, 21);
             this.txt_apellidoResponsable.TabIndex = 38;
             // 
             // txt_nombreResponsable
             // 
             this.txt_nombreResponsable.Enabled = false;
             this.txt_nombreResponsable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombreResponsable.Location = new System.Drawing.Point(937, 47);
+            this.txt_nombreResponsable.Location = new System.Drawing.Point(939, 132);
             this.txt_nombreResponsable.Name = "txt_nombreResponsable";
             this.txt_nombreResponsable.Size = new System.Drawing.Size(181, 21);
             this.txt_nombreResponsable.TabIndex = 37;
@@ -203,7 +206,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(773, 354);
+            this.label7.Location = new System.Drawing.Point(775, 440);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 15);
             this.label7.TabIndex = 36;
@@ -213,7 +216,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(773, 306);
+            this.label8.Location = new System.Drawing.Point(775, 388);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 15);
             this.label8.TabIndex = 35;
@@ -223,7 +226,7 @@
             // 
             this.lbl_barrio.AutoSize = true;
             this.lbl_barrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_barrio.Location = new System.Drawing.Point(773, 252);
+            this.lbl_barrio.Location = new System.Drawing.Point(775, 332);
             this.lbl_barrio.Name = "lbl_barrio";
             this.lbl_barrio.Size = new System.Drawing.Size(40, 15);
             this.lbl_barrio.TabIndex = 33;
@@ -233,7 +236,7 @@
             // 
             this.lbl_nro_calle.AutoSize = true;
             this.lbl_nro_calle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nro_calle.Location = new System.Drawing.Point(773, 190);
+            this.lbl_nro_calle.Location = new System.Drawing.Point(776, 280);
             this.lbl_nro_calle.Name = "lbl_nro_calle";
             this.lbl_nro_calle.Size = new System.Drawing.Size(100, 15);
             this.lbl_nro_calle.TabIndex = 32;
@@ -243,7 +246,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(773, 147);
+            this.label4.Location = new System.Drawing.Point(776, 233);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 15);
             this.label4.TabIndex = 31;
@@ -253,7 +256,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(773, 100);
+            this.label2.Location = new System.Drawing.Point(777, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 15);
             this.label2.TabIndex = 30;
@@ -263,7 +266,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(773, 51);
+            this.label3.Location = new System.Drawing.Point(777, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 15);
             this.label3.TabIndex = 29;
@@ -273,7 +276,7 @@
             // 
             this.btn_guardarNuevaFranquicia.Enabled = false;
             this.btn_guardarNuevaFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardarNuevaFranquicia.Location = new System.Drawing.Point(776, 417);
+            this.btn_guardarNuevaFranquicia.Location = new System.Drawing.Point(780, 513);
             this.btn_guardarNuevaFranquicia.Name = "btn_guardarNuevaFranquicia";
             this.btn_guardarNuevaFranquicia.Size = new System.Drawing.Size(167, 37);
             this.btn_guardarNuevaFranquicia.TabIndex = 28;
@@ -287,7 +290,7 @@
             this.cmb_tipoFranquicia.Enabled = false;
             this.cmb_tipoFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_tipoFranquicia.FormattingEnabled = true;
-            this.cmb_tipoFranquicia.Location = new System.Drawing.Point(937, 302);
+            this.cmb_tipoFranquicia.Location = new System.Drawing.Point(939, 384);
             this.cmb_tipoFranquicia.Name = "cmb_tipoFranquicia";
             this.cmb_tipoFranquicia.Size = new System.Drawing.Size(181, 23);
             this.cmb_tipoFranquicia.TabIndex = 27;
@@ -297,7 +300,7 @@
             this.cmb_barrio.Enabled = false;
             this.cmb_barrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_barrio.FormattingEnabled = true;
-            this.cmb_barrio.Location = new System.Drawing.Point(937, 248);
+            this.cmb_barrio.Location = new System.Drawing.Point(939, 328);
             this.cmb_barrio.Name = "cmb_barrio";
             this.cmb_barrio.Size = new System.Drawing.Size(181, 23);
             this.cmb_barrio.TabIndex = 26;
@@ -305,7 +308,7 @@
             // btn_agregarTipoFranquicia
             // 
             this.btn_agregarTipoFranquicia.Enabled = false;
-            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(1124, 302);
+            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(1128, 383);
             this.btn_agregarTipoFranquicia.Name = "btn_agregarTipoFranquicia";
             this.btn_agregarTipoFranquicia.Size = new System.Drawing.Size(37, 23);
             this.btn_agregarTipoFranquicia.TabIndex = 51;
@@ -316,7 +319,7 @@
             // btn_agregarBarrio
             // 
             this.btn_agregarBarrio.Enabled = false;
-            this.btn_agregarBarrio.Location = new System.Drawing.Point(1124, 248);
+            this.btn_agregarBarrio.Location = new System.Drawing.Point(1128, 328);
             this.btn_agregarBarrio.Name = "btn_agregarBarrio";
             this.btn_agregarBarrio.Size = new System.Drawing.Size(37, 23);
             this.btn_agregarBarrio.TabIndex = 52;
@@ -327,16 +330,16 @@
             // txt_buscarFranquicia
             // 
             this.txt_buscarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscarFranquicia.Location = new System.Drawing.Point(28, 41);
+            this.txt_buscarFranquicia.Location = new System.Drawing.Point(15, 148);
             this.txt_buscarFranquicia.Name = "txt_buscarFranquicia";
-            this.txt_buscarFranquicia.Size = new System.Drawing.Size(310, 21);
+            this.txt_buscarFranquicia.Size = new System.Drawing.Size(596, 21);
             this.txt_buscarFranquicia.TabIndex = 53;
             this.txt_buscarFranquicia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_buscarFranquicia_KeyUp);
             // 
             // btn_buscarFranquicia
             // 
             this.btn_buscarFranquicia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarFranquicia.Location = new System.Drawing.Point(370, 37);
+            this.btn_buscarFranquicia.Location = new System.Drawing.Point(617, 144);
             this.btn_buscarFranquicia.Name = "btn_buscarFranquicia";
             this.btn_buscarFranquicia.Size = new System.Drawing.Size(98, 29);
             this.btn_buscarFranquicia.TabIndex = 54;
@@ -348,13 +351,10 @@
             // 
             this.dgv_franquicias.AllowUserToAddRows = false;
             this.dgv_franquicias.AllowUserToDeleteRows = false;
-            this.dgv_franquicias.AllowUserToResizeColumns = false;
-            this.dgv_franquicias.AllowUserToResizeRows = false;
-            this.dgv_franquicias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_franquicias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv_franquicias.BackgroundColor = System.Drawing.Color.YellowGreen;
-            this.dgv_franquicias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_franquicias.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgv_franquicias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_franquicias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_franquicias.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -371,87 +371,81 @@
             this.calle,
             this.nro_calle,
             this.nombre_barrio,
-            this.legajo_vendedor,
             this.nombre_tipo_franquicia,
-            this.id_barrio,
-            this.id_tipo_franquicia});
-            this.dgv_franquicias.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dgv_franquicias.EnableHeadersVisualStyles = false;
-            this.dgv_franquicias.GridColor = System.Drawing.Color.Black;
-            this.dgv_franquicias.Location = new System.Drawing.Point(7, 83);
-            this.dgv_franquicias.MultiSelect = false;
-            this.dgv_franquicias.Name = "dgv_franquicias";
-            this.dgv_franquicias.ReadOnly = true;
-            this.dgv_franquicias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.nombre_vendedor,
+            this.apellido_vendedor,
+            this.legajo_vendedor,
+            this.id_tipo_franquicia,
+            this.id_barrio});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_franquicias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_franquicias.RowHeadersVisible = false;
-            this.dgv_franquicias.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_franquicias.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_franquicias.GridColor = System.Drawing.Color.YellowGreen;
+            this.dgv_franquicias.Location = new System.Drawing.Point(15, 200);
+            this.dgv_franquicias.Name = "dgv_franquicias";
+            this.dgv_franquicias.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_franquicias.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_franquicias.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_franquicias.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_franquicias.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_franquicias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_franquicias.Size = new System.Drawing.Size(749, 326);
-            this.dgv_franquicias.TabIndex = 56;
+            this.dgv_franquicias.Size = new System.Drawing.Size(700, 350);
+            this.dgv_franquicias.TabIndex = 55;
             // 
             // id_franquicia
             // 
-            this.id_franquicia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.id_franquicia.DataPropertyName = "id_franquicia";
             this.id_franquicia.HeaderText = "ID Franquicia";
             this.id_franquicia.Name = "id_franquicia";
             this.id_franquicia.ReadOnly = true;
-            this.id_franquicia.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id_franquicia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id_franquicia.Width = 90;
+            this.id_franquicia.Width = 96;
             // 
             // nombre_responsable
             // 
-            this.nombre_responsable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.nombre_responsable.DataPropertyName = "nombre_responsable";
-            this.nombre_responsable.HeaderText = "Nombre responsable";
+            this.nombre_responsable.HeaderText = "Nombre del Responsable";
             this.nombre_responsable.Name = "nombre_responsable";
             this.nombre_responsable.ReadOnly = true;
-            this.nombre_responsable.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombre_responsable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nombre_responsable.Width = 75;
+            this.nombre_responsable.Width = 158;
             // 
             // apellido_responsable
             // 
-            this.apellido_responsable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.apellido_responsable.DataPropertyName = "apellido_responsable";
-            this.apellido_responsable.HeaderText = "Apellido responsable";
+            this.apellido_responsable.HeaderText = "Apellido del Responsable";
             this.apellido_responsable.Name = "apellido_responsable";
             this.apellido_responsable.ReadOnly = true;
-            this.apellido_responsable.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.apellido_responsable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.apellido_responsable.Width = 75;
+            this.apellido_responsable.Width = 157;
             // 
             // calle
             // 
-            this.calle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.calle.DataPropertyName = "calle";
             this.calle.HeaderText = "Calle";
             this.calle.Name = "calle";
             this.calle.ReadOnly = true;
-            this.calle.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.calle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.calle.Width = 75;
+            this.calle.Width = 60;
             // 
             // nro_calle
             // 
             this.nro_calle.DataPropertyName = "nro_calle";
-            this.nro_calle.HeaderText = "Nro de Calle";
+            this.nro_calle.HeaderText = "Nro Calle";
             this.nro_calle.Name = "nro_calle";
             this.nro_calle.ReadOnly = true;
-            this.nro_calle.Width = 90;
+            this.nro_calle.Width = 77;
             // 
             // nombre_barrio
             // 
@@ -459,34 +453,39 @@
             this.nombre_barrio.HeaderText = "Barrio";
             this.nombre_barrio.Name = "nombre_barrio";
             this.nombre_barrio.ReadOnly = true;
-            this.nombre_barrio.Width = 63;
-            // 
-            // legajo_vendedor
-            // 
-            this.legajo_vendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
-            this.legajo_vendedor.HeaderText = "Legajo del Vendedor";
-            this.legajo_vendedor.Name = "legajo_vendedor";
-            this.legajo_vendedor.ReadOnly = true;
-            this.legajo_vendedor.Width = 120;
+            this.nombre_barrio.Width = 65;
             // 
             // nombre_tipo_franquicia
             // 
             this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
             this.nombre_tipo_franquicia.HeaderText = "Tipo de Franquicia";
-            this.nombre_tipo_franquicia.MinimumWidth = 150;
             this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
             this.nombre_tipo_franquicia.ReadOnly = true;
-            this.nombre_tipo_franquicia.Width = 150;
+            this.nombre_tipo_franquicia.Width = 123;
             // 
-            // id_barrio
+            // nombre_vendedor
             // 
-            this.id_barrio.DataPropertyName = "id_barrio";
-            this.id_barrio.HeaderText = "ID Barrio";
-            this.id_barrio.Name = "id_barrio";
-            this.id_barrio.ReadOnly = true;
-            this.id_barrio.Visible = false;
-            this.id_barrio.Width = 72;
+            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
+            this.nombre_vendedor.HeaderText = "Nombre del Vendedor";
+            this.nombre_vendedor.Name = "nombre_vendedor";
+            this.nombre_vendedor.ReadOnly = true;
+            this.nombre_vendedor.Width = 92;
+            // 
+            // apellido_vendedor
+            // 
+            this.apellido_vendedor.DataPropertyName = "apellido_vendedor";
+            this.apellido_vendedor.HeaderText = "Apellido del Vendedor";
+            this.apellido_vendedor.Name = "apellido_vendedor";
+            this.apellido_vendedor.ReadOnly = true;
+            this.apellido_vendedor.Width = 91;
+            // 
+            // legajo_vendedor
+            // 
+            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
+            this.legajo_vendedor.HeaderText = "Legajo del Vendedor";
+            this.legajo_vendedor.Name = "legajo_vendedor";
+            this.legajo_vendedor.ReadOnly = true;
+            this.legajo_vendedor.Width = 86;
             // 
             // id_tipo_franquicia
             // 
@@ -495,7 +494,14 @@
             this.id_tipo_franquicia.Name = "id_tipo_franquicia";
             this.id_tipo_franquicia.ReadOnly = true;
             this.id_tipo_franquicia.Visible = false;
-            this.id_tipo_franquicia.Width = 119;
+            // 
+            // id_barrio
+            // 
+            this.id_barrio.DataPropertyName = "id_barrio";
+            this.id_barrio.HeaderText = "ID Barrio";
+            this.id_barrio.Name = "id_barrio";
+            this.id_barrio.ReadOnly = true;
+            this.id_barrio.Visible = false;
             // 
             // uc_ABM_Franquicia
             // 
@@ -531,7 +537,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uc_ABM_Franquicia";
-            this.Size = new System.Drawing.Size(1174, 469);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.Load += new System.EventHandler(this.uc_ABM_Franquicia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_franquicias)).EndInit();
             this.ResumeLayout(false);
@@ -574,9 +580,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_vendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido_vendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
     }
 }

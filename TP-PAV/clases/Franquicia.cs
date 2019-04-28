@@ -126,7 +126,7 @@ namespace TP_PAV.clases
 
         public bool eliminarFranquicia()
         {
-            string noQuery = @"DELETE FROM franquicia WHERE id_franquicia=" + priv_id_franquicia.ToString();
+            string noQuery = @"UPDATE franquicia SET habilitado=0 WHERE id_franquicia=" + priv_id_franquicia.ToString();
             if (priv_acceso_db.ejecutarNoConsulta(noQuery) == 1)
             {
                 return true;
@@ -148,11 +148,14 @@ namespace TP_PAV.clases
 	                                vendedor.legajo_vendedor,
 	                                tipo_franquicia.nombre_tipo_franquicia,
                                     barrio.id_barrio,
+                                    vendedor.nombre_vendedor,
+                                    vendedor.apellido_vendedor,
                                     tipo_franquicia.id_tipo_franquicia 
 	                                        FROM franquicia
 	                                                JOIN vendedor ON vendedor.legajo_vendedor=franquicia.legajo_vendedor
 	                                                JOIN barrio ON barrio.id_barrio=franquicia.id_barrio
-	                                                JOIN tipo_franquicia ON tipo_franquicia.id_tipo_franquicia=franquicia.id_tipo_franquicia";
+	                                                JOIN tipo_franquicia ON tipo_franquicia.id_tipo_franquicia=franquicia.id_tipo_franquicia
+                                    WHERE franquicia.habilitado=1";
             return priv_acceso_db.ejecutarConsulta(query);
         }
         
@@ -171,13 +174,13 @@ namespace TP_PAV.clases
                                                         FROM franquicia JOIN vendedor ON vendedor.legajo_vendedor=franquicia.legajo_vendedor 
                                                                         JOIN barrio ON barrio.id_barrio=franquicia.id_barrio 
                                                                         JOIN tipo_franquicia ON tipo_franquicia.id_tipo_franquicia=franquicia.id_tipo_franquicia 
-                                                        WHERE franquicia.nombre_responsable LIKE '%{0}%' 
+                                                        WHERE franquicia.habilitado=1 AND (franquicia.nombre_responsable LIKE '%{0}%' 
                                                            OR franquicia.apellido_responsable LIKE '%{1}%' 
                                                            OR franquicia.calle LIKE '%{2}%' 
                                                            OR barrio.nombre_barrio LIKE '%{4}%' 
                                                            OR tipo_franquicia.nombre_tipo_franquicia LIKE '%{6}%' 
                                                            OR barrio.nombre_barrio LIKE '%{7}%' 
-                                                           OR tipo_franquicia.nombre_tipo_franquicia LIKE '%{8}%';", text, text, text, text, text, text, text, text, text);
+                                                           OR tipo_franquicia.nombre_tipo_franquicia LIKE '%{8}%');", text, text, text, text, text, text, text, text, text);
 
             return priv_acceso_db.ejecutarConsulta(query);
         }
