@@ -139,7 +139,6 @@ namespace TP_PAV.formularios
                 {
                     vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text, this.cmb_habilitado.SelectedIndex);
                     this.txt_legajo.Enabled = false;
-                    MessageBox.Show("Usuario registrado con exito");
                     this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_nombre.Text);
                     this.txt_legajo.Clear();
                     this.txt_nombre.Clear();
@@ -179,6 +178,12 @@ namespace TP_PAV.formularios
             this.txt_apellido.Enabled = estado;
             this.txt_comision.Enabled = estado;
             this.cmb_habilitado.Enabled = estado;
+        }
+
+        private void btn_activarBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            bool estado = this.grp_busquedaAvanzada.Visible;
+            this.grp_busquedaAvanzada.Visible = !estado;
         }
     }
 }

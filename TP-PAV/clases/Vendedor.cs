@@ -26,7 +26,6 @@ namespace TP_PAV.clases
             return db.ejecutarConsulta(consulta);
 
         }
-
         public DataTable insertarVendedor(string nombre, string apellido, string comision, int estado)
         {
             string consulta = @"INSERT INTO Vendedor (nombre_vendedor, apellido_vendedor, porcentaje_comision, habilitado) VALUES ('" + nombre + "','" + apellido + "','" + comision + "'," + estado + ")";
