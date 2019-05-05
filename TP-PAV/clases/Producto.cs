@@ -43,7 +43,7 @@ namespace TP_PAV.clases
         {
             string consulta = String.Format(@"UPDATE producto SET 
                                                      nombre_producto='{0}',cantidad_u_medida='{1}',
-                                                     id_u_medida='{2}',descripcion={3},id_tipo_producto={4},precio_unitario={5},
+                                                     id_u_medida='{2}',descripcion='{3}',id_tipo_producto={4},precio_unitario={5},
                                                      estado_producto={6} WHERE id_producto={7}",
                                         nombre, cantidad, unidad, descripcion, tipo, precio, estado, id);
 
