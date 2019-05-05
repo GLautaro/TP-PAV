@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,17 +41,9 @@
             this.lbl_descripcion = new System.Windows.Forms.Label();
             this.lbl_unidadMedida = new System.Windows.Forms.Label();
             this.lbl_estadoProducto = new System.Windows.Forms.Label();
-            this.txt_IdProducto = new System.Windows.Forms.TextBox();
-            this.txt_NombreProducto = new System.Windows.Forms.TextBox();
-            this.txt_cantidadProducto = new System.Windows.Forms.TextBox();
-            this.cmb_unidadMedida = new System.Windows.Forms.ComboBox();
-            this.txt_descripcionProducto = new System.Windows.Forms.TextBox();
-            this.txt_precioUnitario = new System.Windows.Forms.TextBox();
-            this.cmb_estadoProducto = new System.Windows.Forms.ComboBox();
             this.btn_agregarUdeMedida = new System.Windows.Forms.Button();
             this.btn_agregarTipo = new System.Windows.Forms.Button();
             this.btn_cancelarModProducto = new System.Windows.Forms.Button();
-            this.cmb_tipoProducto = new System.Windows.Forms.ComboBox();
             this.lbl_tipoProducto = new System.Windows.Forms.Label();
             this.btn_guardarModProducto = new System.Windows.Forms.Button();
             this.btn_busquedaAvanzadaProducto = new System.Windows.Forms.Button();
@@ -68,6 +61,14 @@
             this.id_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmb_estadoProducto = new TP_PAV.clases.ComboBoxHabilitado(this.components);
+            this.txt_precioUnitario = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.txt_descripcionProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.cmb_unidadMedida = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.txt_cantidadProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_NombreProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_IdProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,69 +153,6 @@
             this.lbl_estadoProducto.TabIndex = 8;
             this.lbl_estadoProducto.Text = "Estado del Producto";
             // 
-            // txt_IdProducto
-            // 
-            this.txt_IdProducto.Enabled = false;
-            this.txt_IdProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdProducto.Location = new System.Drawing.Point(978, 121);
-            this.txt_IdProducto.Name = "txt_IdProducto";
-            this.txt_IdProducto.Size = new System.Drawing.Size(143, 21);
-            this.txt_IdProducto.TabIndex = 9;
-            // 
-            // txt_NombreProducto
-            // 
-            this.txt_NombreProducto.Enabled = false;
-            this.txt_NombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NombreProducto.Location = new System.Drawing.Point(978, 163);
-            this.txt_NombreProducto.Name = "txt_NombreProducto";
-            this.txt_NombreProducto.Size = new System.Drawing.Size(143, 21);
-            this.txt_NombreProducto.TabIndex = 10;
-            // 
-            // txt_cantidadProducto
-            // 
-            this.txt_cantidadProducto.Enabled = false;
-            this.txt_cantidadProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cantidadProducto.Location = new System.Drawing.Point(978, 208);
-            this.txt_cantidadProducto.Name = "txt_cantidadProducto";
-            this.txt_cantidadProducto.Size = new System.Drawing.Size(143, 21);
-            this.txt_cantidadProducto.TabIndex = 11;
-            // 
-            // cmb_unidadMedida
-            // 
-            this.cmb_unidadMedida.Enabled = false;
-            this.cmb_unidadMedida.FormattingEnabled = true;
-            this.cmb_unidadMedida.Location = new System.Drawing.Point(978, 256);
-            this.cmb_unidadMedida.Name = "cmb_unidadMedida";
-            this.cmb_unidadMedida.Size = new System.Drawing.Size(143, 21);
-            this.cmb_unidadMedida.TabIndex = 12;
-            // 
-            // txt_descripcionProducto
-            // 
-            this.txt_descripcionProducto.Enabled = false;
-            this.txt_descripcionProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcionProducto.Location = new System.Drawing.Point(978, 301);
-            this.txt_descripcionProducto.Name = "txt_descripcionProducto";
-            this.txt_descripcionProducto.Size = new System.Drawing.Size(143, 21);
-            this.txt_descripcionProducto.TabIndex = 13;
-            // 
-            // txt_precioUnitario
-            // 
-            this.txt_precioUnitario.Enabled = false;
-            this.txt_precioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_precioUnitario.Location = new System.Drawing.Point(978, 391);
-            this.txt_precioUnitario.Name = "txt_precioUnitario";
-            this.txt_precioUnitario.Size = new System.Drawing.Size(143, 21);
-            this.txt_precioUnitario.TabIndex = 14;
-            // 
-            // cmb_estadoProducto
-            // 
-            this.cmb_estadoProducto.Enabled = false;
-            this.cmb_estadoProducto.FormattingEnabled = true;
-            this.cmb_estadoProducto.Location = new System.Drawing.Point(978, 431);
-            this.cmb_estadoProducto.Name = "cmb_estadoProducto";
-            this.cmb_estadoProducto.Size = new System.Drawing.Size(143, 21);
-            this.cmb_estadoProducto.TabIndex = 15;
-            // 
             // btn_agregarUdeMedida
             // 
             this.btn_agregarUdeMedida.Enabled = false;
@@ -250,15 +188,6 @@
             this.btn_cancelarModProducto.UseVisualStyleBackColor = true;
             this.btn_cancelarModProducto.Visible = false;
             this.btn_cancelarModProducto.Click += new System.EventHandler(this.btn_cancelarModProducto_Click);
-            // 
-            // cmb_tipoProducto
-            // 
-            this.cmb_tipoProducto.Enabled = false;
-            this.cmb_tipoProducto.FormattingEnabled = true;
-            this.cmb_tipoProducto.Location = new System.Drawing.Point(978, 345);
-            this.cmb_tipoProducto.Name = "cmb_tipoProducto";
-            this.cmb_tipoProducto.Size = new System.Drawing.Size(143, 21);
-            this.cmb_tipoProducto.TabIndex = 59;
             // 
             // lbl_tipoProducto
             // 
@@ -455,10 +384,125 @@
             this.estado_producto.Name = "estado_producto";
             this.estado_producto.ReadOnly = true;
             // 
+            // cmb_estadoProducto
+            // 
+            this.cmb_estadoProducto._campo = "estado_producto";
+            this.cmb_estadoProducto._mensaje_error = "No se selecciono un estado";
+            this.cmb_estadoProducto._nombre_tabla = "producto";
+            this.cmb_estadoProducto._validable = true;
+            this.cmb_estadoProducto.Enabled = false;
+            this.cmb_estadoProducto.FormattingEnabled = true;
+            this.cmb_estadoProducto.Items.AddRange(new object[] {
+            "No Habilitado",
+            "Habilitado"});
+            this.cmb_estadoProducto.Location = new System.Drawing.Point(978, 435);
+            this.cmb_estadoProducto.Name = "cmb_estadoProducto";
+            this.cmb_estadoProducto.Size = new System.Drawing.Size(143, 21);
+            this.cmb_estadoProducto.TabIndex = 75;
+            // 
+            // txt_precioUnitario
+            // 
+            this.txt_precioUnitario._campo = "precio_unitario";
+            this.txt_precioUnitario._mensaje_error = "No se ingreso el Precio Unitario del Producto";
+            this.txt_precioUnitario._nombre_tabla = "producto";
+            this.txt_precioUnitario._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_precioUnitario._validable = true;
+            this.txt_precioUnitario.Enabled = false;
+            this.txt_precioUnitario.Location = new System.Drawing.Point(978, 391);
+            this.txt_precioUnitario.Name = "txt_precioUnitario";
+            this.txt_precioUnitario.Size = new System.Drawing.Size(143, 20);
+            this.txt_precioUnitario.TabIndex = 73;
+            // 
+            // cmb_tipoProducto
+            // 
+            this.cmb_tipoProducto._campo = "id_tipo_producto";
+            this.cmb_tipoProducto._mensaje_error = "No se selecciono un Tipo de Producto";
+            this.cmb_tipoProducto._nombre_tabla = "producto";
+            this.cmb_tipoProducto._validable = true;
+            this.cmb_tipoProducto.Enabled = false;
+            this.cmb_tipoProducto.FormattingEnabled = true;
+            this.cmb_tipoProducto.Location = new System.Drawing.Point(978, 343);
+            this.cmb_tipoProducto.Name = "cmb_tipoProducto";
+            this.cmb_tipoProducto.Size = new System.Drawing.Size(143, 21);
+            this.cmb_tipoProducto.TabIndex = 72;
+            // 
+            // txt_descripcionProducto
+            // 
+            this.txt_descripcionProducto._campo = "descripcion";
+            this.txt_descripcionProducto._mensaje_error = "";
+            this.txt_descripcionProducto._nombre_tabla = "producto";
+            this.txt_descripcionProducto._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_descripcionProducto._validable = false;
+            this.txt_descripcionProducto.Enabled = false;
+            this.txt_descripcionProducto.Location = new System.Drawing.Point(978, 300);
+            this.txt_descripcionProducto.Name = "txt_descripcionProducto";
+            this.txt_descripcionProducto.Size = new System.Drawing.Size(143, 20);
+            this.txt_descripcionProducto.TabIndex = 71;
+            // 
+            // cmb_unidadMedida
+            // 
+            this.cmb_unidadMedida._campo = "id_u_medida";
+            this.cmb_unidadMedida._mensaje_error = "No se selecciono Unidad de Medida";
+            this.cmb_unidadMedida._nombre_tabla = "producto";
+            this.cmb_unidadMedida._validable = true;
+            this.cmb_unidadMedida.Enabled = false;
+            this.cmb_unidadMedida.FormattingEnabled = true;
+            this.cmb_unidadMedida.Location = new System.Drawing.Point(978, 252);
+            this.cmb_unidadMedida.Name = "cmb_unidadMedida";
+            this.cmb_unidadMedida.Size = new System.Drawing.Size(143, 21);
+            this.cmb_unidadMedida.TabIndex = 70;
+            // 
+            // txt_cantidadProducto
+            // 
+            this.txt_cantidadProducto._campo = "cantidad_u_medida";
+            this.txt_cantidadProducto._mensaje_error = "No se ingreso la Cantidad del Producto";
+            this.txt_cantidadProducto._nombre_tabla = "producto";
+            this.txt_cantidadProducto._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_cantidadProducto._validable = true;
+            this.txt_cantidadProducto.Enabled = false;
+            this.txt_cantidadProducto.Location = new System.Drawing.Point(978, 207);
+            this.txt_cantidadProducto.Name = "txt_cantidadProducto";
+            this.txt_cantidadProducto.Size = new System.Drawing.Size(143, 20);
+            this.txt_cantidadProducto.TabIndex = 69;
+            // 
+            // txt_NombreProducto
+            // 
+            this.txt_NombreProducto._campo = "nombre_producto";
+            this.txt_NombreProducto._mensaje_error = "No se ingreso el Nombre del Producto";
+            this.txt_NombreProducto._nombre_tabla = "producto";
+            this.txt_NombreProducto._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_NombreProducto._validable = true;
+            this.txt_NombreProducto.Enabled = false;
+            this.txt_NombreProducto.Location = new System.Drawing.Point(978, 162);
+            this.txt_NombreProducto.Name = "txt_NombreProducto";
+            this.txt_NombreProducto.Size = new System.Drawing.Size(143, 20);
+            this.txt_NombreProducto.TabIndex = 68;
+            // 
+            // txt_IdProducto
+            // 
+            this.txt_IdProducto._campo = null;
+            this.txt_IdProducto._mensaje_error = null;
+            this.txt_IdProducto._nombre_tabla = null;
+            this.txt_IdProducto._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_IdProducto._validable = false;
+            this.txt_IdProducto.Enabled = false;
+            this.txt_IdProducto.Location = new System.Drawing.Point(978, 117);
+            this.txt_IdProducto.Name = "txt_IdProducto";
+            this.txt_IdProducto.Size = new System.Drawing.Size(143, 20);
+            this.txt_IdProducto.TabIndex = 67;
+            // 
             // uc_ABM_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmb_estadoProducto);
+            this.Controls.Add(this.txt_precioUnitario);
+            this.Controls.Add(this.cmb_tipoProducto);
+            this.Controls.Add(this.txt_descripcionProducto);
+            this.Controls.Add(this.cmb_unidadMedida);
+            this.Controls.Add(this.txt_cantidadProducto);
+            this.Controls.Add(this.txt_NombreProducto);
+            this.Controls.Add(this.txt_IdProducto);
             this.Controls.Add(this.dgv_productos);
             this.Controls.Add(this.btn_busquedaAvanzadaProducto);
             this.Controls.Add(this.btn_buscarProducto);
@@ -466,19 +510,11 @@
             this.Controls.Add(this.lbl_buscarProducto);
             this.Controls.Add(this.btn_registrarProducto);
             this.Controls.Add(this.btn_modificarProducto);
-            this.Controls.Add(this.cmb_tipoProducto);
             this.Controls.Add(this.lbl_tipoProducto);
             this.Controls.Add(this.btn_cancelarModProducto);
             this.Controls.Add(this.btn_guardarModProducto);
             this.Controls.Add(this.btn_agregarTipo);
             this.Controls.Add(this.btn_agregarUdeMedida);
-            this.Controls.Add(this.cmb_estadoProducto);
-            this.Controls.Add(this.txt_precioUnitario);
-            this.Controls.Add(this.txt_descripcionProducto);
-            this.Controls.Add(this.cmb_unidadMedida);
-            this.Controls.Add(this.txt_cantidadProducto);
-            this.Controls.Add(this.txt_NombreProducto);
-            this.Controls.Add(this.txt_IdProducto);
             this.Controls.Add(this.lbl_estadoProducto);
             this.Controls.Add(this.lbl_unidadMedida);
             this.Controls.Add(this.lbl_descripcion);
@@ -507,17 +543,9 @@
         private System.Windows.Forms.Label lbl_descripcion;
         private System.Windows.Forms.Label lbl_unidadMedida;
         private System.Windows.Forms.Label lbl_estadoProducto;
-        private System.Windows.Forms.TextBox txt_IdProducto;
-        private System.Windows.Forms.TextBox txt_NombreProducto;
-        private System.Windows.Forms.TextBox txt_cantidadProducto;
-        private System.Windows.Forms.ComboBox cmb_unidadMedida;
-        private System.Windows.Forms.TextBox txt_descripcionProducto;
-        private System.Windows.Forms.TextBox txt_precioUnitario;
-        private System.Windows.Forms.ComboBox cmb_estadoProducto;
         private System.Windows.Forms.Button btn_agregarUdeMedida;
         private System.Windows.Forms.Button btn_agregarTipo;
         private System.Windows.Forms.Button btn_cancelarModProducto;
-        private System.Windows.Forms.ComboBox cmb_tipoProducto;
         private System.Windows.Forms.Label lbl_tipoProducto;
         private System.Windows.Forms.Button btn_guardarModProducto;
         private System.Windows.Forms.Button btn_busquedaAvanzadaProducto;
@@ -535,5 +563,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
+        private clases.TextBoxPersonal txt_IdProducto;
+        private clases.TextBoxPersonal txt_NombreProducto;
+        private clases.TextBoxPersonal txt_cantidadProducto;
+        private clases.ComboBoxPersonal cmb_unidadMedida;
+        private clases.TextBoxPersonal txt_descripcionProducto;
+        private clases.ComboBoxPersonal cmb_tipoProducto;
+        private clases.TextBoxPersonal txt_precioUnitario;
+        private clases.ComboBoxHabilitado cmb_estadoProducto;
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
+using TP_PAV.clases;
 
 namespace TP_PAV.clases
 {
@@ -25,14 +27,27 @@ namespace TP_PAV.clases
             return db.ejecutarConsulta(consulta);
         }
 
-/*        public DataTable insertarproducto(string nombre, string cantidad, string id_tipo_producto)
+        public Validar.estado_validacion validarProducto(Control.ControlCollection controles)
         {
-            string consulta = @"insert into producto (nombre_producto, cantidad_u_medida, 
-                                id_u_medida, descripcion, id_tipo_producto, precio_unitario, estado_producto) 
-                                values ('" + nombre + "','" + cantidad + "','" + id_tipo_producto + "')";
+            Validar validar = new Validar();
+            return validar.validarUC(controles);
+        }
+
+        public void grabarProducto (Control.ControlCollection controles)
+        {
+            db.insert_automatizado(controles, "producto");
+        }
+
+        public DataTable grabarModificaciones(string id, string nombre, string cantidad, string descripcion, string precio,
+                                         int estado, string tipo, string unidad)
+        {
+            string consulta = String.Format(@"UPDATE producto SET 
+                                                     nombre_producto='{0}',cantidad_u_medida='{1}',
+                                                     id_u_medida='{2}',descripcion={3},id_tipo_producto={4},precio_unitario={5},
+                                                     estado_producto={6} WHERE id_producto={7}",
+                                        nombre, cantidad, unidad, descripcion, tipo, precio, estado, id);
+
             return db.ejecutarConsulta(consulta);
         }
-*/       
-        
     }
 }

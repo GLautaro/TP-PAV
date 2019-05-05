@@ -46,11 +46,30 @@
   <ItemGroup>
     <Compile Include="clases\AccesoBD.cs" />
     <Compile Include="clases\Barrio.cs" />
+    <Compile Include="clases\ComboBoxHabilitado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clases\ComboBoxHabilitado.Designer.cs">
+      <DependentUpon>ComboBoxHabilitado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clases\ComboBoxPersonal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clases\ComboBoxPersonal.Designer.cs">
+      <DependentUpon>ComboBoxPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="clases\Franquicia.cs" />
     <Compile Include="clases\Producto.cs" />
+    <Compile Include="clases\TextBoxPersonal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clases\TextBoxPersonal.Designer.cs">
+      <DependentUpon>TextBoxPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="clases\TipoFranquicia.cs" />
     <Compile Include="clases\TipoProducto.cs" />
     <Compile Include="clases\UnidadMedida.cs" />
+    <Compile Include="clases\Validar.cs" />
     <Compile Include="clases\Vendedor.cs" />
     <Compile Include="formularios\Escritorio.cs">
       <SubType>Form</SubType>
