@@ -25,9 +25,19 @@ namespace TP_PAV
             SidePanel.Show();
             SidePanel.Height = btn_menuPedidos.Height;
             SidePanel.Top = btn_menuPedidos.Top;
-         
-        }
+            if (!main_panel.Controls.Contains(uc_Pedido.pub_instance))
+            {
+                main_panel.Controls.Add(uc_Pedido.pub_instance);
+                uc_Pedido.pub_instance.Dock = DockStyle.Fill;
+                uc_Pedido.pub_instance.BringToFront();
+            }
+            else
+            {
 
+                uc_Pedido.pub_instance.BringToFront();
+
+            }
+        }
       
 
         private void btn_menuProductos_Click(object sender, EventArgs e)

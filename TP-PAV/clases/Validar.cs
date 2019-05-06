@@ -56,6 +56,20 @@ namespace TP_PAV.clases
                         }
                     }
                 }
+                if (item.GetType().Name == "DateTimePickerPersonal")
+                {
+                   
+                    if (((DateTimePickerPersonal)item)._validable == true)
+                    {
+                        
+                        if (item.Text == "")
+                        {
+                            MessageBox.Show(((DateTimePickerPersonal)item)._mensaje_error);
+                            ((DateTimePickerPersonal)item).Focus();
+                            return estado_validacion.erroneo;
+                        }
+                    }
+                }
             }
             return estado_validacion.correcto;
         }
