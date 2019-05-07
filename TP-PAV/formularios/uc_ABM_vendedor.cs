@@ -54,7 +54,10 @@ namespace TP_PAV.formularios
 
         private void btn_nuevoVendedor_Click(object sender, EventArgs e)
         {
-            this.btn_modificar.Visible = false;
+            this.btn_modificar.Enabled = false;
+            this.btn_activarBusquedaAvanzada.Enabled = false;
+            this.grp_busquedaAvanzada.Visible = false;
+
             if (this.txt_legajo.Text != "")
             {
                 this.txt_legajo.Clear();
@@ -100,7 +103,11 @@ namespace TP_PAV.formularios
             //MessageBox.Show(this.dataGrid.CurrentRow.Cells[0].Value.ToString());
 
             //cargar los datos del dataGridView en el formulario de modificacion
-            this.btn_registrar.Visible = false;
+
+            this.grp_busquedaAvanzada.Visible = false;
+            this.btn_activarBusquedaAvanzada.Enabled = false;
+            this.btn_registrar.Enabled = false;
+
             this.txt_legajo.Enabled = false;
             this.txt_legajo.Text = this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString();
             this.txt_nombre.Text = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString();
@@ -148,12 +155,14 @@ namespace TP_PAV.formularios
                     this.label_informacion.ForeColor = Color.YellowGreen;
                     this.label_informacion.Text = "Usuario cargado correctamente";
                     this.label_informacion.Visible = true;
+                    
                 }
                 //desactivar botones de guardado y reactivar boton de modificacion y registro
                 this.btn_guardar.Visible = false;
                 this.btn_cancelar.Visible = false;
-                this.btn_registrar.Visible = true;
-                this.btn_modificar.Visible = true;
+                this.btn_registrar.Enabled = true;
+                this.btn_modificar.Enabled = true;
+                this.btn_activarBusquedaAvanzada.Enabled = true;
                 modificarEstadoCajasDeTexto(false);
             }
         }
@@ -167,9 +176,10 @@ namespace TP_PAV.formularios
             this.label_informacion.Visible = false;
             this.btn_guardar.Visible = false;
             this.btn_cancelar.Visible = false;
-            this.btn_modificar.Visible = true;
-            this.btn_registrar.Visible = true;
+            this.btn_modificar.Enabled = true;
+            this.btn_registrar.Enabled = true;
             modificarEstadoCajasDeTexto(false);
+            this.btn_activarBusquedaAvanzada.Enabled = true;
         }
 
         private void modificarEstadoCajasDeTexto(bool estado)
@@ -184,6 +194,13 @@ namespace TP_PAV.formularios
         {
             bool estado = this.grp_busquedaAvanzada.Visible;
             this.grp_busquedaAvanzada.Visible = !estado;
+            this.txt_busqAvan_nombre.Text = "";
+            this.txt_busqAvan_apellido.Text = "";
+            this.txt_busqAvan_nombre.Text = "";
+            this.txt_busqAvan_apellido.Text = "";
+            this.txt_busqAvan_comisionDesde.Text = "";
+            this.txt_busqAvan_comisionHasta.Text = "";
+            this.radio_busqAvan_todos.Checked = true;
         }
 
         private void chb_legajo_CheckedChanged(object sender, EventArgs e)
@@ -224,12 +241,6 @@ namespace TP_PAV.formularios
 
         private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
         {
-            this.txt_busqAvan_nombre.Text = "";
-            this.txt_busqAvan_apellido.Text = "";
-            this.txt_busqAvan_nombre.Text = "";
-            this.txt_busqAvan_apellido.Text = "";
-            this.txt_busqAvan_comisionDesde.Text = "";
-            this.txt_busqAvan_comisionHasta.Text = "";
             this.grp_busquedaAvanzada.Visible = false;
         }
 
