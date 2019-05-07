@@ -59,25 +59,28 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_habilitado = new System.Windows.Forms.ComboBox();
             this.grp_busquedaAvanzada = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.chb_comision = new System.Windows.Forms.CheckBox();
+            this.chb_NomyApe = new System.Windows.Forms.CheckBox();
+            this.chb_legajo = new System.Windows.Forms.CheckBox();
+            this.busqAvan_informacion = new System.Windows.Forms.Label();
+            this.btn_cerrarBusquedaAvanzada = new System.Windows.Forms.Button();
+            this.label_legajoHasta = new System.Windows.Forms.Label();
+            this.label_legajoDesde = new System.Windows.Forms.Label();
             this.btn_busquedaAvanzada = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radio_busqAvan_deshabilitados = new System.Windows.Forms.RadioButton();
+            this.radio_busqAvan_habilitados = new System.Windows.Forms.RadioButton();
+            this.radio_busqAvan_todos = new System.Windows.Forms.RadioButton();
+            this.label_disponibilidad = new System.Windows.Forms.Label();
+            this.txt_busqAvan_apellido = new System.Windows.Forms.TextBox();
+            this.label_comisionHasta = new System.Windows.Forms.Label();
+            this.label_comisionDesde = new System.Windows.Forms.Label();
+            this.label_apellido = new System.Windows.Forms.Label();
+            this.label_nombre = new System.Windows.Forms.Label();
+            this.txt_busqAvan_nombre = new System.Windows.Forms.TextBox();
+            this.txt_busqAvan_legajoDesde = new System.Windows.Forms.MaskedTextBox();
+            this.txt_busqAvan_legajoHasta = new System.Windows.Forms.MaskedTextBox();
+            this.txt_busqAvan_comisionDesde = new System.Windows.Forms.MaskedTextBox();
+            this.txt_busqAvan_comisionHasta = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
             this.grp_busquedaAvanzada.SuspendLayout();
             this.SuspendLayout();
@@ -384,198 +387,262 @@
             // grp_busquedaAvanzada
             // 
             this.grp_busquedaAvanzada.BackColor = System.Drawing.SystemColors.Control;
-            this.grp_busquedaAvanzada.Controls.Add(this.textBox5);
-            this.grp_busquedaAvanzada.Controls.Add(this.textBox6);
-            this.grp_busquedaAvanzada.Controls.Add(this.label14);
-            this.grp_busquedaAvanzada.Controls.Add(this.label15);
-            this.grp_busquedaAvanzada.Controls.Add(this.label16);
+            this.grp_busquedaAvanzada.Controls.Add(this.txt_busqAvan_comisionHasta);
+            this.grp_busquedaAvanzada.Controls.Add(this.txt_busqAvan_comisionDesde);
+            this.grp_busquedaAvanzada.Controls.Add(this.txt_busqAvan_legajoHasta);
+            this.grp_busquedaAvanzada.Controls.Add(this.txt_busqAvan_legajoDesde);
+            this.grp_busquedaAvanzada.Controls.Add(this.chb_comision);
+            this.grp_busquedaAvanzada.Controls.Add(this.chb_NomyApe);
+            this.grp_busquedaAvanzada.Controls.Add(this.chb_legajo);
+            this.grp_busquedaAvanzada.Controls.Add(this.busqAvan_informacion);
+            this.grp_busquedaAvanzada.Controls.Add(this.btn_cerrarBusquedaAvanzada);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_legajoHasta);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_legajoDesde);
             this.grp_busquedaAvanzada.Controls.Add(this.btn_busquedaAvanzada);
-            this.grp_busquedaAvanzada.Controls.Add(this.radioButton3);
-            this.grp_busquedaAvanzada.Controls.Add(this.radioButton2);
-            this.grp_busquedaAvanzada.Controls.Add(this.radioButton1);
-            this.grp_busquedaAvanzada.Controls.Add(this.label13);
-            this.grp_busquedaAvanzada.Controls.Add(this.textBox4);
-            this.grp_busquedaAvanzada.Controls.Add(this.textBox3);
-            this.grp_busquedaAvanzada.Controls.Add(this.textBox2);
-            this.grp_busquedaAvanzada.Controls.Add(this.label12);
-            this.grp_busquedaAvanzada.Controls.Add(this.label11);
-            this.grp_busquedaAvanzada.Controls.Add(this.label10);
-            this.grp_busquedaAvanzada.Controls.Add(this.label9);
-            this.grp_busquedaAvanzada.Controls.Add(this.label8);
-            this.grp_busquedaAvanzada.Controls.Add(this.textBox1);
-            this.grp_busquedaAvanzada.Location = new System.Drawing.Point(760, 200);
+            this.grp_busquedaAvanzada.Controls.Add(this.radio_busqAvan_deshabilitados);
+            this.grp_busquedaAvanzada.Controls.Add(this.radio_busqAvan_habilitados);
+            this.grp_busquedaAvanzada.Controls.Add(this.radio_busqAvan_todos);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_disponibilidad);
+            this.grp_busquedaAvanzada.Controls.Add(this.txt_busqAvan_apellido);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_comisionHasta);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_comisionDesde);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_apellido);
+            this.grp_busquedaAvanzada.Controls.Add(this.label_nombre);
+            this.grp_busquedaAvanzada.Controls.Add(this.txt_busqAvan_nombre);
+            this.grp_busquedaAvanzada.Location = new System.Drawing.Point(760, 83);
             this.grp_busquedaAvanzada.Name = "grp_busquedaAvanzada";
-            this.grp_busquedaAvanzada.Size = new System.Drawing.Size(332, 350);
+            this.grp_busquedaAvanzada.Size = new System.Drawing.Size(332, 467);
             this.grp_busquedaAvanzada.TabIndex = 58;
             this.grp_busquedaAvanzada.TabStop = false;
             this.grp_busquedaAvanzada.Text = "Busqueda Avanzada | Reportes";
             this.grp_busquedaAvanzada.Visible = false;
             // 
-            // textBox5
+            // chb_comision
             // 
-            this.textBox5.Location = new System.Drawing.Point(113, 69);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 64;
+            this.chb_comision.AccessibleName = "busqAvan_comision";
+            this.chb_comision.AutoSize = true;
+            this.chb_comision.Location = new System.Drawing.Point(6, 236);
+            this.chb_comision.Name = "chb_comision";
+            this.chb_comision.Size = new System.Drawing.Size(71, 17);
+            this.chb_comision.TabIndex = 61;
+            this.chb_comision.Text = "Comision:";
+            this.chb_comision.UseVisualStyleBackColor = true;
+            this.chb_comision.CheckedChanged += new System.EventHandler(this.chb_comision_CheckedChanged);
             // 
-            // textBox6
+            // chb_NomyApe
             // 
-            this.textBox6.Location = new System.Drawing.Point(113, 43);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 63;
+            this.chb_NomyApe.AccessibleName = "busqAvan_nomyape";
+            this.chb_NomyApe.AutoSize = true;
+            this.chb_NomyApe.Location = new System.Drawing.Point(7, 122);
+            this.chb_NomyApe.Name = "chb_NomyApe";
+            this.chb_NomyApe.Size = new System.Drawing.Size(113, 17);
+            this.chb_NomyApe.TabIndex = 60;
+            this.chb_NomyApe.Text = "Nombre y apellido:";
+            this.chb_NomyApe.UseVisualStyleBackColor = true;
+            this.chb_NomyApe.CheckedChanged += new System.EventHandler(this.chb_NomyApe_CheckedChanged);
             // 
-            // label14
+            // chb_legajo
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(54, 72);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 13);
-            this.label14.TabIndex = 62;
-            this.label14.Text = "Hasta";
+            this.chb_legajo.AccessibleName = "busqAvan_legajo";
+            this.chb_legajo.AutoSize = true;
+            this.chb_legajo.Location = new System.Drawing.Point(6, 19);
+            this.chb_legajo.Name = "chb_legajo";
+            this.chb_legajo.Size = new System.Drawing.Size(61, 17);
+            this.chb_legajo.TabIndex = 59;
+            this.chb_legajo.Text = "Legajo:";
+            this.chb_legajo.UseVisualStyleBackColor = true;
+            this.chb_legajo.CheckedChanged += new System.EventHandler(this.chb_legajo_CheckedChanged);
             // 
-            // label15
+            // busqAvan_informacion
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(54, 46);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 61;
-            this.label15.Text = "Desde: ";
+            this.busqAvan_informacion.AutoSize = true;
+            this.busqAvan_informacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busqAvan_informacion.ForeColor = System.Drawing.Color.Red;
+            this.busqAvan_informacion.Location = new System.Drawing.Point(34, 395);
+            this.busqAvan_informacion.Name = "busqAvan_informacion";
+            this.busqAvan_informacion.Size = new System.Drawing.Size(51, 16);
+            this.busqAvan_informacion.TabIndex = 67;
+            this.busqAvan_informacion.Text = "label7";
+            this.busqAvan_informacion.Visible = false;
             // 
-            // label16
+            // btn_cerrarBusquedaAvanzada
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 27);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(39, 13);
-            this.label16.TabIndex = 60;
-            this.label16.Text = "Legajo";
+            this.btn_cerrarBusquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrarBusquedaAvanzada.Location = new System.Drawing.Point(186, 431);
+            this.btn_cerrarBusquedaAvanzada.Name = "btn_cerrarBusquedaAvanzada";
+            this.btn_cerrarBusquedaAvanzada.Size = new System.Drawing.Size(67, 30);
+            this.btn_cerrarBusquedaAvanzada.TabIndex = 66;
+            this.btn_cerrarBusquedaAvanzada.Text = "Cerrar";
+            this.btn_cerrarBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btn_cerrarBusquedaAvanzada.Click += new System.EventHandler(this.btn_cerrarBusquedaAvanzada_Click);
+            // 
+            // label_legajoHasta
+            // 
+            this.label_legajoHasta.AutoSize = true;
+            this.label_legajoHasta.Location = new System.Drawing.Point(54, 72);
+            this.label_legajoHasta.Name = "label_legajoHasta";
+            this.label_legajoHasta.Size = new System.Drawing.Size(35, 13);
+            this.label_legajoHasta.TabIndex = 62;
+            this.label_legajoHasta.Text = "Hasta";
+            // 
+            // label_legajoDesde
+            // 
+            this.label_legajoDesde.AutoSize = true;
+            this.label_legajoDesde.Location = new System.Drawing.Point(54, 46);
+            this.label_legajoDesde.Name = "label_legajoDesde";
+            this.label_legajoDesde.Size = new System.Drawing.Size(44, 13);
+            this.label_legajoDesde.TabIndex = 61;
+            this.label_legajoDesde.Text = "Desde: ";
             // 
             // btn_busquedaAvanzada
             // 
             this.btn_busquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busquedaAvanzada.Location = new System.Drawing.Point(238, 305);
+            this.btn_busquedaAvanzada.Location = new System.Drawing.Point(259, 431);
             this.btn_busquedaAvanzada.Name = "btn_busquedaAvanzada";
             this.btn_busquedaAvanzada.Size = new System.Drawing.Size(67, 30);
             this.btn_busquedaAvanzada.TabIndex = 59;
             this.btn_busquedaAvanzada.Text = "Buscar";
             this.btn_busquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btn_busquedaAvanzada.Click += new System.EventHandler(this.btn_busquedaAvanzada_Click);
             // 
-            // radioButton3
+            // radio_busqAvan_deshabilitados
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(204, 278);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(89, 17);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Deshabilitado";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radio_busqAvan_deshabilitados.AccessibleName = "busqAvan_disponibilidad";
+            this.radio_busqAvan_deshabilitados.AutoSize = true;
+            this.radio_busqAvan_deshabilitados.Location = new System.Drawing.Point(208, 343);
+            this.radio_busqAvan_deshabilitados.Name = "radio_busqAvan_deshabilitados";
+            this.radio_busqAvan_deshabilitados.Size = new System.Drawing.Size(89, 17);
+            this.radio_busqAvan_deshabilitados.TabIndex = 12;
+            this.radio_busqAvan_deshabilitados.Text = "Deshabilitado";
+            this.radio_busqAvan_deshabilitados.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radio_busqAvan_habilitados
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(113, 278);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(72, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Habilitado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radio_busqAvan_habilitados.AccessibleName = "busqAvan_disponibilidad";
+            this.radio_busqAvan_habilitados.AutoSize = true;
+            this.radio_busqAvan_habilitados.Location = new System.Drawing.Point(117, 343);
+            this.radio_busqAvan_habilitados.Name = "radio_busqAvan_habilitados";
+            this.radio_busqAvan_habilitados.Size = new System.Drawing.Size(72, 17);
+            this.radio_busqAvan_habilitados.TabIndex = 11;
+            this.radio_busqAvan_habilitados.Text = "Habilitado";
+            this.radio_busqAvan_habilitados.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radio_busqAvan_todos
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(49, 278);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Todos";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radio_busqAvan_todos.AccessibleName = "busqAvan_disponibilidad";
+            this.radio_busqAvan_todos.AutoSize = true;
+            this.radio_busqAvan_todos.Checked = true;
+            this.radio_busqAvan_todos.Location = new System.Drawing.Point(53, 343);
+            this.radio_busqAvan_todos.Name = "radio_busqAvan_todos";
+            this.radio_busqAvan_todos.Size = new System.Drawing.Size(55, 17);
+            this.radio_busqAvan_todos.TabIndex = 10;
+            this.radio_busqAvan_todos.TabStop = true;
+            this.radio_busqAvan_todos.Text = "Todos";
+            this.radio_busqAvan_todos.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // label_disponibilidad
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 246);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Disponibilidad";
+            this.label_disponibilidad.AccessibleName = "busqAvan_disponibilidad";
+            this.label_disponibilidad.AutoSize = true;
+            this.label_disponibilidad.Location = new System.Drawing.Point(10, 322);
+            this.label_disponibilidad.Name = "label_disponibilidad";
+            this.label_disponibilidad.Size = new System.Drawing.Size(75, 13);
+            this.label_disponibilidad.TabIndex = 9;
+            this.label_disponibilidad.Text = "Disponibilidad:";
             // 
-            // textBox4
+            // txt_busqAvan_apellido
             // 
-            this.textBox4.Location = new System.Drawing.Point(113, 207);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 8;
+            this.txt_busqAvan_apellido.AccessibleName = "busqAvan_nomyape";
+            this.txt_busqAvan_apellido.Enabled = false;
+            this.txt_busqAvan_apellido.Location = new System.Drawing.Point(116, 170);
+            this.txt_busqAvan_apellido.Name = "txt_busqAvan_apellido";
+            this.txt_busqAvan_apellido.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_apellido.TabIndex = 6;
             // 
-            // textBox3
+            // label_comisionHasta
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.label_comisionHasta.AutoSize = true;
+            this.label_comisionHasta.Location = new System.Drawing.Point(57, 288);
+            this.label_comisionHasta.Name = "label_comisionHasta";
+            this.label_comisionHasta.Size = new System.Drawing.Size(35, 13);
+            this.label_comisionHasta.TabIndex = 5;
+            this.label_comisionHasta.Text = "Hasta";
             // 
-            // textBox2
+            // label_comisionDesde
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.label_comisionDesde.AutoSize = true;
+            this.label_comisionDesde.Location = new System.Drawing.Point(57, 262);
+            this.label_comisionDesde.Name = "label_comisionDesde";
+            this.label_comisionDesde.Size = new System.Drawing.Size(44, 13);
+            this.label_comisionDesde.TabIndex = 4;
+            this.label_comisionDesde.Text = "Desde: ";
             // 
-            // label12
+            // label_apellido
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(54, 210);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Hasta";
+            this.label_apellido.AutoSize = true;
+            this.label_apellido.Location = new System.Drawing.Point(46, 173);
+            this.label_apellido.Name = "label_apellido";
+            this.label_apellido.Size = new System.Drawing.Size(44, 13);
+            this.label_apellido.TabIndex = 2;
+            this.label_apellido.Text = "Apellido";
             // 
-            // label11
+            // label_nombre
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(54, 184);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Desde: ";
+            this.label_nombre.AutoSize = true;
+            this.label_nombre.Location = new System.Drawing.Point(46, 147);
+            this.label_nombre.Name = "label_nombre";
+            this.label_nombre.Size = new System.Drawing.Size(44, 13);
+            this.label_nombre.TabIndex = 1;
+            this.label_nombre.Text = "Nombre";
             // 
-            // label10
+            // txt_busqAvan_nombre
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 163);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Comision";
+            this.txt_busqAvan_nombre.AccessibleName = "busqAvan_nomyape";
+            this.txt_busqAvan_nombre.Enabled = false;
+            this.txt_busqAvan_nombre.Location = new System.Drawing.Point(116, 144);
+            this.txt_busqAvan_nombre.Name = "txt_busqAvan_nombre";
+            this.txt_busqAvan_nombre.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_nombre.TabIndex = 0;
             // 
-            // label9
+            // txt_busqAvan_legajoDesde
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 138);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Apellido";
+            this.txt_busqAvan_legajoDesde.Enabled = false;
+            this.txt_busqAvan_legajoDesde.Location = new System.Drawing.Point(113, 43);
+            this.txt_busqAvan_legajoDesde.Mask = "99999";
+            this.txt_busqAvan_legajoDesde.Name = "txt_busqAvan_legajoDesde";
+            this.txt_busqAvan_legajoDesde.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_legajoDesde.TabIndex = 68;
+            this.txt_busqAvan_legajoDesde.ValidatingType = typeof(int);
             // 
-            // label8
+            // txt_busqAvan_legajoHasta
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Nombre";
+            this.txt_busqAvan_legajoHasta.Enabled = false;
+            this.txt_busqAvan_legajoHasta.Location = new System.Drawing.Point(113, 69);
+            this.txt_busqAvan_legajoHasta.Mask = "99999";
+            this.txt_busqAvan_legajoHasta.Name = "txt_busqAvan_legajoHasta";
+            this.txt_busqAvan_legajoHasta.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_legajoHasta.TabIndex = 69;
+            this.txt_busqAvan_legajoHasta.ValidatingType = typeof(int);
             // 
-            // textBox1
+            // txt_busqAvan_comisionDesde
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txt_busqAvan_comisionDesde.Enabled = false;
+            this.txt_busqAvan_comisionDesde.Location = new System.Drawing.Point(117, 256);
+            this.txt_busqAvan_comisionDesde.Mask = "99999";
+            this.txt_busqAvan_comisionDesde.Name = "txt_busqAvan_comisionDesde";
+            this.txt_busqAvan_comisionDesde.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_comisionDesde.TabIndex = 70;
+            this.txt_busqAvan_comisionDesde.ValidatingType = typeof(int);
+            // 
+            // txt_busqAvan_comisionHasta
+            // 
+            this.txt_busqAvan_comisionHasta.Enabled = false;
+            this.txt_busqAvan_comisionHasta.Location = new System.Drawing.Point(117, 285);
+            this.txt_busqAvan_comisionHasta.Mask = "99999";
+            this.txt_busqAvan_comisionHasta.Name = "txt_busqAvan_comisionHasta";
+            this.txt_busqAvan_comisionHasta.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_comisionHasta.TabIndex = 71;
+            this.txt_busqAvan_comisionHasta.ValidatingType = typeof(int);
             // 
             // uc_ABM_Vendedor
             // 
@@ -643,24 +710,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
         private System.Windows.Forms.GroupBox grp_busquedaAvanzada;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radio_busqAvan_habilitados;
+        private System.Windows.Forms.RadioButton radio_busqAvan_todos;
+        private System.Windows.Forms.Label label_disponibilidad;
+        private System.Windows.Forms.TextBox txt_busqAvan_apellido;
+        private System.Windows.Forms.Label label_comisionHasta;
+        private System.Windows.Forms.Label label_comisionDesde;
+        private System.Windows.Forms.Label label_apellido;
+        private System.Windows.Forms.Label label_nombre;
+        private System.Windows.Forms.TextBox txt_busqAvan_nombre;
         private System.Windows.Forms.Button btn_busquedaAvanzada;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RadioButton radio_busqAvan_deshabilitados;
+        private System.Windows.Forms.Label label_legajoHasta;
+        private System.Windows.Forms.Label label_legajoDesde;
+        private System.Windows.Forms.CheckBox chb_comision;
+        private System.Windows.Forms.CheckBox chb_NomyApe;
+        private System.Windows.Forms.CheckBox chb_legajo;
+        private System.Windows.Forms.Button btn_cerrarBusquedaAvanzada;
+        private System.Windows.Forms.Label busqAvan_informacion;
+        private System.Windows.Forms.MaskedTextBox txt_busqAvan_legajoDesde;
+        private System.Windows.Forms.MaskedTextBox txt_busqAvan_comisionHasta;
+        private System.Windows.Forms.MaskedTextBox txt_busqAvan_comisionDesde;
+        private System.Windows.Forms.MaskedTextBox txt_busqAvan_legajoHasta;
     }
 }

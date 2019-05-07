@@ -185,5 +185,101 @@ namespace TP_PAV.formularios
             bool estado = this.grp_busquedaAvanzada.Visible;
             this.grp_busquedaAvanzada.Visible = !estado;
         }
+
+        private void chb_legajo_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = this.chb_legajo.Checked;
+            this.txt_busqAvan_legajoDesde.Enabled = estado;
+            this.txt_busqAvan_legajoHasta.Enabled = estado;
+            if (estado == false)
+            {
+                this.txt_busqAvan_legajoDesde.Text = "";
+                this.txt_busqAvan_legajoHasta.Text = "";
+            }
+        }
+
+        private void chb_NomyApe_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = this.chb_NomyApe.Checked;
+            this.txt_busqAvan_nombre.Enabled = estado;
+            this.txt_busqAvan_apellido.Enabled = estado;
+            if (estado == false)
+            {
+                this.txt_busqAvan_nombre.Text = "";
+                this.txt_busqAvan_apellido.Text = "";
+            }
+        }
+
+        private void chb_comision_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = this.chb_comision.Checked;
+            this.txt_busqAvan_comisionDesde.Enabled = estado;
+            this.txt_busqAvan_comisionHasta.Enabled = estado;
+            if (estado == false)
+            {
+                this.txt_busqAvan_comisionDesde.Text = "";
+                this.txt_busqAvan_comisionHasta.Text = "";
+            }
+        }
+
+        private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            this.txt_busqAvan_nombre.Text = "";
+            this.txt_busqAvan_apellido.Text = "";
+            this.txt_busqAvan_nombre.Text = "";
+            this.txt_busqAvan_apellido.Text = "";
+            this.txt_busqAvan_comisionDesde.Text = "";
+            this.txt_busqAvan_comisionHasta.Text = "";
+            this.grp_busquedaAvanzada.Visible = false;
+        }
+
+        private void btn_busquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            if (validarBusquedaAvanzada())
+            {
+                this.busqAvan_informacion.Visible = false;
+                this.dgv_vendedores.DataSource = vendedor.busquedaAvanzada(this.grp_busquedaAvanzada.Controls);
+            }
+            else
+            {
+                this.busqAvan_informacion.Visible = true;
+            }
+            
+        }
+
+        private bool validarBusquedaAvanzada()
+        {
+            if (this.chb_legajo.Checked)
+            {
+                if (this.txt_busqAvan_legajoDesde.Text == "" || this.txt_busqAvan_legajoHasta.Text == "")
+                {
+                    //avisar de espacios vacios.
+                    this.busqAvan_informacion.Text = "LEGAJO: Ingrese ambos los limites \n para la busqueda";
+                    return false;
+                }
+                else if (int.Parse(this.txt_busqAvan_legajoDesde.Text) > int.Parse(this.txt_busqAvan_legajoHasta.Text))
+                {
+                    //Legajo desde no puede ser mayor que Legajo hasta
+                    this.busqAvan_informacion.Text = "LEGAJO: El limite inferior debe ser \n menor que el limite superior";
+                    return false;
+                }
+            }
+            if (this.chb_comision.Checked)
+            {
+                if (this.txt_busqAvan_comisionDesde.Text == "" || this.txt_busqAvan_comisionHasta.Text == "")
+                {
+                    //avisar de espacios vacios.
+                    this.busqAvan_informacion.Text = "COMISION: Ingrese ambos los limites \n para la busqueda";
+                    return false;
+                }
+                else if (int.Parse(this.txt_busqAvan_comisionDesde.Text) > int.Parse(this.txt_busqAvan_comisionHasta.Text))
+                {
+                    //comision desde no puede ser mayor que comision hasta
+                    this.busqAvan_informacion.Text = "COMISION: El limite inferior debe ser \n menor que el limite superior";
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
