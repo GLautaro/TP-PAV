@@ -50,7 +50,7 @@ namespace TP_PAV.formularios
 
         private void uc_ABM_Producto_Load(object sender, EventArgs e)
         {
-            this.dgv_productos.DataSource = producto.traerProductos();
+            this.dgv_productos.DataSource = producto.recuperarProductos();
             this.cmb_unidadMedida.cargar("unidad_medida", "id_u_medida", "nombre_u_medida");
             this.cmb_tipoProducto.cargar("tipo_producto", "id_tipo_producto", "nombre_tipo_producto");
             cleanTextBox();
@@ -127,7 +127,7 @@ namespace TP_PAV.formularios
 
                 }
             }
-            this.dgv_productos.DataSource = producto.traerProductos();
+            this.dgv_productos.DataSource = producto.recuperarProductos();
             cleanTextBox();
             modificarCajasDeTxt(false);
             this.btn_guardarModProducto.Visible = false;

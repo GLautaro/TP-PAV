@@ -53,14 +53,6 @@
             this.btn_registrarProducto = new System.Windows.Forms.Button();
             this.btn_modificarProducto = new System.Windows.Forms.Button();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmb_estadoProducto = new TP_PAV.clases.ComboBoxHabilitado(this.components);
             this.txt_precioUnitario = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
@@ -69,6 +61,16 @@
             this.txt_cantidadProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_NombreProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_IdProducto = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -293,8 +295,10 @@
             this.nombre_producto,
             this.cantidad_u_medida,
             this.id_u_medida,
+            this.nombre_u_medida,
             this.descripcion,
             this.id_tipo_producto,
+            this.nombre_tipo_producto,
             this.precio_unitario,
             this.estado_producto});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -327,62 +331,6 @@
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_productos.Size = new System.Drawing.Size(700, 350);
             this.dgv_productos.TabIndex = 66;
-            // 
-            // id_producto
-            // 
-            this.id_producto.DataPropertyName = "id_producto";
-            this.id_producto.HeaderText = "ID Producto";
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
-            // 
-            // nombre_producto
-            // 
-            this.nombre_producto.DataPropertyName = "nombre_producto";
-            this.nombre_producto.HeaderText = "Nombre";
-            this.nombre_producto.Name = "nombre_producto";
-            this.nombre_producto.ReadOnly = true;
-            // 
-            // cantidad_u_medida
-            // 
-            this.cantidad_u_medida.DataPropertyName = "cantidad_u_medida";
-            this.cantidad_u_medida.HeaderText = "Cantidad";
-            this.cantidad_u_medida.Name = "cantidad_u_medida";
-            this.cantidad_u_medida.ReadOnly = true;
-            // 
-            // id_u_medida
-            // 
-            this.id_u_medida.DataPropertyName = "id_u_medida";
-            this.id_u_medida.HeaderText = "Unidad de Medida";
-            this.id_u_medida.Name = "id_u_medida";
-            this.id_u_medida.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // id_tipo_producto
-            // 
-            this.id_tipo_producto.DataPropertyName = "id_tipo_producto";
-            this.id_tipo_producto.HeaderText = "Tipo";
-            this.id_tipo_producto.Name = "id_tipo_producto";
-            this.id_tipo_producto.ReadOnly = true;
-            // 
-            // precio_unitario
-            // 
-            this.precio_unitario.DataPropertyName = "precio_unitario";
-            this.precio_unitario.HeaderText = "Precio Unitario";
-            this.precio_unitario.Name = "precio_unitario";
-            this.precio_unitario.ReadOnly = true;
-            // 
-            // estado_producto
-            // 
-            this.estado_producto.DataPropertyName = "estado_producto";
-            this.estado_producto.HeaderText = "Estado ";
-            this.estado_producto.Name = "estado_producto";
-            this.estado_producto.ReadOnly = true;
             // 
             // cmb_estadoProducto
             // 
@@ -491,6 +439,79 @@
             this.txt_IdProducto.Size = new System.Drawing.Size(143, 20);
             this.txt_IdProducto.TabIndex = 67;
             // 
+            // id_producto
+            // 
+            this.id_producto.DataPropertyName = "id_producto";
+            this.id_producto.HeaderText = "ID Producto";
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            // 
+            // nombre_producto
+            // 
+            this.nombre_producto.DataPropertyName = "nombre_producto";
+            this.nombre_producto.HeaderText = "Nombre";
+            this.nombre_producto.Name = "nombre_producto";
+            this.nombre_producto.ReadOnly = true;
+            // 
+            // cantidad_u_medida
+            // 
+            this.cantidad_u_medida.DataPropertyName = "cantidad_u_medida";
+            this.cantidad_u_medida.HeaderText = "Cantidad";
+            this.cantidad_u_medida.Name = "cantidad_u_medida";
+            this.cantidad_u_medida.ReadOnly = true;
+            // 
+            // id_u_medida
+            // 
+            this.id_u_medida.DataPropertyName = "id_u_medida";
+            this.id_u_medida.HeaderText = "Unidad de Medida";
+            this.id_u_medida.Name = "id_u_medida";
+            this.id_u_medida.ReadOnly = true;
+            this.id_u_medida.Visible = false;
+            // 
+            // nombre_u_medida
+            // 
+            this.nombre_u_medida.DataPropertyName = "nombre_u_medida";
+            this.nombre_u_medida.HeaderText = "Unidad de Medida";
+            this.nombre_u_medida.Name = "nombre_u_medida";
+            this.nombre_u_medida.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // id_tipo_producto
+            // 
+            this.id_tipo_producto.DataPropertyName = "id_tipo_producto";
+            this.id_tipo_producto.HeaderText = "Tipo";
+            this.id_tipo_producto.Name = "id_tipo_producto";
+            this.id_tipo_producto.ReadOnly = true;
+            this.id_tipo_producto.Visible = false;
+            // 
+            // nombre_tipo_producto
+            // 
+            this.nombre_tipo_producto.DataPropertyName = "nombre_tipo_producto";
+            this.nombre_tipo_producto.HeaderText = "Tipo de Producto";
+            this.nombre_tipo_producto.Name = "nombre_tipo_producto";
+            this.nombre_tipo_producto.ReadOnly = true;
+            // 
+            // precio_unitario
+            // 
+            this.precio_unitario.DataPropertyName = "precio_unitario";
+            this.precio_unitario.HeaderText = "Precio Unitario";
+            this.precio_unitario.Name = "precio_unitario";
+            this.precio_unitario.ReadOnly = true;
+            // 
+            // estado_producto
+            // 
+            this.estado_producto.DataPropertyName = "estado_producto";
+            this.estado_producto.HeaderText = "Estado ";
+            this.estado_producto.Name = "estado_producto";
+            this.estado_producto.ReadOnly = true;
+            this.estado_producto.Visible = false;
+            // 
             // uc_ABM_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,14 +576,6 @@
         private System.Windows.Forms.Button btn_registrarProducto;
         private System.Windows.Forms.Button btn_modificarProducto;
         private System.Windows.Forms.DataGridView dgv_productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
         private clases.TextBoxPersonal txt_IdProducto;
         private clases.TextBoxPersonal txt_NombreProducto;
         private clases.TextBoxPersonal txt_cantidadProducto;
@@ -571,5 +584,15 @@
         private clases.ComboBoxPersonal cmb_tipoProducto;
         private clases.TextBoxPersonal txt_precioUnitario;
         private clases.ComboBoxHabilitado cmb_estadoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
     }
 }

@@ -12,14 +12,14 @@ namespace TP_PAV.clases
     class Producto
     {
         AccesoBD db = new AccesoBD();
-
+        /*
         public DataTable traerProductos()
         {
             string consulta = @"SELECT * FROM producto";
 
             return db.ejecutarConsulta(consulta);
         }
-
+        */
         public DataTable buscarProductos(string texto)
         {
             string consulta = @"SELECT * FROM producto WHERE nombre_producto LIKE '%" + texto + "%' OR id_producto LIKE '%" + texto + "%';";
@@ -48,6 +48,23 @@ namespace TP_PAV.clases
                                         nombre, cantidad, unidad, descripcion, tipo, precio, estado, id);
 
             return db.ejecutarConsulta(consulta);
+        }
+
+        // TODO: Terminar funcion
+
+
+        public DataTable recuperarProductos() 
+        {
+            string sql = @"SELECT p.id_producto, p.nombre_producto, p.cantidad_u_medida,
+                                  u.nombre_u_medida, p.descripcion, u.id_u_medida, p.estado_producto, 
+                                  t.nombre_tipo_producto, p.precio_unitario, t.id_tipo_producto
+                                    FROM producto p
+                                        JOIN unidad_medida u ON p.id_u_medida=u.id_u_medida
+                                        JOIN tipo_producto t ON p.id_tipo_producto=t.id_tipo_producto 
+                                    WHERE p.estado_producto=1";
+
+            return db.ejecutarConsulta(sql);
+
         }
     }
 }
