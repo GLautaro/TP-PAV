@@ -33,6 +33,7 @@ namespace TP_PAV.formularios
         private void uc_ABM_vendedor_Load(object sender, EventArgs e)
         {
             this.dgv_vendedores.DataSource = vendedor.traerVendedores();
+            actualizarBotonDisponibilidad();
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace TP_PAV.formularios
         private void txt_busqueda_KeyUp(object sender, KeyEventArgs e)
         {
             this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_busqueda.Text);
+            actualizarBotonDisponibilidad();
         }
 
         private void ocultar_label_informacion(object sender, KeyEventArgs e)
@@ -147,6 +149,7 @@ namespace TP_PAV.formularios
                     vendedor.insertarVendedor(this.txt_nombre.Text, this.txt_apellido.Text, this.txt_comision.Text, this.cmb_habilitado.SelectedIndex);
                     this.txt_legajo.Enabled = false;
                     this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.txt_nombre.Text);
+                    actualizarBotonDisponibilidad();
                     this.txt_legajo.Clear();
                     this.txt_nombre.Clear();
                     this.txt_apellido.Clear();
@@ -158,6 +161,7 @@ namespace TP_PAV.formularios
                     
                 }
                 //desactivar botones de guardado y reactivar boton de modificacion y registro
+                this.btn_guardar.Visible = false;
                 this.btn_guardar.Visible = false;
                 this.btn_cancelar.Visible = false;
                 this.btn_registrar.Enabled = true;
@@ -291,6 +295,47 @@ namespace TP_PAV.formularios
                 }
             }
             return true;
+        }
+
+        private void btn_disponibilidad_Click(object sender, EventArgs e)
+        {
+            string nombreVendedor = this.dgv_vendedores.CurrentRow.Cells[1].Value.ToString()+" "+this.dgv_vendedores.CurrentRow.Cells[2].Value.ToString();
+            DialogResult result = DialogResult.No;
+            int estado = 0;
+            if (this.dgv_vendedores.CurrentRow.Cells[4].Value.ToString() == "True")
+            {
+                result = MessageBox.Show("¿Desea desactivar al vendedor(a) " + nombreVendedor + " ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                estado = 0;
+            }
+            else
+            {
+                result = MessageBox.Show("¿Desea activar el vendedor(a)  " + nombreVendedor + " ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                estado = 1;
+            }
+
+            if (result == DialogResult.Yes)
+            {
+                vendedor.modificarDisponibilidadVendedor(this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString(), estado);
+                this.dgv_vendedores.DataSource = vendedor.buscarVendedores(this.dgv_vendedores.CurrentRow.Cells[0].Value.ToString());
+                actualizarBotonDisponibilidad();
+            }
+        }
+
+        private void dgv_vendedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            actualizarBotonDisponibilidad();
+        }
+
+        private void actualizarBotonDisponibilidad()
+        {
+            if (this.dgv_vendedores.CurrentRow.Cells[4].Value.ToString() == "True")
+            {
+                this.btn_disponibilidad.Text = "Desactivar";
+            }
+            else
+            {
+                this.btn_disponibilidad.Text = "Activar";
+            }
         }
     }
 }

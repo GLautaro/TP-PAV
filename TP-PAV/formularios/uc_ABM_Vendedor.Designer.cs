@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.txt_comision = new System.Windows.Forms.TextBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
@@ -59,6 +59,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_habilitado = new System.Windows.Forms.ComboBox();
             this.grp_busquedaAvanzada = new System.Windows.Forms.GroupBox();
+            this.txt_busqAvan_comisionHasta = new System.Windows.Forms.MaskedTextBox();
+            this.txt_busqAvan_comisionDesde = new System.Windows.Forms.MaskedTextBox();
+            this.txt_busqAvan_legajoHasta = new System.Windows.Forms.MaskedTextBox();
+            this.txt_busqAvan_legajoDesde = new System.Windows.Forms.MaskedTextBox();
             this.chb_comision = new System.Windows.Forms.CheckBox();
             this.chb_NomyApe = new System.Windows.Forms.CheckBox();
             this.chb_legajo = new System.Windows.Forms.CheckBox();
@@ -77,10 +81,7 @@
             this.label_apellido = new System.Windows.Forms.Label();
             this.label_nombre = new System.Windows.Forms.Label();
             this.txt_busqAvan_nombre = new System.Windows.Forms.TextBox();
-            this.txt_busqAvan_legajoDesde = new System.Windows.Forms.MaskedTextBox();
-            this.txt_busqAvan_legajoHasta = new System.Windows.Forms.MaskedTextBox();
-            this.txt_busqAvan_comisionDesde = new System.Windows.Forms.MaskedTextBox();
-            this.txt_busqAvan_comisionHasta = new System.Windows.Forms.MaskedTextBox();
+            this.btn_disponibilidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
             this.grp_busquedaAvanzada.SuspendLayout();
             this.SuspendLayout();
@@ -236,14 +237,14 @@
             this.dgv_vendedores.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_vendedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_vendedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_vendedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -251,36 +252,37 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_vendedores.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_vendedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_vendedores.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_vendedores.Location = new System.Drawing.Point(15, 200);
             this.dgv_vendedores.MultiSelect = false;
             this.dgv_vendedores.Name = "dgv_vendedores";
             this.dgv_vendedores.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_vendedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_vendedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_vendedores.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_vendedores.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_vendedores.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_vendedores.Size = new System.Drawing.Size(700, 350);
             this.dgv_vendedores.TabIndex = 51;
+            this.dgv_vendedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vendedores_CellClick);
             // 
             // Column1
             // 
@@ -416,6 +418,46 @@
             this.grp_busquedaAvanzada.TabStop = false;
             this.grp_busquedaAvanzada.Text = "Busqueda Avanzada | Reportes";
             this.grp_busquedaAvanzada.Visible = false;
+            // 
+            // txt_busqAvan_comisionHasta
+            // 
+            this.txt_busqAvan_comisionHasta.Enabled = false;
+            this.txt_busqAvan_comisionHasta.Location = new System.Drawing.Point(117, 285);
+            this.txt_busqAvan_comisionHasta.Mask = "99999";
+            this.txt_busqAvan_comisionHasta.Name = "txt_busqAvan_comisionHasta";
+            this.txt_busqAvan_comisionHasta.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_comisionHasta.TabIndex = 71;
+            this.txt_busqAvan_comisionHasta.ValidatingType = typeof(int);
+            // 
+            // txt_busqAvan_comisionDesde
+            // 
+            this.txt_busqAvan_comisionDesde.Enabled = false;
+            this.txt_busqAvan_comisionDesde.Location = new System.Drawing.Point(117, 256);
+            this.txt_busqAvan_comisionDesde.Mask = "99999";
+            this.txt_busqAvan_comisionDesde.Name = "txt_busqAvan_comisionDesde";
+            this.txt_busqAvan_comisionDesde.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_comisionDesde.TabIndex = 70;
+            this.txt_busqAvan_comisionDesde.ValidatingType = typeof(int);
+            // 
+            // txt_busqAvan_legajoHasta
+            // 
+            this.txt_busqAvan_legajoHasta.Enabled = false;
+            this.txt_busqAvan_legajoHasta.Location = new System.Drawing.Point(113, 69);
+            this.txt_busqAvan_legajoHasta.Mask = "99999";
+            this.txt_busqAvan_legajoHasta.Name = "txt_busqAvan_legajoHasta";
+            this.txt_busqAvan_legajoHasta.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_legajoHasta.TabIndex = 69;
+            this.txt_busqAvan_legajoHasta.ValidatingType = typeof(int);
+            // 
+            // txt_busqAvan_legajoDesde
+            // 
+            this.txt_busqAvan_legajoDesde.Enabled = false;
+            this.txt_busqAvan_legajoDesde.Location = new System.Drawing.Point(113, 43);
+            this.txt_busqAvan_legajoDesde.Mask = "99999";
+            this.txt_busqAvan_legajoDesde.Name = "txt_busqAvan_legajoDesde";
+            this.txt_busqAvan_legajoDesde.Size = new System.Drawing.Size(100, 20);
+            this.txt_busqAvan_legajoDesde.TabIndex = 68;
+            this.txt_busqAvan_legajoDesde.ValidatingType = typeof(int);
             // 
             // chb_comision
             // 
@@ -604,50 +646,22 @@
             this.txt_busqAvan_nombre.Size = new System.Drawing.Size(100, 20);
             this.txt_busqAvan_nombre.TabIndex = 0;
             // 
-            // txt_busqAvan_legajoDesde
+            // btn_disponibilidad
             // 
-            this.txt_busqAvan_legajoDesde.Enabled = false;
-            this.txt_busqAvan_legajoDesde.Location = new System.Drawing.Point(113, 43);
-            this.txt_busqAvan_legajoDesde.Mask = "99999";
-            this.txt_busqAvan_legajoDesde.Name = "txt_busqAvan_legajoDesde";
-            this.txt_busqAvan_legajoDesde.Size = new System.Drawing.Size(100, 20);
-            this.txt_busqAvan_legajoDesde.TabIndex = 68;
-            this.txt_busqAvan_legajoDesde.ValidatingType = typeof(int);
-            // 
-            // txt_busqAvan_legajoHasta
-            // 
-            this.txt_busqAvan_legajoHasta.Enabled = false;
-            this.txt_busqAvan_legajoHasta.Location = new System.Drawing.Point(113, 69);
-            this.txt_busqAvan_legajoHasta.Mask = "99999";
-            this.txt_busqAvan_legajoHasta.Name = "txt_busqAvan_legajoHasta";
-            this.txt_busqAvan_legajoHasta.Size = new System.Drawing.Size(100, 20);
-            this.txt_busqAvan_legajoHasta.TabIndex = 69;
-            this.txt_busqAvan_legajoHasta.ValidatingType = typeof(int);
-            // 
-            // txt_busqAvan_comisionDesde
-            // 
-            this.txt_busqAvan_comisionDesde.Enabled = false;
-            this.txt_busqAvan_comisionDesde.Location = new System.Drawing.Point(117, 256);
-            this.txt_busqAvan_comisionDesde.Mask = "99999";
-            this.txt_busqAvan_comisionDesde.Name = "txt_busqAvan_comisionDesde";
-            this.txt_busqAvan_comisionDesde.Size = new System.Drawing.Size(100, 20);
-            this.txt_busqAvan_comisionDesde.TabIndex = 70;
-            this.txt_busqAvan_comisionDesde.ValidatingType = typeof(int);
-            // 
-            // txt_busqAvan_comisionHasta
-            // 
-            this.txt_busqAvan_comisionHasta.Enabled = false;
-            this.txt_busqAvan_comisionHasta.Location = new System.Drawing.Point(117, 285);
-            this.txt_busqAvan_comisionHasta.Mask = "99999";
-            this.txt_busqAvan_comisionHasta.Name = "txt_busqAvan_comisionHasta";
-            this.txt_busqAvan_comisionHasta.Size = new System.Drawing.Size(100, 20);
-            this.txt_busqAvan_comisionHasta.TabIndex = 71;
-            this.txt_busqAvan_comisionHasta.ValidatingType = typeof(int);
+            this.btn_disponibilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_disponibilidad.Location = new System.Drawing.Point(498, 124);
+            this.btn_disponibilidad.Name = "btn_disponibilidad";
+            this.btn_disponibilidad.Size = new System.Drawing.Size(109, 49);
+            this.btn_disponibilidad.TabIndex = 59;
+            this.btn_disponibilidad.Text = "Desactivar";
+            this.btn_disponibilidad.UseVisualStyleBackColor = true;
+            this.btn_disponibilidad.Click += new System.EventHandler(this.btn_disponibilidad_Click);
             // 
             // uc_ABM_Vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_disponibilidad);
             this.Controls.Add(this.grp_busquedaAvanzada);
             this.Controls.Add(this.cmb_habilitado);
             this.Controls.Add(this.label7);
@@ -732,5 +746,6 @@
         private System.Windows.Forms.MaskedTextBox txt_busqAvan_comisionHasta;
         private System.Windows.Forms.MaskedTextBox txt_busqAvan_comisionDesde;
         private System.Windows.Forms.MaskedTextBox txt_busqAvan_legajoHasta;
+        private System.Windows.Forms.Button btn_disponibilidad;
     }
 }

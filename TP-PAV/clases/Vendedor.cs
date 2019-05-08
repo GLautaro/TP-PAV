@@ -40,6 +40,12 @@ namespace TP_PAV.clases
             return db.ejecutarConsulta(consulta);
         }
 
+        public DataTable modificarDisponibilidadVendedor(string legajo, int estado)
+        {
+            string consulta = @"UPDATE Vendedor SET habilitado = " + estado + " WHERE legajo_vendedor = " + legajo;
+            return db.ejecutarConsulta(consulta);
+        }
+
         public DataTable busquedaAvanzada(Control.ControlCollection controles)
         {
             bool legajo = false;
