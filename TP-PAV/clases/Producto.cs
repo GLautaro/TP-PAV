@@ -14,6 +14,12 @@ namespace TP_PAV.clases
     {
         
         AccesoBD db = new AccesoBD();
+        private Label priv_label_error_producto;
+        public Label pub_label_error_producto
+        {
+            get { return priv_label_error_producto; }
+            set { priv_label_error_producto = value; }
+        }
         /*
         public DataTable traerProductos()
         {
@@ -31,9 +37,9 @@ namespace TP_PAV.clases
 
         public Validar.estado_validacion validarProducto(Control.ControlCollection controles)
         {
-            uc_ABM_Producto form_padre_abmProducto = new uc_ABM_Producto();  
+    
             Validar validar = new Validar();
-            return validar.validarUC(controles, form_padre_abmProducto.pub_label_error);
+            return validar.validarUC(controles, priv_label_error_producto);
         }
 
         public void grabarProducto (Control.ControlCollection controles)

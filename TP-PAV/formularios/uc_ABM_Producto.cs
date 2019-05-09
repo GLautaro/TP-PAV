@@ -17,11 +17,6 @@ namespace TP_PAV.formularios
         TipoProducto tipoProducto = new TipoProducto();
         UnidadMedida unidadMedida = new UnidadMedida();
 
-        public Label pub_label_error
-        {
-            get { return this.lbl_mensajeError; }
-           
-        }
 
         private static uc_ABM_Producto priv_instance;
         public static uc_ABM_Producto pub_instance
@@ -57,6 +52,7 @@ namespace TP_PAV.formularios
 
         private void uc_ABM_Producto_Load(object sender, EventArgs e)
         {
+            producto.pub_label_error_producto = this.lbl_mensajeError;
             this.dgv_productos.DataSource = producto.recuperarProductos();
             this.cmb_unidadMedida.cargar("unidad_medida", "id_u_medida", "nombre_u_medida");
             this.cmb_tipoProducto.cargar("tipo_producto", "id_tipo_producto", "nombre_tipo_producto");
@@ -88,7 +84,7 @@ namespace TP_PAV.formularios
 
         private void btn_modificarProducto_Click(object sender, EventArgs e)
         {   
-
+            
             this.btn_registrarProducto.Visible = false;
             this.btn_guardarModProducto.Visible = true;
             this.btn_cancelarModProducto.Visible = true;
