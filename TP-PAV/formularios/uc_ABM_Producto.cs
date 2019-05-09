@@ -17,6 +17,11 @@ namespace TP_PAV.formularios
         TipoProducto tipoProducto = new TipoProducto();
         UnidadMedida unidadMedida = new UnidadMedida();
 
+        public Label pub_label_error
+        {
+            get { return this.lbl_mensajeError; }
+        }
+
         private static uc_ABM_Producto priv_instance;
         public static uc_ABM_Producto pub_instance
         {

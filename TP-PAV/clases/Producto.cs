@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 using TP_PAV.clases;
+using TP_PAV.formularios;
 
 namespace TP_PAV.clases
 {
     class Producto
     {
+        uc_ABM_Producto form_padre_abmProducto = new uc_ABM_Producto();   
         AccesoBD db = new AccesoBD();
         /*
         public DataTable traerProductos()
@@ -30,7 +32,7 @@ namespace TP_PAV.clases
         public Validar.estado_validacion validarProducto(Control.ControlCollection controles)
         {
             Validar validar = new Validar();
-            return validar.validarUC(controles);
+            return validar.validarUC(controles, form_padre_abmProducto.pub_label_error);
         }
 
         public void grabarProducto (Control.ControlCollection controles)
