@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_habilitarAgregarTipoFranquicia = new System.Windows.Forms.Button();
             this.btn_habilitarModificarTipoFranquicia = new System.Windows.Forms.Button();
-            this.btn_eliminarFranquicia = new System.Windows.Forms.Button();
+            this.btn_handleStateTipoFranquicia = new System.Windows.Forms.Button();
             this.btn_modificarTipoFranquicia = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_agregarTipoFranquicia = new System.Windows.Forms.Button();
@@ -50,6 +50,8 @@
             this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto_minimo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.porcentaje_descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.habilitado_tipo_franquicia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label_validation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoFranquicia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 110);
+            this.label1.Location = new System.Drawing.Point(10, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 6;
@@ -75,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 109);
+            this.label2.Location = new System.Drawing.Point(182, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 7;
@@ -84,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(342, 110);
+            this.label3.Location = new System.Drawing.Point(343, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 17);
             this.label3.TabIndex = 8;
@@ -92,7 +94,7 @@
             // 
             // btn_habilitarAgregarTipoFranquicia
             // 
-            this.btn_habilitarAgregarTipoFranquicia.Location = new System.Drawing.Point(12, 409);
+            this.btn_habilitarAgregarTipoFranquicia.Location = new System.Drawing.Point(18, 112);
             this.btn_habilitarAgregarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_habilitarAgregarTipoFranquicia.Name = "btn_habilitarAgregarTipoFranquicia";
             this.btn_habilitarAgregarTipoFranquicia.Size = new System.Drawing.Size(145, 34);
@@ -103,7 +105,7 @@
             // 
             // btn_habilitarModificarTipoFranquicia
             // 
-            this.btn_habilitarModificarTipoFranquicia.Location = new System.Drawing.Point(256, 409);
+            this.btn_habilitarModificarTipoFranquicia.Location = new System.Drawing.Point(262, 112);
             this.btn_habilitarModificarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_habilitarModificarTipoFranquicia.Name = "btn_habilitarModificarTipoFranquicia";
             this.btn_habilitarModificarTipoFranquicia.Size = new System.Drawing.Size(139, 34);
@@ -112,21 +114,21 @@
             this.btn_habilitarModificarTipoFranquicia.UseVisualStyleBackColor = true;
             this.btn_habilitarModificarTipoFranquicia.Click += new System.EventHandler(this.btn_habilitarModificarTipoFranquicia_Click);
             // 
-            // btn_eliminarFranquicia
+            // btn_handleStateTipoFranquicia
             // 
-            this.btn_eliminarFranquicia.Location = new System.Drawing.Point(501, 409);
-            this.btn_eliminarFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_eliminarFranquicia.Name = "btn_eliminarFranquicia";
-            this.btn_eliminarFranquicia.Size = new System.Drawing.Size(165, 34);
-            this.btn_eliminarFranquicia.TabIndex = 11;
-            this.btn_eliminarFranquicia.Text = "Eliminar";
-            this.btn_eliminarFranquicia.UseVisualStyleBackColor = true;
-            this.btn_eliminarFranquicia.Click += new System.EventHandler(this.btn_eliminarFranquicia_Click);
+            this.btn_handleStateTipoFranquicia.Location = new System.Drawing.Point(507, 112);
+            this.btn_handleStateTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_handleStateTipoFranquicia.Name = "btn_handleStateTipoFranquicia";
+            this.btn_handleStateTipoFranquicia.Size = new System.Drawing.Size(165, 34);
+            this.btn_handleStateTipoFranquicia.TabIndex = 11;
+            this.btn_handleStateTipoFranquicia.Text = "Habilitar";
+            this.btn_handleStateTipoFranquicia.UseVisualStyleBackColor = true;
+            this.btn_handleStateTipoFranquicia.Click += new System.EventHandler(this.btn_hanldeStateTipoFranquicia_Click);
             // 
             // btn_modificarTipoFranquicia
             // 
             this.btn_modificarTipoFranquicia.Enabled = false;
-            this.btn_modificarTipoFranquicia.Location = new System.Drawing.Point(513, 130);
+            this.btn_modificarTipoFranquicia.Location = new System.Drawing.Point(514, 187);
             this.btn_modificarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_modificarTipoFranquicia.Name = "btn_modificarTipoFranquicia";
             this.btn_modificarTipoFranquicia.Size = new System.Drawing.Size(75, 23);
@@ -138,7 +140,7 @@
             // btn_cancelar
             // 
             this.btn_cancelar.Enabled = false;
-            this.btn_cancelar.Location = new System.Drawing.Point(593, 131);
+            this.btn_cancelar.Location = new System.Drawing.Point(594, 188);
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
@@ -150,7 +152,7 @@
             // btn_agregarTipoFranquicia
             // 
             this.btn_agregarTipoFranquicia.Enabled = false;
-            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(513, 131);
+            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(514, 188);
             this.btn_agregarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_agregarTipoFranquicia.Name = "btn_agregarTipoFranquicia";
             this.btn_agregarTipoFranquicia.Size = new System.Drawing.Size(75, 23);
@@ -172,14 +174,14 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(12, 131);
+            this.txt_nombre.Location = new System.Drawing.Point(13, 188);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(145, 22);
             this.txt_nombre.TabIndex = 16;
             // 
             // txt_montoMinimo
             // 
-            this.txt_montoMinimo.Location = new System.Drawing.Point(184, 132);
+            this.txt_montoMinimo.Location = new System.Drawing.Point(185, 189);
             this.txt_montoMinimo.Name = "txt_montoMinimo";
             this.txt_montoMinimo.Size = new System.Drawing.Size(134, 22);
             this.txt_montoMinimo.TabIndex = 17;
@@ -187,7 +189,7 @@
             // 
             // txt_porcentajeDescuento
             // 
-            this.txt_porcentajeDescuento.Location = new System.Drawing.Point(345, 132);
+            this.txt_porcentajeDescuento.Location = new System.Drawing.Point(346, 189);
             this.txt_porcentajeDescuento.Name = "txt_porcentajeDescuento";
             this.txt_porcentajeDescuento.Size = new System.Drawing.Size(145, 22);
             this.txt_porcentajeDescuento.TabIndex = 18;
@@ -208,42 +210,43 @@
             this.dgv_tipoFranquicia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_tipoFranquicia.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_tipoFranquicia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoFranquicia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoFranquicia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_tipoFranquicia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tipoFranquicia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_tipo_franquicia,
             this.nombre_tipo_franquicia,
             this.monto_minimo_compra,
-            this.porcentaje_descuento});
+            this.porcentaje_descuento,
+            this.habilitado_tipo_franquicia});
             this.dgv_tipoFranquicia.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgv_tipoFranquicia.EnableHeadersVisualStyles = false;
             this.dgv_tipoFranquicia.GridColor = System.Drawing.Color.Black;
-            this.dgv_tipoFranquicia.Location = new System.Drawing.Point(12, 170);
+            this.dgv_tipoFranquicia.Location = new System.Drawing.Point(15, 248);
             this.dgv_tipoFranquicia.MultiSelect = false;
             this.dgv_tipoFranquicia.Name = "dgv_tipoFranquicia";
             this.dgv_tipoFranquicia.ReadOnly = true;
             this.dgv_tipoFranquicia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoFranquicia.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoFranquicia.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_tipoFranquicia.RowHeadersVisible = false;
             this.dgv_tipoFranquicia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_tipoFranquicia.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_tipoFranquicia.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_tipoFranquicia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tipoFranquicia.Size = new System.Drawing.Size(654, 219);
             this.dgv_tipoFranquicia.TabIndex = 57;
@@ -289,12 +292,35 @@
             this.porcentaje_descuento.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.porcentaje_descuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // habilitado_tipo_franquicia
+            // 
+            this.habilitado_tipo_franquicia.DataPropertyName = "habilitado";
+            this.habilitado_tipo_franquicia.HeaderText = "Habilitado";
+            this.habilitado_tipo_franquicia.Name = "habilitado_tipo_franquicia";
+            this.habilitado_tipo_franquicia.ReadOnly = true;
+            // 
+            // label_validation
+            // 
+            this.label_validation.AutoSize = true;
+            this.label_validation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_validation.ForeColor = System.Drawing.Color.Red;
+            this.label_validation.Location = new System.Drawing.Point(225, 218);
+            this.label_validation.Name = "label_validation";
+            this.label_validation.Size = new System.Drawing.Size(52, 20);
+            this.label_validation.TabIndex = 58;
+            this.label_validation.Text = "Error";
+            this.label_validation.Visible = false;
+            // 
             // frm_TipoFranquicia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 479);
+            this.Controls.Add(this.label_validation);
+            this.Controls.Add(this.btn_handleStateTipoFranquicia);
+            this.Controls.Add(this.btn_habilitarAgregarTipoFranquicia);
             this.Controls.Add(this.dgv_tipoFranquicia);
+            this.Controls.Add(this.btn_habilitarModificarTipoFranquicia);
             this.Controls.Add(this.txt_porcentajeDescuento);
             this.Controls.Add(this.txt_montoMinimo);
             this.Controls.Add(this.txt_nombre);
@@ -302,9 +328,6 @@
             this.Controls.Add(this.btn_agregarTipoFranquicia);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_modificarTipoFranquicia);
-            this.Controls.Add(this.btn_eliminarFranquicia);
-            this.Controls.Add(this.btn_habilitarModificarTipoFranquicia);
-            this.Controls.Add(this.btn_habilitarAgregarTipoFranquicia);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -328,7 +351,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_habilitarAgregarTipoFranquicia;
         private System.Windows.Forms.Button btn_habilitarModificarTipoFranquicia;
-        private System.Windows.Forms.Button btn_eliminarFranquicia;
+        private System.Windows.Forms.Button btn_handleStateTipoFranquicia;
         private System.Windows.Forms.Button btn_modificarTipoFranquicia;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_agregarTipoFranquicia;
@@ -341,6 +364,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_minimo_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn porcentaje_descuento;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn habilitado_tipo_franquicia;
+        private System.Windows.Forms.Label label_validation;
 
     }
 }

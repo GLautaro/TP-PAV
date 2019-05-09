@@ -20,6 +20,7 @@ namespace TP_PAV.formularios
         public Label pub_label_error
         {
             get { return this.lbl_mensajeError; }
+           
         }
 
         private static uc_ABM_Producto priv_instance;
@@ -36,6 +37,7 @@ namespace TP_PAV.formularios
         public ComboBox pub_cmb_tipo_producto
         {
             get { return this.cmb_tipoProducto; }
+            
         }
 
         public ComboBox pub_cmb_unidadMedida

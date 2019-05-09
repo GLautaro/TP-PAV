@@ -12,7 +12,7 @@ namespace TP_PAV.clases
 {
     class Producto
     {
-        uc_ABM_Producto form_padre_abmProducto = new uc_ABM_Producto();   
+        
         AccesoBD db = new AccesoBD();
         /*
         public DataTable traerProductos()
@@ -31,6 +31,7 @@ namespace TP_PAV.clases
 
         public Validar.estado_validacion validarProducto(Control.ControlCollection controles)
         {
+            uc_ABM_Producto form_padre_abmProducto = new uc_ABM_Producto();  
             Validar validar = new Validar();
             return validar.validarUC(controles, form_padre_abmProducto.pub_label_error);
         }

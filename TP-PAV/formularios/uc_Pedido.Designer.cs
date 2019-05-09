@@ -43,32 +43,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_addPedido = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btn_addProductoPedido = new System.Windows.Forms.Button();
             this.grp_crearPedido = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_pedidos = new System.Windows.Forms.DataGridView();
-            this.dgv_detallePedido = new System.Windows.Forms.DataGridView();
             this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_cantidad = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.cmb_Producto = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.dt_fechaSolicitada = new TP_PAV.clases.DateTimePickerPersonal(this.components);
-            this.txt_legajoVendedor = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.cmb_franquicia = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.dgv_detallePedido = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_error = new System.Windows.Forms.Label();
+            this.dt_fechaSolicitada = new TP_PAV.clases.DateTimePickerPersonal(this.components);
+            this.txt_legajoVendedor = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.cmb_franquicia = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.grp_crearPedido.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             this.SuspendLayout();
@@ -131,42 +123,6 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Fecha Solicitada:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Tipo Producto:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 81);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Producto:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(48, 134);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 17);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Cantidad:";
-            // 
-            // btn_addProductoPedido
-            // 
-            this.btn_addProductoPedido.Location = new System.Drawing.Point(197, 188);
-            this.btn_addProductoPedido.Name = "btn_addProductoPedido";
-            this.btn_addProductoPedido.Size = new System.Drawing.Size(150, 35);
-            this.btn_addProductoPedido.TabIndex = 19;
-            this.btn_addProductoPedido.Text = "Agregar Producto";
-            this.btn_addProductoPedido.UseVisualStyleBackColor = true;
-            // 
             // grp_crearPedido
             // 
             this.grp_crearPedido.Controls.Add(this.dt_fechaSolicitada);
@@ -191,22 +147,6 @@
             this.label9.Size = new System.Drawing.Size(121, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Legajo Vendedor:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btn_addProductoPedido);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txt_cantidad);
-            this.groupBox1.Controls.Add(this.cmb_tipoProducto);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.cmb_Producto);
-            this.groupBox1.Location = new System.Drawing.Point(823, 472);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(382, 247);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Agregar Productos al Pedido";
             // 
             // dgv_pedidos
             // 
@@ -264,6 +204,46 @@
             this.dgv_pedidos.TabIndex = 52;
             this.dgv_pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pedidos_CellClick);
             // 
+            // id_pedido
+            // 
+            this.id_pedido.DataPropertyName = "id_pedido";
+            this.id_pedido.HeaderText = "ID Pedido";
+            this.id_pedido.Name = "id_pedido";
+            this.id_pedido.ReadOnly = true;
+            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "id_franquicia";
+            this.Column3.HeaderText = "ID Franquicia";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "id_vendedor";
+            this.Column4.HeaderText = "Legajo Vendedor";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "fecha_solicitud";
+            this.Column2.HeaderText = "Fecha Solicitud";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // monto_final
+            // 
+            this.monto_final.DataPropertyName = "monto_final";
+            this.monto_final.HeaderText = "Monto Total";
+            this.monto_final.Name = "monto_final";
+            this.monto_final.ReadOnly = true;
+            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // dgv_detallePedido
             // 
             this.dgv_detallePedido.AllowUserToAddRows = false;
@@ -318,121 +298,6 @@
             this.dgv_detallePedido.Size = new System.Drawing.Size(748, 272);
             this.dgv_detallePedido.TabIndex = 53;
             // 
-            // id_pedido
-            // 
-            this.id_pedido.DataPropertyName = "id_pedido";
-            this.id_pedido.HeaderText = "ID Pedido";
-            this.id_pedido.Name = "id_pedido";
-            this.id_pedido.ReadOnly = true;
-            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "id_franquicia";
-            this.Column3.HeaderText = "ID Franquicia";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "id_vendedor";
-            this.Column4.HeaderText = "Legajo Vendedor";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "fecha_solicitud";
-            this.Column2.HeaderText = "Fecha Solicitud";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // monto_final
-            // 
-            this.monto_final.DataPropertyName = "monto_final";
-            this.monto_final.HeaderText = "Monto Total";
-            this.monto_final.Name = "monto_final";
-            this.monto_final.ReadOnly = true;
-            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad._campo = null;
-            this.txt_cantidad._mensaje_error = null;
-            this.txt_cantidad._nombre_tabla = null;
-            this.txt_cantidad._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_cantidad._validable = false;
-            this.txt_cantidad.Location = new System.Drawing.Point(147, 134);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(200, 22);
-            this.txt_cantidad.TabIndex = 18;
-            // 
-            // cmb_tipoProducto
-            // 
-            this.cmb_tipoProducto._campo = "cmb_tipoProducto";
-            this.cmb_tipoProducto._mensaje_error = "Necesita seleccionar un tipo de Producto";
-            this.cmb_tipoProducto._nombre_tabla = null;
-            this.cmb_tipoProducto._validable = false;
-            this.cmb_tipoProducto.FormattingEnabled = true;
-            this.cmb_tipoProducto.Location = new System.Drawing.Point(147, 33);
-            this.cmb_tipoProducto.Name = "cmb_tipoProducto";
-            this.cmb_tipoProducto.Size = new System.Drawing.Size(200, 24);
-            this.cmb_tipoProducto.TabIndex = 15;
-            // 
-            // cmb_Producto
-            // 
-            this.cmb_Producto._campo = null;
-            this.cmb_Producto._mensaje_error = null;
-            this.cmb_Producto._nombre_tabla = null;
-            this.cmb_Producto._validable = false;
-            this.cmb_Producto.FormattingEnabled = true;
-            this.cmb_Producto.Location = new System.Drawing.Point(147, 81);
-            this.cmb_Producto.Name = "cmb_Producto";
-            this.cmb_Producto.Size = new System.Drawing.Size(200, 24);
-            this.cmb_Producto.TabIndex = 16;
-            // 
-            // dt_fechaSolicitada
-            // 
-            this.dt_fechaSolicitada._campo = "fecha_solicitud";
-            this.dt_fechaSolicitada._mensaje_error = "Necesita ingresar una Fecha Solicitada";
-            this.dt_fechaSolicitada._nombre_tabla = "pedido";
-            this.dt_fechaSolicitada._validable = true;
-            this.dt_fechaSolicitada.CustomFormat = "yyyy/MM/dd";
-            this.dt_fechaSolicitada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_fechaSolicitada.Location = new System.Drawing.Point(128, 128);
-            this.dt_fechaSolicitada.Name = "dt_fechaSolicitada";
-            this.dt_fechaSolicitada.Size = new System.Drawing.Size(128, 22);
-            this.dt_fechaSolicitada.TabIndex = 15;
-            // 
-            // txt_legajoVendedor
-            // 
-            this.txt_legajoVendedor._campo = "id_vendedor";
-            this.txt_legajoVendedor._mensaje_error = null;
-            this.txt_legajoVendedor._nombre_tabla = "pedido";
-            this.txt_legajoVendedor._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_legajoVendedor._validable = false;
-            this.txt_legajoVendedor.Enabled = false;
-            this.txt_legajoVendedor.Location = new System.Drawing.Point(120, 86);
-            this.txt_legajoVendedor.Name = "txt_legajoVendedor";
-            this.txt_legajoVendedor.Size = new System.Drawing.Size(256, 22);
-            this.txt_legajoVendedor.TabIndex = 14;
-            // 
-            // cmb_franquicia
-            // 
-            this.cmb_franquicia._campo = "id_franquicia";
-            this.cmb_franquicia._mensaje_error = "Necesita seleccionar una Franquicia";
-            this.cmb_franquicia._nombre_tabla = "pedido";
-            this.cmb_franquicia._validable = true;
-            this.cmb_franquicia.FormattingEnabled = true;
-            this.cmb_franquicia.Location = new System.Drawing.Point(120, 47);
-            this.cmb_franquicia.Name = "cmb_franquicia";
-            this.cmb_franquicia.Size = new System.Drawing.Size(256, 24);
-            this.cmb_franquicia.TabIndex = 9;
-            this.cmb_franquicia.SelectedIndexChanged += new System.EventHandler(this.cmb_franquicia_SelectedIndexChanged);
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre_producto";
@@ -466,13 +331,61 @@
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
+            // label_error
+            // 
+            this.label_error.AutoSize = true;
+            this.label_error.Location = new System.Drawing.Point(827, 140);
+            this.label_error.Name = "label_error";
+            this.label_error.Size = new System.Drawing.Size(46, 17);
+            this.label_error.TabIndex = 54;
+            this.label_error.Text = "label6";
+            // 
+            // dt_fechaSolicitada
+            // 
+            this.dt_fechaSolicitada._campo = "fecha_solicitud";
+            this.dt_fechaSolicitada._mensaje_error = "Necesita ingresar una Fecha Solicitada";
+            this.dt_fechaSolicitada._nombre_tabla = "pedido";
+            this.dt_fechaSolicitada._validable = true;
+            this.dt_fechaSolicitada.CustomFormat = "yyyy/MM/dd";
+            this.dt_fechaSolicitada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_fechaSolicitada.Location = new System.Drawing.Point(128, 128);
+            this.dt_fechaSolicitada.Name = "dt_fechaSolicitada";
+            this.dt_fechaSolicitada.Size = new System.Drawing.Size(128, 22);
+            this.dt_fechaSolicitada.TabIndex = 15;
+            // 
+            // txt_legajoVendedor
+            // 
+            this.txt_legajoVendedor._campo = "id_vendedor";
+            this.txt_legajoVendedor._mensaje_error = "Error";
+            this.txt_legajoVendedor._nombre_tabla = "pedido";
+            this.txt_legajoVendedor._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_legajoVendedor._validable = true;
+            this.txt_legajoVendedor.Enabled = false;
+            this.txt_legajoVendedor.Location = new System.Drawing.Point(120, 86);
+            this.txt_legajoVendedor.Name = "txt_legajoVendedor";
+            this.txt_legajoVendedor.Size = new System.Drawing.Size(256, 22);
+            this.txt_legajoVendedor.TabIndex = 14;
+            // 
+            // cmb_franquicia
+            // 
+            this.cmb_franquicia._campo = "id_franquicia";
+            this.cmb_franquicia._mensaje_error = "Necesita seleccionar una Franquicia";
+            this.cmb_franquicia._nombre_tabla = "pedido";
+            this.cmb_franquicia._validable = true;
+            this.cmb_franquicia.FormattingEnabled = true;
+            this.cmb_franquicia.Location = new System.Drawing.Point(120, 47);
+            this.cmb_franquicia.Name = "cmb_franquicia";
+            this.cmb_franquicia.Size = new System.Drawing.Size(256, 24);
+            this.cmb_franquicia.TabIndex = 9;
+            this.cmb_franquicia.SelectedIndexChanged += new System.EventHandler(this.cmb_franquicia_SelectedIndexChanged);
+            // 
             // uc_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label_error);
             this.Controls.Add(this.dgv_detallePedido);
             this.Controls.Add(this.dgv_pedidos);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grp_crearPedido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -482,8 +395,6 @@
             this.Load += new System.EventHandler(this.uc_Pedido_Load);
             this.grp_crearPedido.ResumeLayout(false);
             this.grp_crearPedido.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).EndInit();
             this.ResumeLayout(false);
@@ -500,15 +411,7 @@
         private clases.ComboBoxPersonal cmb_franquicia;
         private System.Windows.Forms.Button btn_addPedido;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private clases.ComboBoxPersonal cmb_tipoProducto;
-        private clases.ComboBoxPersonal cmb_Producto;
-        private System.Windows.Forms.Label label8;
-        private clases.TextBoxPersonal txt_cantidad;
-        private System.Windows.Forms.Button btn_addProductoPedido;
         private System.Windows.Forms.GroupBox grp_crearPedido;
-        private System.Windows.Forms.GroupBox groupBox1;
         private clases.TextBoxPersonal txt_legajoVendedor;
         private System.Windows.Forms.Label label9;
         private clases.DateTimePickerPersonal dt_fechaSolicitada;
@@ -523,5 +426,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        public System.Windows.Forms.Label label_error;
     }
 }

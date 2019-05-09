@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_PAV.formularios;
 
 namespace TP_PAV.clases
 {
@@ -12,6 +13,7 @@ namespace TP_PAV.clases
     {
         
         AccesoBD priv_acceso_db = new AccesoBD();
+
         private int priv_id_pedido;
         private DateTime priv_fecha_solicitud;
         private DateTime priv_fecha_entrega;
@@ -19,7 +21,8 @@ namespace TP_PAV.clases
         private int priv_id_franquicia;
         private int priv_id_vendedor;
         private int priv_monto_final;
-
+        private Label priv_uc_pedido_label_error;
+        
         public int pub_id_pedido
         {
             get { return this.priv_id_pedido; }
@@ -55,12 +58,17 @@ namespace TP_PAV.clases
             get { return this.pub_monto_final; }
             set { this.pub_monto_final = value; }
         }
-
-
+        public Label pub_uc_Pedido_label_error
+        {
+            get { return this.priv_uc_pedido_label_error; }
+            set { this.priv_uc_pedido_label_error = value; }
+        }
+        
         public Validar.estado_validacion validarPedido(Control.ControlCollection controles)
         {
             Validar validar = new Validar();
-            return validar.validarUC(controles);
+          
+            return validar.validarUC(controles, priv_uc_pedido_label_error);
 
         }
 

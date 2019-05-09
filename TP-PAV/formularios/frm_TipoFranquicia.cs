@@ -35,19 +35,19 @@ namespace TP_PAV.formularios
         {
             if (txt_nombre.Text.Trim() == "")
             {
-                MessageBox.Show("Error en el nombre de Tipo de Franquicia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_validacion_error(true,"Error en el nombre de Tipo de Franquicia");
                 txt_nombre.Focus();
                 return false;
             }
             if (txt_montoMinimo.Text == "" || (int.Parse(txt_montoMinimo.Text) < 0))
             {
-                MessageBox.Show("Error en el valor Monto Minimo de compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_validacion_error(true, "Error en el valor Monto Minimo de compra");
                 txt_montoMinimo.Focus();
                 return false;
             }
             if (txt_porcentajeDescuento.Text == "" || (int.Parse(txt_porcentajeDescuento.Text) < 0 || int.Parse(txt_porcentajeDescuento.Text) > 100))
             {
-                MessageBox.Show("Error en el valor Porcentaje de Descuento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_validacion_error(true, "Error en el valor Porcentaje de Descuento");
                 txt_porcentajeDescuento.Focus();
                 return false;
             }
@@ -65,7 +65,7 @@ namespace TP_PAV.formularios
         private void desbloquearBotonesPrincipales(bool value)
         {
             btn_habilitarModificarTipoFranquicia.Enabled = value;
-            btn_eliminarFranquicia.Enabled = value;
+            btn_handleStateTipoFranquicia.Enabled = value;
             btn_habilitarAgregarTipoFranquicia.Enabled = value;
 
         }
@@ -89,10 +89,24 @@ namespace TP_PAV.formularios
         {
             bloquearCajasTexto();
             dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+            actualizarTextBtnState();
+
             
             
         }
+        private void label_validacion_error(bool error, string mensaje )
+        {
 
+            if(error){
+                this.label_validation.ForeColor = Color.Red;
+            }
+            else
+            {
+                this.label_validation.ForeColor = Color.Green;
+            }
+            this.label_validation.Text = mensaje;
+            this.label_validation.Visible = true;
+        }
         private void btn_habilitarAgregarTipoFranquicia_Click(object sender, EventArgs e)
         {
             desbloquearCajasTexto();
@@ -125,7 +139,7 @@ namespace TP_PAV.formularios
                                     txt_nombre.Focus();
                                     dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
                                 }
-
+                               
                             }
                             else
                             {
@@ -133,6 +147,7 @@ namespace TP_PAV.formularios
                             }
                            
                         }
+                        this.label_validation.Visible = false;
 
         }
 
@@ -149,7 +164,7 @@ namespace TP_PAV.formularios
         {
             if (dgv_tipoFranquicia.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_validacion_error(true, "No existen tipos de franquicias cargadas.");
                 return;
             }
             desbloquearCajasTexto();
@@ -168,9 +183,20 @@ namespace TP_PAV.formularios
             txt_nombre.Text = dgv_tipoFranquicia.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString();
             txt_montoMinimo.Text = dgv_tipoFranquicia.CurrentRow.Cells["monto_minimo_compra"].Value.ToString();
             txt_porcentajeDescuento.Text = dgv_tipoFranquicia.CurrentRow.Cells["porcentaje_descuento"].Value.ToString();
-
+            actualizarTextBtnState();
+          
         }
-
+        private void actualizarTextBtnState()
+        {
+            if (bool.Parse(dgv_tipoFranquicia.CurrentRow.Cells["habilitado_tipo_franquicia"].Value.ToString()))
+            {
+                btn_handleStateTipoFranquicia.Text = "Deshabilitar";
+            }
+            else
+            {
+                btn_handleStateTipoFranquicia.Text = "Habilitar";
+            }
+        }
         private void btn_modificarTipoFranquicia_Click(object sender, EventArgs e)
         {
        
@@ -185,7 +211,7 @@ namespace TP_PAV.formularios
                 if (priv_tipoFranquiciaModificar.modificarTipoFranquicia())
                 {
                     dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
-                    MessageBox.Show("Se modificó correctamente.");
+                    label_validacion_error(false, "Se modificó correctamente");
 
                 }
                 else
@@ -202,29 +228,29 @@ namespace TP_PAV.formularios
 
         }
 
-        private void btn_eliminarFranquicia_Click(object sender, EventArgs e)
+        private void btn_hanldeStateTipoFranquicia_Click(object sender, EventArgs e)
         {
             if (dgv_tipoFranquicia.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_validacion_error(true, "No existen tipos de franquicias cargadas.");
                 return;
             }
-            DialogResult resultado = MessageBox.Show("¿Esta seguro que desea eliminar este tipo de franquicia\n La accion no se puede deshacer?",
-                                                     "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (resultado == DialogResult.Yes)
-            {
-                TipoFranquicia priv_tipoFranquiciaEliminar = new TipoFranquicia();
-                priv_tipoFranquiciaEliminar.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
-                if (priv_tipoFranquiciaEliminar.eliminarFranquicia())
+
+                TipoFranquicia priv_tipoFranquiciaHandleState = new TipoFranquicia();
+                priv_tipoFranquiciaHandleState.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
+                priv_tipoFranquiciaHandleState.pub_state_tipo_franquicia = Convert.ToInt32(!bool.Parse(dgv_tipoFranquicia.CurrentRow.Cells["habilitado_tipo_franquicia"].Value.ToString()));
+                if (priv_tipoFranquiciaHandleState.handleStateTipoFranquicia())
                 {
-                    MessageBox.Show("Se ha eliminado correctamente");
+                    label_validacion_error(false,"Se ha cambiado el estado correctamente");
                     dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
                 }
                 else
                 {
                     MessageBox.Show("Error al tratar de eliminar el tipo de franquicia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+                actualizarTextBtnState();
+
+           
         }
         private void frm_TipoFranquicia_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -234,9 +260,11 @@ namespace TP_PAV.formularios
 
         private void txt_montoMinimo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            this.label_validation.Visible = false;
             if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
             {
-                MessageBox.Show("No es un valor permitido");
+                label_validacion_error(true,"No es un valor permitido");
+                
                 //borra el caracter no permitido
                 e.Handled = true;
             }

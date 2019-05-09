@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV.clases;
 
+
 //Si surgen nuevos componentes propios y necesitan validacion, en esta clase tenemos que agregarlas.
 
 namespace TP_PAV.clases
@@ -24,10 +25,13 @@ namespace TP_PAV.clases
                     {
                         if (item.Text == "")
                         {
-                            lbl_error.Text = ((TextBoxPersonal)item)._mensaje_error;
+                                     
+                          lbl_error.Text = ((TextBoxPersonal)item)._mensaje_error;
                             lbl_error.Visible = true;
                             ((TextBoxPersonal)item).Focus();
+                  
                             return estado_validacion.erroneo;
+
                         }
                     }
                 }

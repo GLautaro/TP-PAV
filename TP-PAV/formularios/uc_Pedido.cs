@@ -15,10 +15,10 @@ using TP_PAV.clases;
 namespace TP_PAV.formularios
 {
     public partial class uc_Pedido : UserControl
-    {
-        Pedido priv_pedido = new Pedido();
+    {   
         Franquicia priv_franquicia = new Franquicia();
-
+        frm_DetallePedido priv_frm_detallePedido = new frm_DetallePedido();
+       
         public uc_Pedido()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace TP_PAV.formularios
                 return priv_instance;
             }
         }
-
+      
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -46,7 +46,8 @@ namespace TP_PAV.formularios
 
         private void uc_Pedido_Load(object sender, EventArgs e)
         {
-
+            Pedido priv_pedido = new Pedido();
+           
             dgv_pedidos.DataSource = priv_pedido.recuperarPedidosPendientes();
             dgv_detallePedido.DataSource = "";
             cmb_franquicia.DataSource = priv_franquicia.recuperarFranquicias();
@@ -61,18 +62,20 @@ namespace TP_PAV.formularios
         {
             DataRowView row_selected = (DataRowView)cmb_franquicia.SelectedItem;
 
-            txt_legajoVendedor.Text = row_selected.Row["legajo_vendedor"].ToString();
+            txt_legajoVendedor.Text = "";
         }
 
         private void btn_addPedido_Click(object sender, EventArgs e)
         {
+            Pedido priv_pedido = new Pedido();
+            priv_pedido.pub_uc_Pedido_label_error = this.label_error;
             if (priv_pedido.validarPedido(grp_crearPedido.Controls) == Validar.estado_validacion.correcto)
             {
                 Pedido nuevo_pedido = new Pedido();
                 if (nuevo_pedido.addPedido(grp_crearPedido.Controls))
                 {
                     dgv_pedidos.DataSource = priv_pedido.recuperarPedidosPendientes();
-                    MessageBox.Show("Se agregó correctamente!");
+                    priv_frm_detallePedido.ShowDialog();          
                     
                 }
             }
@@ -81,6 +84,7 @@ namespace TP_PAV.formularios
 
         private void dgv_pedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Pedido priv_pedido = new Pedido();
             dgv_detallePedido.DataSource = priv_pedido.recuperarDetalleDePedido(int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString()));
         }
     }
