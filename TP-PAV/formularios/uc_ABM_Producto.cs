@@ -16,9 +16,8 @@ namespace TP_PAV.formularios
         Producto producto = new Producto();
         TipoProducto tipoProducto = new TipoProducto();
         UnidadMedida unidadMedida = new UnidadMedida();
-
-
         private static uc_ABM_Producto priv_instance;
+
         public static uc_ABM_Producto pub_instance
         {
             get
@@ -62,12 +61,16 @@ namespace TP_PAV.formularios
         private void btn_agregarTipo_Click(object sender, EventArgs e)
         {
             frm_ABM_TipoProducto frm_ABM_TipoProducto = new frm_ABM_TipoProducto();
-            frm_ABM_TipoProducto.ShowDialog();
+            frm_ABM_TipoProducto.pub_formularioPadre = this;
+            frm_ABM_TipoProducto.pub_selectedIndex = cmb_tipoProducto.SelectedIndex;
+            frm_ABM_TipoProducto.ShowDialog();    
         }
 
         private void btn_agregarUdeMedida_Click(object sender, EventArgs e)
         {
             frm_ABM_UnidadMedida frm_ABM_UnidadMedida = new frm_ABM_UnidadMedida();
+            frm_ABM_UnidadMedida.pub_formularioPadre = this;
+            frm_ABM_UnidadMedida.pub_selectedIndex = cmb_unidadMedida.SelectedIndex;
             frm_ABM_UnidadMedida.ShowDialog();
         }
 
