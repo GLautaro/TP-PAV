@@ -37,7 +37,7 @@ namespace TP_PAV.formularios
         {
             btn_habilitarAgregarBarrio.Enabled = value;
             btn_habilitarModificarBarrio.Enabled = value;
-            btn_eliminarBarrio.Enabled = value;
+            btn_handleStateBarrio.Enabled = value;
         }
         private void resetearFormulario()
         {
@@ -71,7 +71,19 @@ namespace TP_PAV.formularios
             txt_nombre_barrio.Enabled = true;
             dgv_barrio.Enabled = false;
         }
+         private void label_validacion_error(bool error, string mensaje )
+        {
 
+            if(error){
+                this.label_validation.ForeColor = Color.Red;
+            }
+            else
+            {
+                this.label_validation.ForeColor = Color.Green;
+            }
+            this.label_validation.Text = mensaje;
+            this.label_validation.Visible = true;
+        }
         private void btn_agregarBarrio_Click(object sender, EventArgs e)
         {
             if (txt_nombre_barrio.Text.Trim() != "")
@@ -99,7 +111,7 @@ namespace TP_PAV.formularios
             }
             else
             {
-                MessageBox.Show("El campo Nombre del Barrio esta vacio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               label_validacion_error(true, "Debe ingresar un nombre de barrio.");
                 txt_nombre_barrio.Focus();
             }
 
@@ -147,7 +159,7 @@ namespace TP_PAV.formularios
             }
             else
             {
-                MessageBox.Show("El campo Nombre del Barrio es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 label_validacion_error(true, "Debe ingresar un nombre de barrio.");
                 txt_nombre_barrio.Focus();
             }
 
@@ -156,35 +168,25 @@ namespace TP_PAV.formularios
         private void dgv_barrio_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txt_nombre_barrio.Text = dgv_barrio.CurrentRow.Cells["nombre_barrio"].Value.ToString();
+            actualizarTextBtnState();
         }
 
-        private void btn_eliminarBarrio_Click(object sender, EventArgs e)
+   
+        private void actualizarTextBtnState()
         {
             if (dgv_barrio.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            DialogResult resultado = MessageBox.Show("¿Esta seguro que desea eliminar este barrio?\n La accion no se puede deshacer",
-                                                     "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (resultado == DialogResult.Yes)
+            if (bool.Parse(dgv_barrio.CurrentRow.Cells["habilitado"].Value.ToString()))
             {
-                Barrio priv_barrioEliminar = new Barrio();
-
-                priv_barrioEliminar.pub_id_barrio = int.Parse(dgv_barrio.CurrentRow.Cells["id_barrio"].Value.ToString());
-                if (priv_barrioEliminar.deleteBarrio())
-                {
-                    MessageBox.Show("Se ha eliminado correctamente");
-                    dgv_barrio.DataSource = priv_barrio.recuperarBarrios();
-                }
-                else
-                {
-                    MessageBox.Show("Error al tratar de eliminar el barrio!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                btn_handleStateBarrio.Text = "Deshabilitar";
+            }
+            else
+            {
+                btn_handleStateBarrio.Text = "Habilitar";
             }
         }
-
         private void frm_ABM_Barrio_FormClosing(object sender, FormClosingEventArgs e)
         {
             priv_cmb_barrios.DataSource = priv_barrio.recuperarBarrios();
@@ -192,7 +194,29 @@ namespace TP_PAV.formularios
      
         }
 
-      
+        private void btn_handleStateBarrio_Click(object sender, EventArgs e)
+        {
+            if (dgv_barrio.SelectedRows.Count < 1)
+            {
+                label_validacion_error(true, "No existen barrios cargados.");
+                return;
+            }
+
+            Barrio priv_barrioHandleState = new Barrio();
+            priv_barrioHandleState.pub_id_barrio = int.Parse(dgv_barrio.CurrentRow.Cells["id_barrio"].Value.ToString());
+            priv_barrioHandleState.pub_state_barrio = Convert.ToInt32(!bool.Parse(dgv_barrio.CurrentRow.Cells["habilitado"].Value.ToString()));
+            if (priv_barrioHandleState.handleStateBarrio())
+            {
+                label_validacion_error(false, "Se ha cambiado el estado correctamente");
+                dgv_barrio.DataSource = priv_barrio.recuperarBarrios();
+            }
+            else
+            {
+                MessageBox.Show("Error al tratar de cambiar el estado del barrio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            actualizarTextBtnState();
+
+        } 
 
 
     }

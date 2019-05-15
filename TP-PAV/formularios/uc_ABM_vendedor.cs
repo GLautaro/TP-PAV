@@ -328,6 +328,10 @@ namespace TP_PAV.formularios
 
         private void actualizarBotonDisponibilidad()
         {
+            if (dgv_vendedores.SelectedRows.Count < 1)
+            {
+                return;
+            }
             if (this.dgv_vendedores.CurrentRow.Cells[4].Value.ToString() == "True")
             {
                 this.btn_disponibilidad.Text = "Desactivar";

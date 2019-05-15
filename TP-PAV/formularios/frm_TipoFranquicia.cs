@@ -188,6 +188,11 @@ namespace TP_PAV.formularios
         }
         private void actualizarTextBtnState()
         {
+            if (dgv_tipoFranquicia.SelectedRows.Count < 1)
+            {
+               
+                return;
+            }
             if (bool.Parse(dgv_tipoFranquicia.CurrentRow.Cells["habilitado_tipo_franquicia"].Value.ToString()))
             {
                 btn_handleStateTipoFranquicia.Text = "Deshabilitar";

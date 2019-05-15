@@ -86,7 +86,7 @@ namespace TP_PAV.clases
 
         }
 
-        internal bool handleStateTipoFranquicia()
+        public bool handleStateTipoFranquicia()
         {
             string noConsulta = String.Format(@"UPDATE tipo_franquicia SET habilitado={0} WHERE id_tipo_franquicia={1}", priv_state_tipo_franquicia.ToString(), priv_id_tipo_franquicia.ToString());
             if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
