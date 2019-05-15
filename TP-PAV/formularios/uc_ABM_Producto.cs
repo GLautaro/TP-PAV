@@ -191,6 +191,50 @@ namespace TP_PAV.formularios
             }
         }
 
+    private void btn_busquedaAvanzadaProducto_Click(object sender, EventArgs e)
+    {
+        if(grp_busquedaAvanzadaProducto.Visible == false)
+        {
+            grp_busquedaAvanzadaProducto.Show();
+
+            this.cmb_busquedaSeleccionTipo.cargar("tipo_producto", "id_tipo_producto", "nombre_tipo_producto");
+        }
+        else 
+        {
+            this.dgv_productos.DataSource = producto.recuperarProductos();
+            grp_busquedaAvanzadaProducto.Hide();
+        }
+    }
+
+    private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
+    {
+        this.dgv_productos.DataSource = producto.recuperarProductos();
+        grp_busquedaAvanzadaProducto.Hide();
+    }
+
+    private void cbx_tipoProducto_CheckedChanged(object sender, EventArgs e)
+    {
+        bool estado = cbx_tipoProducto.Checked;
+        cmb_busquedaSeleccionTipo.Enabled = estado;
+        if (!estado)
+        {
+            cmb_busquedaSeleccionTipo.SelectedIndex = -1;
+        }
+
+    }
+
+    private void cbx_busquedaAvanzPrecio_CheckedChanged(object sender, EventArgs e)
+    {
+        bool estado = cbx_busquedaAvanzPrecio.Checked;
+        txt_busquedaPrecioDesde.Enabled = estado;
+        txt_busquedaPrecioHasta.Enabled = estado;
+        if (!estado)
+        {
+            txt_busquedaPrecioDesde.Text = "";
+            txt_busquedaPrecioHasta.Text = "";
+        }
+    }
+
         
     }
 }
