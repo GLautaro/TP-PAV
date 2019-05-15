@@ -47,6 +47,11 @@ namespace TP_PAV.clases
             string query = @"SELECT * FROM tipo_franquicia";
             return priv_acceso_db.ejecutarConsulta(query);
         }
+        public DataTable recuperarTiposFranquiciaHabilitados()
+        {
+            string query = @"SELECT * FROM tipo_franquicia WHERE habilitado=1";
+            return priv_acceso_db.ejecutarConsulta(query);
+        }
      
         public bool altaTipoFranquicia(int montoMinimo, int porcentajeDescuento, string nombre)
         {

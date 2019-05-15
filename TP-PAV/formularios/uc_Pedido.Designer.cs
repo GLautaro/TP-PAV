@@ -44,7 +44,10 @@
             this.btn_addPedido = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.grp_crearPedido = new System.Windows.Forms.GroupBox();
+            this.dt_fechaSolicitada = new TP_PAV.clases.DateTimePickerPersonal(this.components);
+            this.txt_legajoVendedor = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.label9 = new System.Windows.Forms.Label();
+            this.cmb_franquicia = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.dgv_pedidos = new System.Windows.Forms.DataGridView();
             this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +60,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_error = new System.Windows.Forms.Label();
-            this.dt_fechaSolicitada = new TP_PAV.clases.DateTimePickerPersonal(this.components);
-            this.txt_legajoVendedor = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.cmb_franquicia = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.grp_crearPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
@@ -139,6 +139,32 @@
             this.grp_crearPedido.TabStop = false;
             this.grp_crearPedido.Text = "Crear Pedido";
             // 
+            // dt_fechaSolicitada
+            // 
+            this.dt_fechaSolicitada._campo = "fecha_solicitud";
+            this.dt_fechaSolicitada._mensaje_error = "Necesita ingresar una Fecha Solicitada";
+            this.dt_fechaSolicitada._nombre_tabla = "pedido";
+            this.dt_fechaSolicitada._validable = true;
+            this.dt_fechaSolicitada.CustomFormat = "yyyy/MM/dd";
+            this.dt_fechaSolicitada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt_fechaSolicitada.Location = new System.Drawing.Point(128, 128);
+            this.dt_fechaSolicitada.Name = "dt_fechaSolicitada";
+            this.dt_fechaSolicitada.Size = new System.Drawing.Size(128, 22);
+            this.dt_fechaSolicitada.TabIndex = 15;
+            // 
+            // txt_legajoVendedor
+            // 
+            this.txt_legajoVendedor._campo = "id_vendedor";
+            this.txt_legajoVendedor._mensaje_error = "Error";
+            this.txt_legajoVendedor._nombre_tabla = "pedido";
+            this.txt_legajoVendedor._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_legajoVendedor._validable = true;
+            this.txt_legajoVendedor.Enabled = false;
+            this.txt_legajoVendedor.Location = new System.Drawing.Point(120, 86);
+            this.txt_legajoVendedor.Name = "txt_legajoVendedor";
+            this.txt_legajoVendedor.Size = new System.Drawing.Size(256, 22);
+            this.txt_legajoVendedor.TabIndex = 14;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -147,6 +173,19 @@
             this.label9.Size = new System.Drawing.Size(121, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Legajo Vendedor:";
+            // 
+            // cmb_franquicia
+            // 
+            this.cmb_franquicia._campo = "id_franquicia";
+            this.cmb_franquicia._mensaje_error = "Necesita seleccionar una Franquicia";
+            this.cmb_franquicia._nombre_tabla = "pedido";
+            this.cmb_franquicia._validable = true;
+            this.cmb_franquicia.FormattingEnabled = true;
+            this.cmb_franquicia.Location = new System.Drawing.Point(120, 47);
+            this.cmb_franquicia.Name = "cmb_franquicia";
+            this.cmb_franquicia.Size = new System.Drawing.Size(256, 24);
+            this.cmb_franquicia.TabIndex = 9;
+            this.cmb_franquicia.SelectedIndexChanged += new System.EventHandler(this.cmb_franquicia_SelectedIndexChanged);
             // 
             // dgv_pedidos
             // 
@@ -334,50 +373,12 @@
             // label_error
             // 
             this.label_error.AutoSize = true;
+            this.label_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_error.ForeColor = System.Drawing.Color.Red;
             this.label_error.Location = new System.Drawing.Point(827, 140);
             this.label_error.Name = "label_error";
-            this.label_error.Size = new System.Drawing.Size(46, 17);
+            this.label_error.Size = new System.Drawing.Size(0, 20);
             this.label_error.TabIndex = 54;
-            this.label_error.Text = "label6";
-            // 
-            // dt_fechaSolicitada
-            // 
-            this.dt_fechaSolicitada._campo = "fecha_solicitud";
-            this.dt_fechaSolicitada._mensaje_error = "Necesita ingresar una Fecha Solicitada";
-            this.dt_fechaSolicitada._nombre_tabla = "pedido";
-            this.dt_fechaSolicitada._validable = true;
-            this.dt_fechaSolicitada.CustomFormat = "yyyy/MM/dd";
-            this.dt_fechaSolicitada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt_fechaSolicitada.Location = new System.Drawing.Point(128, 128);
-            this.dt_fechaSolicitada.Name = "dt_fechaSolicitada";
-            this.dt_fechaSolicitada.Size = new System.Drawing.Size(128, 22);
-            this.dt_fechaSolicitada.TabIndex = 15;
-            // 
-            // txt_legajoVendedor
-            // 
-            this.txt_legajoVendedor._campo = "id_vendedor";
-            this.txt_legajoVendedor._mensaje_error = "Error";
-            this.txt_legajoVendedor._nombre_tabla = "pedido";
-            this.txt_legajoVendedor._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
-            this.txt_legajoVendedor._validable = true;
-            this.txt_legajoVendedor.Enabled = false;
-            this.txt_legajoVendedor.Location = new System.Drawing.Point(120, 86);
-            this.txt_legajoVendedor.Name = "txt_legajoVendedor";
-            this.txt_legajoVendedor.Size = new System.Drawing.Size(256, 22);
-            this.txt_legajoVendedor.TabIndex = 14;
-            // 
-            // cmb_franquicia
-            // 
-            this.cmb_franquicia._campo = "id_franquicia";
-            this.cmb_franquicia._mensaje_error = "Necesita seleccionar una Franquicia";
-            this.cmb_franquicia._nombre_tabla = "pedido";
-            this.cmb_franquicia._validable = true;
-            this.cmb_franquicia.FormattingEnabled = true;
-            this.cmb_franquicia.Location = new System.Drawing.Point(120, 47);
-            this.cmb_franquicia.Name = "cmb_franquicia";
-            this.cmb_franquicia.Size = new System.Drawing.Size(256, 24);
-            this.cmb_franquicia.TabIndex = 9;
-            this.cmb_franquicia.SelectedIndexChanged += new System.EventHandler(this.cmb_franquicia_SelectedIndexChanged);
             // 
             // uc_Pedido
             // 

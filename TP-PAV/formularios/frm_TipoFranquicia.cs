@@ -275,7 +275,7 @@ namespace TP_PAV.formularios
         {
             if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
             {
-                MessageBox.Show("No es un valor permitido");
+                label_validacion_error(true, "No es un valor permitido");
                 //borra el caracter no permitido
                 e.Handled = true;
             }

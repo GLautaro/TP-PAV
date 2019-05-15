@@ -11,7 +11,7 @@ using TP_PAV.clases;
 
 namespace TP_PAV.clases
 {
-    class Validar
+    public class Validar
     {
         public enum estado_validacion { correcto, erroneo}
 
