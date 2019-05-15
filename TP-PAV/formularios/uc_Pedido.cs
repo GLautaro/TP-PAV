@@ -87,6 +87,11 @@ namespace TP_PAV.formularios
             dgv_detallePedido.DataSource = priv_pedido.recuperarDetalleDePedido(int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString()));
         }
 
+        private void cmb_franquicia_Click(object sender, EventArgs e)
+        {
+            dgv_pedidos.DataSource = priv_pedido.recuperarPedidosPendientes();
+        }
+
       
     }
 }

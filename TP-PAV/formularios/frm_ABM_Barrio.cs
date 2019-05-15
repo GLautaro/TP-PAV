@@ -90,7 +90,7 @@ namespace TP_PAV.formularios
             {
                 if (priv_barrio.addBarrio(txt_nombre_barrio.Text))
                 {
-                    DialogResult result = MessageBox.Show("Tipo de Franquicia cargada correctamente\n¿Desea cargar otra franquicia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("Tipo de Barrio cargado correctamente\n¿Desea cargar otro Barrio?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (result == DialogResult.No)
                     {
                         resetearFormulario();
@@ -122,7 +122,7 @@ namespace TP_PAV.formularios
         {
             if (dgv_barrio.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No existen barrios cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             txt_nombre_barrio.Text = dgv_barrio.CurrentRow.Cells["nombre_barrio"].Value.ToString();

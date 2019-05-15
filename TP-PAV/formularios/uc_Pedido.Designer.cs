@@ -186,6 +186,7 @@
             this.cmb_franquicia.Size = new System.Drawing.Size(256, 24);
             this.cmb_franquicia.TabIndex = 9;
             this.cmb_franquicia.SelectedIndexChanged += new System.EventHandler(this.cmb_franquicia_SelectedIndexChanged);
+            this.cmb_franquicia.Click += new System.EventHandler(this.cmb_franquicia_Click);
             // 
             // dgv_pedidos
             // 
