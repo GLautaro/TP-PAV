@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 44);
+            this.label1.Location = new System.Drawing.Point(50, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(309, 38);
             this.label1.TabIndex = 0;
@@ -79,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 122);
+            this.label2.Location = new System.Drawing.Point(52, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 29);
             this.label2.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 440);
+            this.label3.Location = new System.Drawing.Point(52, 390);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 29);
             this.label3.TabIndex = 4;
@@ -132,7 +132,7 @@
             this.grp_crearPedido.Controls.Add(this.cmb_franquicia);
             this.grp_crearPedido.Controls.Add(this.label5);
             this.grp_crearPedido.Controls.Add(this.btn_addPedido);
-            this.grp_crearPedido.Location = new System.Drawing.Point(823, 163);
+            this.grp_crearPedido.Location = new System.Drawing.Point(831, 105);
             this.grp_crearPedido.Name = "grp_crearPedido";
             this.grp_crearPedido.Size = new System.Drawing.Size(382, 231);
             this.grp_crearPedido.TabIndex = 20;
@@ -158,7 +158,7 @@
             this.txt_legajoVendedor._mensaje_error = "Error";
             this.txt_legajoVendedor._nombre_tabla = "pedido";
             this.txt_legajoVendedor._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
-            this.txt_legajoVendedor._validable = true;
+            this.txt_legajoVendedor._validable = false;
             this.txt_legajoVendedor.Enabled = false;
             this.txt_legajoVendedor.Location = new System.Drawing.Point(120, 86);
             this.txt_legajoVendedor.Name = "txt_legajoVendedor";
@@ -220,7 +220,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_pedidos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_pedidos.GridColor = System.Drawing.Color.YellowGreen;
-            this.dgv_pedidos.Location = new System.Drawing.Point(57, 155);
+            this.dgv_pedidos.Location = new System.Drawing.Point(57, 105);
             this.dgv_pedidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_pedidos.MultiSelect = false;
             this.dgv_pedidos.Name = "dgv_pedidos";
@@ -315,7 +315,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_detallePedido.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_detallePedido.GridColor = System.Drawing.Color.YellowGreen;
-            this.dgv_detallePedido.Location = new System.Drawing.Point(57, 473);
+            this.dgv_detallePedido.Location = new System.Drawing.Point(57, 423);
             this.dgv_detallePedido.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_detallePedido.MultiSelect = false;
             this.dgv_detallePedido.Name = "dgv_detallePedido";
@@ -376,7 +376,7 @@
             this.label_error.AutoSize = true;
             this.label_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_error.ForeColor = System.Drawing.Color.Red;
-            this.label_error.Location = new System.Drawing.Point(827, 140);
+            this.label_error.Location = new System.Drawing.Point(827, 72);
             this.label_error.Name = "label_error";
             this.label_error.Size = new System.Drawing.Size(0, 20);
             this.label_error.TabIndex = 54;

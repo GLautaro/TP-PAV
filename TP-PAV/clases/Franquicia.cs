@@ -167,7 +167,8 @@ namespace TP_PAV.clases
                                     v.nombre_vendedor,
                                     v.apellido_vendedor,
                                     t_f.id_tipo_franquicia,
-                                    f.habilitado
+                                    f.habilitado,
+                                    t_f.monto_minimo_compra
 	                                        FROM franquicia f
 	                                                JOIN vendedor v ON v.legajo_vendedor=f.legajo_vendedor
 	                                                JOIN barrio b ON b.id_barrio=f.id_barrio

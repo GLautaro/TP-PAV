@@ -17,26 +17,23 @@ namespace TP_PAV
         {
             InitializeComponent();
             SidePanel.Hide();
-           
+            show_page_default();
         }
 
-        private void btn_menuPedidos_Click(object sender, EventArgs e)
+        private void show_page_default()
         {
             SidePanel.Height = btn_menuPedidos.Height;
             SidePanel.Top = btn_menuPedidos.Top;
             SidePanel.Show();
-            if (!main_panel.Controls.Contains(uc_Pedido.pub_instance))
-            {
-                main_panel.Controls.Add(uc_Pedido.pub_instance);
-                uc_Pedido.pub_instance.Dock = DockStyle.Fill;
-                uc_Pedido.pub_instance.BringToFront();
-            }
-            else
-            {
-
-                uc_Pedido.pub_instance.BringToFront();
-
-            }
+            uc_Pedido uc_pedido = new uc_Pedido();
+            main_panel.Controls.Add(uc_pedido);
+            uc_pedido.Dock = DockStyle.Fill;
+            uc_pedido.BringToFront();
+        }
+        private void btn_menuPedidos_Click(object sender, EventArgs e)
+        {
+            show_page_default();
+            
         }
       
 

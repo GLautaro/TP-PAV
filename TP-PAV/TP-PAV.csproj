@@ -64,6 +64,7 @@
     <Compile Include="clases\DateTimePickerPersonal.Designer.cs">
       <DependentUpon>DateTimePickerPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="clases\DetallePedido.cs" />
     <Compile Include="clases\Franquicia.cs" />
     <Compile Include="clases\Pedido.cs" />
     <Compile Include="clases\Producto.cs" />

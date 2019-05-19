@@ -23,43 +23,48 @@ namespace TP_PAV.clases
 
         public int pub_id_pedido
         {
-            get { return this.priv_id_pedido; }
-            set {this.priv_id_pedido = value;}
+            get { return priv_id_pedido; }
+            set {priv_id_pedido = value;}
         }
         public DateTime pub_fecha_solicitud
         {
-            get { return this.pub_fecha_solicitud; }
-            set { this.pub_fecha_solicitud = value; }
+            get { return priv_fecha_solicitud; }
+            set { priv_fecha_solicitud = value; }
         }
         public DateTime pub_fecha_entrega
         {
-            get { return this.pub_fecha_entrega; }
-            set { this.pub_fecha_entrega = value; }
+            get { return priv_fecha_entrega; }
+            set { priv_fecha_entrega = value; }
         }
         public int pub_id_estado
         {
-            get { return this.pub_id_estado; }
-            set { this.pub_id_estado = value; }
+            get { return priv_id_estado; }
+            set { priv_id_estado = value; }
         }
         public int pub_id_franquicia
         {
-            get { return this.pub_id_franquicia; }
-            set { this.pub_id_franquicia = value; }
+            get { return priv_id_franquicia; }
+            set { priv_id_franquicia = value; }
         }
         public int pub_id_vendedor
         {
-            get { return this.pub_id_vendedor; }
-            set { this.pub_id_vendedor = value; }
+            get { return priv_id_vendedor; }
+            set { priv_id_vendedor = value; }
         }
         public int pub_monto_final
         {
-            get { return this.pub_monto_final; }
-            set { this.pub_monto_final = value; }
+            get { return priv_monto_final; }
+            set { priv_monto_final = value; }
         }
         public Label pub_Pedido_label_error
         {
             get { return this.priv_pedido_label_error; }
             set { this.priv_pedido_label_error = value; }
+        }
+        public AccesoBD pub_acceso_db_transaccion
+        {
+            get { return priv_acceso_db; }
+            set { priv_acceso_db = value; }
         }
         public void iniciar_transaccion_pedido()
         {
@@ -79,6 +84,7 @@ namespace TP_PAV.clases
 
         public DataTable recuperarPedidosPendientes()
         {
+            
             return priv_acceso_db.ejecutarConsulta(@"SELECT 
                                                      id_pedido, 
                                                      fecha_solicitud, 
@@ -88,7 +94,8 @@ namespace TP_PAV.clases
                                                      FROM pedido WHERE id_estado = 1" );
 
         }
-        public DataTable recuperarDetalleDePedido(int idPedido)
+  
+   /*     public DataTable recuperarDetalleDePedido(int idPedido)
         {
             return priv_acceso_db.ejecutarConsulta(@"SELECT 
                                                         pxp.id_producto, 
@@ -100,13 +107,27 @@ namespace TP_PAV.clases
                                                         WHERE pxp.id_pedido=" + idPedido);
 
         }
+          */
         public DataTable addPedido(string fecha_solicitud, int id_estado, int id_franquicia, int id_vendedor)
         {
 
             return priv_acceso_db.ejecutarConsulta(String.Format(@"INSERT INTO pedido (fecha_solicitud, id_estado, id_franquicia, id_vendedor) VALUES ('{0}',{1}, {2}, {3}) SELECT @@IDENTITY as id_ultimo_pedido", fecha_solicitud, id_estado, id_franquicia, id_vendedor));
 
         }
-        public DataTable recuperarProductoXTipoProducto(int id_tipo_producto, int id_pedido)
+
+        public DataTable updateMontoFinalPedido(int id_pedido)
+        {
+            return priv_acceso_db.ejecutarConsulta(String.Format(@"UPDATE pedido
+                                                                SET pedido.monto_final=pxp.montoFinal
+                                                                FROM pedido p 
+                                                                JOIN (SELECT id_pedido, SUM(cantidad*precio_unitario) as montoFinal 
+		                                                        FROM pedido_x_producto 
+		                                                        GROUP BY id_pedido) pxp 
+		                                                        ON pxp.id_pedido=p.id_pedido 
+		                                                        WHERE p.id_pedido={0} SELECT monto_final FROM pedido WHERE id_pedido = {0}", id_pedido));
+
+        }
+     /*   public DataTable recuperarProductoXTipoProducto(int id_tipo_producto, int id_pedido)
         {
             return priv_acceso_db.ejecutarConsulta(String.Format(@"SELECT 
 		                                                            id_producto, 
@@ -116,14 +137,14 @@ namespace TP_PAV.clases
 		                                                            JOIN tipo_producto t ON t.id_tipo_producto = p.id_tipo_producto
 		                                                            WHERE id_producto NOT IN (SELECT id_producto FROM pedido_x_producto WHERE id_pedido={0} ) AND t.id_tipo_producto = {1}", id_pedido, id_tipo_producto));
 
-        }
+        } */
 
-        public bool addProductoPedido(int id_pedido, int id_producto, int cantidad, int precio_unitario)
+    /*    public bool addProductoPedido(int id_pedido, int id_producto, int cantidad, int precio_unitario)
         {
             priv_acceso_db.ejecutarNoConsulta(String.Format(@"INSERT INTO pedido_x_producto (id_pedido,id_producto, cantidad, precio_unitario) VALUES ({0},{1}, {2}, {3})", id_pedido, id_producto, cantidad, precio_unitario));
             return true;
 
-        }
+        }   */
        
 
 

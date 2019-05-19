@@ -36,6 +36,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_detallePedido = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_addProductoPedido = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,16 +48,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_guardarPedido = new System.Windows.Forms.Button();
             this.btn_descartarPedido = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_error = new System.Windows.Forms.Label();
-            this.txt_precio_unitario = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_id_pedido = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.cmb_Producto = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.txt_cantidad = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_deleteItem = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_montoTotal = new System.Windows.Forms.Label();
             this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.cmb_Producto = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.txt_precio_unitario = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_cantidad = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_montoMinimo = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_id_pedido = new TP_PAV.clases.TextBoxPersonal(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +79,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1014, 39);
+            this.panel1.Size = new System.Drawing.Size(1102, 39);
             this.panel1.TabIndex = 16;
             // 
             // dgv_detallePedido
@@ -130,6 +135,39 @@
             this.dgv_detallePedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_detallePedido.Size = new System.Drawing.Size(572, 250);
             this.dgv_detallePedido.TabIndex = 55;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre_producto";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre Producto";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "cantidad";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "montoTotal";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Monto Total";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // id_producto
+            // 
+            this.id_producto.DataPropertyName = "id_producto";
+            this.id_producto.HeaderText = "ID PRODUCTO";
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            this.id_producto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id_producto.Visible = false;
             // 
             // btn_addProductoPedido
             // 
@@ -206,61 +244,119 @@
             this.btn_descartarPedido.UseVisualStyleBackColor = true;
             this.btn_descartarPedido.Click += new System.EventHandler(this.btn_descartarPedido_Click);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre_producto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre Producto";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "cantidad";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "montoTotal";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Monto Total";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // id_producto
-            // 
-            this.id_producto.DataPropertyName = "id_producto";
-            this.id_producto.HeaderText = "ID PRODUCTO";
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
-            this.id_producto.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id_producto.Visible = false;
-            // 
             // lbl_error
             // 
             this.lbl_error.AutoSize = true;
             this.lbl_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error.Location = new System.Drawing.Point(631, 113);
+            this.lbl_error.Location = new System.Drawing.Point(572, 95);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(0, 20);
             this.lbl_error.TabIndex = 62;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(220, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 17);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "MONTO MINIMO DE COMPRA:";
+            // 
+            // btn_deleteItem
+            // 
+            this.btn_deleteItem.Location = new System.Drawing.Point(649, 315);
+            this.btn_deleteItem.Name = "btn_deleteItem";
+            this.btn_deleteItem.Size = new System.Drawing.Size(150, 35);
+            this.btn_deleteItem.TabIndex = 65;
+            this.btn_deleteItem.Text = "Eliminar Producto";
+            this.btn_deleteItem.UseVisualStyleBackColor = true;
+            this.btn_deleteItem.Click += new System.EventHandler(this.btn_deleteItem_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(327, 395);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 25);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "Total: $";
+            // 
+            // lbl_montoTotal
+            // 
+            this.lbl_montoTotal.AutoSize = true;
+            this.lbl_montoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_montoTotal.Location = new System.Drawing.Point(419, 395);
+            this.lbl_montoTotal.Name = "lbl_montoTotal";
+            this.lbl_montoTotal.Size = new System.Drawing.Size(24, 25);
+            this.lbl_montoTotal.TabIndex = 67;
+            this.lbl_montoTotal.Text = "0";
+            // 
+            // cmb_tipoProducto
+            // 
+            this.cmb_tipoProducto._campo = null;
+            this.cmb_tipoProducto._mensaje_error = "Necesita agregar un Tipo de Producto";
+            this.cmb_tipoProducto._nombre_tabla = null;
+            this.cmb_tipoProducto._validable = true;
+            this.cmb_tipoProducto.FormattingEnabled = true;
+            this.cmb_tipoProducto.Location = new System.Drawing.Point(743, 158);
+            this.cmb_tipoProducto.Name = "cmb_tipoProducto";
+            this.cmb_tipoProducto.Size = new System.Drawing.Size(223, 24);
+            this.cmb_tipoProducto.TabIndex = 71;
+            this.cmb_tipoProducto.SelectedIndexChanged += new System.EventHandler(this.cmb_tipoProducto_SelectedIndexChanged);
+            // 
+            // cmb_Producto
+            // 
+            this.cmb_Producto._campo = null;
+            this.cmb_Producto._mensaje_error = "Necesita seleccionar un Producto";
+            this.cmb_Producto._nombre_tabla = null;
+            this.cmb_Producto._validable = true;
+            this.cmb_Producto.FormattingEnabled = true;
+            this.cmb_Producto.Location = new System.Drawing.Point(742, 201);
+            this.cmb_Producto.Name = "cmb_Producto";
+            this.cmb_Producto.Size = new System.Drawing.Size(224, 24);
+            this.cmb_Producto.TabIndex = 70;
+            this.cmb_Producto.SelectedIndexChanged += new System.EventHandler(this.cmb_Producto_SelectedIndexChanged);
+            // 
             // txt_precio_unitario
             // 
-            this.txt_precio_unitario._campo = "precio_unitario";
+            this.txt_precio_unitario._campo = null;
             this.txt_precio_unitario._mensaje_error = null;
             this.txt_precio_unitario._nombre_tabla = null;
-            this.txt_precio_unitario._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_precio_unitario._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
             this.txt_precio_unitario._validable = false;
             this.txt_precio_unitario.Enabled = false;
-            this.txt_precio_unitario.Location = new System.Drawing.Point(766, 239);
+            this.txt_precio_unitario.Location = new System.Drawing.Point(742, 239);
             this.txt_precio_unitario.Name = "txt_precio_unitario";
-            this.txt_precio_unitario.Size = new System.Drawing.Size(200, 22);
-            this.txt_precio_unitario.TabIndex = 58;
+            this.txt_precio_unitario.Size = new System.Drawing.Size(224, 22);
+            this.txt_precio_unitario.TabIndex = 69;
+            // 
+            // txt_cantidad
+            // 
+            this.txt_cantidad._campo = null;
+            this.txt_cantidad._mensaje_error = "Necesita agregar una Cantidad";
+            this.txt_cantidad._nombre_tabla = null;
+            this.txt_cantidad._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_cantidad._validable = true;
+            this.txt_cantidad.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txt_cantidad.Location = new System.Drawing.Point(742, 278);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(224, 22);
+            this.txt_cantidad.TabIndex = 68;
+            // 
+            // txt_montoMinimo
+            // 
+            this.txt_montoMinimo._campo = "";
+            this.txt_montoMinimo._mensaje_error = null;
+            this.txt_montoMinimo._nombre_tabla = "";
+            this.txt_montoMinimo._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
+            this.txt_montoMinimo._validable = false;
+            this.txt_montoMinimo.Enabled = false;
+            this.txt_montoMinimo.Location = new System.Drawing.Point(429, 95);
+            this.txt_montoMinimo.Name = "txt_montoMinimo";
+            this.txt_montoMinimo.Size = new System.Drawing.Size(116, 22);
+            this.txt_montoMinimo.TabIndex = 64;
             // 
             // txt_id_pedido
             // 
@@ -275,66 +371,33 @@
             this.txt_id_pedido.Size = new System.Drawing.Size(116, 22);
             this.txt_id_pedido.TabIndex = 57;
             // 
-            // cmb_Producto
-            // 
-            this.cmb_Producto._campo = null;
-            this.cmb_Producto._mensaje_error = "Necesita Seleccionar un Producto";
-            this.cmb_Producto._nombre_tabla = null;
-            this.cmb_Producto._validable = true;
-            this.cmb_Producto.FormattingEnabled = true;
-            this.cmb_Producto.Location = new System.Drawing.Point(766, 199);
-            this.cmb_Producto.Name = "cmb_Producto";
-            this.cmb_Producto.Size = new System.Drawing.Size(200, 24);
-            this.cmb_Producto.TabIndex = 16;
-            this.cmb_Producto.SelectedIndexChanged += new System.EventHandler(this.cmb_Producto_SelectedIndexChanged);
-            // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad._campo = "cantidad";
-            this.txt_cantidad._mensaje_error = "Necesita ingresar una cantidad";
-            this.txt_cantidad._nombre_tabla = "pedido_x_producto";
-            this.txt_cantidad._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.numero;
-            this.txt_cantidad._validable = false;
-            this.txt_cantidad.Location = new System.Drawing.Point(766, 278);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(200, 22);
-            this.txt_cantidad.TabIndex = 18;
-            // 
-            // cmb_tipoProducto
-            // 
-            this.cmb_tipoProducto._campo = "cmb_tipoProducto";
-            this.cmb_tipoProducto._mensaje_error = "Necesita seleccionar un tipo de Producto";
-            this.cmb_tipoProducto._nombre_tabla = null;
-            this.cmb_tipoProducto._validable = true;
-            this.cmb_tipoProducto.FormattingEnabled = true;
-            this.cmb_tipoProducto.Location = new System.Drawing.Point(766, 158);
-            this.cmb_tipoProducto.Name = "cmb_tipoProducto";
-            this.cmb_tipoProducto.Size = new System.Drawing.Size(200, 24);
-            this.cmb_tipoProducto.TabIndex = 15;
-            this.cmb_tipoProducto.SelectedIndexChanged += new System.EventHandler(this.cmb_tipoProducto_SelectedIndexChanged);
-            // 
             // frm_DetallePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 429);
+            this.ClientSize = new System.Drawing.Size(1102, 429);
+            this.Controls.Add(this.cmb_tipoProducto);
+            this.Controls.Add(this.cmb_Producto);
+            this.Controls.Add(this.txt_precio_unitario);
+            this.Controls.Add(this.txt_cantidad);
+            this.Controls.Add(this.lbl_montoTotal);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btn_deleteItem);
+            this.Controls.Add(this.txt_montoMinimo);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.btn_descartarPedido);
             this.Controls.Add(this.btn_guardarPedido);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_precio_unitario);
             this.Controls.Add(this.btn_addProductoPedido);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_id_pedido);
-            this.Controls.Add(this.cmb_Producto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgv_detallePedido);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_cantidad);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cmb_tipoProducto);
             this.Name = "frm_DetallePedido";
             this.Text = "frm_DetallePedido";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_DetallePedido_FormClosing);
@@ -353,13 +416,9 @@
         private System.Windows.Forms.Button btn_addProductoPedido;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private clases.TextBoxPersonal txt_cantidad;
-        private clases.ComboBoxPersonal cmb_tipoProducto;
         private System.Windows.Forms.Label label8;
-        private clases.ComboBoxPersonal cmb_Producto;
         private System.Windows.Forms.Label label1;
         private clases.TextBoxPersonal txt_id_pedido;
-        private clases.TextBoxPersonal txt_precio_unitario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_guardarPedido;
         private System.Windows.Forms.Button btn_descartarPedido;
@@ -368,5 +427,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.Label lbl_error;
+        private System.Windows.Forms.Label label3;
+        private clases.TextBoxPersonal txt_montoMinimo;
+        private System.Windows.Forms.Button btn_deleteItem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_montoTotal;
+        private clases.TextBoxPersonal txt_cantidad;
+        private clases.TextBoxPersonal txt_precio_unitario;
+        private clases.ComboBoxPersonal cmb_Producto;
+        private clases.ComboBoxPersonal cmb_tipoProducto;
     }
 }

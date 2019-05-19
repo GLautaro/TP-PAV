@@ -23,16 +23,7 @@ namespace TP_PAV.formularios
         {
             InitializeComponent();
         }
-        private static uc_Pedido priv_instance;
-        public static uc_Pedido pub_instance
-        {
-            get
-            {
-                if (priv_instance == null)
-                    priv_instance = new uc_Pedido();
-                return priv_instance;
-            }
-        }
+       
 
         private void uc_Pedido_Load(object sender, EventArgs e)
         {
@@ -68,11 +59,18 @@ namespace TP_PAV.formularios
             if (priv_pedido.validarPedido(grp_crearPedido.Controls) == Validar.estado_validacion.correcto)
             {
                 frm_DetallePedido priv_frm_detallePedido = new frm_DetallePedido();
-                Pedido nuevo_pedido = new Pedido();
+                Pedido nuevo_pedido = new Pedido();               
                 nuevo_pedido.iniciar_transaccion_pedido();
                 DataTable result = nuevo_pedido.addPedido(dt_fechaSolicitada.Text.ToString(), 1, int.Parse(cmb_franquicia.SelectedValue.ToString()), int.Parse(txt_legajoVendedor.Text.ToString()));
+                
                 priv_frm_detallePedido.pub_id_pedido = int.Parse(result.Rows[0]["id_ultimo_pedido"].ToString());
+
+                DataRowView row_selected = (DataRowView)cmb_franquicia.SelectedItem;
+                priv_frm_detallePedido.pub_monto_minimo = int.Parse(row_selected["monto_minimo_compra"].ToString());
+
                 priv_frm_detallePedido.pub_pedido = nuevo_pedido;
+                
+                
                 priv_frm_detallePedido.ShowDialog();
                 //nuevo_pedido.cerrar_transaccion_pedido(false);
                 dgv_pedidos.DataSource = nuevo_pedido.recuperarPedidosPendientes();
@@ -83,8 +81,11 @@ namespace TP_PAV.formularios
   
         private void dgv_pedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            dgv_detallePedido.DataSource = priv_pedido.recuperarDetalleDePedido(int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString()));
+            Pedido pedido_seleccionado = new Pedido();
+            pedido_seleccionado.pub_id_pedido = int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
+            DetallePedido detalle_pedido_seleccionado = new DetallePedido();
+            detalle_pedido_seleccionado.pub_pedido = pedido_seleccionado;
+            dgv_detallePedido.DataSource = detalle_pedido_seleccionado.recuperarDetalleDePedido();
         }
 
         private void cmb_franquicia_Click(object sender, EventArgs e)
