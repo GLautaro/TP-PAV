@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_IdProducto = new System.Windows.Forms.Label();
             this.lbl_NomProducto = new System.Windows.Forms.Label();
@@ -63,23 +63,25 @@
             this.nombre_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lbl_mensajeError = new System.Windows.Forms.Label();
             this.grp_busquedaAvanzadaProducto = new System.Windows.Forms.GroupBox();
-            this.cbx_tipoProducto = new System.Windows.Forms.CheckBox();
-            this.lbl_busquedaAvSeleccionTipo = new System.Windows.Forms.Label();
-            this.cbx_busquedaAvanzPrecio = new System.Windows.Forms.CheckBox();
-            this.lbl_busquedaPrecioDesde = new System.Windows.Forms.Label();
-            this.lbl_busquedaPrecioHasta = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.btn_cerrarBusquedaAvanzada = new System.Windows.Forms.Button();
-            this.btn_BuscarBusquedaAvanzada = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_BuscarBusquedaAvanzada = new System.Windows.Forms.Button();
+            this.btn_cerrarBusquedaAvanzada = new System.Windows.Forms.Button();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_busquedaPrecioHasta = new System.Windows.Forms.Label();
+            this.lbl_busquedaPrecioDesde = new System.Windows.Forms.Label();
             this.txt_busquedaPrecioHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_busquedaPrecioDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.cbx_busquedaAvanzPrecio = new System.Windows.Forms.CheckBox();
             this.cmb_busquedaSeleccionTipo = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.lbl_busquedaAvSeleccionTipo = new System.Windows.Forms.Label();
+            this.cbx_tipoProducto = new System.Windows.Forms.CheckBox();
+            this.btn_activarDesactivar = new System.Windows.Forms.Button();
             this.cmb_estadoProducto = new TP_PAV.clases.ComboBoxHabilitado(this.components);
             this.txt_precioUnitario = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
@@ -251,6 +253,7 @@
             this.btn_buscarProducto.TabIndex = 64;
             this.btn_buscarProducto.Text = "Buscar";
             this.btn_buscarProducto.UseVisualStyleBackColor = true;
+            this.btn_buscarProducto.Click += new System.EventHandler(this.btn_buscarProducto_Click);
             // 
             // txt_busquedaProducto
             // 
@@ -259,6 +262,7 @@
             this.txt_busquedaProducto.Name = "txt_busquedaProducto";
             this.txt_busquedaProducto.Size = new System.Drawing.Size(260, 22);
             this.txt_busquedaProducto.TabIndex = 63;
+            this.txt_busquedaProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busquedaProducto_KeyUp);
             // 
             // lbl_buscarProducto
             // 
@@ -284,7 +288,7 @@
             // btn_modificarProducto
             // 
             this.btn_modificarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificarProducto.Location = new System.Drawing.Point(293, 121);
+            this.btn_modificarProducto.Location = new System.Drawing.Point(307, 121);
             this.btn_modificarProducto.Name = "btn_modificarProducto";
             this.btn_modificarProducto.Size = new System.Drawing.Size(109, 49);
             this.btn_modificarProducto.TabIndex = 60;
@@ -300,14 +304,14 @@
             this.dgv_productos.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_productos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -319,37 +323,39 @@
             this.id_tipo_producto,
             this.nombre_tipo_producto,
             this.precio_unitario,
-            this.estado_producto});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle6;
+            this.estado_producto,
+            this.Habilitado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_productos.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_productos.Location = new System.Drawing.Point(15, 200);
             this.dgv_productos.MultiSelect = false;
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_productos.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_productos.Size = new System.Drawing.Size(700, 350);
             this.dgv_productos.TabIndex = 66;
+            this.dgv_productos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_productos_CellClick);
             // 
             // id_producto
             // 
@@ -424,6 +430,15 @@
             this.estado_producto.ReadOnly = true;
             this.estado_producto.Visible = false;
             // 
+            // Habilitado
+            // 
+            this.Habilitado.DataPropertyName = "estado_producto";
+            this.Habilitado.HeaderText = "Habilitado";
+            this.Habilitado.Name = "Habilitado";
+            this.Habilitado.ReadOnly = true;
+            this.Habilitado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Habilitado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // lbl_mensajeError
             // 
             this.lbl_mensajeError.AutoSize = true;
@@ -461,99 +476,27 @@
             this.grp_busquedaAvanzadaProducto.Text = "Busqueda Avanzada | Productos";
             this.grp_busquedaAvanzadaProducto.Visible = false;
             // 
-            // cbx_tipoProducto
+            // label3
             // 
-            this.cbx_tipoProducto.AutoSize = true;
-            this.cbx_tipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_tipoProducto.Location = new System.Drawing.Point(16, 39);
-            this.cbx_tipoProducto.Name = "cbx_tipoProducto";
-            this.cbx_tipoProducto.Size = new System.Drawing.Size(139, 19);
-            this.cbx_tipoProducto.TabIndex = 0;
-            this.cbx_tipoProducto.Text = "Tipo de Producto:";
-            this.cbx_tipoProducto.UseVisualStyleBackColor = true;
-            this.cbx_tipoProducto.CheckedChanged += new System.EventHandler(this.cbx_tipoProducto_CheckedChanged);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(35, 373);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 16);
+            this.label3.TabIndex = 69;
+            this.label3.Text = "Mensajes de Error";
+            this.label3.Visible = false;
             // 
-            // lbl_busquedaAvSeleccionTipo
+            // btn_BuscarBusquedaAvanzada
             // 
-            this.lbl_busquedaAvSeleccionTipo.AutoSize = true;
-            this.lbl_busquedaAvSeleccionTipo.Location = new System.Drawing.Point(58, 82);
-            this.lbl_busquedaAvSeleccionTipo.Name = "lbl_busquedaAvSeleccionTipo";
-            this.lbl_busquedaAvSeleccionTipo.Size = new System.Drawing.Size(87, 13);
-            this.lbl_busquedaAvSeleccionTipo.TabIndex = 2;
-            this.lbl_busquedaAvSeleccionTipo.Text = "Seleccionar Tipo";
-            // 
-            // cbx_busquedaAvanzPrecio
-            // 
-            this.cbx_busquedaAvanzPrecio.AutoSize = true;
-            this.cbx_busquedaAvanzPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_busquedaAvanzPrecio.Location = new System.Drawing.Point(16, 129);
-            this.cbx_busquedaAvanzPrecio.Name = "cbx_busquedaAvanzPrecio";
-            this.cbx_busquedaAvanzPrecio.Size = new System.Drawing.Size(71, 19);
-            this.cbx_busquedaAvanzPrecio.TabIndex = 4;
-            this.cbx_busquedaAvanzPrecio.Text = "Precio:";
-            this.cbx_busquedaAvanzPrecio.UseVisualStyleBackColor = true;
-            this.cbx_busquedaAvanzPrecio.CheckedChanged += new System.EventHandler(this.cbx_busquedaAvanzPrecio_CheckedChanged);
-            // 
-            // lbl_busquedaPrecioDesde
-            // 
-            this.lbl_busquedaPrecioDesde.AutoSize = true;
-            this.lbl_busquedaPrecioDesde.Location = new System.Drawing.Point(107, 172);
-            this.lbl_busquedaPrecioDesde.Name = "lbl_busquedaPrecioDesde";
-            this.lbl_busquedaPrecioDesde.Size = new System.Drawing.Size(41, 13);
-            this.lbl_busquedaPrecioDesde.TabIndex = 7;
-            this.lbl_busquedaPrecioDesde.Text = "Desde:";
-            // 
-            // lbl_busquedaPrecioHasta
-            // 
-            this.lbl_busquedaPrecioHasta.AutoSize = true;
-            this.lbl_busquedaPrecioHasta.Location = new System.Drawing.Point(107, 217);
-            this.lbl_busquedaPrecioHasta.Name = "lbl_busquedaPrecioHasta";
-            this.lbl_busquedaPrecioHasta.Size = new System.Drawing.Size(38, 13);
-            this.lbl_busquedaPrecioHasta.TabIndex = 8;
-            this.lbl_busquedaPrecioHasta.Text = "Hasta:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 268);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Estado:";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(35, 306);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(75, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cualquiera";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(274, 306);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(89, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No Habilitado";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(155, 306);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(72, 17);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Habilitado";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.btn_BuscarBusquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BuscarBusquedaAvanzada.Location = new System.Drawing.Point(316, 421);
+            this.btn_BuscarBusquedaAvanzada.Name = "btn_BuscarBusquedaAvanzada";
+            this.btn_BuscarBusquedaAvanzada.Size = new System.Drawing.Size(67, 30);
+            this.btn_BuscarBusquedaAvanzada.TabIndex = 68;
+            this.btn_BuscarBusquedaAvanzada.Text = "Buscar";
+            this.btn_BuscarBusquedaAvanzada.UseVisualStyleBackColor = true;
             // 
             // btn_cerrarBusquedaAvanzada
             // 
@@ -566,27 +509,66 @@
             this.btn_cerrarBusquedaAvanzada.UseVisualStyleBackColor = true;
             this.btn_cerrarBusquedaAvanzada.Click += new System.EventHandler(this.btn_cerrarBusquedaAvanzada_Click);
             // 
-            // btn_BuscarBusquedaAvanzada
+            // radioButton3
             // 
-            this.btn_BuscarBusquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BuscarBusquedaAvanzada.Location = new System.Drawing.Point(316, 421);
-            this.btn_BuscarBusquedaAvanzada.Name = "btn_BuscarBusquedaAvanzada";
-            this.btn_BuscarBusquedaAvanzada.Size = new System.Drawing.Size(67, 30);
-            this.btn_BuscarBusquedaAvanzada.TabIndex = 68;
-            this.btn_BuscarBusquedaAvanzada.Text = "Buscar";
-            this.btn_BuscarBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(155, 306);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(72, 17);
+            this.radioButton3.TabIndex = 12;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Habilitado";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // radioButton2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(35, 373);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 16);
-            this.label3.TabIndex = 69;
-            this.label3.Text = "Mensajes de Error";
-            this.label3.Visible = false;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(274, 306);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(89, 17);
+            this.radioButton2.TabIndex = 11;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "No Habilitado";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(35, 306);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(75, 17);
+            this.radioButton1.TabIndex = 10;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Cualquiera";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 268);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Estado:";
+            // 
+            // lbl_busquedaPrecioHasta
+            // 
+            this.lbl_busquedaPrecioHasta.AutoSize = true;
+            this.lbl_busquedaPrecioHasta.Location = new System.Drawing.Point(107, 217);
+            this.lbl_busquedaPrecioHasta.Name = "lbl_busquedaPrecioHasta";
+            this.lbl_busquedaPrecioHasta.Size = new System.Drawing.Size(38, 13);
+            this.lbl_busquedaPrecioHasta.TabIndex = 8;
+            this.lbl_busquedaPrecioHasta.Text = "Hasta:";
+            // 
+            // lbl_busquedaPrecioDesde
+            // 
+            this.lbl_busquedaPrecioDesde.AutoSize = true;
+            this.lbl_busquedaPrecioDesde.Location = new System.Drawing.Point(107, 172);
+            this.lbl_busquedaPrecioDesde.Name = "lbl_busquedaPrecioDesde";
+            this.lbl_busquedaPrecioDesde.Size = new System.Drawing.Size(41, 13);
+            this.lbl_busquedaPrecioDesde.TabIndex = 7;
+            this.lbl_busquedaPrecioDesde.Text = "Desde:";
             // 
             // txt_busquedaPrecioHasta
             // 
@@ -614,6 +596,18 @@
             this.txt_busquedaPrecioDesde.Size = new System.Drawing.Size(167, 20);
             this.txt_busquedaPrecioDesde.TabIndex = 5;
             // 
+            // cbx_busquedaAvanzPrecio
+            // 
+            this.cbx_busquedaAvanzPrecio.AutoSize = true;
+            this.cbx_busquedaAvanzPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_busquedaAvanzPrecio.Location = new System.Drawing.Point(16, 129);
+            this.cbx_busquedaAvanzPrecio.Name = "cbx_busquedaAvanzPrecio";
+            this.cbx_busquedaAvanzPrecio.Size = new System.Drawing.Size(71, 19);
+            this.cbx_busquedaAvanzPrecio.TabIndex = 4;
+            this.cbx_busquedaAvanzPrecio.Text = "Precio:";
+            this.cbx_busquedaAvanzPrecio.UseVisualStyleBackColor = true;
+            this.cbx_busquedaAvanzPrecio.CheckedChanged += new System.EventHandler(this.cbx_busquedaAvanzPrecio_CheckedChanged);
+            // 
             // cmb_busquedaSeleccionTipo
             // 
             this.cmb_busquedaSeleccionTipo._campo = "id_tipo_producto";
@@ -626,6 +620,38 @@
             this.cmb_busquedaSeleccionTipo.Name = "cmb_busquedaSeleccionTipo";
             this.cmb_busquedaSeleccionTipo.Size = new System.Drawing.Size(167, 21);
             this.cmb_busquedaSeleccionTipo.TabIndex = 3;
+            // 
+            // lbl_busquedaAvSeleccionTipo
+            // 
+            this.lbl_busquedaAvSeleccionTipo.AutoSize = true;
+            this.lbl_busquedaAvSeleccionTipo.Location = new System.Drawing.Point(58, 82);
+            this.lbl_busquedaAvSeleccionTipo.Name = "lbl_busquedaAvSeleccionTipo";
+            this.lbl_busquedaAvSeleccionTipo.Size = new System.Drawing.Size(87, 13);
+            this.lbl_busquedaAvSeleccionTipo.TabIndex = 2;
+            this.lbl_busquedaAvSeleccionTipo.Text = "Seleccionar Tipo";
+            // 
+            // cbx_tipoProducto
+            // 
+            this.cbx_tipoProducto.AutoSize = true;
+            this.cbx_tipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_tipoProducto.Location = new System.Drawing.Point(16, 39);
+            this.cbx_tipoProducto.Name = "cbx_tipoProducto";
+            this.cbx_tipoProducto.Size = new System.Drawing.Size(139, 19);
+            this.cbx_tipoProducto.TabIndex = 0;
+            this.cbx_tipoProducto.Text = "Tipo de Producto:";
+            this.cbx_tipoProducto.UseVisualStyleBackColor = true;
+            this.cbx_tipoProducto.CheckedChanged += new System.EventHandler(this.cbx_tipoProducto_CheckedChanged);
+            // 
+            // btn_activarDesactivar
+            // 
+            this.btn_activarDesactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_activarDesactivar.Location = new System.Drawing.Point(465, 121);
+            this.btn_activarDesactivar.Name = "btn_activarDesactivar";
+            this.btn_activarDesactivar.Size = new System.Drawing.Size(109, 49);
+            this.btn_activarDesactivar.TabIndex = 78;
+            this.btn_activarDesactivar.Text = "Desactivar";
+            this.btn_activarDesactivar.UseVisualStyleBackColor = true;
+            this.btn_activarDesactivar.Click += new System.EventHandler(this.btn_activarDesactivar_Click);
             // 
             // cmb_estadoProducto
             // 
@@ -738,6 +764,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_activarDesactivar);
             this.Controls.Add(this.grp_busquedaAvanzadaProducto);
             this.Controls.Add(this.lbl_mensajeError);
             this.Controls.Add(this.cmb_estadoProducto);
@@ -810,16 +837,6 @@
         private clases.ComboBoxPersonal cmb_tipoProducto;
         private clases.TextBoxPersonal txt_precioUnitario;
         private clases.ComboBoxHabilitado cmb_estadoProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
         private System.Windows.Forms.Label lbl_mensajeError;
         private System.Windows.Forms.GroupBox grp_busquedaAvanzadaProducto;
         private System.Windows.Forms.CheckBox cbx_tipoProducto;
@@ -837,5 +854,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_BuscarBusquedaAvanzada;
         private System.Windows.Forms.Button btn_cerrarBusquedaAvanzada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_u_medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio_unitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado_producto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Habilitado;
+        private System.Windows.Forms.Button btn_activarDesactivar;
     }
 }

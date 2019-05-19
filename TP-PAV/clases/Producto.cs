@@ -30,7 +30,13 @@ namespace TP_PAV.clases
         */
         public DataTable buscarProductos(string texto)
         {
-            string consulta = @"SELECT * FROM producto WHERE nombre_producto LIKE '%" + texto + "%' OR id_producto LIKE '%" + texto + "%';";
+            string consulta = @"SELECT p.id_producto, p.nombre_producto, p.cantidad_u_medida,
+                                  u.nombre_u_medida, p.descripcion, u.id_u_medida, p.estado_producto, 
+                                  t.nombre_tipo_producto, p.precio_unitario, t.id_tipo_producto
+                                    FROM producto p
+                                        JOIN unidad_medida u ON p.id_u_medida=u.id_u_medida
+                                        JOIN tipo_producto t ON p.id_tipo_producto=t.id_tipo_producto
+                                    WHERE nombre_producto LIKE '%" + texto + "%' OR id_producto LIKE '%" + texto + "%';";
 
             return db.ejecutarConsulta(consulta);
         }
@@ -69,11 +75,16 @@ namespace TP_PAV.clases
                                   t.nombre_tipo_producto, p.precio_unitario, t.id_tipo_producto
                                     FROM producto p
                                         JOIN unidad_medida u ON p.id_u_medida=u.id_u_medida
-                                        JOIN tipo_producto t ON p.id_tipo_producto=t.id_tipo_producto 
-                                    WHERE p.estado_producto=1";
+                                        JOIN tipo_producto t ON p.id_tipo_producto=t.id_tipo_producto";
 
             return db.ejecutarConsulta(sql);
 
+        }
+
+        public DataTable modificarEstadoProducto(string idProducto, int estado)
+        {
+            string consulta = @"UPDATE producto SET estado_producto = " + estado + " WHERE id_producto = " + idProducto;
+            return db.ejecutarConsulta(consulta);
         }
     }
 }

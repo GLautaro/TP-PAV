@@ -198,6 +198,7 @@ namespace TP_PAV.formularios
             grp_busquedaAvanzadaProducto.Show();
 
             this.cmb_busquedaSeleccionTipo.cargar("tipo_producto", "id_tipo_producto", "nombre_tipo_producto");
+            this.cmb_busquedaSeleccionTipo.SelectedIndex = -1;
         }
         else 
         {
@@ -235,6 +236,82 @@ namespace TP_PAV.formularios
         }
     }
 
+    private void btn_activarDesactivar_Click(object sender, EventArgs e)
+    {
+        string nomproducto = this.dgv_productos.CurrentRow.Cells[1].Value.ToString();
+        DialogResult result = DialogResult.No;
+        int estado = 0;
+        if (this.dgv_productos.CurrentRow.Cells[6].Value.ToString() == "True")
+        {
+            result = MessageBox.Show("¿Desea desactivar al producto: " + nomproducto + " ?", 
+                "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            estado = 0;
+        }
+        else
+        {
+            result = MessageBox.Show("¿Desea activar al producto: " + nomproducto + " ?",
+               "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            estado = 1;
+        }
+
+        if (result == DialogResult.Yes)
+        {
+            producto.modificarEstadoProducto(this.dgv_productos.CurrentRow.Cells[0].Value.ToString(), estado);
+            this.dgv_productos.DataSource = producto.recuperarProductos();
+            actualizarBotonActivarDesactivar();
+        }
+    }
+
+
+
+    private void actualizarBotonActivarDesactivar()
+    {
+        if (this.dgv_productos.SelectedRows.Count < 1)
+        {
+            return;
+        }
+        if (this.dgv_productos.CurrentRow.Cells[6].Value.ToString() == "True")
+        {
+            this.btn_activarDesactivar.Text = "Desactivar";
+        }
+        else
+        {
+            this.btn_activarDesactivar.Text = "Activar";
+        }
+    }
+
+    private void dgv_productos_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        txt_IdProducto.Text = dgv_productos.CurrentRow.Cells["id_producto"].Value.ToString();
+        txt_NombreProducto.Text = dgv_productos.CurrentRow.Cells["nombre_producto"].Value.ToString();
+        txt_cantidadProducto.Text = dgv_productos.CurrentRow.Cells["cantidad_u_medida"].Value.ToString();
+        txt_descripcionProducto.Text = dgv_productos.CurrentRow.Cells["descripcion"].Value.ToString();
+        txt_precioUnitario.Text = dgv_productos.CurrentRow.Cells["precio_unitario"].Value.ToString();
+        cmb_unidadMedida.SelectedValue = dgv_productos.CurrentRow.Cells["id_u_medida"].Value.ToString();
+        cmb_tipoProducto.SelectedValue = dgv_productos.CurrentRow.Cells["id_tipo_producto"].Value.ToString();
+
+        if (this.dgv_productos.CurrentRow.Cells["estado_producto"].Value.ToString() == "True")
+        {
+            this.cmb_estadoProducto.SelectedIndex = 1;
+        }
+        else
+        {
+            this.cmb_estadoProducto.SelectedIndex = 0;
+        }
+
+        actualizarBotonActivarDesactivar();
+    }
+
+    private void btn_buscarProducto_Click(object sender, EventArgs e)
+    {
+        this.dgv_productos.DataSource = producto.buscarProductos(this.txt_busquedaProducto.Text);
+    }
+
+    private void txt_busquedaProducto_KeyUp(object sender, KeyEventArgs e)
+    {
+        this.dgv_productos.DataSource = producto.buscarProductos(this.txt_busquedaProducto.Text);
+        actualizarBotonActivarDesactivar();
+    }
         
     }
 }
