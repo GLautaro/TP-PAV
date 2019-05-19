@@ -52,7 +52,25 @@ namespace TP_PAV.formularios
             }
             
         }
-
+        private void cleanMensaje()
+        {
+            label_error.ForeColor = Color.Red;
+            label_error.Text = "";
+            label_error.Visible = false;
+        }
+        private void mostrarMensaje(string value, bool error)
+        {
+            if (error)
+            {
+                label_error.ForeColor = Color.Red;
+            }
+            else
+            {
+                label_error.ForeColor = Color.Green;
+            }
+            label_error.Text = value;
+            label_error.Visible = true;
+        }
         private void btn_addPedido_Click(object sender, EventArgs e)
         {
             priv_pedido.pub_Pedido_label_error = this.label_error;
@@ -74,6 +92,7 @@ namespace TP_PAV.formularios
                 priv_frm_detallePedido.ShowDialog();
                 //nuevo_pedido.cerrar_transaccion_pedido(false);
                 dgv_pedidos.DataSource = nuevo_pedido.recuperarPedidosPendientes();
+                cleanMensaje();
             }
             
         }
@@ -86,11 +105,37 @@ namespace TP_PAV.formularios
             DetallePedido detalle_pedido_seleccionado = new DetallePedido();
             detalle_pedido_seleccionado.pub_pedido = pedido_seleccionado;
             dgv_detallePedido.DataSource = detalle_pedido_seleccionado.recuperarDetalleDePedido();
+
+            cmb_estadoPedido.DataSource = pedido_seleccionado.estadoPedido();
+            cmb_estadoPedido.DisplayMember = "nombre_estado";
+            cmb_estadoPedido.ValueMember = "id_estado";
+            cmb_estadoPedido.SelectedValue = int.Parse(dgv_pedidos.CurrentRow.Cells["id_estado"].Value.ToString());
+            cleanMensaje();
+
         }
 
         private void cmb_franquicia_Click(object sender, EventArgs e)
         {
             dgv_pedidos.DataSource = priv_pedido.recuperarPedidosPendientes();
+
+        }
+
+        private void btn_modificarEstado_Click(object sender, EventArgs e)
+        {
+            priv_pedido.pub_Pedido_label_error = this.label_error;
+            if (priv_pedido.validarPedido(grp_modificar.Controls) == Validar.estado_validacion.correcto)
+            {
+                Pedido pedido_seleccionado = new Pedido();
+                pedido_seleccionado.pub_id_pedido = int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
+                pedido_seleccionado.pub_id_estado = int.Parse(cmb_estadoPedido.SelectedValue.ToString());
+                if (pedido_seleccionado.updateEstadoPedido())
+                {
+                    dgv_pedidos.DataSource = priv_pedido.recuperarPedidosPendientes();
+                    dgv_detallePedido.DataSource = "";
+                    mostrarMensaje("Se cambio el estado del pedido!", false);
+                }
+            }
+    
         }
 
       

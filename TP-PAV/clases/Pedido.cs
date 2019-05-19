@@ -90,24 +90,13 @@ namespace TP_PAV.clases
                                                      fecha_solicitud, 
                                                      id_franquicia, 
                                                      id_vendedor, 
-                                                     monto_final 
+                                                     monto_final,
+                                                     id_estado
                                                      FROM pedido WHERE id_estado = 1" );
 
         }
   
-   /*     public DataTable recuperarDetalleDePedido(int idPedido)
-        {
-            return priv_acceso_db.ejecutarConsulta(@"SELECT 
-                                                        pxp.id_producto, 
-                                                        pxp.cantidad, 
-                                                        (pxp.precio_unitario*pxp.cantidad) AS montoTotal, 
-                                                        producto.nombre_producto   
-                                                        FROM pedido_x_producto pxp 
-                                                        JOIN producto ON producto.id_producto = pxp.id_producto  
-                                                        WHERE pxp.id_pedido=" + idPedido);
 
-        }
-          */
         public DataTable addPedido(string fecha_solicitud, int id_estado, int id_franquicia, int id_vendedor)
         {
 
@@ -127,25 +116,18 @@ namespace TP_PAV.clases
 		                                                        WHERE p.id_pedido={0} SELECT monto_final FROM pedido WHERE id_pedido = {0}", id_pedido));
 
         }
-     /*   public DataTable recuperarProductoXTipoProducto(int id_tipo_producto, int id_pedido)
-        {
-            return priv_acceso_db.ejecutarConsulta(String.Format(@"SELECT 
-		                                                            id_producto, 
-		                                                            nombre_producto, 
-		                                                            precio_unitario 
-		                                                            FROM producto p 
-		                                                            JOIN tipo_producto t ON t.id_tipo_producto = p.id_tipo_producto
-		                                                            WHERE id_producto NOT IN (SELECT id_producto FROM pedido_x_producto WHERE id_pedido={0} ) AND t.id_tipo_producto = {1}", id_pedido, id_tipo_producto));
 
-        } */
 
-    /*    public bool addProductoPedido(int id_pedido, int id_producto, int cantidad, int precio_unitario)
+        public DataTable estadoPedido()
         {
-            priv_acceso_db.ejecutarNoConsulta(String.Format(@"INSERT INTO pedido_x_producto (id_pedido,id_producto, cantidad, precio_unitario) VALUES ({0},{1}, {2}, {3})", id_pedido, id_producto, cantidad, precio_unitario));
+            return priv_acceso_db.ejecutarConsulta("SELECT * FROM estado_pedido");
+        }
+
+        public bool updateEstadoPedido()
+        {
+            priv_acceso_db.ejecutarNoConsulta(String.Format(@"UPDATE pedido SET id_estado={0} WHERE id_pedido={1}", priv_id_estado, priv_id_pedido));
             return true;
-
-        }   */
-       
+        }
 
 
 
