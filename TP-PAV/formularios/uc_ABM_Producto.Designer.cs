@@ -66,22 +66,22 @@
             this.Habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lbl_mensajeError = new System.Windows.Forms.Label();
             this.grp_busquedaAvanzadaProducto = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_msjErrorBusquedaAv = new System.Windows.Forms.Label();
             this.btn_BuscarBusquedaAvanzada = new System.Windows.Forms.Button();
             this.btn_cerrarBusquedaAvanzada = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtn_habilitado = new System.Windows.Forms.RadioButton();
+            this.rbtn_deshabilitado = new System.Windows.Forms.RadioButton();
+            this.rbtn_cualquiera = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_busquedaPrecioHasta = new System.Windows.Forms.Label();
             this.lbl_busquedaPrecioDesde = new System.Windows.Forms.Label();
-            this.txt_busquedaPrecioHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaPrecioDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cbx_busquedaAvanzPrecio = new System.Windows.Forms.CheckBox();
-            this.cmb_busquedaSeleccionTipo = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.lbl_busquedaAvSeleccionTipo = new System.Windows.Forms.Label();
             this.cbx_tipoProducto = new System.Windows.Forms.CheckBox();
             this.btn_activarDesactivar = new System.Windows.Forms.Button();
+            this.txt_busquedaPrecioHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaPrecioDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.cmb_busquedaSeleccionTipo = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.cmb_estadoProducto = new TP_PAV.clases.ComboBoxHabilitado(this.components);
             this.txt_precioUnitario = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
@@ -258,7 +258,7 @@
             // txt_busquedaProducto
             // 
             this.txt_busquedaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_busquedaProducto.Location = new System.Drawing.Point(130, 60);
+            this.txt_busquedaProducto.Location = new System.Drawing.Point(133, 60);
             this.txt_busquedaProducto.Name = "txt_busquedaProducto";
             this.txt_busquedaProducto.Size = new System.Drawing.Size(260, 22);
             this.txt_busquedaProducto.TabIndex = 63;
@@ -268,11 +268,11 @@
             // 
             this.lbl_buscarProducto.AutoSize = true;
             this.lbl_buscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_buscarProducto.Location = new System.Drawing.Point(61, 63);
+            this.lbl_buscarProducto.Location = new System.Drawing.Point(10, 61);
             this.lbl_buscarProducto.Name = "lbl_buscarProducto";
-            this.lbl_buscarProducto.Size = new System.Drawing.Size(53, 16);
+            this.lbl_buscarProducto.Size = new System.Drawing.Size(116, 32);
             this.lbl_buscarProducto.TabIndex = 62;
-            this.lbl_buscarProducto.Text = "Buscar:";
+            this.lbl_buscarProducto.Text = "                     Buscar:\r\n(Por ID o Nombre)";
             // 
             // btn_registrarProducto
             // 
@@ -453,12 +453,12 @@
             // 
             // grp_busquedaAvanzadaProducto
             // 
-            this.grp_busquedaAvanzadaProducto.Controls.Add(this.label3);
+            this.grp_busquedaAvanzadaProducto.Controls.Add(this.lbl_msjErrorBusquedaAv);
             this.grp_busquedaAvanzadaProducto.Controls.Add(this.btn_BuscarBusquedaAvanzada);
             this.grp_busquedaAvanzadaProducto.Controls.Add(this.btn_cerrarBusquedaAvanzada);
-            this.grp_busquedaAvanzadaProducto.Controls.Add(this.radioButton3);
-            this.grp_busquedaAvanzadaProducto.Controls.Add(this.radioButton2);
-            this.grp_busquedaAvanzadaProducto.Controls.Add(this.radioButton1);
+            this.grp_busquedaAvanzadaProducto.Controls.Add(this.rbtn_habilitado);
+            this.grp_busquedaAvanzadaProducto.Controls.Add(this.rbtn_deshabilitado);
+            this.grp_busquedaAvanzadaProducto.Controls.Add(this.rbtn_cualquiera);
             this.grp_busquedaAvanzadaProducto.Controls.Add(this.label2);
             this.grp_busquedaAvanzadaProducto.Controls.Add(this.lbl_busquedaPrecioHasta);
             this.grp_busquedaAvanzadaProducto.Controls.Add(this.lbl_busquedaPrecioDesde);
@@ -476,17 +476,17 @@
             this.grp_busquedaAvanzadaProducto.Text = "Busqueda Avanzada | Productos";
             this.grp_busquedaAvanzadaProducto.Visible = false;
             // 
-            // label3
+            // lbl_msjErrorBusquedaAv
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(35, 373);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 16);
-            this.label3.TabIndex = 69;
-            this.label3.Text = "Mensajes de Error";
-            this.label3.Visible = false;
+            this.lbl_msjErrorBusquedaAv.AutoSize = true;
+            this.lbl_msjErrorBusquedaAv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_msjErrorBusquedaAv.ForeColor = System.Drawing.Color.Red;
+            this.lbl_msjErrorBusquedaAv.Location = new System.Drawing.Point(35, 373);
+            this.lbl_msjErrorBusquedaAv.Name = "lbl_msjErrorBusquedaAv";
+            this.lbl_msjErrorBusquedaAv.Size = new System.Drawing.Size(135, 16);
+            this.lbl_msjErrorBusquedaAv.TabIndex = 69;
+            this.lbl_msjErrorBusquedaAv.Text = "Mensajes de Error";
+            this.lbl_msjErrorBusquedaAv.Visible = false;
             // 
             // btn_BuscarBusquedaAvanzada
             // 
@@ -497,6 +497,7 @@
             this.btn_BuscarBusquedaAvanzada.TabIndex = 68;
             this.btn_BuscarBusquedaAvanzada.Text = "Buscar";
             this.btn_BuscarBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btn_BuscarBusquedaAvanzada.Click += new System.EventHandler(this.btn_BuscarBusquedaAvanzada_Click);
             // 
             // btn_cerrarBusquedaAvanzada
             // 
@@ -509,38 +510,38 @@
             this.btn_cerrarBusquedaAvanzada.UseVisualStyleBackColor = true;
             this.btn_cerrarBusquedaAvanzada.Click += new System.EventHandler(this.btn_cerrarBusquedaAvanzada_Click);
             // 
-            // radioButton3
+            // rbtn_habilitado
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(155, 306);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(72, 17);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Habilitado";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtn_habilitado.AutoSize = true;
+            this.rbtn_habilitado.Location = new System.Drawing.Point(155, 306);
+            this.rbtn_habilitado.Name = "rbtn_habilitado";
+            this.rbtn_habilitado.Size = new System.Drawing.Size(72, 17);
+            this.rbtn_habilitado.TabIndex = 12;
+            this.rbtn_habilitado.TabStop = true;
+            this.rbtn_habilitado.Text = "Habilitado";
+            this.rbtn_habilitado.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtn_deshabilitado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(274, 306);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(89, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No Habilitado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtn_deshabilitado.AutoSize = true;
+            this.rbtn_deshabilitado.Location = new System.Drawing.Point(274, 306);
+            this.rbtn_deshabilitado.Name = "rbtn_deshabilitado";
+            this.rbtn_deshabilitado.Size = new System.Drawing.Size(89, 17);
+            this.rbtn_deshabilitado.TabIndex = 11;
+            this.rbtn_deshabilitado.TabStop = true;
+            this.rbtn_deshabilitado.Text = "No Habilitado";
+            this.rbtn_deshabilitado.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtn_cualquiera
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(35, 306);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(75, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Cualquiera";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtn_cualquiera.AutoSize = true;
+            this.rbtn_cualquiera.Location = new System.Drawing.Point(35, 306);
+            this.rbtn_cualquiera.Name = "rbtn_cualquiera";
+            this.rbtn_cualquiera.Size = new System.Drawing.Size(75, 17);
+            this.rbtn_cualquiera.TabIndex = 10;
+            this.rbtn_cualquiera.TabStop = true;
+            this.rbtn_cualquiera.Text = "Cualquiera";
+            this.rbtn_cualquiera.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -570,32 +571,6 @@
             this.lbl_busquedaPrecioDesde.TabIndex = 7;
             this.lbl_busquedaPrecioDesde.Text = "Desde:";
             // 
-            // txt_busquedaPrecioHasta
-            // 
-            this.txt_busquedaPrecioHasta._campo = "precio_unitario";
-            this.txt_busquedaPrecioHasta._mensaje_error = null;
-            this.txt_busquedaPrecioHasta._nombre_tabla = "producto";
-            this.txt_busquedaPrecioHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaPrecioHasta._validable = false;
-            this.txt_busquedaPrecioHasta.Enabled = false;
-            this.txt_busquedaPrecioHasta.Location = new System.Drawing.Point(170, 214);
-            this.txt_busquedaPrecioHasta.Name = "txt_busquedaPrecioHasta";
-            this.txt_busquedaPrecioHasta.Size = new System.Drawing.Size(167, 20);
-            this.txt_busquedaPrecioHasta.TabIndex = 6;
-            // 
-            // txt_busquedaPrecioDesde
-            // 
-            this.txt_busquedaPrecioDesde._campo = "precio_unitario";
-            this.txt_busquedaPrecioDesde._mensaje_error = null;
-            this.txt_busquedaPrecioDesde._nombre_tabla = "producto";
-            this.txt_busquedaPrecioDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaPrecioDesde._validable = false;
-            this.txt_busquedaPrecioDesde.Enabled = false;
-            this.txt_busquedaPrecioDesde.Location = new System.Drawing.Point(170, 168);
-            this.txt_busquedaPrecioDesde.Name = "txt_busquedaPrecioDesde";
-            this.txt_busquedaPrecioDesde.Size = new System.Drawing.Size(167, 20);
-            this.txt_busquedaPrecioDesde.TabIndex = 5;
-            // 
             // cbx_busquedaAvanzPrecio
             // 
             this.cbx_busquedaAvanzPrecio.AutoSize = true;
@@ -607,19 +582,6 @@
             this.cbx_busquedaAvanzPrecio.Text = "Precio:";
             this.cbx_busquedaAvanzPrecio.UseVisualStyleBackColor = true;
             this.cbx_busquedaAvanzPrecio.CheckedChanged += new System.EventHandler(this.cbx_busquedaAvanzPrecio_CheckedChanged);
-            // 
-            // cmb_busquedaSeleccionTipo
-            // 
-            this.cmb_busquedaSeleccionTipo._campo = "id_tipo_producto";
-            this.cmb_busquedaSeleccionTipo._mensaje_error = "No se selecciono un tipo de producto";
-            this.cmb_busquedaSeleccionTipo._nombre_tabla = "producto";
-            this.cmb_busquedaSeleccionTipo._validable = false;
-            this.cmb_busquedaSeleccionTipo.Enabled = false;
-            this.cmb_busquedaSeleccionTipo.FormattingEnabled = true;
-            this.cmb_busquedaSeleccionTipo.Location = new System.Drawing.Point(170, 79);
-            this.cmb_busquedaSeleccionTipo.Name = "cmb_busquedaSeleccionTipo";
-            this.cmb_busquedaSeleccionTipo.Size = new System.Drawing.Size(167, 21);
-            this.cmb_busquedaSeleccionTipo.TabIndex = 3;
             // 
             // lbl_busquedaAvSeleccionTipo
             // 
@@ -652,6 +614,45 @@
             this.btn_activarDesactivar.Text = "Desactivar";
             this.btn_activarDesactivar.UseVisualStyleBackColor = true;
             this.btn_activarDesactivar.Click += new System.EventHandler(this.btn_activarDesactivar_Click);
+            // 
+            // txt_busquedaPrecioHasta
+            // 
+            this.txt_busquedaPrecioHasta._campo = "precio_unitario";
+            this.txt_busquedaPrecioHasta._mensaje_error = null;
+            this.txt_busquedaPrecioHasta._nombre_tabla = "producto";
+            this.txt_busquedaPrecioHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaPrecioHasta._validable = false;
+            this.txt_busquedaPrecioHasta.Enabled = false;
+            this.txt_busquedaPrecioHasta.Location = new System.Drawing.Point(170, 214);
+            this.txt_busquedaPrecioHasta.Name = "txt_busquedaPrecioHasta";
+            this.txt_busquedaPrecioHasta.Size = new System.Drawing.Size(167, 20);
+            this.txt_busquedaPrecioHasta.TabIndex = 6;
+            // 
+            // txt_busquedaPrecioDesde
+            // 
+            this.txt_busquedaPrecioDesde._campo = "precio_unitario";
+            this.txt_busquedaPrecioDesde._mensaje_error = null;
+            this.txt_busquedaPrecioDesde._nombre_tabla = "producto";
+            this.txt_busquedaPrecioDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaPrecioDesde._validable = false;
+            this.txt_busquedaPrecioDesde.Enabled = false;
+            this.txt_busquedaPrecioDesde.Location = new System.Drawing.Point(170, 168);
+            this.txt_busquedaPrecioDesde.Name = "txt_busquedaPrecioDesde";
+            this.txt_busquedaPrecioDesde.Size = new System.Drawing.Size(167, 20);
+            this.txt_busquedaPrecioDesde.TabIndex = 5;
+            // 
+            // cmb_busquedaSeleccionTipo
+            // 
+            this.cmb_busquedaSeleccionTipo._campo = "id_tipo_producto";
+            this.cmb_busquedaSeleccionTipo._mensaje_error = "No se selecciono un tipo de producto";
+            this.cmb_busquedaSeleccionTipo._nombre_tabla = "producto";
+            this.cmb_busquedaSeleccionTipo._validable = false;
+            this.cmb_busquedaSeleccionTipo.Enabled = false;
+            this.cmb_busquedaSeleccionTipo.FormattingEnabled = true;
+            this.cmb_busquedaSeleccionTipo.Location = new System.Drawing.Point(170, 79);
+            this.cmb_busquedaSeleccionTipo.Name = "cmb_busquedaSeleccionTipo";
+            this.cmb_busquedaSeleccionTipo.Size = new System.Drawing.Size(167, 21);
+            this.cmb_busquedaSeleccionTipo.TabIndex = 3;
             // 
             // cmb_estadoProducto
             // 
@@ -847,11 +848,11 @@
         private clases.TextBoxPersonal txt_busquedaPrecioDesde;
         private System.Windows.Forms.Label lbl_busquedaPrecioHasta;
         private System.Windows.Forms.Label lbl_busquedaPrecioDesde;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtn_habilitado;
+        private System.Windows.Forms.RadioButton rbtn_deshabilitado;
+        private System.Windows.Forms.RadioButton rbtn_cualquiera;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_msjErrorBusquedaAv;
         private System.Windows.Forms.Button btn_BuscarBusquedaAvanzada;
         private System.Windows.Forms.Button btn_cerrarBusquedaAvanzada;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;

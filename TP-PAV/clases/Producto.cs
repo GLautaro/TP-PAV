@@ -20,14 +20,7 @@ namespace TP_PAV.clases
             get { return priv_label_error_producto; }
             set { priv_label_error_producto = value; }
         }
-        /*
-        public DataTable traerProductos()
-        {
-            string consulta = @"SELECT * FROM producto";
-
-            return db.ejecutarConsulta(consulta);
-        }
-        */
+       
         public DataTable buscarProductos(string texto)
         {
             string consulta = @"SELECT p.id_producto, p.nombre_producto, p.cantidad_u_medida,
@@ -86,5 +79,103 @@ namespace TP_PAV.clases
             string consulta = @"UPDATE producto SET estado_producto = " + estado + " WHERE id_producto = " + idProducto;
             return db.ejecutarConsulta(consulta);
         }
+
+        public DataTable busquedaAvanzada(Control.ControlCollection controles)
+        {
+            bool busqueda_tipoProducto = false, busqueda_precio = false, habilitado = false, deshabilitado = false;
+            string nombre_tipoProducto = null;
+            string precio_desde = "-1";
+            string precio_hasta = "";
+            foreach (Control item in controles)
+            {
+                switch (item.GetType().Name)
+                {
+                    case "ComboBoxPersonal":
+                        if (item.Name == "cmb_busquedaSeleccionTipo")
+                        {
+
+                            nombre_tipoProducto = ((ComboBoxPersonal)item).SelectedIndex == -1 ? null : ((ComboBoxPersonal)item).SelectedValue.ToString();
+                        }
+                        break;
+                    case "CheckBox":
+                        if (item.Name == "cbx_tipoProducto")
+                        {
+                            busqueda_tipoProducto = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_busquedaAvanzPrecio")
+                        {
+                            busqueda_precio = ((CheckBox)item).Checked;
+                        }
+                        break;
+                    case "TextBoxPersonal":
+                        if (item.Name == "txt_busquedaPrecioDesde")
+                        {
+                            precio_desde = item.Text;
+                        }
+                        if (item.Name == "txt_busquedaPrecioHasta")
+                        {
+                            precio_hasta = item.Text;
+                        }
+                        break;
+                    case "RadioButton":
+                        if (item.Name == "rbtn_habilitado")
+                        {
+                            habilitado = ((RadioButton)item).Checked;
+                        }
+                        if (item.Name == "rbtn_deshabilitado")
+                        {
+                            deshabilitado = ((RadioButton)item).Checked;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            string consulta = @"SELECT p.id_producto, p.nombre_producto, p.cantidad_u_medida,
+                                  u.nombre_u_medida, p.descripcion, u.id_u_medida, p.estado_producto, 
+                                  t.nombre_tipo_producto, p.precio_unitario, t.id_tipo_producto
+                                    FROM producto p
+                                        JOIN unidad_medida u ON p.id_u_medida=u.id_u_medida
+                                        JOIN tipo_producto t ON p.id_tipo_producto=t.id_tipo_producto
+                                    WHERE 1=1";
+
+            if (busqueda_precio)
+            {
+                if (precio_hasta == String.Empty)
+                {
+                    //(f.id_franquicia>=" + id_desde + ")"
+                    consulta += " AND (p.precio_unitario>=" + precio_desde + ")";
+                }
+                else if(precio_desde == String.Empty)
+                {
+                    consulta += " AND (p.precio_unitario<=" + precio_hasta + ")";
+                }
+                else 
+                {
+                    consulta += " AND (p.precio_unitario BETWEEN " + precio_desde + " AND " + precio_hasta + ")";
+                }
+            }
+
+            if(busqueda_tipoProducto)
+            {
+                if (!string.IsNullOrEmpty(nombre_tipoProducto))
+                {
+                    consulta += " AND (t.id_tipo_producto=" + nombre_tipoProducto + ")";
+                }
+            }
+
+            if (habilitado)
+            {
+                consulta += " AND (p.estado_producto = 1)";
+            }
+            if (deshabilitado)
+            {
+                consulta += " AND (p.estado_producto = 0)";
+            }
+            
+            return db.ejecutarConsulta(consulta);
+        }
+        
     }
 }

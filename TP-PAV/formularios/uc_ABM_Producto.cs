@@ -31,7 +31,7 @@ namespace TP_PAV.formularios
         public ComboBox pub_cmb_tipo_producto
         {
             get { return this.cmb_tipoProducto; }
-            
+
         }
 
         public ComboBox pub_cmb_unidadMedida
@@ -63,7 +63,7 @@ namespace TP_PAV.formularios
             frm_ABM_TipoProducto frm_ABM_TipoProducto = new frm_ABM_TipoProducto();
             frm_ABM_TipoProducto.pub_formularioPadre = this;
             frm_ABM_TipoProducto.pub_selectedIndex = cmb_tipoProducto.SelectedIndex;
-            frm_ABM_TipoProducto.ShowDialog();    
+            frm_ABM_TipoProducto.ShowDialog();
         }
 
         private void btn_agregarUdeMedida_Click(object sender, EventArgs e)
@@ -86,8 +86,8 @@ namespace TP_PAV.formularios
         }
 
         private void btn_modificarProducto_Click(object sender, EventArgs e)
-        {   
-            
+        {
+
             this.btn_registrarProducto.Visible = false;
             this.btn_guardarModProducto.Visible = true;
             this.btn_cancelarModProducto.Visible = true;
@@ -112,12 +112,12 @@ namespace TP_PAV.formularios
                 this.cmb_estadoProducto.SelectedIndex = 0;
             }
 
-            
+
         }
 
         private void btn_guardarModProducto_Click(object sender, EventArgs e)
         {
-            
+
             if (producto.validarProducto(this.Controls) == Validar.estado_validacion.correcto)
             {
                 if (this.txt_IdProducto.Text == "")
@@ -151,7 +151,7 @@ namespace TP_PAV.formularios
             this.btn_cancelarModProducto.Visible = false;
             this.btn_modificarProducto.Visible = true;
             this.btn_registrarProducto.Visible = true;
-            
+
         }
 
 
@@ -162,7 +162,7 @@ namespace TP_PAV.formularios
                 string tipoComponente = item.GetType().Name;
                 string nombreComponente = item.Name;
 
-                if ((tipoComponente == "TextBoxPersonal" && nombreComponente != "txt_IdProducto" )
+                if ((tipoComponente == "TextBoxPersonal" && nombreComponente != "txt_IdProducto")
                     || tipoComponente == "ComboBoxPersonal" || tipoComponente == "ComboBoxHabilitado")
                 {
                     item.Enabled = estado;
@@ -172,7 +172,7 @@ namespace TP_PAV.formularios
             this.btn_agregarUdeMedida.Enabled = estado;
         }
 
-    private void cleanTextBox ()
+        private void cleanTextBox()
         {
             foreach (Control item in this.Controls)
             {
@@ -191,127 +191,133 @@ namespace TP_PAV.formularios
             }
         }
 
-    private void btn_busquedaAvanzadaProducto_Click(object sender, EventArgs e)
-    {
-        if(grp_busquedaAvanzadaProducto.Visible == false)
+        private void btn_busquedaAvanzadaProducto_Click(object sender, EventArgs e)
         {
-            grp_busquedaAvanzadaProducto.Show();
+            if (grp_busquedaAvanzadaProducto.Visible == false)
+            {
+                grp_busquedaAvanzadaProducto.Show();
 
-            this.cmb_busquedaSeleccionTipo.cargar("tipo_producto", "id_tipo_producto", "nombre_tipo_producto");
-            this.cmb_busquedaSeleccionTipo.SelectedIndex = -1;
+                this.cmb_busquedaSeleccionTipo.cargar("tipo_producto", "id_tipo_producto", "nombre_tipo_producto");
+                this.cmb_busquedaSeleccionTipo.SelectedIndex = -1;
+            }
+            else
+            {
+                this.dgv_productos.DataSource = producto.recuperarProductos();
+                grp_busquedaAvanzadaProducto.Hide();
+            }
         }
-        else 
+
+        private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
         {
             this.dgv_productos.DataSource = producto.recuperarProductos();
             grp_busquedaAvanzadaProducto.Hide();
         }
-    }
 
-    private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
-    {
-        this.dgv_productos.DataSource = producto.recuperarProductos();
-        grp_busquedaAvanzadaProducto.Hide();
-    }
-
-    private void cbx_tipoProducto_CheckedChanged(object sender, EventArgs e)
-    {
-        bool estado = cbx_tipoProducto.Checked;
-        cmb_busquedaSeleccionTipo.Enabled = estado;
-        if (!estado)
+        private void cbx_tipoProducto_CheckedChanged(object sender, EventArgs e)
         {
-            cmb_busquedaSeleccionTipo.SelectedIndex = -1;
+            bool estado = cbx_tipoProducto.Checked;
+            cmb_busquedaSeleccionTipo.Enabled = estado;
+            if (!estado)
+            {
+                cmb_busquedaSeleccionTipo.SelectedIndex = -1;
+            }
+
         }
 
-    }
-
-    private void cbx_busquedaAvanzPrecio_CheckedChanged(object sender, EventArgs e)
-    {
-        bool estado = cbx_busquedaAvanzPrecio.Checked;
-        txt_busquedaPrecioDesde.Enabled = estado;
-        txt_busquedaPrecioHasta.Enabled = estado;
-        if (!estado)
+        private void cbx_busquedaAvanzPrecio_CheckedChanged(object sender, EventArgs e)
         {
-            txt_busquedaPrecioDesde.Text = "";
-            txt_busquedaPrecioHasta.Text = "";
-        }
-    }
-
-    private void btn_activarDesactivar_Click(object sender, EventArgs e)
-    {
-        string nomproducto = this.dgv_productos.CurrentRow.Cells[1].Value.ToString();
-        DialogResult result = DialogResult.No;
-        int estado = 0;
-        if (this.dgv_productos.CurrentRow.Cells[6].Value.ToString() == "True")
-        {
-            result = MessageBox.Show("¿Desea desactivar al producto: " + nomproducto + " ?", 
-                "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            estado = 0;
-        }
-        else
-        {
-            result = MessageBox.Show("¿Desea activar al producto: " + nomproducto + " ?",
-               "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            estado = 1;
+            bool estado = cbx_busquedaAvanzPrecio.Checked;
+            txt_busquedaPrecioDesde.Enabled = estado;
+            txt_busquedaPrecioHasta.Enabled = estado;
+            if (!estado)
+            {
+                txt_busquedaPrecioDesde.Text = "";
+                txt_busquedaPrecioHasta.Text = "";
+            }
         }
 
-        if (result == DialogResult.Yes)
+        private void btn_activarDesactivar_Click(object sender, EventArgs e)
         {
-            producto.modificarEstadoProducto(this.dgv_productos.CurrentRow.Cells[0].Value.ToString(), estado);
-            this.dgv_productos.DataSource = producto.recuperarProductos();
+            string nomproducto = this.dgv_productos.CurrentRow.Cells[1].Value.ToString();
+            DialogResult result = DialogResult.No;
+            int estado = 0;
+            if (this.dgv_productos.CurrentRow.Cells["estado_producto"].Value.ToString() == "True")
+            {
+                result = MessageBox.Show("¿Desea desactivar al producto: " + nomproducto + " ?",
+                    "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                estado = 0;
+            }
+            else
+            {
+                result = MessageBox.Show("¿Desea activar al producto: " + nomproducto + " ?",
+                   "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                estado = 1;
+            }
+
+            if (result == DialogResult.Yes)
+            {
+                producto.modificarEstadoProducto(this.dgv_productos.CurrentRow.Cells["id_producto"].Value.ToString(), estado);
+                this.dgv_productos.DataSource = producto.recuperarProductos();
+                actualizarBotonActivarDesactivar();
+            }
+        }
+
+
+
+        private void actualizarBotonActivarDesactivar()
+        {
+            if (this.dgv_productos.SelectedRows.Count < 1)
+            {
+                return;
+            }
+            if (this.dgv_productos.CurrentRow.Cells["estado_producto"].Value.ToString() == "True")
+            {
+                this.btn_activarDesactivar.Text = "Desactivar";
+            }
+            else
+            {
+                this.btn_activarDesactivar.Text = "Activar";
+            }
+        }
+
+        private void dgv_productos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_IdProducto.Text = dgv_productos.CurrentRow.Cells["id_producto"].Value.ToString();
+            txt_NombreProducto.Text = dgv_productos.CurrentRow.Cells["nombre_producto"].Value.ToString();
+            txt_cantidadProducto.Text = dgv_productos.CurrentRow.Cells["cantidad_u_medida"].Value.ToString();
+            txt_descripcionProducto.Text = dgv_productos.CurrentRow.Cells["descripcion"].Value.ToString();
+            txt_precioUnitario.Text = dgv_productos.CurrentRow.Cells["precio_unitario"].Value.ToString();
+            cmb_unidadMedida.SelectedValue = dgv_productos.CurrentRow.Cells["id_u_medida"].Value.ToString();
+            cmb_tipoProducto.SelectedValue = dgv_productos.CurrentRow.Cells["id_tipo_producto"].Value.ToString();
+
+            if (this.dgv_productos.CurrentRow.Cells["estado_producto"].Value.ToString() == "True")
+            {
+                this.cmb_estadoProducto.SelectedIndex = 1;
+            }
+            else
+            {
+                this.cmb_estadoProducto.SelectedIndex = 0;
+            }
+
             actualizarBotonActivarDesactivar();
         }
-    }
 
-
-
-    private void actualizarBotonActivarDesactivar()
-    {
-        if (this.dgv_productos.SelectedRows.Count < 1)
+        private void btn_buscarProducto_Click(object sender, EventArgs e)
         {
-            return;
-        }
-        if (this.dgv_productos.CurrentRow.Cells[6].Value.ToString() == "True")
-        {
-            this.btn_activarDesactivar.Text = "Desactivar";
-        }
-        else
-        {
-            this.btn_activarDesactivar.Text = "Activar";
-        }
-    }
-
-    private void dgv_productos_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-        txt_IdProducto.Text = dgv_productos.CurrentRow.Cells["id_producto"].Value.ToString();
-        txt_NombreProducto.Text = dgv_productos.CurrentRow.Cells["nombre_producto"].Value.ToString();
-        txt_cantidadProducto.Text = dgv_productos.CurrentRow.Cells["cantidad_u_medida"].Value.ToString();
-        txt_descripcionProducto.Text = dgv_productos.CurrentRow.Cells["descripcion"].Value.ToString();
-        txt_precioUnitario.Text = dgv_productos.CurrentRow.Cells["precio_unitario"].Value.ToString();
-        cmb_unidadMedida.SelectedValue = dgv_productos.CurrentRow.Cells["id_u_medida"].Value.ToString();
-        cmb_tipoProducto.SelectedValue = dgv_productos.CurrentRow.Cells["id_tipo_producto"].Value.ToString();
-
-        if (this.dgv_productos.CurrentRow.Cells["estado_producto"].Value.ToString() == "True")
-        {
-            this.cmb_estadoProducto.SelectedIndex = 1;
-        }
-        else
-        {
-            this.cmb_estadoProducto.SelectedIndex = 0;
+            this.dgv_productos.DataSource = producto.buscarProductos(this.txt_busquedaProducto.Text);
         }
 
-        actualizarBotonActivarDesactivar();
-    }
+        private void txt_busquedaProducto_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.dgv_productos.DataSource = producto.buscarProductos(this.txt_busquedaProducto.Text);
+            actualizarBotonActivarDesactivar();
+        }
 
-    private void btn_buscarProducto_Click(object sender, EventArgs e)
-    {
-        this.dgv_productos.DataSource = producto.buscarProductos(this.txt_busquedaProducto.Text);
-    }
+        private void btn_BuscarBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            this.dgv_productos.DataSource = producto.busquedaAvanzada(grp_busquedaAvanzadaProducto.Controls);
+        }
 
-    private void txt_busquedaProducto_KeyUp(object sender, KeyEventArgs e)
-    {
-        this.dgv_productos.DataSource = producto.buscarProductos(this.txt_busquedaProducto.Text);
-        actualizarBotonActivarDesactivar();
-    }
-        
+
     }
 }
