@@ -142,6 +142,18 @@ namespace TP_PAV.formularios
                 {
 
                    dgv_detallePedido.DataSource = detallePedido_itemEliminar.recuperarDetalleDePedido();
+                   if (dgv_detallePedido.RowCount == 0)
+                   {
+                       priv_pedido.updateMontoFinalCero(priv_id_pedido);
+                       lbl_montoTotal.Text = "0";
+
+                   }
+                   else
+                   {
+                       lbl_montoTotal.Text = priv_pedido.updateMontoFinalPedido(priv_id_pedido).Rows[0]["monto_final"].ToString();  
+                   }
+                  
+                    
                 }
               
             }

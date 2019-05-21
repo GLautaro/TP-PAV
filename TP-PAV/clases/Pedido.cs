@@ -111,9 +111,17 @@ namespace TP_PAV.clases
                                                                 FROM pedido p 
                                                                 JOIN (SELECT id_pedido, SUM(cantidad*precio_unitario) as montoFinal 
 		                                                        FROM pedido_x_producto 
-		                                                        GROUP BY id_pedido) pxp 
+		                                                        GROUP BY id_pedido) pxp
 		                                                        ON pxp.id_pedido=p.id_pedido 
 		                                                        WHERE p.id_pedido={0} SELECT monto_final FROM pedido WHERE id_pedido = {0}", id_pedido));
+
+        }
+        public DataTable updateMontoFinalCero(int id_pedido)
+        {
+            return priv_acceso_db.ejecutarConsulta(String.Format(@"UPDATE pedido
+                                                                SET pedido.monto_final=0
+                                                                FROM pedido p                                                             
+		                                                        WHERE p.id_pedido={0} ", id_pedido));
 
         }
 
