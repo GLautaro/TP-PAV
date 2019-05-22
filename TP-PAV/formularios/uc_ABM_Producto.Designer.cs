@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_IdProducto = new System.Windows.Forms.Label();
             this.lbl_NomProducto = new System.Windows.Forms.Label();
@@ -75,13 +75,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_busquedaPrecioHasta = new System.Windows.Forms.Label();
             this.lbl_busquedaPrecioDesde = new System.Windows.Forms.Label();
+            this.txt_busquedaPrecioHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaPrecioDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cbx_busquedaAvanzPrecio = new System.Windows.Forms.CheckBox();
+            this.cmb_busquedaSeleccionTipo = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.lbl_busquedaAvSeleccionTipo = new System.Windows.Forms.Label();
             this.cbx_tipoProducto = new System.Windows.Forms.CheckBox();
             this.btn_activarDesactivar = new System.Windows.Forms.Button();
-            this.txt_busquedaPrecioHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaPrecioDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.cmb_busquedaSeleccionTipo = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.cmb_estadoProducto = new TP_PAV.clases.ComboBoxHabilitado(this.components);
             this.txt_precioUnitario = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_tipoProducto = new TP_PAV.clases.ComboBoxPersonal(this.components);
@@ -304,14 +304,14 @@
             this.dgv_productos.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_productos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_producto,
@@ -325,33 +325,33 @@
             this.precio_unitario,
             this.estado_producto,
             this.Habilitado});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_productos.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_productos.Location = new System.Drawing.Point(15, 200);
             this.dgv_productos.MultiSelect = false;
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_productos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_productos.Size = new System.Drawing.Size(700, 350);
             this.dgv_productos.TabIndex = 66;
@@ -571,6 +571,32 @@
             this.lbl_busquedaPrecioDesde.TabIndex = 7;
             this.lbl_busquedaPrecioDesde.Text = "Desde:";
             // 
+            // txt_busquedaPrecioHasta
+            // 
+            this.txt_busquedaPrecioHasta._campo = "precio_unitario";
+            this.txt_busquedaPrecioHasta._mensaje_error = null;
+            this.txt_busquedaPrecioHasta._nombre_tabla = "producto";
+            this.txt_busquedaPrecioHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaPrecioHasta._validable = false;
+            this.txt_busquedaPrecioHasta.Enabled = false;
+            this.txt_busquedaPrecioHasta.Location = new System.Drawing.Point(170, 214);
+            this.txt_busquedaPrecioHasta.Name = "txt_busquedaPrecioHasta";
+            this.txt_busquedaPrecioHasta.Size = new System.Drawing.Size(167, 20);
+            this.txt_busquedaPrecioHasta.TabIndex = 6;
+            // 
+            // txt_busquedaPrecioDesde
+            // 
+            this.txt_busquedaPrecioDesde._campo = "precio_unitario";
+            this.txt_busquedaPrecioDesde._mensaje_error = null;
+            this.txt_busquedaPrecioDesde._nombre_tabla = "producto";
+            this.txt_busquedaPrecioDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaPrecioDesde._validable = false;
+            this.txt_busquedaPrecioDesde.Enabled = false;
+            this.txt_busquedaPrecioDesde.Location = new System.Drawing.Point(170, 168);
+            this.txt_busquedaPrecioDesde.Name = "txt_busquedaPrecioDesde";
+            this.txt_busquedaPrecioDesde.Size = new System.Drawing.Size(167, 20);
+            this.txt_busquedaPrecioDesde.TabIndex = 5;
+            // 
             // cbx_busquedaAvanzPrecio
             // 
             this.cbx_busquedaAvanzPrecio.AutoSize = true;
@@ -582,6 +608,19 @@
             this.cbx_busquedaAvanzPrecio.Text = "Precio:";
             this.cbx_busquedaAvanzPrecio.UseVisualStyleBackColor = true;
             this.cbx_busquedaAvanzPrecio.CheckedChanged += new System.EventHandler(this.cbx_busquedaAvanzPrecio_CheckedChanged);
+            // 
+            // cmb_busquedaSeleccionTipo
+            // 
+            this.cmb_busquedaSeleccionTipo._campo = "id_tipo_producto";
+            this.cmb_busquedaSeleccionTipo._mensaje_error = "No se selecciono un tipo de producto";
+            this.cmb_busquedaSeleccionTipo._nombre_tabla = "producto";
+            this.cmb_busquedaSeleccionTipo._validable = false;
+            this.cmb_busquedaSeleccionTipo.Enabled = false;
+            this.cmb_busquedaSeleccionTipo.FormattingEnabled = true;
+            this.cmb_busquedaSeleccionTipo.Location = new System.Drawing.Point(170, 79);
+            this.cmb_busquedaSeleccionTipo.Name = "cmb_busquedaSeleccionTipo";
+            this.cmb_busquedaSeleccionTipo.Size = new System.Drawing.Size(167, 21);
+            this.cmb_busquedaSeleccionTipo.TabIndex = 3;
             // 
             // lbl_busquedaAvSeleccionTipo
             // 
@@ -614,45 +653,6 @@
             this.btn_activarDesactivar.Text = "Desactivar";
             this.btn_activarDesactivar.UseVisualStyleBackColor = true;
             this.btn_activarDesactivar.Click += new System.EventHandler(this.btn_activarDesactivar_Click);
-            // 
-            // txt_busquedaPrecioHasta
-            // 
-            this.txt_busquedaPrecioHasta._campo = "precio_unitario";
-            this.txt_busquedaPrecioHasta._mensaje_error = null;
-            this.txt_busquedaPrecioHasta._nombre_tabla = "producto";
-            this.txt_busquedaPrecioHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaPrecioHasta._validable = false;
-            this.txt_busquedaPrecioHasta.Enabled = false;
-            this.txt_busquedaPrecioHasta.Location = new System.Drawing.Point(170, 214);
-            this.txt_busquedaPrecioHasta.Name = "txt_busquedaPrecioHasta";
-            this.txt_busquedaPrecioHasta.Size = new System.Drawing.Size(167, 20);
-            this.txt_busquedaPrecioHasta.TabIndex = 6;
-            // 
-            // txt_busquedaPrecioDesde
-            // 
-            this.txt_busquedaPrecioDesde._campo = "precio_unitario";
-            this.txt_busquedaPrecioDesde._mensaje_error = null;
-            this.txt_busquedaPrecioDesde._nombre_tabla = "producto";
-            this.txt_busquedaPrecioDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaPrecioDesde._validable = false;
-            this.txt_busquedaPrecioDesde.Enabled = false;
-            this.txt_busquedaPrecioDesde.Location = new System.Drawing.Point(170, 168);
-            this.txt_busquedaPrecioDesde.Name = "txt_busquedaPrecioDesde";
-            this.txt_busquedaPrecioDesde.Size = new System.Drawing.Size(167, 20);
-            this.txt_busquedaPrecioDesde.TabIndex = 5;
-            // 
-            // cmb_busquedaSeleccionTipo
-            // 
-            this.cmb_busquedaSeleccionTipo._campo = "id_tipo_producto";
-            this.cmb_busquedaSeleccionTipo._mensaje_error = "No se selecciono un tipo de producto";
-            this.cmb_busquedaSeleccionTipo._nombre_tabla = "producto";
-            this.cmb_busquedaSeleccionTipo._validable = false;
-            this.cmb_busquedaSeleccionTipo.Enabled = false;
-            this.cmb_busquedaSeleccionTipo.FormattingEnabled = true;
-            this.cmb_busquedaSeleccionTipo.Location = new System.Drawing.Point(170, 79);
-            this.cmb_busquedaSeleccionTipo.Name = "cmb_busquedaSeleccionTipo";
-            this.cmb_busquedaSeleccionTipo.Size = new System.Drawing.Size(167, 21);
-            this.cmb_busquedaSeleccionTipo.TabIndex = 3;
             // 
             // cmb_estadoProducto
             // 

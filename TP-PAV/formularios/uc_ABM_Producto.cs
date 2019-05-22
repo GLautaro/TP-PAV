@@ -211,6 +211,8 @@ namespace TP_PAV.formularios
         {
             this.dgv_productos.DataSource = producto.recuperarProductos();
             grp_busquedaAvanzadaProducto.Hide();
+            lbl_msjErrorBusquedaAv.Hide();
+
         }
 
         private void cbx_tipoProducto_CheckedChanged(object sender, EventArgs e)
@@ -315,9 +317,53 @@ namespace TP_PAV.formularios
 
         private void btn_BuscarBusquedaAvanzada_Click(object sender, EventArgs e)
         {
-            this.dgv_productos.DataSource = producto.busquedaAvanzada(grp_busquedaAvanzadaProducto.Controls);
+            if (validarBusquedaAvanzada())
+            {
+                this.dgv_productos.DataSource = producto.busquedaAvanzada(grp_busquedaAvanzadaProducto.Controls);
+            }
         }
 
+        private bool validarBusquedaAvanzada()
+        {
+            int precio_desde = -1, precio_hasta = 9999;
+            int.TryParse(txt_busquedaPrecioDesde.Text, out precio_desde);
+            int.TryParse(txt_busquedaPrecioHasta.Text, out precio_hasta);
 
+            if (cbx_tipoProducto.Checked)
+            {
+                if (cmb_busquedaSeleccionTipo.SelectedIndex == -1) 
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = cmb_busquedaSeleccionTipo._mensaje_error;
+                    lbl_msjErrorBusquedaAv.Show();
+                    return false;
+                }
+            }
+            if (cbx_busquedaAvanzPrecio.Checked)
+            {
+                if(txt_busquedaPrecioDesde.Text == "" && txt_busquedaPrecioHasta.Text == "")
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = "PRECIO: Ingrese al menos un limite \n para la busqueda.";
+                    lbl_msjErrorBusquedaAv.Show();
+                    txt_busquedaPrecioDesde.Focus();
+                    return false;
+                }
+                else if (precio_desde > precio_hasta && precio_hasta != 0)
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = "PRECIO: El limite inferior debe ser menor \n que el limite superior.";
+                    lbl_msjErrorBusquedaAv.Show();
+                    txt_busquedaPrecioDesde.Focus();
+                    return false;
+                }
+            }
+
+            lbl_msjErrorBusquedaAv.ForeColor = Color.Green;
+            lbl_msjErrorBusquedaAv.Text = "¡Busqueda Exitosa!";
+            lbl_msjErrorBusquedaAv.Show();
+            return true;
+
+        }
     }
 }
