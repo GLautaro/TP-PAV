@@ -135,9 +135,86 @@ namespace TP_PAV.formularios
                     mostrarMensaje("Se cambio el estado del pedido!", false);
                 }
             }
-    
+
         }
 
+        private void btn_busquedaAvanzadaPedido_Click(object sender, EventArgs e)
+        {
+            grp_busquedaAvanzadaPedido.Visible = true;
+
+            this.cmb_franquicias.cargar("franquicia", "id_franquicia", "nombre_responsable");
+            this.cmb_franquicias.SelectedIndex = -1;
+
+            this.cmb_vendedores.cargar("vendedor", "legajo_vendedor", "nombre_vendedor");
+            this.cmb_vendedores.SelectedIndex = -1;
+
+        }
+
+        private void cbx_franquicia_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = cbx_franquicia.Checked;
+            cmb_franquicias.Enabled = estado;
+            if (!estado)
+            {
+                cmb_franquicias.SelectedIndex = -1;
+            }
+        }
+
+        private void cbx_vendedor_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = cbx_vendedor.Checked;
+            cmb_vendedores.Enabled = estado;
+            if (!estado)
+            {
+                cmb_vendedores.SelectedIndex = -1;
+            }
+        }
+
+        private void cbx_monto_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = cbx_monto.Checked;
+            txt_desde_monto.Enabled = estado;
+            txt_hasta_monto.Enabled = estado;
+            if (!estado)
+            {
+                txt_desde_monto.Text = "";
+                txt_hasta_monto.Text = "";
+            }
+        }
+
+        private void cbx_fechaSolicitud_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = cbx_fechaSolicitud.Checked;
+            txt_desde_fechaSolicitud.Enabled = estado;
+            txt_hasta_fechaSolicitud.Enabled = estado;
+            if (!estado)
+            {
+                txt_desde_fechaSolicitud.Text = "";
+                txt_hasta_fechaSolicitud.Text = "";
+            }
+        }
+
+        private void cbx_fechaEntrega_CheckedChanged(object sender, EventArgs e)
+        {
+            bool estado = cbx_fechaEntrega.Checked;
+            txt_desde_fechaEntrega.Enabled = estado;
+            txt_hasta_fechaEntrega.Enabled = estado;
+            if (!estado)
+            {
+                txt_desde_fechaEntrega.Text = "";
+                txt_hasta_fechaEntrega.Text = "";
+            }
+        }
+
+        private void cbx_estado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            grp_busquedaAvanzadaPedido.Visible = false;
+        }
       
     }
 }
