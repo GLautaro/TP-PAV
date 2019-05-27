@@ -87,10 +87,10 @@
             this.lbl_buscarProducto = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cbx_estado = new System.Windows.Forms.CheckBox();
-            this.txt_hasta_fechaEntrega = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_desde_fechaEntrega = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_hasta_fechaSolicitud = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_desde_fechaSolicitud = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.dtp_hasta_fechaEntrega = new TP_PAV.clases.DateTimePickerPersonal(this.components);
+            this.dtp_desde_fechaEntrega = new TP_PAV.clases.DateTimePickerPersonal(this.components);
+            this.dtp_hasta_fechaSolicitud = new TP_PAV.clases.DateTimePickerPersonal(this.components);
+            this.dtp_desde_fechaSolicitud = new TP_PAV.clases.DateTimePickerPersonal(this.components);
             this.cmb_vendedores = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.txt_hasta_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
@@ -436,16 +436,16 @@
             // 
             // grp_busquedaAvanzadaPedido
             // 
+            this.grp_busquedaAvanzadaPedido.Controls.Add(this.dtp_hasta_fechaEntrega);
+            this.grp_busquedaAvanzadaPedido.Controls.Add(this.dtp_desde_fechaEntrega);
+            this.grp_busquedaAvanzadaPedido.Controls.Add(this.dtp_hasta_fechaSolicitud);
+            this.grp_busquedaAvanzadaPedido.Controls.Add(this.dtp_desde_fechaSolicitud);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_estado);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.label12);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.label13);
-            this.grp_busquedaAvanzadaPedido.Controls.Add(this.txt_hasta_fechaEntrega);
-            this.grp_busquedaAvanzadaPedido.Controls.Add(this.txt_desde_fechaEntrega);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_fechaEntrega);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.label10);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.label11);
-            this.grp_busquedaAvanzadaPedido.Controls.Add(this.txt_hasta_fechaSolicitud);
-            this.grp_busquedaAvanzadaPedido.Controls.Add(this.txt_desde_fechaSolicitud);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_fechaSolicitud);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.rbtn_cancelado);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cmb_vendedores);
@@ -464,7 +464,7 @@
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cmb_franquicias);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.lbl_busquedaAvSeleccionTipo);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_franquicia);
-            this.grp_busquedaAvanzadaPedido.Location = new System.Drawing.Point(610, 87);
+            this.grp_busquedaAvanzadaPedido.Location = new System.Drawing.Point(623, 84);
             this.grp_busquedaAvanzadaPedido.Name = "grp_busquedaAvanzadaPedido";
             this.grp_busquedaAvanzadaPedido.Size = new System.Drawing.Size(361, 547);
             this.grp_busquedaAvanzadaPedido.TabIndex = 78;
@@ -535,6 +535,7 @@
             // rbtn_cancelado
             // 
             this.rbtn_cancelado.AutoSize = true;
+            this.rbtn_cancelado.Enabled = false;
             this.rbtn_cancelado.Location = new System.Drawing.Point(255, 377);
             this.rbtn_cancelado.Name = "rbtn_cancelado";
             this.rbtn_cancelado.Size = new System.Drawing.Size(76, 17);
@@ -585,6 +586,7 @@
             this.btn_BuscarBusquedaAvanzada.TabIndex = 68;
             this.btn_BuscarBusquedaAvanzada.Text = "Buscar";
             this.btn_BuscarBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btn_BuscarBusquedaAvanzada.Click += new System.EventHandler(this.btn_BuscarBusquedaAvanzada_Click);
             // 
             // btn_cerrarBusquedaAvanzada
             // 
@@ -600,6 +602,7 @@
             // rbtn_pendiente
             // 
             this.rbtn_pendiente.AutoSize = true;
+            this.rbtn_pendiente.Enabled = false;
             this.rbtn_pendiente.Location = new System.Drawing.Point(99, 377);
             this.rbtn_pendiente.Name = "rbtn_pendiente";
             this.rbtn_pendiente.Size = new System.Drawing.Size(73, 17);
@@ -611,6 +614,7 @@
             // rbtn_entregado
             // 
             this.rbtn_entregado.AutoSize = true;
+            this.rbtn_entregado.Enabled = false;
             this.rbtn_entregado.Location = new System.Drawing.Point(175, 377);
             this.rbtn_entregado.Name = "rbtn_entregado";
             this.rbtn_entregado.Size = new System.Drawing.Size(74, 17);
@@ -730,57 +734,65 @@
             this.cbx_estado.UseVisualStyleBackColor = true;
             this.cbx_estado.CheckedChanged += new System.EventHandler(this.cbx_estado_CheckedChanged);
             // 
-            // txt_hasta_fechaEntrega
+            // dtp_hasta_fechaEntrega
             // 
-            this.txt_hasta_fechaEntrega._campo = "fecha_entrega";
-            this.txt_hasta_fechaEntrega._mensaje_error = null;
-            this.txt_hasta_fechaEntrega._nombre_tabla = "pedido";
-            this.txt_hasta_fechaEntrega._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_hasta_fechaEntrega._validable = false;
-            this.txt_hasta_fechaEntrega.Enabled = false;
-            this.txt_hasta_fechaEntrega.Location = new System.Drawing.Point(174, 333);
-            this.txt_hasta_fechaEntrega.Name = "txt_hasta_fechaEntrega";
-            this.txt_hasta_fechaEntrega.Size = new System.Drawing.Size(167, 20);
-            this.txt_hasta_fechaEntrega.TabIndex = 81;
+            this.dtp_hasta_fechaEntrega._campo = "fecha_entrega";
+            this.dtp_hasta_fechaEntrega._mensaje_error = "Necesita ingresar una fecha de entrega";
+            this.dtp_hasta_fechaEntrega._nombre_tabla = "pedido";
+            this.dtp_hasta_fechaEntrega._validable = true;
+            this.dtp_hasta_fechaEntrega.CustomFormat = "dd/MM/yyyy";
+            this.dtp_hasta_fechaEntrega.Enabled = false;
+            this.dtp_hasta_fechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_hasta_fechaEntrega.Location = new System.Drawing.Point(174, 336);
+            this.dtp_hasta_fechaEntrega.Margin = new System.Windows.Forms.Padding(2);
+            this.dtp_hasta_fechaEntrega.Name = "dtp_hasta_fechaEntrega";
+            this.dtp_hasta_fechaEntrega.Size = new System.Drawing.Size(168, 20);
+            this.dtp_hasta_fechaEntrega.TabIndex = 84;
             // 
-            // txt_desde_fechaEntrega
+            // dtp_desde_fechaEntrega
             // 
-            this.txt_desde_fechaEntrega._campo = "fecha_entrega";
-            this.txt_desde_fechaEntrega._mensaje_error = null;
-            this.txt_desde_fechaEntrega._nombre_tabla = "pedido";
-            this.txt_desde_fechaEntrega._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_desde_fechaEntrega._validable = false;
-            this.txt_desde_fechaEntrega.Enabled = false;
-            this.txt_desde_fechaEntrega.Location = new System.Drawing.Point(174, 307);
-            this.txt_desde_fechaEntrega.Name = "txt_desde_fechaEntrega";
-            this.txt_desde_fechaEntrega.Size = new System.Drawing.Size(167, 20);
-            this.txt_desde_fechaEntrega.TabIndex = 80;
+            this.dtp_desde_fechaEntrega._campo = "fecha_entrega";
+            this.dtp_desde_fechaEntrega._mensaje_error = "Necesita ingresar una fecha de entrega";
+            this.dtp_desde_fechaEntrega._nombre_tabla = "pedido";
+            this.dtp_desde_fechaEntrega._validable = true;
+            this.dtp_desde_fechaEntrega.CustomFormat = "dd/MM/yyyy";
+            this.dtp_desde_fechaEntrega.Enabled = false;
+            this.dtp_desde_fechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_desde_fechaEntrega.Location = new System.Drawing.Point(174, 305);
+            this.dtp_desde_fechaEntrega.Margin = new System.Windows.Forms.Padding(2);
+            this.dtp_desde_fechaEntrega.Name = "dtp_desde_fechaEntrega";
+            this.dtp_desde_fechaEntrega.Size = new System.Drawing.Size(168, 20);
+            this.dtp_desde_fechaEntrega.TabIndex = 85;
             // 
-            // txt_hasta_fechaSolicitud
+            // dtp_hasta_fechaSolicitud
             // 
-            this.txt_hasta_fechaSolicitud._campo = "fecha_solicitud";
-            this.txt_hasta_fechaSolicitud._mensaje_error = null;
-            this.txt_hasta_fechaSolicitud._nombre_tabla = "pedido";
-            this.txt_hasta_fechaSolicitud._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_hasta_fechaSolicitud._validable = false;
-            this.txt_hasta_fechaSolicitud.Enabled = false;
-            this.txt_hasta_fechaSolicitud.Location = new System.Drawing.Point(174, 255);
-            this.txt_hasta_fechaSolicitud.Name = "txt_hasta_fechaSolicitud";
-            this.txt_hasta_fechaSolicitud.Size = new System.Drawing.Size(167, 20);
-            this.txt_hasta_fechaSolicitud.TabIndex = 76;
+            this.dtp_hasta_fechaSolicitud._campo = "fecha_solicitud";
+            this.dtp_hasta_fechaSolicitud._mensaje_error = "Necesita ingresar una fecha de solicitud";
+            this.dtp_hasta_fechaSolicitud._nombre_tabla = "pedido";
+            this.dtp_hasta_fechaSolicitud._validable = true;
+            this.dtp_hasta_fechaSolicitud.CustomFormat = "dd/MM/yyyy";
+            this.dtp_hasta_fechaSolicitud.Enabled = false;
+            this.dtp_hasta_fechaSolicitud.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_hasta_fechaSolicitud.Location = new System.Drawing.Point(173, 258);
+            this.dtp_hasta_fechaSolicitud.Margin = new System.Windows.Forms.Padding(2);
+            this.dtp_hasta_fechaSolicitud.Name = "dtp_hasta_fechaSolicitud";
+            this.dtp_hasta_fechaSolicitud.Size = new System.Drawing.Size(168, 20);
+            this.dtp_hasta_fechaSolicitud.TabIndex = 84;
             // 
-            // txt_desde_fechaSolicitud
+            // dtp_desde_fechaSolicitud
             // 
-            this.txt_desde_fechaSolicitud._campo = "fecha_solicitud";
-            this.txt_desde_fechaSolicitud._mensaje_error = null;
-            this.txt_desde_fechaSolicitud._nombre_tabla = "pedido";
-            this.txt_desde_fechaSolicitud._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_desde_fechaSolicitud._validable = false;
-            this.txt_desde_fechaSolicitud.Enabled = false;
-            this.txt_desde_fechaSolicitud.Location = new System.Drawing.Point(174, 229);
-            this.txt_desde_fechaSolicitud.Name = "txt_desde_fechaSolicitud";
-            this.txt_desde_fechaSolicitud.Size = new System.Drawing.Size(167, 20);
-            this.txt_desde_fechaSolicitud.TabIndex = 75;
+            this.dtp_desde_fechaSolicitud._campo = "fecha_solicitud";
+            this.dtp_desde_fechaSolicitud._mensaje_error = "Necesita ingresar una fecha de solicitud";
+            this.dtp_desde_fechaSolicitud._nombre_tabla = "pedido";
+            this.dtp_desde_fechaSolicitud._validable = true;
+            this.dtp_desde_fechaSolicitud.CustomFormat = "dd/MM/yyyy";
+            this.dtp_desde_fechaSolicitud.Enabled = false;
+            this.dtp_desde_fechaSolicitud.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_desde_fechaSolicitud.Location = new System.Drawing.Point(173, 230);
+            this.dtp_desde_fechaSolicitud.Margin = new System.Windows.Forms.Padding(2);
+            this.dtp_desde_fechaSolicitud.Name = "dtp_desde_fechaSolicitud";
+            this.dtp_desde_fechaSolicitud.Size = new System.Drawing.Size(168, 20);
+            this.dtp_desde_fechaSolicitud.TabIndex = 16;
             // 
             // cmb_vendedores
             // 
@@ -974,13 +986,9 @@
         private System.Windows.Forms.CheckBox cbx_franquicia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private clases.TextBoxPersonal txt_hasta_fechaEntrega;
-        private clases.TextBoxPersonal txt_desde_fechaEntrega;
         private System.Windows.Forms.CheckBox cbx_fechaEntrega;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private clases.TextBoxPersonal txt_hasta_fechaSolicitud;
-        private clases.TextBoxPersonal txt_desde_fechaSolicitud;
         private System.Windows.Forms.CheckBox cbx_fechaSolicitud;
         private System.Windows.Forms.RadioButton rbtn_cancelado;
         private System.Windows.Forms.Button btn_busquedaAvanzadaProducto;
@@ -989,5 +997,9 @@
         private System.Windows.Forms.Label lbl_buscarProducto;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox cbx_estado;
+        private clases.DateTimePickerPersonal dtp_desde_fechaSolicitud;
+        private clases.DateTimePickerPersonal dtp_hasta_fechaEntrega;
+        private clases.DateTimePickerPersonal dtp_desde_fechaEntrega;
+        private clases.DateTimePickerPersonal dtp_hasta_fechaSolicitud;
     }
 }

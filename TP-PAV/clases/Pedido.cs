@@ -137,9 +137,102 @@ namespace TP_PAV.clases
             return true;
         }
 
+        public DataTable busquedaAvanzada(Control.ControlCollection controles)
+        {
+            bool busqueda_franquicia = false, busqueda_vendedor = false, busqueda_monto = false, busqueda_fechaSolicitud = false, busqueda_fechaEntrega = false, busqueda_estado = false, pendiente = false, entregado = false, cancelado = false;
+            string monto_desde = "-1";
+            string monto_hasta = "-1";
+            string franquicia_seleccionada = null;
+            string vendedor_seleccionado = null;
 
+            foreach (Control item in controles)
+            {
+                switch (item.GetType().Name)
+                {
+                    case "ComboBoxPersonal":
+                        if (item.Name == "cmb_franquicias")
+                        {
+                            franquicia_seleccionada = ((ComboBoxPersonal)item).SelectedIndex == -1 ? null : ((ComboBoxPersonal)item).SelectedValue.ToString();
+                        }
+                        if (item.Name == "cmb_vendedores")
+                        {
+                            vendedor_seleccionado = ((ComboBoxPersonal)item).SelectedIndex == -1 ? null : ((ComboBoxPersonal)item).SelectedValue.ToString();
+                        }
+                        break;
+                    case "CheckBox":
+                        if (item.Name == "cbx_franquicia")
+                        {
+                            busqueda_franquicia = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_vendedor")
+                        {
+                            busqueda_vendedor = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_monto")
+                        {
+                            busqueda_monto = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_fechaSolicitud")
+                        {
+                            busqueda_fechaSolicitud = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_fechaEntrega")
+                        {
+                            busqueda_fechaEntrega = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_estado")
+                        {
+                            busqueda_estado = ((CheckBox)item).Checked;
+                        }
+                        break;
+                    case "TextBoxPersonal":
+                        if (item.Name == "txt_desde_monto")
+                        {
+                            monto_desde = item.Text;
+                        }
+                        if (item.Name == "txt_hasta_monto")
+                        {
+                            monto_hasta = item.Text;
+                        }
+                        break;
+                    case "RadioButton":
+                        if (item.Name == "rbtn_pendiente")
+                        {
+                            pendiente = ((RadioButton)item).Checked;
+                        }
+                        if (item.Name == "rbtn_entregado")
+                        {
+                            entregado = ((RadioButton)item).Checked;
+                        }
+                        if (item.Name == "rbtn_cancelado")
+                        {
+                            cancelado = ((RadioButton)item).Checked;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
 
+            string consulta = @"SELECT P.id_pedido, P.id_franquicia, P.id_vendedor, P.fecha_solicitud, P.monto_final
+                                    FROM pedido P
+                                        JOIN estado_pedido EP ON P.id_estado = EP.id_estado
+                                        JOIN franquicia F ON P.id_franquicia = F.id_franquicia
+                                        JOIN vendedor V ON P.id_vendedor = V.legajo_vendedor
+                                    WHERE 1=1";
 
+            if (busqueda_franquicia)
+            {
+                consulta += " AND P.id_franquicia = " + franquicia_seleccionada;
+            }
+            if (busqueda_vendedor)
+            {
+                consulta += " AND P.id_vendedor = " + vendedor_seleccionado;
+            }
+
+            return priv_acceso_db.ejecutarConsulta(consulta);
+
+        }
 
     }
 }

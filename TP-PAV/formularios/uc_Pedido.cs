@@ -185,35 +185,42 @@ namespace TP_PAV.formularios
         private void cbx_fechaSolicitud_CheckedChanged(object sender, EventArgs e)
         {
             bool estado = cbx_fechaSolicitud.Checked;
-            txt_desde_fechaSolicitud.Enabled = estado;
-            txt_hasta_fechaSolicitud.Enabled = estado;
+            dtp_desde_fechaSolicitud.Enabled = estado;
+            dtp_hasta_fechaSolicitud.Enabled = estado;
             if (!estado)
             {
-                txt_desde_fechaSolicitud.Text = "";
-                txt_hasta_fechaSolicitud.Text = "";
+                dtp_desde_fechaSolicitud.Text = "";
+                dtp_hasta_fechaSolicitud.Text = "";
             }
         }
 
         private void cbx_fechaEntrega_CheckedChanged(object sender, EventArgs e)
         {
             bool estado = cbx_fechaEntrega.Checked;
-            txt_desde_fechaEntrega.Enabled = estado;
-            txt_hasta_fechaEntrega.Enabled = estado;
+            dtp_desde_fechaEntrega.Enabled = estado;
+            dtp_hasta_fechaEntrega.Enabled = estado;
             if (!estado)
             {
-                txt_desde_fechaEntrega.Text = "";
-                txt_hasta_fechaEntrega.Text = "";
+                dtp_desde_fechaEntrega.Text = "";
+                dtp_hasta_fechaEntrega.Text = "";
             }
         }
 
         private void cbx_estado_CheckedChanged(object sender, EventArgs e)
         {
-
+            rbtn_pendiente.Enabled = true;
+            rbtn_entregado.Enabled = true;
+            rbtn_cancelado.Enabled = true;
         }
 
         private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
         {
             grp_busquedaAvanzadaPedido.Visible = false;
+        }
+
+        private void btn_BuscarBusquedaAvanzada_Click(object sender, EventArgs e)
+        {
+            this.dgv_pedidos.DataSource = priv_pedido.busquedaAvanzada(grp_busquedaAvanzadaPedido.Controls);
         }
       
     }
