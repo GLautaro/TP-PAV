@@ -104,6 +104,16 @@ namespace TP_PAV
             SidePanel.Show();
             SidePanel.Height = btn_menuEstadisticas.Height;
             SidePanel.Top = btn_menuEstadisticas.Top;
+            if (!main_panel.Controls.Contains(uc_Estadisticas.pub_instance))
+            {
+                main_panel.Controls.Add(uc_Estadisticas.pub_instance);
+                uc_Estadisticas.pub_instance.Dock = DockStyle.Fill;
+                uc_Estadisticas.pub_instance.BringToFront();
+            }
+            else
+            {
+                uc_Estadisticas.pub_instance.BringToFront();
+            }
         }
 
         private void btn_menuReportes_Click(object sender, EventArgs e)

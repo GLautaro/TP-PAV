@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -126,6 +127,12 @@
     <Compile Include="formularios\uc_ABM_Vendedor.Designer.cs">
       <DependentUpon>uc_ABM_Vendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\uc_Estadisticas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="formularios\uc_Estadisticas.Designer.cs">
+      <DependentUpon>uc_Estadisticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\uc_Pedido.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\uc_ABM_Vendedor.resx">
       <DependentUpon>uc_ABM_Vendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\uc_Estadisticas.resx">
+      <DependentUpon>uc_Estadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\uc_Pedido.resx">
       <DependentUpon>uc_Pedido.cs</DependentUpon>

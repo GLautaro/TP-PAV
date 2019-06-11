@@ -21,6 +21,22 @@ namespace TP_PAV.clases
 
         }
 
+        public DataTable VendedoresGrafico()
+        {
+            string consulta = @"SELECT count(*) as cantidad, habilitado FROM Vendedor group by habilitado";
+
+            return db.ejecutarConsulta(consulta);
+
+        }
+
+        public DataTable MejoresVendedores()
+        {
+            string consulta = @"SELECT TOP 5 V.nombre_vendedor ,SUM(p.monto_final) as suma from vendedor V join pedido P on v.legajo_vendedor = P.id_vendedor WHERE p.id_estado = 1 GROUP BY P.id_vendedor, V.nombre_vendedor ORDER BY SUM(p.monto_final) desc";
+
+            return db.ejecutarConsulta(consulta);
+
+        }
+
         public DataTable buscarVendedores(string texto)
         {
             string consulta = @"SELECT * FROM Vendedor WHERE nombre_vendedor LIKE '%" + texto + "%' OR apellido_vendedor LIKE '%" + texto + "%' OR legajo_vendedor LIKE '" + texto + "%';";
