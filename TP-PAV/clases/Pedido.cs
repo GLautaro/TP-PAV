@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TP_PAV.formularios;
 
 namespace TP_PAV.clases
 {
-    class Pedido
+    public class Pedido
     {
-        
-        AccesoBD priv_acceso_db = new AccesoBD();
         private int priv_id_pedido;
         private DateTime priv_fecha_solicitud;
         private DateTime priv_fecha_entrega;
@@ -19,73 +18,221 @@ namespace TP_PAV.clases
         private int priv_id_franquicia;
         private int priv_id_vendedor;
         private int priv_monto_final;
+        private Label priv_pedido_label_error;
+        AccesoBD priv_acceso_db = new AccesoBD();
 
         public int pub_id_pedido
         {
-            get { return this.priv_id_pedido; }
-            set {this.priv_id_pedido = value;}
+            get { return priv_id_pedido; }
+            set {priv_id_pedido = value;}
         }
         public DateTime pub_fecha_solicitud
         {
-            get { return this.pub_fecha_solicitud; }
-            set { this.pub_fecha_solicitud = value; }
+            get { return priv_fecha_solicitud; }
+            set { priv_fecha_solicitud = value; }
         }
         public DateTime pub_fecha_entrega
         {
-            get { return this.pub_fecha_entrega; }
-            set { this.pub_fecha_entrega = value; }
+            get { return priv_fecha_entrega; }
+            set { priv_fecha_entrega = value; }
         }
         public int pub_id_estado
         {
-            get { return this.pub_id_estado; }
-            set { this.pub_id_estado = value; }
+            get { return priv_id_estado; }
+            set { priv_id_estado = value; }
         }
         public int pub_id_franquicia
         {
-            get { return this.pub_id_franquicia; }
-            set { this.pub_id_franquicia = value; }
+            get { return priv_id_franquicia; }
+            set { priv_id_franquicia = value; }
         }
         public int pub_id_vendedor
         {
-            get { return this.pub_id_vendedor; }
-            set { this.pub_id_vendedor = value; }
+            get { return priv_id_vendedor; }
+            set { priv_id_vendedor = value; }
         }
         public int pub_monto_final
         {
-            get { return this.pub_monto_final; }
-            set { this.pub_monto_final = value; }
+            get { return priv_monto_final; }
+            set { priv_monto_final = value; }
         }
-
-
+        public Label pub_Pedido_label_error
+        {
+            get { return this.priv_pedido_label_error; }
+            set { this.priv_pedido_label_error = value; }
+        }
+        public AccesoBD pub_acceso_db_transaccion
+        {
+            get { return priv_acceso_db; }
+            set { priv_acceso_db = value; }
+        }
+        public void iniciar_transaccion_pedido()
+        {
+            priv_acceso_db.iniciar_transaccion();
+        }
+        public void cerrar_transaccion_pedido(bool rollback)
+        {
+            priv_acceso_db.cerrar_transaccion(rollback);
+        }
         public Validar.estado_validacion validarPedido(Control.ControlCollection controles)
         {
             Validar validar = new Validar();
-            return validar.validarUC(controles);
+          
+            return validar.validarUC(controles, priv_pedido_label_error);
 
         }
 
         public DataTable recuperarPedidosPendientes()
         {
-            return priv_acceso_db.ejecutarConsulta("SELECT id_pedido, fecha_solicitud, id_franquicia, id_vendedor, monto_final FROM pedido WHERE id_estado ="+1 );
+            
+            return priv_acceso_db.ejecutarConsulta(@"SELECT 
+                                                     id_pedido, 
+                                                     fecha_solicitud, 
+                                                     id_franquicia, 
+                                                     id_vendedor, 
+                                                     monto_final,
+                                                     id_estado
+                                                     FROM pedido WHERE id_estado = 1" );
 
         }
-        public DataTable recuperarDetalleDePedido(int idPedido)
+  
+
+        public DataTable addPedido(string fecha_solicitud, int id_estado, int id_franquicia, int id_vendedor)
         {
-            return priv_acceso_db.ejecutarConsulta("SELECT pxp.id_producto, pxp.cantidad, (pxp.precio_unitario*pxp.cantidad) AS montoTotal, producto.nombre_producto   FROM pedido_x_producto pxp JOIN producto ON producto.id_producto = pxp.id_producto  WHERE pxp.id_pedido=" + idPedido);
+
+            return priv_acceso_db.ejecutarConsulta(String.Format(@"INSERT INTO pedido (fecha_solicitud, id_estado, id_franquicia, id_vendedor) VALUES ('{0}',{1}, {2}, {3}) SELECT @@IDENTITY as id_ultimo_pedido", fecha_solicitud, id_estado, id_franquicia, id_vendedor));
 
         }
-        public bool addPedido(Control.ControlCollection controles)
-        {
 
-            priv_acceso_db.insert_automatizado(controles, "pedido");
+        public DataTable updateMontoFinalPedido(int id_pedido)
+        {
+            return priv_acceso_db.ejecutarConsulta(String.Format(@"UPDATE pedido
+                                                                SET pedido.monto_final=pxp.montoFinal
+                                                                FROM pedido p 
+                                                                JOIN (SELECT id_pedido, SUM(cantidad*precio_unitario) as montoFinal 
+		                                                        FROM pedido_x_producto 
+		                                                        GROUP BY id_pedido) pxp
+		                                                        ON pxp.id_pedido=p.id_pedido 
+		                                                        WHERE p.id_pedido={0} SELECT monto_final FROM pedido WHERE id_pedido = {0}", id_pedido));
+
+        }
+        public DataTable updateMontoFinalCero(int id_pedido)
+        {
+            return priv_acceso_db.ejecutarConsulta(String.Format(@"UPDATE pedido
+                                                                SET pedido.monto_final=0
+                                                                FROM pedido p                                                             
+		                                                        WHERE p.id_pedido={0} ", id_pedido));
+
+        }
+
+
+        public DataTable estadoPedido()
+        {
+            return priv_acceso_db.ejecutarConsulta("SELECT * FROM estado_pedido");
+        }
+
+        public bool updateEstadoPedido()
+        {
+            priv_acceso_db.ejecutarNoConsulta(String.Format(@"UPDATE pedido SET id_estado={0} WHERE id_pedido={1}", priv_id_estado, priv_id_pedido));
             return true;
+        }
+
+        public DataTable busquedaAvanzada(Control.ControlCollection controles)
+        {
+            bool busqueda_franquicia = false, busqueda_vendedor = false, busqueda_monto = false, busqueda_fechaSolicitud = false, busqueda_fechaEntrega = false, busqueda_estado = false, pendiente = false, entregado = false, cancelado = false;
+            string monto_desde = "-1";
+            string monto_hasta = "-1";
+            string franquicia_seleccionada = null;
+            string vendedor_seleccionado = null;
+
+            foreach (Control item in controles)
+            {
+                switch (item.GetType().Name)
+                {
+                    case "ComboBoxPersonal":
+                        if (item.Name == "cmb_franquicias")
+                        {
+                            franquicia_seleccionada = ((ComboBoxPersonal)item).SelectedIndex == -1 ? null : ((ComboBoxPersonal)item).SelectedValue.ToString();
+                        }
+                        if (item.Name == "cmb_vendedores")
+                        {
+                            vendedor_seleccionado = ((ComboBoxPersonal)item).SelectedIndex == -1 ? null : ((ComboBoxPersonal)item).SelectedValue.ToString();
+                        }
+                        break;
+                    case "CheckBox":
+                        if (item.Name == "cbx_franquicia")
+                        {
+                            busqueda_franquicia = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_vendedor")
+                        {
+                            busqueda_vendedor = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_monto")
+                        {
+                            busqueda_monto = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_fechaSolicitud")
+                        {
+                            busqueda_fechaSolicitud = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_fechaEntrega")
+                        {
+                            busqueda_fechaEntrega = ((CheckBox)item).Checked;
+                        }
+                        if (item.Name == "cbx_estado")
+                        {
+                            busqueda_estado = ((CheckBox)item).Checked;
+                        }
+                        break;
+                    case "TextBoxPersonal":
+                        if (item.Name == "txt_desde_monto")
+                        {
+                            monto_desde = item.Text;
+                        }
+                        if (item.Name == "txt_hasta_monto")
+                        {
+                            monto_hasta = item.Text;
+                        }
+                        break;
+                    case "RadioButton":
+                        if (item.Name == "rbtn_pendiente")
+                        {
+                            pendiente = ((RadioButton)item).Checked;
+                        }
+                        if (item.Name == "rbtn_entregado")
+                        {
+                            entregado = ((RadioButton)item).Checked;
+                        }
+                        if (item.Name == "rbtn_cancelado")
+                        {
+                            cancelado = ((RadioButton)item).Checked;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            string consulta = @"SELECT P.id_pedido, P.id_franquicia, P.id_vendedor, P.fecha_solicitud, P.monto_final
+                                    FROM pedido P
+                                        JOIN estado_pedido EP ON P.id_estado = EP.id_estado
+                                        JOIN franquicia F ON P.id_franquicia = F.id_franquicia
+                                        JOIN vendedor V ON P.id_vendedor = V.legajo_vendedor
+                                    WHERE 1=1";
+
+            if (busqueda_franquicia)
+            {
+                consulta += " AND P.id_franquicia = " + franquicia_seleccionada;
+            }
+            if (busqueda_vendedor)
+            {
+                consulta += " AND P.id_vendedor = " + vendedor_seleccionado;
+            }
+
+            return priv_acceso_db.ejecutarConsulta(consulta);
 
         }
-       
-
-
-
-
 
     }
 }

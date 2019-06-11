@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label33 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombre_barrio = new System.Windows.Forms.TextBox();
             this.btn_habilitarAgregarBarrio = new System.Windows.Forms.Button();
             this.btn_habilitarModificarBarrio = new System.Windows.Forms.Button();
-            this.btn_eliminarBarrio = new System.Windows.Forms.Button();
+            this.btn_handleStateBarrio = new System.Windows.Forms.Button();
             this.btn_modificarBarrio = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_agregarBarrio = new System.Windows.Forms.Button();
             this.dgv_barrio = new System.Windows.Forms.DataGridView();
             this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_validation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_barrio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 39);
+            this.panel1.Size = new System.Drawing.Size(835, 39);
             this.panel1.TabIndex = 43;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -97,7 +98,7 @@
             // 
             // btn_habilitarModificarBarrio
             // 
-            this.btn_habilitarModificarBarrio.Location = new System.Drawing.Point(290, 419);
+            this.btn_habilitarModificarBarrio.Location = new System.Drawing.Point(327, 419);
             this.btn_habilitarModificarBarrio.Name = "btn_habilitarModificarBarrio";
             this.btn_habilitarModificarBarrio.Size = new System.Drawing.Size(197, 44);
             this.btn_habilitarModificarBarrio.TabIndex = 49;
@@ -105,15 +106,15 @@
             this.btn_habilitarModificarBarrio.UseVisualStyleBackColor = true;
             this.btn_habilitarModificarBarrio.Click += new System.EventHandler(this.btn_habilitarModificarBarrio_Click);
             // 
-            // btn_eliminarBarrio
+            // btn_handleStateBarrio
             // 
-            this.btn_eliminarBarrio.Location = new System.Drawing.Point(572, 419);
-            this.btn_eliminarBarrio.Name = "btn_eliminarBarrio";
-            this.btn_eliminarBarrio.Size = new System.Drawing.Size(197, 44);
-            this.btn_eliminarBarrio.TabIndex = 50;
-            this.btn_eliminarBarrio.Text = "Eliminar Barrio";
-            this.btn_eliminarBarrio.UseVisualStyleBackColor = true;
-            this.btn_eliminarBarrio.Click += new System.EventHandler(this.btn_eliminarBarrio_Click);
+            this.btn_handleStateBarrio.Location = new System.Drawing.Point(626, 419);
+            this.btn_handleStateBarrio.Name = "btn_handleStateBarrio";
+            this.btn_handleStateBarrio.Size = new System.Drawing.Size(197, 44);
+            this.btn_handleStateBarrio.TabIndex = 50;
+            this.btn_handleStateBarrio.Text = "Hablilitar";
+            this.btn_handleStateBarrio.UseVisualStyleBackColor = true;
+            this.btn_handleStateBarrio.Click += new System.EventHandler(this.btn_handleStateBarrio_Click);
             // 
             // btn_modificarBarrio
             // 
@@ -163,14 +164,14 @@
             this.dgv_barrio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_barrio.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_barrio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_barrio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_barrio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_barrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_barrio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_barrio,
@@ -183,22 +184,22 @@
             this.dgv_barrio.Name = "dgv_barrio";
             this.dgv_barrio.ReadOnly = true;
             this.dgv_barrio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_barrio.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_barrio.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_barrio.RowHeadersVisible = false;
             this.dgv_barrio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_barrio.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_barrio.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_barrio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_barrio.Size = new System.Drawing.Size(757, 235);
+            this.dgv_barrio.Size = new System.Drawing.Size(811, 235);
             this.dgv_barrio.TabIndex = 58;
             this.dgv_barrio.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_barrio_CellMouseClick);
             // 
@@ -222,16 +223,27 @@
             this.nombre_barrio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.nombre_barrio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // label_validation
+            // 
+            this.label_validation.AutoSize = true;
+            this.label_validation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_validation.ForeColor = System.Drawing.Color.Red;
+            this.label_validation.Location = new System.Drawing.Point(432, 131);
+            this.label_validation.Name = "label_validation";
+            this.label_validation.Size = new System.Drawing.Size(0, 20);
+            this.label_validation.TabIndex = 59;
+            // 
             // frm_ABM_Barrio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 481);
+            this.ClientSize = new System.Drawing.Size(835, 481);
+            this.Controls.Add(this.label_validation);
             this.Controls.Add(this.dgv_barrio);
             this.Controls.Add(this.btn_agregarBarrio);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_modificarBarrio);
-            this.Controls.Add(this.btn_eliminarBarrio);
+            this.Controls.Add(this.btn_handleStateBarrio);
             this.Controls.Add(this.btn_habilitarModificarBarrio);
             this.Controls.Add(this.btn_habilitarAgregarBarrio);
             this.Controls.Add(this.txt_nombre_barrio);
@@ -256,12 +268,13 @@
         private System.Windows.Forms.TextBox txt_nombre_barrio;
         private System.Windows.Forms.Button btn_habilitarAgregarBarrio;
         private System.Windows.Forms.Button btn_habilitarModificarBarrio;
-        private System.Windows.Forms.Button btn_eliminarBarrio;
+        private System.Windows.Forms.Button btn_handleStateBarrio;
         private System.Windows.Forms.Button btn_modificarBarrio;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_agregarBarrio;
         private System.Windows.Forms.DataGridView dgv_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
+        private System.Windows.Forms.Label label_validation;
     }
 }

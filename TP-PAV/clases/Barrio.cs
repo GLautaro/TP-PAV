@@ -15,6 +15,7 @@ namespace TP_PAV.clases
         
         private string priv_nombre_barrio = "";
 
+        private int priv_state_barrio;
         public int pub_id_barrio
         {
             get { return this.priv_id_barrio; }
@@ -25,9 +26,19 @@ namespace TP_PAV.clases
             get { return this.priv_nombre_barrio; }
             set { this.priv_nombre_barrio = value; }
         }
+        public int pub_state_barrio
+        {
+            get { return this.priv_state_barrio; }
+            set { this.priv_state_barrio = value; }
+        }
         public DataTable recuperarBarrios()
         {
             string query = @"SELECT * FROM barrio";
+            return priv_acceso_bd.ejecutarConsulta(query);
+        }
+        public DataTable recuperarBarriosHabilitados()
+        {
+            string query = @"SELECT * FROM barrio WHERE habilitado=1";
             return priv_acceso_bd.ejecutarConsulta(query);
         }
 
@@ -43,12 +54,19 @@ namespace TP_PAV.clases
             return priv_acceso_bd.ejecutarNoConsulta(consulta) == 1 ? true : false;
 
         }
-        public bool deleteBarrio()
+        public bool handleStateBarrio()
         {
-            string consulta = @"DELETE FROM barrio WHERE id_barrio=" + priv_id_barrio.ToString();
-            return priv_acceso_bd.ejecutarNoConsulta(consulta) == 1 ? true : false;
-        }
+            string noConsulta = String.Format(@"UPDATE barrio SET habilitado={0} WHERE id_barrio={1}", priv_state_barrio.ToString(), priv_id_barrio.ToString());
+            if (priv_acceso_bd.ejecutarNoConsulta(noConsulta) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
+        }
 
 
 

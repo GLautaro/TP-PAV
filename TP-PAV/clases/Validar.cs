@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TP_PAV.clases;
 
+
 //Si surgen nuevos componentes propios y necesitan validacion, en esta clase tenemos que agregarlas.
 
 namespace TP_PAV.clases
 {
-    class Validar
+    public class Validar
     {
         public enum estado_validacion { correcto, erroneo}
 
-        public estado_validacion validarUC (Control.ControlCollection controles)
+        public estado_validacion validarUC (Control.ControlCollection controles, Label lbl_error)
         {
             foreach (Control item in controles)
             {
@@ -24,9 +25,13 @@ namespace TP_PAV.clases
                     {
                         if (item.Text == "")
                         {
-                            MessageBox.Show(((TextBoxPersonal)item)._mensaje_error);
+                                     
+                          lbl_error.Text = ((TextBoxPersonal)item)._mensaje_error;
+                            lbl_error.Visible = true;
                             ((TextBoxPersonal)item).Focus();
+                  
                             return estado_validacion.erroneo;
+
                         }
                     }
                 }
@@ -37,7 +42,8 @@ namespace TP_PAV.clases
                     {
                         if (((ComboBoxPersonal)item).SelectedIndex == -1)
                         {
-                            MessageBox.Show(((ComboBoxPersonal)item)._mensaje_error);
+                            lbl_error.Text = ((ComboBoxPersonal)item)._mensaje_error;
+                            lbl_error.Visible = true;
                             ((ComboBoxPersonal)item).Focus();
                             return estado_validacion.erroneo;
                         }
@@ -50,7 +56,8 @@ namespace TP_PAV.clases
                     {
                         if (((ComboBoxHabilitado)item).SelectedIndex == -1)
                         {
-                            MessageBox.Show(((ComboBoxHabilitado)item)._mensaje_error);
+                            lbl_error.Text = ((ComboBoxHabilitado)item)._mensaje_error;
+                            lbl_error.Visible = true;
                             ((ComboBoxHabilitado)item).Focus();
                             return estado_validacion.erroneo;
                         }
@@ -61,10 +68,13 @@ namespace TP_PAV.clases
                    
                     if (((DateTimePickerPersonal)item)._validable == true)
                     {
-                        
+                        //AGUS!!! Tenes que crear un label en tu UC y pasarlo a esta funcion!! Porque los mensajes de error ahora
+                        //van con un label.
+                      
                         if (item.Text == "")
                         {
-                            MessageBox.Show(((DateTimePickerPersonal)item)._mensaje_error);
+                            lbl_error.Text = ((DateTimePickerPersonal)item)._mensaje_error;
+                            lbl_error.Visible = true;
                             ((DateTimePickerPersonal)item).Focus();
                             return estado_validacion.erroneo;
                         }

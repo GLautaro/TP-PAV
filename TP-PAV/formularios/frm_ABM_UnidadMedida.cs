@@ -14,6 +14,18 @@ namespace TP_PAV.formularios
     public partial class frm_ABM_UnidadMedida : Form
     {
         UnidadMedida priv_UnidadMedida = new UnidadMedida();
+        uc_ABM_Producto priv_formularioPadre = new uc_ABM_Producto();
+        int priv_selectedCmbIndex;
+
+        public uc_ABM_Producto pub_formularioPadre
+        {
+            set { priv_formularioPadre = value; }
+        }
+
+        public int pub_selectedIndex
+        {
+            set { priv_selectedCmbIndex = value; }
+        }
 
         public frm_ABM_UnidadMedida()
         {
@@ -162,7 +174,12 @@ namespace TP_PAV.formularios
             habilitarBotones();
             btn_agregarUnidadMedida.Visible = false;
         }
-    
+
+        private void frm_UnidadMedida_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            priv_formularioPadre.pub_cmb_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
+            priv_formularioPadre.pub_cmb_unidadMedida.SelectedIndex = priv_selectedCmbIndex;
+        }   
 
     }
 }

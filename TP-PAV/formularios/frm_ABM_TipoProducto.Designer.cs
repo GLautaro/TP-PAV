@@ -330,6 +330,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Name = "frm_ABM_TipoProducto";
             this.Text = "frm_ABM_TipoProducto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_TipoProducto_FormClosing);
             this.Load += new System.EventHandler(this.frm_ABM_TipoProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoProducto)).EndInit();
             this.ResumeLayout(false);

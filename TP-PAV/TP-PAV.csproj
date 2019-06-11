@@ -65,6 +65,7 @@
     <Compile Include="clases\DateTimePickerPersonal.Designer.cs">
       <DependentUpon>DateTimePickerPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="clases\DetallePedido.cs" />
     <Compile Include="clases\Franquicia.cs" />
     <Compile Include="clases\Pedido.cs" />
     <Compile Include="clases\Producto.cs" />
@@ -102,6 +103,12 @@
     </Compile>
     <Compile Include="formularios\frm_ABM_UnidadMedida.Designer.cs">
       <DependentUpon>frm_ABM_UnidadMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\frm_DetallePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\frm_DetallePedido.Designer.cs">
+      <DependentUpon>frm_DetallePedido.cs</DependentUpon>
     </Compile>
     <Compile Include="formularios\frm_TipoFranquicia.cs">
       <SubType>Form</SubType>
@@ -152,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_ABM_UnidadMedida.resx">
       <DependentUpon>frm_ABM_UnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\frm_DetallePedido.resx">
+      <DependentUpon>frm_DetallePedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_TipoFranquicia.resx">
       <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>

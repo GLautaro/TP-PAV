@@ -14,6 +14,18 @@ namespace TP_PAV.formularios
     public partial class frm_ABM_TipoProducto : Form
     {
         TipoProducto priv_tipoProducto = new TipoProducto();
+        uc_ABM_Producto priv_formularioPadre = new uc_ABM_Producto();
+        int priv_selectedCmbIndex;
+
+        public uc_ABM_Producto pub_formularioPadre
+        {
+            set { priv_formularioPadre = value; }
+        }
+
+        public int pub_selectedIndex
+        {
+            set { priv_selectedCmbIndex = value; }
+        }
 
         public frm_ABM_TipoProducto()
         {
@@ -167,6 +179,12 @@ namespace TP_PAV.formularios
             limpiarCajasTexto();
             habilitarBotones();
             btn_agregarTipoProducto.Visible = false;
+        }
+
+        private void frm_TipoProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            priv_formularioPadre.pub_cmb_tipo_producto.DataSource = priv_tipoProducto.traerTipoProducto();
+            priv_formularioPadre.pub_cmb_tipo_producto.SelectedIndex = priv_selectedCmbIndex;
         }
     }
 }

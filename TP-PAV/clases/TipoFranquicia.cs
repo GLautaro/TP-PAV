@@ -14,6 +14,7 @@ namespace TP_PAV.clases
         private float priv_monto_minimo_compra;
         private float priv_porcentaje_descuento;
         private string priv_nombre_tipo_franquicia;
+        private int priv_state_tipo_franquicia;
         public int pub_id_tipo_franquicia
         {
             get { return this.priv_id_tipo_franquicia; }
@@ -34,11 +35,21 @@ namespace TP_PAV.clases
             get { return this.priv_nombre_tipo_franquicia; }
             set { this.priv_nombre_tipo_franquicia = value; }
         }
+        public int pub_state_tipo_franquicia
+        {
+            get { return this.priv_state_tipo_franquicia; }
+            set { this.priv_state_tipo_franquicia = value;}   
+        }
        
 
         public DataTable recuperarTiposFranquicia()
         {
             string query = @"SELECT * FROM tipo_franquicia";
+            return priv_acceso_db.ejecutarConsulta(query);
+        }
+        public DataTable recuperarTiposFranquiciaHabilitados()
+        {
+            string query = @"SELECT * FROM tipo_franquicia WHERE habilitado=1";
             return priv_acceso_db.ejecutarConsulta(query);
         }
      
@@ -75,9 +86,9 @@ namespace TP_PAV.clases
 
         }
 
-        internal bool eliminarFranquicia()
+        public bool handleStateTipoFranquicia()
         {
-            string noConsulta = @"DELETE FROM tipo_franquicia WHERE id_tipo_franquicia=" + priv_id_tipo_franquicia.ToString();
+            string noConsulta = String.Format(@"UPDATE tipo_franquicia SET habilitado={0} WHERE id_tipo_franquicia={1}", priv_state_tipo_franquicia.ToString(), priv_id_tipo_franquicia.ToString());
             if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
             {
                 return true;

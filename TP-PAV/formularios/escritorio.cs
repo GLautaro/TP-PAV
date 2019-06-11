@@ -17,34 +17,31 @@ namespace TP_PAV
         {
             InitializeComponent();
             SidePanel.Hide();
-           
+            show_page_default();
         }
 
-        private void btn_menuPedidos_Click(object sender, EventArgs e)
+        private void show_page_default()
         {
-            SidePanel.Show();
             SidePanel.Height = btn_menuPedidos.Height;
             SidePanel.Top = btn_menuPedidos.Top;
-            if (!main_panel.Controls.Contains(uc_Pedido.pub_instance))
-            {
-                main_panel.Controls.Add(uc_Pedido.pub_instance);
-                uc_Pedido.pub_instance.Dock = DockStyle.Fill;
-                uc_Pedido.pub_instance.BringToFront();
-            }
-            else
-            {
-
-                uc_Pedido.pub_instance.BringToFront();
-
-            }
+            SidePanel.Show();
+            uc_Pedido uc_pedido = new uc_Pedido();
+            main_panel.Controls.Add(uc_pedido);
+            uc_pedido.Dock = DockStyle.Fill;
+            uc_pedido.BringToFront();
+        }
+        private void btn_menuPedidos_Click(object sender, EventArgs e)
+        {
+            show_page_default();
+            
         }
       
 
         private void btn_menuProductos_Click(object sender, EventArgs e)
         {
-            SidePanel.Show();
             SidePanel.Height = btn_menuProductos.Height;
             SidePanel.Top = btn_menuProductos.Top;
+            SidePanel.Show();
 
             if (!main_panel.Controls.Contains(uc_ABM_Producto.pub_instance)) 
             {
@@ -61,9 +58,9 @@ namespace TP_PAV
 
         private void btn_menuVendedores_Click(object sender, EventArgs e)
         {
-            SidePanel.Show();
             SidePanel.Height = btn_menuVendedores.Height;
             SidePanel.Top = btn_menuVendedores.Top;
+            SidePanel.Show();
             if (!main_panel.Controls.Contains(uc_ABM_Vendedor.pub_instance))
             {
                 main_panel.Controls.Add(uc_ABM_Vendedor.pub_instance);
@@ -79,9 +76,9 @@ namespace TP_PAV
 
         private void btn_menuFranquicias_Click(object sender, EventArgs e)
         {
-            SidePanel.Show();
             SidePanel.Height = btn_menuFranquicias.Height;
             SidePanel.Top = btn_menuFranquicias.Top;
+            SidePanel.Show();
             
              if (!main_panel.Controls.Contains(uc_ABM_Franquicia.pub_instance))
             {
@@ -101,7 +98,6 @@ namespace TP_PAV
 
         private void btn_menuEstadisticas_Click(object sender, EventArgs e)
         {
-            SidePanel.Show();
             SidePanel.Height = btn_menuEstadisticas.Height;
             SidePanel.Top = btn_menuEstadisticas.Top;
             if (!main_panel.Controls.Contains(uc_Estadisticas.pub_instance))
@@ -118,9 +114,9 @@ namespace TP_PAV
 
         private void btn_menuReportes_Click(object sender, EventArgs e)
         {
-            SidePanel.Show();
             SidePanel.Height = btn_menuReportes.Height;
             SidePanel.Top = btn_menuReportes.Top;
+            SidePanel.Show();
         }
 
         
