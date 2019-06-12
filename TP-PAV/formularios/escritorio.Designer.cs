@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Escritorio));
             this.panel1 = new System.Windows.Forms.Panel();
             this.SidePanel = new System.Windows.Forms.Panel();
-            this.btn_menuReportes = new System.Windows.Forms.Button();
+            this.btn_menuHistorialPedidos = new System.Windows.Forms.Button();
             this.btn_menuEstadisticas = new System.Windows.Forms.Button();
             this.btn_menuFranquicias = new System.Windows.Forms.Button();
             this.btn_menuProductos = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.panel1.Controls.Add(this.SidePanel);
-            this.panel1.Controls.Add(this.btn_menuReportes);
+            this.panel1.Controls.Add(this.btn_menuHistorialPedidos);
             this.panel1.Controls.Add(this.btn_menuEstadisticas);
             this.panel1.Controls.Add(this.btn_menuFranquicias);
             this.panel1.Controls.Add(this.btn_menuProductos);
@@ -72,19 +72,19 @@
             this.SidePanel.Size = new System.Drawing.Size(10, 54);
             this.SidePanel.TabIndex = 3;
             // 
-            // btn_menuReportes
+            // btn_menuHistorialPedidos
             // 
-            this.btn_menuReportes.FlatAppearance.BorderSize = 0;
-            this.btn_menuReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menuReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menuReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menuReportes.Location = new System.Drawing.Point(3, 341);
-            this.btn_menuReportes.Name = "btn_menuReportes";
-            this.btn_menuReportes.Size = new System.Drawing.Size(184, 54);
-            this.btn_menuReportes.TabIndex = 8;
-            this.btn_menuReportes.Text = "Reportes";
-            this.btn_menuReportes.UseVisualStyleBackColor = true;
-            this.btn_menuReportes.Click += new System.EventHandler(this.btn_menuReportes_Click);
+            this.btn_menuHistorialPedidos.FlatAppearance.BorderSize = 0;
+            this.btn_menuHistorialPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menuHistorialPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menuHistorialPedidos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_menuHistorialPedidos.Location = new System.Drawing.Point(6, 116);
+            this.btn_menuHistorialPedidos.Name = "btn_menuHistorialPedidos";
+            this.btn_menuHistorialPedidos.Size = new System.Drawing.Size(184, 54);
+            this.btn_menuHistorialPedidos.TabIndex = 8;
+            this.btn_menuHistorialPedidos.Text = "Historial de pedidos";
+            this.btn_menuHistorialPedidos.UseVisualStyleBackColor = true;
+            this.btn_menuHistorialPedidos.Click += new System.EventHandler(this.btn_menuHistorialPedidos_Click);
             // 
             // btn_menuEstadisticas
             // 
@@ -92,7 +92,7 @@
             this.btn_menuEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menuEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menuEstadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menuEstadisticas.Location = new System.Drawing.Point(3, 284);
+            this.btn_menuEstadisticas.Location = new System.Drawing.Point(6, 355);
             this.btn_menuEstadisticas.Name = "btn_menuEstadisticas";
             this.btn_menuEstadisticas.Size = new System.Drawing.Size(184, 54);
             this.btn_menuEstadisticas.TabIndex = 7;
@@ -106,7 +106,7 @@
             this.btn_menuFranquicias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menuFranquicias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menuFranquicias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menuFranquicias.Location = new System.Drawing.Point(3, 227);
+            this.btn_menuFranquicias.Location = new System.Drawing.Point(6, 295);
             this.btn_menuFranquicias.Name = "btn_menuFranquicias";
             this.btn_menuFranquicias.Size = new System.Drawing.Size(184, 54);
             this.btn_menuFranquicias.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.btn_menuProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menuProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menuProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menuProductos.Location = new System.Drawing.Point(3, 113);
+            this.btn_menuProductos.Location = new System.Drawing.Point(0, 175);
             this.btn_menuProductos.Name = "btn_menuProductos";
             this.btn_menuProductos.Size = new System.Drawing.Size(184, 54);
             this.btn_menuProductos.TabIndex = 5;
@@ -134,7 +134,7 @@
             this.btn_menuVendedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menuVendedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menuVendedores.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menuVendedores.Location = new System.Drawing.Point(3, 170);
+            this.btn_menuVendedores.Location = new System.Drawing.Point(6, 235);
             this.btn_menuVendedores.Name = "btn_menuVendedores";
             this.btn_menuVendedores.Size = new System.Drawing.Size(184, 54);
             this.btn_menuVendedores.TabIndex = 4;
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_menuReportes;
+        private System.Windows.Forms.Button btn_menuHistorialPedidos;
         private System.Windows.Forms.Button btn_menuEstadisticas;
         private System.Windows.Forms.Button btn_menuFranquicias;
         private System.Windows.Forms.Button btn_menuProductos;

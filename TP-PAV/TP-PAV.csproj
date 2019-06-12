@@ -116,6 +116,12 @@
     <Compile Include="formularios\frm_TipoFranquicia.Designer.cs">
       <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\uc_HistorialPedidos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="formularios\uc_HistorialPedidos.Designer.cs">
+      <DependentUpon>uc_HistorialPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="formularios\uc_ABM_Franquicia.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\frm_TipoFranquicia.resx">
       <DependentUpon>frm_TipoFranquicia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\uc_HistorialPedidos.resx">
+      <DependentUpon>uc_HistorialPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\uc_ABM_Franquicia.resx">
       <DependentUpon>uc_ABM_Franquicia.cs</DependentUpon>

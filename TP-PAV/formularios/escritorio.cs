@@ -112,11 +112,20 @@ namespace TP_PAV
             }
         }
 
-        private void btn_menuReportes_Click(object sender, EventArgs e)
+        private void btn_menuHistorialPedidos_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = btn_menuReportes.Height;
-            SidePanel.Top = btn_menuReportes.Top;
-            SidePanel.Show();
+            SidePanel.Height = btn_menuHistorialPedidos.Height;
+            SidePanel.Top = btn_menuHistorialPedidos.Top;
+            if (!main_panel.Controls.Contains(uc_HistorialPedidos.pub_instance))
+            {
+                main_panel.Controls.Add(uc_HistorialPedidos.pub_instance);
+                uc_HistorialPedidos.pub_instance.Dock = DockStyle.Fill;
+                uc_HistorialPedidos.pub_instance.BringToFront();
+            }
+            else
+            {
+                uc_HistorialPedidos.pub_instance.BringToFront();
+            }
         }
 
         

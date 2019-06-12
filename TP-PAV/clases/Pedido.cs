@@ -95,7 +95,29 @@ namespace TP_PAV.clases
                                                      FROM pedido WHERE id_estado = 1" );
 
         }
-  
+
+        public DataTable recuperarPedidos()
+        {
+
+            return priv_acceso_db.ejecutarConsulta(@"SELECT 
+                                                     id_pedido, 
+                                                     fecha_solicitud, 
+                                                     id_franquicia, 
+                                                     id_vendedor, 
+                                                     monto_final,
+                                                     id_estado
+                                                     FROM pedido");
+
+        }
+
+        public DataTable buscarPedidosPorID(int id_pedido)
+        {
+
+            return priv_acceso_db.ejecutarConsulta(@"SELECT P.id_pedido, P.id_franquicia, P.id_vendedor, P.fecha_solicitud, P.monto_final
+                                                    FROM pedido P
+                                                    WHERE P.id_pedido LIKE %" + id_pedido + "%");
+
+        }
 
         public DataTable addPedido(string fecha_solicitud, int id_estado, int id_franquicia, int id_vendedor)
         {
@@ -142,6 +164,10 @@ namespace TP_PAV.clases
             bool busqueda_franquicia = false, busqueda_vendedor = false, busqueda_monto = false, busqueda_fechaSolicitud = false, busqueda_fechaEntrega = false, busqueda_estado = false, pendiente = false, entregado = false, cancelado = false;
             string monto_desde = "-1";
             string monto_hasta = "-1";
+            string fechaSolicitud_desde = "-1";
+            string fechaSolicitud_hasta = "-1";
+            string fechaEntrega_desde = "-1";
+            string fechaEntrega_hasta = "-1";
             string franquicia_seleccionada = null;
             string vendedor_seleccionado = null;
 
@@ -195,6 +221,24 @@ namespace TP_PAV.clases
                             monto_hasta = item.Text;
                         }
                         break;
+                    case "DateTimePickerPersonal":
+                        if (item.Name == "dtp_desde_fechaSolicitud")
+                        {
+                            fechaSolicitud_desde = item.Text;
+                        }
+                        if (item.Name == "dtp_desde_fechaSolicitud")
+                        {
+                            fechaSolicitud_hasta = item.Text;
+                        }
+                        if (item.Name == "dtp_desde_fechaEntrega")
+                        {
+                            fechaEntrega_desde = item.Text;
+                        }
+                        if (item.Name == "dtp_desde_fechaEntrega")
+                        {
+                            fechaEntrega_hasta = item.Text;
+                        }
+                        break;
                     case "RadioButton":
                         if (item.Name == "rbtn_pendiente")
                         {
@@ -229,9 +273,67 @@ namespace TP_PAV.clases
             {
                 consulta += " AND P.id_vendedor = " + vendedor_seleccionado;
             }
-
+            if (busqueda_monto)
+            {
+                if (monto_desde != "" && monto_hasta != "")
+                {
+                    consulta += " AND P.monto_final BETWEEN " + monto_desde + "AND " + monto_hasta;
+                }
+                else if (monto_desde != "")
+                {
+                    consulta += " AND P.monto_final >= " + monto_desde;
+                }
+                else if (monto_hasta != "")
+                {
+                    consulta += " AND P.monto_final <= " + monto_hasta;
+                }
+            }
+            if (busqueda_fechaSolicitud)
+            {
+                if (fechaSolicitud_desde != "" && fechaSolicitud_hasta != "")
+                {
+                    consulta += " AND P.fecha_solicitud BETWEEN " + fechaSolicitud_desde + "AND " + fechaSolicitud_hasta;
+                }
+                else if (fechaSolicitud_desde != "")
+                {
+                    consulta += " AND P.fecha_solicitud >= " + fechaSolicitud_desde;
+                }
+                else if (fechaSolicitud_hasta != "")
+                {
+                    consulta += " AND P.fecha_solicitud <= " + fechaSolicitud_hasta;
+                }
+            }
+            if (busqueda_fechaEntrega)
+            {
+                if (fechaEntrega_desde != "" && fechaEntrega_hasta != "")
+                {
+                    consulta += " AND P.fecha_entrega BETWEEN " + fechaEntrega_desde + "AND " + fechaEntrega_hasta;
+                }
+                else if (fechaEntrega_desde != "")
+                {
+                    consulta += " AND P.fecha_entrega >= " + fechaEntrega_desde;
+                }
+                else if (fechaSolicitud_hasta != "")
+                {
+                    consulta += " AND P.fecha_entrega <= " + fechaEntrega_hasta;
+                }
+            }
+            if (busqueda_estado)
+            {
+                if (pendiente)
+                {
+                    consulta += " AND P.id_estado = " + 1;
+                }
+                if (entregado)
+                {
+                    consulta += " AND P.id_estado = " + 2;
+                }
+                if (cancelado)
+                {
+                    consulta += " AND P.id_estado = " + 3;
+                }
+            }
             return priv_acceso_db.ejecutarConsulta(consulta);
-
         }
 
     }
