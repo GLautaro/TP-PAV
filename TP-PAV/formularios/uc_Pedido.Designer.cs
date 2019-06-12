@@ -65,10 +65,6 @@
             this.btn_modificarEstado = new System.Windows.Forms.Button();
             this.cmb_estadoPedido = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_buscarProducto = new System.Windows.Forms.Button();
-            this.txt_busquedaProducto = new System.Windows.Forms.TextBox();
-            this.lbl_buscarProducto = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.grp_crearPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
@@ -364,7 +360,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_detallePedido.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_detallePedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detallePedido.Size = new System.Drawing.Size(561, 221);
+            this.dgv_detallePedido.Size = new System.Drawing.Size(561, 183);
             this.dgv_detallePedido.TabIndex = 53;
             // 
             // dataGridViewTextBoxColumn2
@@ -459,51 +455,10 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Estado Pedido:";
             // 
-            // btn_buscarProducto
-            // 
-            this.btn_buscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarProducto.Location = new System.Drawing.Point(440, 41);
-            this.btn_buscarProducto.Name = "btn_buscarProducto";
-            this.btn_buscarProducto.Size = new System.Drawing.Size(67, 30);
-            this.btn_buscarProducto.TabIndex = 81;
-            this.btn_buscarProducto.Text = "Buscar";
-            this.btn_buscarProducto.UseVisualStyleBackColor = true;
-            // 
-            // txt_busquedaProducto
-            // 
-            this.txt_busquedaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_busquedaProducto.Location = new System.Drawing.Point(159, 45);
-            this.txt_busquedaProducto.Name = "txt_busquedaProducto";
-            this.txt_busquedaProducto.Size = new System.Drawing.Size(260, 22);
-            this.txt_busquedaProducto.TabIndex = 80;
-            // 
-            // lbl_buscarProducto
-            // 
-            this.lbl_buscarProducto.AutoSize = true;
-            this.lbl_buscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_buscarProducto.Location = new System.Drawing.Point(100, 48);
-            this.lbl_buscarProducto.Name = "lbl_buscarProducto";
-            this.lbl_buscarProducto.Size = new System.Drawing.Size(53, 16);
-            this.lbl_buscarProducto.TabIndex = 79;
-            this.lbl_buscarProducto.Text = "Buscar:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(231, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 13);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "Búsqueda por ID";
-            // 
             // uc_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.btn_buscarProducto);
-            this.Controls.Add(this.txt_busquedaProducto);
-            this.Controls.Add(this.lbl_buscarProducto);
             this.Controls.Add(this.grp_modificar);
             this.Controls.Add(this.label_error);
             this.Controls.Add(this.dgv_detallePedido);
@@ -557,9 +512,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_final;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_estado;
-        private System.Windows.Forms.Button btn_buscarProducto;
-        private System.Windows.Forms.TextBox txt_busquedaProducto;
-        private System.Windows.Forms.Label lbl_buscarProducto;
-        private System.Windows.Forms.Label label14;
     }
 }

@@ -92,6 +92,8 @@ namespace TP_PAV.formularios
             this.cmb_vendedores.cargar("vendedor", "legajo_vendedor", "legajo_vendedor");
             this.cmb_vendedores.SelectedIndex = -1;
 
+            lbl_msjErrorBusquedaAv.Visible = false;
+
         }
 
         private void cbx_franquicia_CheckedChanged(object sender, EventArgs e)
@@ -186,11 +188,16 @@ namespace TP_PAV.formularios
         private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
         {
             grp_busquedaAvanzadaPedido.Visible = false;
+            dgv_pedidos.DataSource = priv_pedido.recuperarPedidos();
+            dgv_detallePedido.DataSource = "";
         }
 
         private void btn_BuscarBusquedaAvanzada_Click(object sender, EventArgs e)
         {
-            this.dgv_pedidos.DataSource = priv_pedido.busquedaAvanzada(grp_busquedaAvanzadaPedido.Controls);
+            if(validarBusquedaAvanzada())
+            {
+                this.dgv_pedidos.DataSource = priv_pedido.busquedaAvanzada(grp_busquedaAvanzadaPedido.Controls);
+            }
         }
 
         private void btn_buscarProducto_Click(object sender, EventArgs e)
@@ -204,6 +211,59 @@ namespace TP_PAV.formularios
             {
                 error_buscar.Visible = true;
             }
+        }
+
+        private bool validarBusquedaAvanzada()
+        {
+            int precio_desde = -1, precio_hasta = 9999;
+            int.TryParse(txt_desde_monto.Text, out precio_desde);
+            int.TryParse(txt_hasta_monto.Text, out precio_hasta);
+
+            if (cbx_franquicia.Checked)
+            {
+                if (cmb_franquicias.SelectedIndex == -1)
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = cmb_franquicias._mensaje_error;
+                    lbl_msjErrorBusquedaAv.Show();
+                    return false;
+                }
+            }
+            if (cbx_vendedor.Checked)
+            {
+                if (cmb_vendedores.SelectedIndex == -1)
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = cmb_vendedores._mensaje_error;
+                    lbl_msjErrorBusquedaAv.Show();
+                    return false;
+                }
+            }
+            if (cbx_monto.Checked)
+            {
+                if (txt_desde_monto.Text == "" && txt_hasta_monto.Text == "")
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = "MONTO: Ingrese al menos un limite \n para la busqueda.";
+                    lbl_msjErrorBusquedaAv.Show();
+                    txt_desde_monto.Focus();
+                    return false;
+                }
+                else if (precio_desde > precio_hasta && precio_hasta != 0)
+                {
+                    lbl_msjErrorBusquedaAv.ForeColor = Color.Red;
+                    lbl_msjErrorBusquedaAv.Text = "MONTO: El limite inferior debe ser menor \n que el limite superior.";
+                    lbl_msjErrorBusquedaAv.Show();
+                    txt_desde_monto.Focus();
+                    return false;
+                }
+            }
+
+            lbl_msjErrorBusquedaAv.ForeColor = Color.Green;
+            lbl_msjErrorBusquedaAv.Text = "¡Busqueda Exitosa!";
+            lbl_msjErrorBusquedaAv.Show();
+            return true;
+
         }
 
     }

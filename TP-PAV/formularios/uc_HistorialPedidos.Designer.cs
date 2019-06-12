@@ -57,7 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbx_franquicia = new System.Windows.Forms.CheckBox();
-            this.lbl_busquedaAvSeleccionTipo = new System.Windows.Forms.Label();
+            this.lbl_franquicia = new System.Windows.Forms.Label();
             this.cbx_monto = new System.Windows.Forms.CheckBox();
             this.lbl_busquedaPrecioDesde = new System.Windows.Forms.Label();
             this.lbl_busquedaPrecioHasta = new System.Windows.Forms.Label();
@@ -75,12 +75,12 @@
             this.label_error = new System.Windows.Forms.Label();
             this.btn_modificarEstado = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.error_buscar = new System.Windows.Forms.Label();
             this.cmb_vendedores = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.txt_hasta_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_franquicias = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.cmb_estadoPedido = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.error_buscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             this.grp_busquedaAvanzadaPedido.SuspendLayout();
@@ -360,14 +360,14 @@
             this.cbx_franquicia.UseVisualStyleBackColor = true;
             this.cbx_franquicia.CheckedChanged += new System.EventHandler(this.cbx_franquicia_CheckedChanged);
             // 
-            // lbl_busquedaAvSeleccionTipo
+            // lbl_franquicia
             // 
-            this.lbl_busquedaAvSeleccionTipo.AutoSize = true;
-            this.lbl_busquedaAvSeleccionTipo.Location = new System.Drawing.Point(86, 64);
-            this.lbl_busquedaAvSeleccionTipo.Name = "lbl_busquedaAvSeleccionTipo";
-            this.lbl_busquedaAvSeleccionTipo.Size = new System.Drawing.Size(66, 13);
-            this.lbl_busquedaAvSeleccionTipo.TabIndex = 2;
-            this.lbl_busquedaAvSeleccionTipo.Text = "Seleccionar:";
+            this.lbl_franquicia.AutoSize = true;
+            this.lbl_franquicia.Location = new System.Drawing.Point(86, 64);
+            this.lbl_franquicia.Name = "lbl_franquicia";
+            this.lbl_franquicia.Size = new System.Drawing.Size(66, 13);
+            this.lbl_franquicia.TabIndex = 2;
+            this.lbl_franquicia.Text = "Seleccionar:";
             // 
             // cbx_monto
             // 
@@ -432,11 +432,12 @@
             this.btn_cerrarBusquedaAvanzada.TabIndex = 67;
             this.btn_cerrarBusquedaAvanzada.Text = "Cerrar";
             this.btn_cerrarBusquedaAvanzada.UseVisualStyleBackColor = true;
+            this.btn_cerrarBusquedaAvanzada.Click += new System.EventHandler(this.btn_cerrarBusquedaAvanzada_Click);
             // 
             // btn_BuscarBusquedaAvanzada
             // 
             this.btn_BuscarBusquedaAvanzada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BuscarBusquedaAvanzada.Location = new System.Drawing.Point(158, 312);
+            this.btn_BuscarBusquedaAvanzada.Location = new System.Drawing.Point(149, 357);
             this.btn_BuscarBusquedaAvanzada.Name = "btn_BuscarBusquedaAvanzada";
             this.btn_BuscarBusquedaAvanzada.Size = new System.Drawing.Size(67, 30);
             this.btn_BuscarBusquedaAvanzada.TabIndex = 68;
@@ -449,7 +450,7 @@
             this.lbl_msjErrorBusquedaAv.AutoSize = true;
             this.lbl_msjErrorBusquedaAv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_msjErrorBusquedaAv.ForeColor = System.Drawing.Color.Red;
-            this.lbl_msjErrorBusquedaAv.Location = new System.Drawing.Point(130, 269);
+            this.lbl_msjErrorBusquedaAv.Location = new System.Drawing.Point(17, 283);
             this.lbl_msjErrorBusquedaAv.Name = "lbl_msjErrorBusquedaAv";
             this.lbl_msjErrorBusquedaAv.Size = new System.Drawing.Size(135, 16);
             this.lbl_msjErrorBusquedaAv.TabIndex = 69;
@@ -519,7 +520,7 @@
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.txt_desde_monto);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_monto);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cmb_franquicias);
-            this.grp_busquedaAvanzadaPedido.Controls.Add(this.lbl_busquedaAvSeleccionTipo);
+            this.grp_busquedaAvanzadaPedido.Controls.Add(this.lbl_franquicia);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_franquicia);
             this.grp_busquedaAvanzadaPedido.Location = new System.Drawing.Point(625, 95);
             this.grp_busquedaAvanzadaPedido.Name = "grp_busquedaAvanzadaPedido";
@@ -577,10 +578,22 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Estado Pedido:";
             // 
+            // error_buscar
+            // 
+            this.error_buscar.AutoSize = true;
+            this.error_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_buscar.ForeColor = System.Drawing.Color.Red;
+            this.error_buscar.Location = new System.Drawing.Point(317, 72);
+            this.error_buscar.Name = "error_buscar";
+            this.error_buscar.Size = new System.Drawing.Size(79, 16);
+            this.error_buscar.TabIndex = 97;
+            this.error_buscar.Text = "Ingrese ID";
+            this.error_buscar.Visible = false;
+            // 
             // cmb_vendedores
             // 
             this.cmb_vendedores._campo = "legajo_vendedor";
-            this.cmb_vendedores._mensaje_error = "No se selecciono vendedor";
+            this.cmb_vendedores._mensaje_error = "No se seleccionó vendedor";
             this.cmb_vendedores._nombre_tabla = "vendedor";
             this.cmb_vendedores._validable = false;
             this.cmb_vendedores.Enabled = false;
@@ -619,7 +632,7 @@
             // cmb_franquicias
             // 
             this.cmb_franquicias._campo = "id_franquicia";
-            this.cmb_franquicias._mensaje_error = "No se selecciono una franquicia";
+            this.cmb_franquicias._mensaje_error = "No se seleccionó una franquicia";
             this.cmb_franquicias._nombre_tabla = "franquicia";
             this.cmb_franquicias._validable = false;
             this.cmb_franquicias.Enabled = false;
@@ -641,18 +654,6 @@
             this.cmb_estadoPedido.Name = "cmb_estadoPedido";
             this.cmb_estadoPedido.Size = new System.Drawing.Size(181, 21);
             this.cmb_estadoPedido.TabIndex = 17;
-            // 
-            // error_buscar
-            // 
-            this.error_buscar.AutoSize = true;
-            this.error_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error_buscar.ForeColor = System.Drawing.Color.Red;
-            this.error_buscar.Location = new System.Drawing.Point(317, 72);
-            this.error_buscar.Name = "error_buscar";
-            this.error_buscar.Size = new System.Drawing.Size(79, 16);
-            this.error_buscar.TabIndex = 97;
-            this.error_buscar.Text = "Ingrese ID";
-            this.error_buscar.Visible = false;
             // 
             // uc_HistorialPedidos
             // 
@@ -706,7 +707,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbx_franquicia;
-        private System.Windows.Forms.Label lbl_busquedaAvSeleccionTipo;
+        private System.Windows.Forms.Label lbl_franquicia;
         private clases.ComboBoxPersonal cmb_franquicias;
         private System.Windows.Forms.CheckBox cbx_monto;
         private clases.TextBoxPersonal txt_desde_monto;
