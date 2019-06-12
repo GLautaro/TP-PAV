@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_agregarTipoProducto = new System.Windows.Forms.Button();
             this.btn_habilitarAgregarTipoProducto = new System.Windows.Forms.Button();
-            this.btn_eliminarTipoProducto = new System.Windows.Forms.Button();
+            this.btn_habilitarTipoProducto = new System.Windows.Forms.Button();
             this.btn_habilitarModificarTipoProducto = new System.Windows.Forms.Button();
             this.btn_modificarTipoProducto = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -79,17 +79,17 @@
             this.btn_habilitarAgregarTipoProducto.UseVisualStyleBackColor = true;
             this.btn_habilitarAgregarTipoProducto.Click += new System.EventHandler(this.btn_habilitarAgregarTipoProducto_Click);
             // 
-            // btn_eliminarTipoProducto
+            // btn_habilitarTipoProducto
             // 
-            this.btn_eliminarTipoProducto.Location = new System.Drawing.Point(413, 85);
-            this.btn_eliminarTipoProducto.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_eliminarTipoProducto.Name = "btn_eliminarTipoProducto";
-            this.btn_eliminarTipoProducto.Size = new System.Drawing.Size(102, 28);
-            this.btn_eliminarTipoProducto.TabIndex = 37;
-            this.btn_eliminarTipoProducto.TabStop = false;
-            this.btn_eliminarTipoProducto.Text = "Eliminar";
-            this.btn_eliminarTipoProducto.UseVisualStyleBackColor = true;
-            this.btn_eliminarTipoProducto.Click += new System.EventHandler(this.btn_eliminarTipoProducto_Click);
+            this.btn_habilitarTipoProducto.Location = new System.Drawing.Point(413, 85);
+            this.btn_habilitarTipoProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_habilitarTipoProducto.Name = "btn_habilitarTipoProducto";
+            this.btn_habilitarTipoProducto.Size = new System.Drawing.Size(102, 28);
+            this.btn_habilitarTipoProducto.TabIndex = 37;
+            this.btn_habilitarTipoProducto.TabStop = false;
+            this.btn_habilitarTipoProducto.Text = "Habilitar";
+            this.btn_habilitarTipoProducto.UseVisualStyleBackColor = true;
+            this.btn_habilitarTipoProducto.Click += new System.EventHandler(this.btn_eliminarTipoProducto_Click);
             // 
             // btn_habilitarModificarTipoProducto
             // 
@@ -225,12 +225,12 @@
             this.msj_eliminado_ok.AutoSize = true;
             this.msj_eliminado_ok.BackColor = System.Drawing.Color.Transparent;
             this.msj_eliminado_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msj_eliminado_ok.ForeColor = System.Drawing.Color.LawnGreen;
-            this.msj_eliminado_ok.Location = new System.Drawing.Point(151, 172);
+            this.msj_eliminado_ok.ForeColor = System.Drawing.Color.OliveDrab;
+            this.msj_eliminado_ok.Location = new System.Drawing.Point(127, 172);
             this.msj_eliminado_ok.Name = "msj_eliminado_ok";
-            this.msj_eliminado_ok.Size = new System.Drawing.Size(249, 15);
+            this.msj_eliminado_ok.Size = new System.Drawing.Size(340, 15);
             this.msj_eliminado_ok.TabIndex = 46;
-            this.msj_eliminado_ok.Text = "Tipo de producto eliminado con éxito.";
+            this.msj_eliminado_ok.Text = "Tipo de producto habilitado/deshabilitado con éxito.";
             this.msj_eliminado_ok.Visible = false;
             // 
             // dgv_tipoProducto
@@ -241,45 +241,45 @@
             this.dgv_tipoProducto.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_tipoProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_tipoProducto.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_tipoProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tipoProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_tipo_producto,
             this.nombre_tipo_producto,
             this.descripcion});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_tipoProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_tipoProducto.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_tipoProducto.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_tipoProducto.Location = new System.Drawing.Point(40, 200);
             this.dgv_tipoProducto.Name = "dgv_tipoProducto";
             this.dgv_tipoProducto.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_tipoProducto.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_tipoProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tipoProducto.Size = new System.Drawing.Size(500, 230);
             this.dgv_tipoProducto.TabIndex = 52;
@@ -320,7 +320,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_agregarTipoProducto);
             this.Controls.Add(this.btn_habilitarAgregarTipoProducto);
-            this.Controls.Add(this.btn_eliminarTipoProducto);
+            this.Controls.Add(this.btn_habilitarTipoProducto);
             this.Controls.Add(this.btn_habilitarModificarTipoProducto);
             this.Controls.Add(this.btn_modificarTipoProducto);
             this.Controls.Add(this.btn_cancelar);
@@ -342,7 +342,7 @@
 
         private System.Windows.Forms.Button btn_agregarTipoProducto;
         private System.Windows.Forms.Button btn_habilitarAgregarTipoProducto;
-        private System.Windows.Forms.Button btn_eliminarTipoProducto;
+        private System.Windows.Forms.Button btn_habilitarTipoProducto;
         private System.Windows.Forms.Button btn_habilitarModificarTipoProducto;
         private System.Windows.Forms.Button btn_modificarTipoProducto;
         private System.Windows.Forms.Button btn_cancelar;

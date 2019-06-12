@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_unidadMedida = new System.Windows.Forms.DataGridView();
             this.id_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_agregarUnidadMedida = new System.Windows.Forms.Button();
             this.btn_habilitarAgregarUnidadMedida = new System.Windows.Forms.Button();
-            this.btn_eliminarUnidadMedida = new System.Windows.Forms.Button();
+            this.btn_habilitar_UnidadMedida = new System.Windows.Forms.Button();
             this.btn_habilitarModificarUnidadMedida = new System.Windows.Forms.Button();
             this.btn_modificarUnidadMedida = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -60,44 +60,44 @@
             this.dgv_unidadMedida.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_unidadMedida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_unidadMedida.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_unidadMedida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_unidadMedida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_unidadMedida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_unidadMedida.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_u_medida,
             this.nombre_u_medida});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_unidadMedida.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_unidadMedida.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_unidadMedida.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_unidadMedida.Location = new System.Drawing.Point(38, 229);
             this.dgv_unidadMedida.Name = "dgv_unidadMedida";
             this.dgv_unidadMedida.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_unidadMedida.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_unidadMedida.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_unidadMedida.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_unidadMedida.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_unidadMedida.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_unidadMedida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_unidadMedida.Size = new System.Drawing.Size(477, 167);
             this.dgv_unidadMedida.TabIndex = 69;
@@ -161,17 +161,17 @@
             this.btn_habilitarAgregarUnidadMedida.UseVisualStyleBackColor = true;
             this.btn_habilitarAgregarUnidadMedida.Click += new System.EventHandler(this.btn_habilitarAgregarUnidadMedida_Click);
             // 
-            // btn_eliminarUnidadMedida
+            // btn_habilitar_UnidadMedida
             // 
-            this.btn_eliminarUnidadMedida.Location = new System.Drawing.Point(413, 102);
-            this.btn_eliminarUnidadMedida.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_eliminarUnidadMedida.Name = "btn_eliminarUnidadMedida";
-            this.btn_eliminarUnidadMedida.Size = new System.Drawing.Size(102, 28);
-            this.btn_eliminarUnidadMedida.TabIndex = 60;
-            this.btn_eliminarUnidadMedida.TabStop = false;
-            this.btn_eliminarUnidadMedida.Text = "Eliminar";
-            this.btn_eliminarUnidadMedida.UseVisualStyleBackColor = true;
-            this.btn_eliminarUnidadMedida.Click += new System.EventHandler(this.btn_eliminarUnidadMedida_Click);
+            this.btn_habilitar_UnidadMedida.Location = new System.Drawing.Point(413, 102);
+            this.btn_habilitar_UnidadMedida.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_habilitar_UnidadMedida.Name = "btn_habilitar_UnidadMedida";
+            this.btn_habilitar_UnidadMedida.Size = new System.Drawing.Size(102, 28);
+            this.btn_habilitar_UnidadMedida.TabIndex = 60;
+            this.btn_habilitar_UnidadMedida.TabStop = false;
+            this.btn_habilitar_UnidadMedida.Text = "Habilitar";
+            this.btn_habilitar_UnidadMedida.UseVisualStyleBackColor = true;
+            this.btn_habilitar_UnidadMedida.Click += new System.EventHandler(this.btn_eliminarUnidadMedida_Click);
             // 
             // btn_habilitarModificarUnidadMedida
             // 
@@ -230,12 +230,12 @@
             this.msj_eliminado_ok.AutoSize = true;
             this.msj_eliminado_ok.BackColor = System.Drawing.Color.Transparent;
             this.msj_eliminado_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msj_eliminado_ok.ForeColor = System.Drawing.Color.LawnGreen;
-            this.msj_eliminado_ok.Location = new System.Drawing.Point(167, 188);
+            this.msj_eliminado_ok.ForeColor = System.Drawing.Color.OliveDrab;
+            this.msj_eliminado_ok.Location = new System.Drawing.Point(118, 188);
             this.msj_eliminado_ok.Name = "msj_eliminado_ok";
-            this.msj_eliminado_ok.Size = new System.Drawing.Size(259, 15);
+            this.msj_eliminado_ok.Size = new System.Drawing.Size(350, 15);
             this.msj_eliminado_ok.TabIndex = 73;
-            this.msj_eliminado_ok.Text = "Unidad de medida eliminado con éxito.";
+            this.msj_eliminado_ok.Text = "Unidad de medida habilitado/deshabilitado con éxito.";
             this.msj_eliminado_ok.Visible = false;
             // 
             // msj_modificado_ok
@@ -291,7 +291,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_agregarUnidadMedida);
             this.Controls.Add(this.btn_habilitarAgregarUnidadMedida);
-            this.Controls.Add(this.btn_eliminarUnidadMedida);
+            this.Controls.Add(this.btn_habilitar_UnidadMedida);
             this.Controls.Add(this.btn_habilitarModificarUnidadMedida);
             this.Controls.Add(this.btn_modificarUnidadMedida);
             this.Controls.Add(this.btn_cancelar);
@@ -314,7 +314,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_agregarUnidadMedida;
         private System.Windows.Forms.Button btn_habilitarAgregarUnidadMedida;
-        private System.Windows.Forms.Button btn_eliminarUnidadMedida;
+        private System.Windows.Forms.Button btn_habilitar_UnidadMedida;
         private System.Windows.Forms.Button btn_habilitarModificarUnidadMedida;
         private System.Windows.Forms.Button btn_modificarUnidadMedida;
         private System.Windows.Forms.Button btn_cancelar;

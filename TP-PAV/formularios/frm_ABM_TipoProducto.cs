@@ -36,12 +36,14 @@ namespace TP_PAV.formularios
         {
             txt_nombre.Text = dgv_tipoProducto.CurrentRow.Cells["nombre_tipo_producto"].Value.ToString();
             txt_descripcion.Text = dgv_tipoProducto.CurrentRow.Cells["descripcion"].Value.ToString();
+            actualizarTextBtnState();
         }
 
         private void frm_ABM_TipoProducto_Load(object sender, EventArgs e)
         {
             bloquearCajasTexto();
             dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
+            actualizarTextBtnState();
         }
 
         private void bloquearCajasTexto()
@@ -75,7 +77,7 @@ namespace TP_PAV.formularios
         {
             btn_habilitarAgregarTipoProducto.Enabled = true;
             btn_habilitarModificarTipoProducto.Enabled = true;
-            btn_eliminarTipoProducto.Enabled = true;
+            btn_habilitarTipoProducto.Enabled = true;
         }
 
         private void btn_habilitarAgregarTipoProducto_Click(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace TP_PAV.formularios
             desbloquearCajasTexto();
             btn_agregarTipoProducto.Visible = true;
             btn_habilitarModificarTipoProducto.Enabled = false;
-            btn_eliminarTipoProducto.Enabled = false;
+            btn_habilitarTipoProducto.Enabled = false;
         }
 
         private void btn_agregarTipoProducto_Click(object sender, EventArgs e)
@@ -120,7 +122,7 @@ namespace TP_PAV.formularios
             desbloquearCajasTexto();
             btn_modificarTipoProducto.Enabled = true;
             btn_habilitarAgregarTipoProducto.Enabled = false;
-            btn_eliminarTipoProducto.Enabled = false;
+            btn_habilitarTipoProducto.Enabled = false;
         }
 
         private void btn_modificarTipoProducto_Click(object sender, EventArgs e)
@@ -150,21 +152,40 @@ namespace TP_PAV.formularios
             habilitarBotones();
         }
 
+        private void actualizarTextBtnState()
+        {
+            if (dgv_tipoProducto.SelectedRows.Count < 1)
+            {
+
+                return;
+            }
+            if (bool.Parse(dgv_tipoProducto.CurrentRow.Cells["habilitado"].Value.ToString()))
+            {
+                btn_habilitarTipoProducto.Text = "Deshabilitar";
+            }
+            else
+            {
+                btn_habilitarTipoProducto.Text = "Habilitar";
+            }
+        }
+
         private void btn_eliminarTipoProducto_Click(object sender, EventArgs e)
         {
             msj_error.Visible = false;
 
             int priv_id_tipo_producto = int.Parse(dgv_tipoProducto.CurrentRow.Cells["id_tipo_producto"].Value.ToString());
+            int priv_estado = Convert.ToInt32(!bool.Parse(dgv_tipoProducto.CurrentRow.Cells["habilitado"].Value.ToString()));
 
-            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar el tipo de producto código " + priv_id_tipo_producto + " ?",
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea habilitar/deshabilitar el tipo de producto código " + priv_id_tipo_producto + " ?",
                                                      "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
             {
-                if (priv_tipoProducto.eliminarTipoProducto(priv_id_tipo_producto))
+                if (priv_tipoProducto.handleStateTipoProducto(priv_id_tipo_producto, priv_estado))
                 {
                     msj_eliminado_ok.Visible = true;
                     dgv_tipoProducto.DataSource = priv_tipoProducto.traerTipoProducto();
                     limpiarCajasTexto();
+                    actualizarTextBtnState();
                 }
                 else
                 {

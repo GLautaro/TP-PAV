@@ -35,11 +35,13 @@ namespace TP_PAV.formularios
         private void dgv_tipoProducto_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txt_nombre.Text = dgv_unidadMedida.CurrentRow.Cells["nombre_u_medida"].Value.ToString();
+            actualizarTextBtnState();
         }
 
         private void frm_ABM_UnidadMedida_Load(object sender, EventArgs e)
         {
             bloquearCajasTexto();
+            actualizarTextBtnState();
             dgv_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
         }
 
@@ -70,7 +72,7 @@ namespace TP_PAV.formularios
         {
             btn_habilitarAgregarUnidadMedida.Enabled = true;
             btn_habilitarModificarUnidadMedida.Enabled = true;
-            btn_eliminarUnidadMedida.Enabled = true;
+            btn_habilitar_UnidadMedida.Enabled = true;
         }
 
         private void btn_habilitarAgregarUnidadMedida_Click(object sender, EventArgs e)
@@ -78,7 +80,7 @@ namespace TP_PAV.formularios
             desbloquearCajasTexto();
             btn_agregarUnidadMedida.Visible = true;
             btn_habilitarModificarUnidadMedida.Enabled = false;
-            btn_eliminarUnidadMedida.Enabled = false;
+            btn_habilitar_UnidadMedida.Enabled = false;
         }
 
         private void btn_agregarUnidadMedida_Click(object sender, EventArgs e)
@@ -114,7 +116,7 @@ namespace TP_PAV.formularios
             desbloquearCajasTexto();
             btn_modificarUnidadMedida.Enabled = true;
             btn_habilitarAgregarUnidadMedida.Enabled = false;
-            btn_eliminarUnidadMedida.Enabled = false;
+            btn_habilitar_UnidadMedida.Enabled = false;
         }
 
         private void btn_modificarUnidadMedida_Click(object sender, EventArgs e)
@@ -144,21 +146,40 @@ namespace TP_PAV.formularios
             habilitarBotones();
         }
 
+        private void actualizarTextBtnState()
+        {
+            if (dgv_unidadMedida.SelectedRows.Count < 1)
+            {
+
+                return;
+            }
+            if (bool.Parse(dgv_unidadMedida.CurrentRow.Cells["habilitado"].Value.ToString()))
+            {
+                btn_habilitar_UnidadMedida.Text = "Deshabilitar";
+            }
+            else
+            {
+                btn_habilitar_UnidadMedida.Text = "Habilitar";
+            }
+        }
+
         private void btn_eliminarUnidadMedida_Click(object sender, EventArgs e)
         {
             msj_error.Visible = false;
 
             int priv_id_unidad_medida = int.Parse(dgv_unidadMedida.CurrentRow.Cells["id_u_medida"].Value.ToString());
+            int priv_estado = Convert.ToInt32(!bool.Parse(dgv_unidadMedida.CurrentRow.Cells["habilitado"].Value.ToString()));
 
-            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar la undiad de medida código " + priv_id_unidad_medida + " ?",
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea habilitar/deshabilitar la undiad de medida código " + priv_id_unidad_medida + " ?",
                                                      "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
             {
-                if (priv_UnidadMedida.eliminarUnidadMedida(priv_id_unidad_medida))
+                if (priv_UnidadMedida.handleStateUnidadMedida(priv_id_unidad_medida, priv_estado))
                 {
                     msj_eliminado_ok.Visible = true;
                     dgv_unidadMedida.DataSource = priv_UnidadMedida.traerUnidadMedida();
                     limpiarCajasTexto();
+                    actualizarTextBtnState();
                 }
                 else
                 {

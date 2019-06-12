@@ -49,9 +49,9 @@ namespace TP_PAV.clases
             }
         }
 
-        public bool eliminarTipoProducto(int id_tipo_producto)
+        public bool handleStateTipoProducto(int id_tipo_producto, int estado)
         {
-            string noConsulta = @"DELETE FROM tipo_producto WHERE id_tipo_producto=" + id_tipo_producto.ToString();
+            string noConsulta = String.Format(@"UPDATE tipo_producto SET habilitado={0} WHERE id_tipo_producto={1}", estado.ToString(), id_tipo_producto.ToString());
             if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
             {
                 return true;

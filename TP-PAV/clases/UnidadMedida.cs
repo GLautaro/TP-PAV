@@ -48,9 +48,9 @@ namespace TP_PAV.clases
             }
         }
 
-        public bool eliminarUnidadMedida(int id_unidad_medida)
+        public bool handleStateUnidadMedida(int id_unidad_medida, int estado)
         {
-            string noConsulta = @"DELETE FROM unidad_medida WHERE id_u_medida =" + id_unidad_medida.ToString();
+            string noConsulta = String.Format(@"UPDATE unidad_medida SET habilitado={0} WHERE id_u_medida={1}", estado.ToString(), id_unidad_medida.ToString());
             if (priv_acceso_db.ejecutarNoConsulta(noConsulta) == 1)
             {
                 return true;
