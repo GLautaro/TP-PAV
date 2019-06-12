@@ -116,16 +116,11 @@ namespace TP_PAV
         {
             SidePanel.Height = btn_menuHistorialPedidos.Height;
             SidePanel.Top = btn_menuHistorialPedidos.Top;
-            if (!main_panel.Controls.Contains(uc_HistorialPedidos.pub_instance))
-            {
-                main_panel.Controls.Add(uc_HistorialPedidos.pub_instance);
-                uc_HistorialPedidos.pub_instance.Dock = DockStyle.Fill;
-                uc_HistorialPedidos.pub_instance.BringToFront();
-            }
-            else
-            {
-                uc_HistorialPedidos.pub_instance.BringToFront();
-            }
+            SidePanel.Show();
+            uc_HistorialPedidos uc_historial = new uc_HistorialPedidos();
+            main_panel.Controls.Add(uc_historial);
+            uc_historial.Dock = DockStyle.Fill;
+            uc_historial.BringToFront();
         }
 
         
