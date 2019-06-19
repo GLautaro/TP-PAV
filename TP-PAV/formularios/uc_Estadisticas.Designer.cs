@@ -34,6 +34,8 @@
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btn_EstadisticaVendedorPedidos = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_EstadisticaFranquiciaPedidos = new System.Windows.Forms.Button();
+            this.lbl_mensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,15 +76,37 @@
             this.label5.TabIndex = 66;
             this.label5.Text = "Reportes y Estadísticas";
             // 
+            // btn_EstadisticaFranquiciaPedidos
+            // 
+            this.btn_EstadisticaFranquiciaPedidos.Location = new System.Drawing.Point(392, 78);
+            this.btn_EstadisticaFranquiciaPedidos.Name = "btn_EstadisticaFranquiciaPedidos";
+            this.btn_EstadisticaFranquiciaPedidos.Size = new System.Drawing.Size(262, 70);
+            this.btn_EstadisticaFranquiciaPedidos.TabIndex = 69;
+            this.btn_EstadisticaFranquiciaPedidos.Text = "Franquicias con mas pedidos entregados";
+            this.btn_EstadisticaFranquiciaPedidos.UseVisualStyleBackColor = true;
+            this.btn_EstadisticaFranquiciaPedidos.Click += new System.EventHandler(this.btn_EstadisticaFranquiciaPedidos_Click);
+            // 
+            // lbl_mensaje
+            // 
+            this.lbl_mensaje.AutoSize = true;
+            this.lbl_mensaje.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mensaje.Location = new System.Drawing.Point(112, 486);
+            this.lbl_mensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_mensaje.Name = "lbl_mensaje";
+            this.lbl_mensaje.Size = new System.Drawing.Size(0, 25);
+            this.lbl_mensaje.TabIndex = 70;
+            // 
             // uc_Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbl_mensaje);
+            this.Controls.Add(this.btn_EstadisticaFranquiciaPedidos);
             this.Controls.Add(this.grafico);
             this.Controls.Add(this.btn_EstadisticaVendedorPedidos);
             this.Controls.Add(this.label5);
             this.Name = "uc_Estadisticas";
-            this.Size = new System.Drawing.Size(1243, 447);
+            this.Size = new System.Drawing.Size(1243, 584);
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,5 +118,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
         private System.Windows.Forms.Button btn_EstadisticaVendedorPedidos;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_EstadisticaFranquiciaPedidos;
+        private System.Windows.Forms.Label lbl_mensaje;
     }
 }

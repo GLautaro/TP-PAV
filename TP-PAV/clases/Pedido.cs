@@ -100,13 +100,16 @@ namespace TP_PAV.clases
         {
 
             return priv_acceso_db.ejecutarConsulta(@"SELECT 
-                                                     id_pedido, 
-                                                     fecha_solicitud, 
-                                                     id_franquicia, 
-                                                     id_vendedor, 
-                                                     monto_final,
-                                                     id_estado
-                                                     FROM pedido");
+                                                     P.id_pedido,  
+                                                     P.id_franquicia, 
+                                                     P.id_vendedor, 
+                                                     P.fecha_solicitud,
+                                                     P.fecha_entrega,
+                                                     P.monto_final,
+                                                     P.id_estado,
+                                                     E.nombre_estado
+                                                     FROM pedido P
+                                                     JOIN estado_pedido E ON E.id_estado=P.id_estado");
 
         }
 
@@ -155,6 +158,12 @@ namespace TP_PAV.clases
 
         public bool updateEstadoPedido()
         {
+            if (priv_id_estado == 2)
+            {
+                priv_acceso_db.ejecutarNoConsulta(String.Format(@"UPDATE pedido SET id_estado={0},fecha_entrega=CONVERT(DATE,GETDATE()) WHERE id_pedido={1}", priv_id_estado, priv_id_pedido));
+                return true;
+            }
+
             priv_acceso_db.ejecutarNoConsulta(String.Format(@"UPDATE pedido SET id_estado={0} WHERE id_pedido={1}", priv_id_estado, priv_id_pedido));
             return true;
         }

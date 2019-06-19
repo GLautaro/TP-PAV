@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.btn_busquedaAvanzadaProducto = new System.Windows.Forms.Button();
             this.btn_buscarProducto = new System.Windows.Forms.Button();
@@ -48,12 +48,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_pedidos = new System.Windows.Forms.DataGridView();
-            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbx_franquicia = new System.Windows.Forms.CheckBox();
@@ -81,6 +75,14 @@
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_franquicias = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.cmb_estadoPedido = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_solicitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             this.grp_busquedaAvanzadaPedido.SuspendLayout();
@@ -144,47 +146,47 @@
             this.dgv_detallePedido.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_detallePedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_detallePedido.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_detallePedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_detallePedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_detallePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_detallePedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_detallePedido.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_detallePedido.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_detallePedido.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_detallePedido.Location = new System.Drawing.Point(41, 354);
             this.dgv_detallePedido.MultiSelect = false;
             this.dgv_detallePedido.Name = "dgv_detallePedido";
             this.dgv_detallePedido.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_detallePedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_detallePedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_detallePedido.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_detallePedido.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_detallePedido.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_detallePedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_detallePedido.Size = new System.Drawing.Size(561, 212);
             this.dgv_detallePedido.TabIndex = 87;
@@ -230,101 +232,55 @@
             this.dgv_pedidos.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_pedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_pedidos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_pedido,
             this.Column3,
             this.Column4,
-            this.Column2,
+            this.fecha_solicitud,
+            this.fecha_entrega,
             this.monto_final,
+            this.nombre_estado,
             this.id_estado});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_pedidos.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_pedidos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_pedidos.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_pedidos.Location = new System.Drawing.Point(41, 95);
             this.dgv_pedidos.MultiSelect = false;
             this.dgv_pedidos.Name = "dgv_pedidos";
             this.dgv_pedidos.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_pedidos.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_pedidos.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_pedidos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_pedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pedidos.Size = new System.Drawing.Size(561, 221);
             this.dgv_pedidos.TabIndex = 86;
             this.dgv_pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pedidos_CellClick);
-            // 
-            // id_pedido
-            // 
-            this.id_pedido.DataPropertyName = "id_pedido";
-            this.id_pedido.HeaderText = "ID Pedido";
-            this.id_pedido.Name = "id_pedido";
-            this.id_pedido.ReadOnly = true;
-            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "id_franquicia";
-            this.Column3.HeaderText = "ID Franquicia";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "id_vendedor";
-            this.Column4.HeaderText = "Legajo Vendedor";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "fecha_solicitud";
-            this.Column2.HeaderText = "Fecha Solicitud";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // monto_final
-            // 
-            this.monto_final.DataPropertyName = "monto_final";
-            this.monto_final.HeaderText = "Monto Total";
-            this.monto_final.Name = "monto_final";
-            this.monto_final.ReadOnly = true;
-            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // id_estado
-            // 
-            this.id_estado.DataPropertyName = "id_estado";
-            this.id_estado.HeaderText = "id_estado";
-            this.id_estado.Name = "id_estado";
-            this.id_estado.ReadOnly = true;
-            this.id_estado.Visible = false;
             // 
             // label3
             // 
@@ -655,6 +611,68 @@
             this.cmb_estadoPedido.Size = new System.Drawing.Size(181, 21);
             this.cmb_estadoPedido.TabIndex = 17;
             // 
+            // id_pedido
+            // 
+            this.id_pedido.DataPropertyName = "id_pedido";
+            this.id_pedido.HeaderText = "ID Pedido";
+            this.id_pedido.Name = "id_pedido";
+            this.id_pedido.ReadOnly = true;
+            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "id_franquicia";
+            this.Column3.HeaderText = "ID Franquicia";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "id_vendedor";
+            this.Column4.HeaderText = "Legajo Vendedor";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fecha_solicitud
+            // 
+            this.fecha_solicitud.DataPropertyName = "fecha_solicitud";
+            this.fecha_solicitud.HeaderText = "Fecha Solicitud";
+            this.fecha_solicitud.Name = "fecha_solicitud";
+            this.fecha_solicitud.ReadOnly = true;
+            this.fecha_solicitud.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.DataPropertyName = "fecha_entrega";
+            this.fecha_entrega.HeaderText = "Fecha Entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.ReadOnly = true;
+            // 
+            // monto_final
+            // 
+            this.monto_final.DataPropertyName = "monto_final";
+            this.monto_final.HeaderText = "Monto Total";
+            this.monto_final.Name = "monto_final";
+            this.monto_final.ReadOnly = true;
+            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nombre_estado
+            // 
+            this.nombre_estado.DataPropertyName = "nombre_estado";
+            this.nombre_estado.HeaderText = "Estado";
+            this.nombre_estado.Name = "nombre_estado";
+            this.nombre_estado.ReadOnly = true;
+            // 
+            // id_estado
+            // 
+            this.id_estado.DataPropertyName = "id_estado";
+            this.id_estado.HeaderText = "id_estado";
+            this.id_estado.Name = "id_estado";
+            this.id_estado.ReadOnly = true;
+            this.id_estado.Visible = false;
+            // 
             // uc_HistorialPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -698,12 +716,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridView dgv_pedidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto_final;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_estado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbx_franquicia;
@@ -731,6 +743,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label_error;
         private System.Windows.Forms.Label error_buscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_solicitud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_final;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_estado;
 
     }
 }
