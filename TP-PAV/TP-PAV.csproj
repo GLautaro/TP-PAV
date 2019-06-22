@@ -152,6 +152,12 @@
     <Compile Include="formularios\uc_Pedido.Designer.cs">
       <DependentUpon>uc_Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios\uc_ProductosPendientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="formularios\uc_ProductosPendientes.Designer.cs">
+      <DependentUpon>uc_ProductosPendientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formularios\Escritorio.resx">
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formularios\uc_Pedido.resx">
       <DependentUpon>uc_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\uc_ProductosPendientes.resx">
+      <DependentUpon>uc_ProductosPendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -78,6 +78,7 @@ namespace TP_PAV.formularios
                     dgv_detallePedido.DataSource = "";
                     label_error.Visible = true;
                 }
+                
             }
         }
         private void btn_busquedaAvanzadaPedido_Click(object sender, EventArgs e)

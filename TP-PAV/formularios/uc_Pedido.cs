@@ -128,6 +128,7 @@ namespace TP_PAV.formularios
                 Pedido pedido_seleccionado = new Pedido();
                 pedido_seleccionado.pub_id_pedido = int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
                 pedido_seleccionado.pub_id_estado = int.Parse(cmb_estadoPedido.SelectedValue.ToString());
+                
                 if (pedido_seleccionado.updateEstadoPedido())
                 {
                     dgv_pedidos.DataSource = priv_pedido.recuperarPedidosPendientes();

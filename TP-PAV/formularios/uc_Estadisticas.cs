@@ -14,7 +14,8 @@ namespace TP_PAV.formularios
 {
     public partial class uc_Estadisticas : UserControl
     {
-         Vendedor vendedor = new Vendedor();
+        Vendedor vendedor = new Vendedor();
+        Franquicia franquicia = new Franquicia();
         private static uc_Estadisticas priv_instance;
         public static uc_Estadisticas pub_instance
         {
@@ -36,31 +37,27 @@ namespace TP_PAV.formularios
             grafico.Series.Clear();
         }
 
-        private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
+        private void llenarGrafico(DataTable tablaDatos, string titulo, string tituloLeyenda, ChartColorPalette color)
         {
-            DataTable datosEstadisticos = vendedor.MejoresVendedores();
-
+            if (tablaDatos.Rows.Count < 1)
+            {
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "No ha sido posible recuperar los datos";
+                return;
+            }
+            grafico.Series.Clear();
+            grafico.Titles.Clear();
+            grafico.Palette = color;
+            grafico.Titles.Add(titulo);
+            
             List<string> series = new List<string> { };
             List<int> puntos = new List<int> { };
 
-            for (int i = 0; i < datosEstadisticos.Columns.Count; i++)
+            for (int i = 0; i < tablaDatos.Columns.Count; i++)
             {
-                series.Add(datosEstadisticos.Rows[i][0].ToString());
+                series.Add(tablaDatos.Rows[i][0].ToString());
+                puntos.Add(int.Parse(tablaDatos.Rows[i][1].ToString()));
             }
-            for (int i = 0; i < datosEstadisticos.Columns.Count; i++)
-            {
-                puntos.Add(int.Parse(datosEstadisticos.Rows[i][1].ToString()));
-            }
-
-            //cambiar la combinacion de colores
-            grafico.Palette = ChartColorPalette.SeaGreen;
-
-            grafico.Series.Clear();
-            
-            grafico.Titles.Clear();
-            grafico.Titles.Add("MEJORES VENDEDORES:");
-            
-
             for (int i = 0; i < series.Count; i++)
             {
                 Series serie;
@@ -68,6 +65,19 @@ namespace TP_PAV.formularios
                 serie.Label = "$ " + puntos[i].ToString();
                 serie.Points.Add(puntos[i]);
             }
+            
+            grafico.ChartAreas[0].AxisY.Minimum = 0;
+            grafico.ChartAreas[0].AxisY.Maximum = (puntos.Max() - puntos.Max() % 1000) + 1000;
+            
+        }
+        private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
+        {
+            llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ","Nombre y apellido del vendedor", ChartColorPalette.SeaGreen);
+        }
+
+        private void btn_EstadisticaFranquiciaPedidos_Click(object sender, EventArgs e)
+        {
+            llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante", ChartColorPalette.SeaGreen);
         }
     }
 }
