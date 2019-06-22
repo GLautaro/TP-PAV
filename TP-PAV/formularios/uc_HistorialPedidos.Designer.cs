@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label14 = new System.Windows.Forms.Label();
             this.btn_busquedaAvanzadaProducto = new System.Windows.Forms.Button();
             this.btn_buscarProducto = new System.Windows.Forms.Button();
@@ -71,16 +71,15 @@
             this.rbtn_cancelado = new System.Windows.Forms.RadioButton();
             this.cbx_estado = new System.Windows.Forms.CheckBox();
             this.grp_busquedaAvanzadaPedido = new System.Windows.Forms.GroupBox();
-            this.grp_modificar = new System.Windows.Forms.GroupBox();
-            this.label_error = new System.Windows.Forms.Label();
-            this.btn_modificarEstado = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.error_buscar = new System.Windows.Forms.Label();
             this.cmb_vendedores = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.txt_hasta_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_franquicias = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.grp_modificar = new System.Windows.Forms.GroupBox();
+            this.label_error = new System.Windows.Forms.Label();
+            this.btn_modificarEstado = new System.Windows.Forms.Button();
             this.cmb_estadoPedido = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             this.grp_busquedaAvanzadaPedido.SuspendLayout();
@@ -144,47 +143,47 @@
             this.dgv_detallePedido.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_detallePedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_detallePedido.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_detallePedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_detallePedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_detallePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_detallePedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_detallePedido.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_detallePedido.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_detallePedido.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_detallePedido.Location = new System.Drawing.Point(41, 354);
             this.dgv_detallePedido.MultiSelect = false;
             this.dgv_detallePedido.Name = "dgv_detallePedido";
             this.dgv_detallePedido.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_detallePedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_detallePedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_detallePedido.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_detallePedido.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_detallePedido.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_detallePedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_detallePedido.Size = new System.Drawing.Size(561, 212);
             this.dgv_detallePedido.TabIndex = 87;
@@ -230,14 +229,14 @@
             this.dgv_pedidos.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_pedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_pedidos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_pedido,
@@ -246,33 +245,33 @@
             this.Column2,
             this.monto_final,
             this.id_estado});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_pedidos.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_pedidos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_pedidos.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_pedidos.Location = new System.Drawing.Point(41, 95);
             this.dgv_pedidos.MultiSelect = false;
             this.dgv_pedidos.Name = "dgv_pedidos";
             this.dgv_pedidos.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_pedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_pedidos.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_pedidos.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_pedidos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_pedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pedidos.Size = new System.Drawing.Size(561, 221);
             this.dgv_pedidos.TabIndex = 86;
@@ -530,66 +529,6 @@
             this.grp_busquedaAvanzadaPedido.Text = "Busqueda Avanzada | Productos";
             this.grp_busquedaAvanzadaPedido.Visible = false;
             // 
-            // grp_modificar
-            // 
-            this.grp_modificar.Controls.Add(this.label_error);
-            this.grp_modificar.Controls.Add(this.btn_modificarEstado);
-            this.grp_modificar.Controls.Add(this.cmb_estadoPedido);
-            this.grp_modificar.Controls.Add(this.label6);
-            this.grp_modificar.Location = new System.Drawing.Point(670, 113);
-            this.grp_modificar.Margin = new System.Windows.Forms.Padding(2);
-            this.grp_modificar.Name = "grp_modificar";
-            this.grp_modificar.Padding = new System.Windows.Forms.Padding(2);
-            this.grp_modificar.Size = new System.Drawing.Size(284, 108);
-            this.grp_modificar.TabIndex = 96;
-            this.grp_modificar.TabStop = false;
-            this.grp_modificar.Text = "Modificar estado pedido";
-            // 
-            // label_error
-            // 
-            this.label_error.AutoSize = true;
-            this.label_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_error.ForeColor = System.Drawing.Color.Green;
-            this.label_error.Location = new System.Drawing.Point(10, 70);
-            this.label_error.Name = "label_error";
-            this.label_error.Size = new System.Drawing.Size(161, 13);
-            this.label_error.TabIndex = 18;
-            this.label_error.Text = "Estado moficado con éxito.";
-            this.label_error.Visible = false;
-            // 
-            // btn_modificarEstado
-            // 
-            this.btn_modificarEstado.Location = new System.Drawing.Point(174, 65);
-            this.btn_modificarEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_modificarEstado.Name = "btn_modificarEstado";
-            this.btn_modificarEstado.Size = new System.Drawing.Size(93, 28);
-            this.btn_modificarEstado.TabIndex = 16;
-            this.btn_modificarEstado.Text = "Cambiar Estado";
-            this.btn_modificarEstado.UseVisualStyleBackColor = true;
-            this.btn_modificarEstado.Click += new System.EventHandler(this.btn_modificarEstado_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 28);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Estado Pedido:";
-            // 
-            // error_buscar
-            // 
-            this.error_buscar.AutoSize = true;
-            this.error_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error_buscar.ForeColor = System.Drawing.Color.Red;
-            this.error_buscar.Location = new System.Drawing.Point(317, 72);
-            this.error_buscar.Name = "error_buscar";
-            this.error_buscar.Size = new System.Drawing.Size(79, 16);
-            this.error_buscar.TabIndex = 97;
-            this.error_buscar.Text = "Ingrese ID";
-            this.error_buscar.Visible = false;
-            // 
             // cmb_vendedores
             // 
             this.cmb_vendedores._campo = "legajo_vendedor";
@@ -642,6 +581,44 @@
             this.cmb_franquicias.Size = new System.Drawing.Size(167, 21);
             this.cmb_franquicias.TabIndex = 3;
             // 
+            // grp_modificar
+            // 
+            this.grp_modificar.Controls.Add(this.label_error);
+            this.grp_modificar.Controls.Add(this.btn_modificarEstado);
+            this.grp_modificar.Controls.Add(this.cmb_estadoPedido);
+            this.grp_modificar.Controls.Add(this.label6);
+            this.grp_modificar.Location = new System.Drawing.Point(670, 113);
+            this.grp_modificar.Margin = new System.Windows.Forms.Padding(2);
+            this.grp_modificar.Name = "grp_modificar";
+            this.grp_modificar.Padding = new System.Windows.Forms.Padding(2);
+            this.grp_modificar.Size = new System.Drawing.Size(284, 108);
+            this.grp_modificar.TabIndex = 96;
+            this.grp_modificar.TabStop = false;
+            this.grp_modificar.Text = "Modificar estado pedido";
+            // 
+            // label_error
+            // 
+            this.label_error.AutoSize = true;
+            this.label_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_error.ForeColor = System.Drawing.Color.Green;
+            this.label_error.Location = new System.Drawing.Point(10, 70);
+            this.label_error.Name = "label_error";
+            this.label_error.Size = new System.Drawing.Size(161, 13);
+            this.label_error.TabIndex = 18;
+            this.label_error.Text = "Estado moficado con éxito.";
+            this.label_error.Visible = false;
+            // 
+            // btn_modificarEstado
+            // 
+            this.btn_modificarEstado.Location = new System.Drawing.Point(174, 65);
+            this.btn_modificarEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_modificarEstado.Name = "btn_modificarEstado";
+            this.btn_modificarEstado.Size = new System.Drawing.Size(93, 28);
+            this.btn_modificarEstado.TabIndex = 16;
+            this.btn_modificarEstado.Text = "Cambiar Estado";
+            this.btn_modificarEstado.UseVisualStyleBackColor = true;
+            this.btn_modificarEstado.Click += new System.EventHandler(this.btn_modificarEstado_Click);
+            // 
             // cmb_estadoPedido
             // 
             this.cmb_estadoPedido._campo = null;
@@ -655,11 +632,20 @@
             this.cmb_estadoPedido.Size = new System.Drawing.Size(181, 21);
             this.cmb_estadoPedido.TabIndex = 17;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 28);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Estado Pedido:";
+            // 
             // uc_HistorialPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.error_buscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grp_busquedaAvanzadaPedido);
             this.Controls.Add(this.label14);
@@ -730,7 +716,6 @@
         private clases.ComboBoxPersonal cmb_estadoPedido;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label_error;
-        private System.Windows.Forms.Label error_buscar;
 
     }
 }

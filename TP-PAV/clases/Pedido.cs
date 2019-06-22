@@ -115,7 +115,7 @@ namespace TP_PAV.clases
 
             return priv_acceso_db.ejecutarConsulta(@"SELECT P.id_pedido, P.id_franquicia, P.id_vendedor, P.fecha_solicitud, P.monto_final
                                                     FROM pedido P
-                                                    WHERE P.id_pedido LIKE %" + id_pedido + "%");
+                                                    WHERE P.id_pedido =" + id_pedido);
 
         }
 
@@ -161,13 +161,9 @@ namespace TP_PAV.clases
 
         public DataTable busquedaAvanzada(Control.ControlCollection controles)
         {
-            bool busqueda_franquicia = false, busqueda_vendedor = false, busqueda_monto = false, busqueda_fechaSolicitud = false, busqueda_fechaEntrega = false, busqueda_estado = false, pendiente = false, entregado = false, cancelado = false;
+            bool busqueda_franquicia = false, busqueda_vendedor = false, busqueda_monto = false, busqueda_estado = false, pendiente = false, entregado = false, cancelado = false;
             string monto_desde = "-1";
             string monto_hasta = "-1";
-            string fechaSolicitud_desde = "-1";
-            string fechaSolicitud_hasta = "-1";
-            string fechaEntrega_desde = "-1";
-            string fechaEntrega_hasta = "-1";
             string franquicia_seleccionada = null;
             string vendedor_seleccionado = null;
 
@@ -198,14 +194,6 @@ namespace TP_PAV.clases
                         {
                             busqueda_monto = ((CheckBox)item).Checked;
                         }
-                        if (item.Name == "cbx_fechaSolicitud")
-                        {
-                            busqueda_fechaSolicitud = ((CheckBox)item).Checked;
-                        }
-                        if (item.Name == "cbx_fechaEntrega")
-                        {
-                            busqueda_fechaEntrega = ((CheckBox)item).Checked;
-                        }
                         if (item.Name == "cbx_estado")
                         {
                             busqueda_estado = ((CheckBox)item).Checked;
@@ -219,24 +207,6 @@ namespace TP_PAV.clases
                         if (item.Name == "txt_hasta_monto")
                         {
                             monto_hasta = item.Text;
-                        }
-                        break;
-                    case "DateTimePickerPersonal":
-                        if (item.Name == "dtp_desde_fechaSolicitud")
-                        {
-                            fechaSolicitud_desde = item.Text;
-                        }
-                        if (item.Name == "dtp_desde_fechaSolicitud")
-                        {
-                            fechaSolicitud_hasta = item.Text;
-                        }
-                        if (item.Name == "dtp_desde_fechaEntrega")
-                        {
-                            fechaEntrega_desde = item.Text;
-                        }
-                        if (item.Name == "dtp_desde_fechaEntrega")
-                        {
-                            fechaEntrega_hasta = item.Text;
                         }
                         break;
                     case "RadioButton":
@@ -286,36 +256,6 @@ namespace TP_PAV.clases
                 else if (monto_hasta != "")
                 {
                     consulta += " AND P.monto_final <= " + monto_hasta;
-                }
-            }
-            if (busqueda_fechaSolicitud)
-            {
-                if (fechaSolicitud_desde != "" && fechaSolicitud_hasta != "")
-                {
-                    consulta += " AND P.fecha_solicitud BETWEEN " + fechaSolicitud_desde + "AND " + fechaSolicitud_hasta;
-                }
-                else if (fechaSolicitud_desde != "")
-                {
-                    consulta += " AND P.fecha_solicitud >= " + fechaSolicitud_desde;
-                }
-                else if (fechaSolicitud_hasta != "")
-                {
-                    consulta += " AND P.fecha_solicitud <= " + fechaSolicitud_hasta;
-                }
-            }
-            if (busqueda_fechaEntrega)
-            {
-                if (fechaEntrega_desde != "" && fechaEntrega_hasta != "")
-                {
-                    consulta += " AND P.fecha_entrega BETWEEN " + fechaEntrega_desde + "AND " + fechaEntrega_hasta;
-                }
-                else if (fechaEntrega_desde != "")
-                {
-                    consulta += " AND P.fecha_entrega >= " + fechaEntrega_desde;
-                }
-                else if (fechaSolicitud_hasta != "")
-                {
-                    consulta += " AND P.fecha_entrega <= " + fechaEntrega_hasta;
                 }
             }
             if (busqueda_estado)

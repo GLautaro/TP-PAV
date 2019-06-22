@@ -80,8 +80,6 @@ namespace TP_PAV.formularios
                 }
             }
         }
-        
-
         private void btn_busquedaAvanzadaPedido_Click(object sender, EventArgs e)
         {
             grp_busquedaAvanzadaPedido.Visible = true;
@@ -93,9 +91,7 @@ namespace TP_PAV.formularios
             this.cmb_vendedores.SelectedIndex = -1;
 
             lbl_msjErrorBusquedaAv.Visible = false;
-
         }
-
         private void cbx_franquicia_CheckedChanged(object sender, EventArgs e)
         {
             bool estado = cbx_franquicia.Checked;
@@ -127,62 +123,18 @@ namespace TP_PAV.formularios
                 txt_hasta_monto.Text = "";
             }
         }
-
-        /*
-
-        private void cbx_fechaSolicitud_desde_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbx_fechaSolicitud_hasta_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbx_fechaEntrega_desde_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbx_fechaEntrega_hasta_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbx_fechaSolicitud_CheckedChanged(object sender, EventArgs e)
-        {
-            /*
-            bool estado = cbx_fechaSolicitud.Checked;
-            dtp_desde_fechaSolicitud.Enabled = estado;
-            dtp_hasta_fechaSolicitud.Enabled = estado;
-            if (!estado)
-            {
-                dtp_desde_fechaSolicitud.Text = "";
-                dtp_hasta_fechaSolicitud.Text = "";
-            }
-             
-        }
-
-        private void cbx_fechaEntrega_CheckedChanged(object sender, EventArgs e)
-        {
-            /*
-            bool estado = cbx_fechaEntrega.Checked;
-            dtp_desde_fechaEntrega.Enabled = estado;
-            dtp_hasta_fechaEntrega.Enabled = estado;
-            if (!estado)
-            {
-                dtp_desde_fechaEntrega.Text = "";
-                dtp_hasta_fechaEntrega.Text = "";
-            }
-            
-        }
-         */
         private void cbx_estado_CheckedChanged(object sender, EventArgs e)
         {
-            rbtn_pendiente.Enabled = true;
-            rbtn_entregado.Enabled = true;
-            rbtn_cancelado.Enabled = true;
+            bool estado = cbx_estado.Checked;
+            rbtn_pendiente.Enabled = estado;
+            rbtn_entregado.Enabled = estado;
+            rbtn_cancelado.Enabled = estado;
+            if (!estado)
+            {
+                rbtn_pendiente.Checked = false;
+                rbtn_entregado.Checked = false;
+                rbtn_cancelado.Checked = false;
+            }
         }
 
         private void btn_cerrarBusquedaAvanzada_Click(object sender, EventArgs e)
@@ -204,12 +156,11 @@ namespace TP_PAV.formularios
         {
             if (txt_busquedaProducto.Text != "")
             {
-                error_buscar.Visible = false;
                 this.dgv_pedidos.DataSource = priv_pedido.buscarPedidosPorID(int.Parse(txt_busquedaProducto.Text));
             }
             else
             {
-                error_buscar.Visible = true;
+                dgv_pedidos.DataSource = priv_pedido.recuperarPedidos();
             }
         }
 
