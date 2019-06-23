@@ -192,5 +192,30 @@ namespace TP_PAV.clases
             return db.ejecutarConsulta(query);
         }
         
+        public DataTable productosMasVendidosHistorico()
+        {
+            string consulta = @"SELECT TOP 5 p.nombre_producto, SUM(pxp.cantidad) as 'Cantidad Vendida'
+                                FROM producto p
+                                JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
+                                WHERE p.id_estado = 1
+                                GROUP BY p.nombre_producto
+                                ORDER BY SUM(pxp.cantidad) DESC";
+
+            return db.ejecutarConsulta(consulta);
+        }
+
+        public DataTable ProductosMasVendidosXTiempo(string fecha_desde, string fecha_hasta)
+        {
+            string consulta = @"SELECT TOP 5 p.nombre_producto, SUM(pxp.cantidad) as 'Cantidad Vendida'
+                                FROM producto p
+                                JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
+                                JOIN pedido pe ON pe.id_pedido = pxp.id_pedido
+                                WHERE p.id_estado = 1
+                                AND pe.fecha_entrega BETWEEN "+ fecha_desde + " AND "+ fecha_hasta +
+                                @" GROUP BY p.nombre_producto
+                                ORDER BY SUM(pxp.cantidad) DESC";
+
+            return db.ejecutarConsulta(consulta);
+        }
     }
 }
