@@ -106,7 +106,6 @@ namespace TP_PAV.clases
                                                      P.fecha_solicitud,
                                                      P.fecha_entrega,
                                                      P.monto_final,
-                                                     P.id_estado,
                                                      E.nombre_estado
                                                      FROM pedido P
                                                      JOIN estado_pedido E ON E.id_estado=P.id_estado");

@@ -48,12 +48,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_pedidos = new System.Windows.Forms.DataGridView();
-            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbx_franquicia = new System.Windows.Forms.CheckBox();
@@ -75,15 +69,16 @@
             this.txt_hasta_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_franquicias = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.grp_modificar = new System.Windows.Forms.GroupBox();
-            this.label_error = new System.Windows.Forms.Label();
-            this.btn_modificarEstado = new System.Windows.Forms.Button();
-            this.cmb_estadoPedido = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.label6 = new System.Windows.Forms.Label();
+            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             this.grp_busquedaAvanzadaPedido.SuspendLayout();
-            this.grp_modificar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -244,7 +239,8 @@
             this.Column4,
             this.Column2,
             this.monto_final,
-            this.id_estado});
+            this.fecha_entrega,
+            this.nombre_estado});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -275,55 +271,6 @@
             this.dgv_pedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pedidos.Size = new System.Drawing.Size(561, 221);
             this.dgv_pedidos.TabIndex = 86;
-            this.dgv_pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pedidos_CellClick);
-            // 
-            // id_pedido
-            // 
-            this.id_pedido.DataPropertyName = "id_pedido";
-            this.id_pedido.HeaderText = "ID Pedido";
-            this.id_pedido.Name = "id_pedido";
-            this.id_pedido.ReadOnly = true;
-            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "id_franquicia";
-            this.Column3.HeaderText = "ID Franquicia";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "id_vendedor";
-            this.Column4.HeaderText = "Legajo Vendedor";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "fecha_solicitud";
-            this.Column2.HeaderText = "Fecha Solicitud";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // monto_final
-            // 
-            this.monto_final.DataPropertyName = "monto_final";
-            this.monto_final.HeaderText = "Monto Total";
-            this.monto_final.Name = "monto_final";
-            this.monto_final.ReadOnly = true;
-            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // id_estado
-            // 
-            this.id_estado.DataPropertyName = "id_estado";
-            this.id_estado.HeaderText = "id_estado";
-            this.id_estado.Name = "id_estado";
-            this.id_estado.ReadOnly = true;
-            this.id_estado.Visible = false;
             // 
             // label3
             // 
@@ -521,7 +468,7 @@
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cmb_franquicias);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.lbl_franquicia);
             this.grp_busquedaAvanzadaPedido.Controls.Add(this.cbx_franquicia);
-            this.grp_busquedaAvanzadaPedido.Location = new System.Drawing.Point(625, 95);
+            this.grp_busquedaAvanzadaPedido.Location = new System.Drawing.Point(644, 95);
             this.grp_busquedaAvanzadaPedido.Name = "grp_busquedaAvanzadaPedido";
             this.grp_busquedaAvanzadaPedido.Size = new System.Drawing.Size(362, 471);
             this.grp_busquedaAvanzadaPedido.TabIndex = 93;
@@ -581,66 +528,59 @@
             this.cmb_franquicias.Size = new System.Drawing.Size(167, 21);
             this.cmb_franquicias.TabIndex = 3;
             // 
-            // grp_modificar
+            // id_pedido
             // 
-            this.grp_modificar.Controls.Add(this.label_error);
-            this.grp_modificar.Controls.Add(this.btn_modificarEstado);
-            this.grp_modificar.Controls.Add(this.cmb_estadoPedido);
-            this.grp_modificar.Controls.Add(this.label6);
-            this.grp_modificar.Location = new System.Drawing.Point(670, 113);
-            this.grp_modificar.Margin = new System.Windows.Forms.Padding(2);
-            this.grp_modificar.Name = "grp_modificar";
-            this.grp_modificar.Padding = new System.Windows.Forms.Padding(2);
-            this.grp_modificar.Size = new System.Drawing.Size(284, 108);
-            this.grp_modificar.TabIndex = 96;
-            this.grp_modificar.TabStop = false;
-            this.grp_modificar.Text = "Modificar estado pedido";
+            this.id_pedido.DataPropertyName = "id_pedido";
+            this.id_pedido.HeaderText = "ID Pedido";
+            this.id_pedido.Name = "id_pedido";
+            this.id_pedido.ReadOnly = true;
+            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // label_error
+            // Column3
             // 
-            this.label_error.AutoSize = true;
-            this.label_error.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_error.ForeColor = System.Drawing.Color.Green;
-            this.label_error.Location = new System.Drawing.Point(10, 70);
-            this.label_error.Name = "label_error";
-            this.label_error.Size = new System.Drawing.Size(161, 13);
-            this.label_error.TabIndex = 18;
-            this.label_error.Text = "Estado moficado con éxito.";
-            this.label_error.Visible = false;
+            this.Column3.DataPropertyName = "id_franquicia";
+            this.Column3.HeaderText = "ID Franquicia";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // btn_modificarEstado
+            // Column4
             // 
-            this.btn_modificarEstado.Location = new System.Drawing.Point(174, 65);
-            this.btn_modificarEstado.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_modificarEstado.Name = "btn_modificarEstado";
-            this.btn_modificarEstado.Size = new System.Drawing.Size(93, 28);
-            this.btn_modificarEstado.TabIndex = 16;
-            this.btn_modificarEstado.Text = "Cambiar Estado";
-            this.btn_modificarEstado.UseVisualStyleBackColor = true;
-            this.btn_modificarEstado.Click += new System.EventHandler(this.btn_modificarEstado_Click);
+            this.Column4.DataPropertyName = "id_vendedor";
+            this.Column4.HeaderText = "Legajo Vendedor";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // cmb_estadoPedido
+            // Column2
             // 
-            this.cmb_estadoPedido._campo = null;
-            this.cmb_estadoPedido._mensaje_error = "Necesita seleccionar un estado para el pedido";
-            this.cmb_estadoPedido._nombre_tabla = null;
-            this.cmb_estadoPedido._validable = true;
-            this.cmb_estadoPedido.FormattingEnabled = true;
-            this.cmb_estadoPedido.Location = new System.Drawing.Point(87, 28);
-            this.cmb_estadoPedido.Margin = new System.Windows.Forms.Padding(2);
-            this.cmb_estadoPedido.Name = "cmb_estadoPedido";
-            this.cmb_estadoPedido.Size = new System.Drawing.Size(181, 21);
-            this.cmb_estadoPedido.TabIndex = 17;
+            this.Column2.DataPropertyName = "fecha_solicitud";
+            this.Column2.HeaderText = "Fecha Solicitud";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // label6
+            // monto_final
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 28);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Estado Pedido:";
+            this.monto_final.DataPropertyName = "monto_final";
+            this.monto_final.HeaderText = "Monto Total";
+            this.monto_final.Name = "monto_final";
+            this.monto_final.ReadOnly = true;
+            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.DataPropertyName = "fecha_entrega";
+            this.fecha_entrega.HeaderText = "Fecha entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.ReadOnly = true;
+            // 
+            // nombre_estado
+            // 
+            this.nombre_estado.DataPropertyName = "nombre_estado";
+            this.nombre_estado.HeaderText = "Estado";
+            this.nombre_estado.Name = "nombre_estado";
+            this.nombre_estado.ReadOnly = true;
             // 
             // uc_HistorialPedidos
             // 
@@ -656,7 +596,6 @@
             this.Controls.Add(this.dgv_detallePedido);
             this.Controls.Add(this.dgv_pedidos);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.grp_modificar);
             this.Name = "uc_HistorialPedidos";
             this.Size = new System.Drawing.Size(1006, 601);
             this.Load += new System.EventHandler(this.uc_HistorialPedidos_Load);
@@ -664,8 +603,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).EndInit();
             this.grp_busquedaAvanzadaPedido.ResumeLayout(false);
             this.grp_busquedaAvanzadaPedido.PerformLayout();
-            this.grp_modificar.ResumeLayout(false);
-            this.grp_modificar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,12 +621,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridView dgv_pedidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto_final;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_estado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbx_franquicia;
@@ -711,11 +642,13 @@
         private System.Windows.Forms.RadioButton rbtn_cancelado;
         private System.Windows.Forms.CheckBox cbx_estado;
         private System.Windows.Forms.GroupBox grp_busquedaAvanzadaPedido;
-        private System.Windows.Forms.GroupBox grp_modificar;
-        private System.Windows.Forms.Button btn_modificarEstado;
-        private clases.ComboBoxPersonal cmb_estadoPedido;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label_error;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_final;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_estado;
 
     }
 }

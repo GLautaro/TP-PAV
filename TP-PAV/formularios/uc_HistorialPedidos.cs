@@ -38,49 +38,7 @@ namespace TP_PAV.formularios
             dgv_detallePedido.DataSource = "";
         }
 
-        //Desde acá
-
-        private void cleanMensaje()
-        {
-            label_error.ForeColor = Color.Red;
-            label_error.Text = "";
-            label_error.Visible = false;
-        }
-
-
-        private void dgv_pedidos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Pedido pedido_seleccionado = new Pedido();
-            pedido_seleccionado.pub_id_pedido = int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
-            DetallePedido detalle_pedido_seleccionado = new DetallePedido();
-            detalle_pedido_seleccionado.pub_pedido = pedido_seleccionado;
-            dgv_detallePedido.DataSource = detalle_pedido_seleccionado.recuperarDetalleDePedido();
-
-            cmb_estadoPedido.DataSource = pedido_seleccionado.estadoPedido();
-            cmb_estadoPedido.DisplayMember = "nombre_estado";
-            cmb_estadoPedido.ValueMember = "id_estado";
-            cmb_estadoPedido.SelectedValue = int.Parse(dgv_pedidos.CurrentRow.Cells["id_estado"].Value.ToString());
-            cleanMensaje();    
-        }
-        //Hasta acá se copiaron y pegaron métodos de uc_Pedidos
-
-        private void btn_modificarEstado_Click(object sender, EventArgs e)
-        {
-            priv_pedido.pub_Pedido_label_error = this.label_error;
-            if (priv_pedido.validarPedido(grp_modificar.Controls) == Validar.estado_validacion.correcto)
-            {
-                Pedido pedido_seleccionado = new Pedido();
-                pedido_seleccionado.pub_id_pedido = int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
-                pedido_seleccionado.pub_id_estado = int.Parse(cmb_estadoPedido.SelectedValue.ToString());
-                if (pedido_seleccionado.updateEstadoPedido())
-                {
-                    dgv_pedidos.DataSource = priv_pedido.recuperarPedidos();
-                    dgv_detallePedido.DataSource = "";
-                    label_error.Visible = true;
-                }
-                
-            }
-        }
+        
         private void btn_busquedaAvanzadaPedido_Click(object sender, EventArgs e)
         {
             grp_busquedaAvanzadaPedido.Visible = true;
