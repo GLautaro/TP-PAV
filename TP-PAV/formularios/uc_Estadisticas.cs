@@ -54,7 +54,7 @@ namespace TP_PAV.formularios
             List<string> series = new List<string> { };
             List<int> puntos = new List<int> { };
 
-            for (int i = 0; i < tablaDatos.Columns.Count; i++)
+            for (int i = 0; i < tablaDatos.Rows.Count; i++)
             {
                 series.Add(tablaDatos.Rows[i][0].ToString());
                 puntos.Add(int.Parse(tablaDatos.Rows[i][1].ToString()));
