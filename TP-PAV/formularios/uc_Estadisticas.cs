@@ -17,6 +17,7 @@ namespace TP_PAV.formularios
         Vendedor vendedor = new Vendedor();
         Franquicia franquicia = new Franquicia();
         Producto producto = new Producto();
+        Pedido pedido = new Pedido();
         private static uc_Estadisticas priv_instance;
         public static uc_Estadisticas pub_instance
         {
@@ -72,6 +73,15 @@ namespace TP_PAV.formularios
             
         }
 
+        //Activar / Desactivar Fechas
+        private void visibilidadFechas(bool estado)
+        {
+            dtp_fechaDesde.Visible = estado;
+            dtp_fechaHasta.Visible = estado;
+            lbl_fechaDesde.Visible = estado;
+            lbl_fechaHasta.Visible = estado;
+        }
+
         //Para no hacer tantos grupos puse todos en el mismo grupo, pero solo muestra las opciones que corresponde segun el boton que tocan
         private void btn_estVendedores_Click(object sender, EventArgs e)
         {
@@ -91,8 +101,9 @@ namespace TP_PAV.formularios
             btn_estVendedores.Visible = false;
             btn_estPedidos.Visible = false;
             btn_estProductos.Visible = false;
-            //Activar la visibilidad de sus botones que muestran la estadistica 
-            btn_EstadisticaFranquiciaPedidos.Visible = true;
+          
+             //Activar la visibilidad de sus botones que muestran la estadistica 
+            btn_EstadisticaFranquiciaPedidos.Visible = true;           
         }
 
         private void btn_estProductos_Click(object sender, EventArgs e)
@@ -112,7 +123,11 @@ namespace TP_PAV.formularios
             btn_estVendedores.Visible = false;
             btn_estProductos.Visible = false;
             btn_estFranquicias.Visible = false;
+      
             //Activar la visibilidad de sus botones que muestran la estadistica 
+            btn_EstadisticaCantidadPedidoPend.Visible = true;
+
+            visibilidadFechas(true);
         }
 
         private void btn_cerrarGrupo_Click(object sender, EventArgs e)
@@ -126,12 +141,15 @@ namespace TP_PAV.formularios
             //abrimos otra opcion sigue quedando el boton de la opcion anterior
             btn_EstadisticaFranquiciaPedidos.Visible = false;
             btn_EstadisticaVendedorPedidos.Visible = false;
+            btn_EstadisticaCantidadPedidoPend.Visible = false;
+            visibilidadFechas(false);
             grp_estadisticas.Visible = false;
             grp_estadisticas.Text = "";
         }
 
 
-        private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
+       
+             private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
         {
             llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ","Nombre y apellido del vendedor", ChartColorPalette.SeaGreen);
         }
@@ -139,6 +157,12 @@ namespace TP_PAV.formularios
         private void btn_EstadisticaFranquiciaPedidos_Click(object sender, EventArgs e)
         {
             llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante", ChartColorPalette.SeaGreen);
+        }
+
+        private void btn_EstadisticaCantidadPedidoPend_Click(object sender, EventArgs e)
+        {
+            llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD PEDIDOS PENDIENTES: ", "Mes y Cantidad", ChartColorPalette.SeaGreen);
+
         }
 
     }
