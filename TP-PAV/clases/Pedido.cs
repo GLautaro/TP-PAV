@@ -87,12 +87,12 @@ namespace TP_PAV.clases
             
             return priv_acceso_db.ejecutarConsulta(@"SELECT 
                                                      id_pedido, 
-                                                     fecha_solicitud, 
+                                                     CONVERT(VARCHAR(10),fecha_solicitud,103) as 'fecha_solicitud', 
                                                      id_franquicia, 
                                                      id_vendedor, 
                                                      monto_final,
                                                      id_estado
-                                                     FROM pedido WHERE id_estado = 1" );
+                                                     FROM pedido WHERE id_estado = 1");
 
         }
 
@@ -286,12 +286,21 @@ namespace TP_PAV.clases
 
 
 
-        public DataTable CantidadPedidoXRangoFecha(DateTime fDesde, DateTime fHasta, int id_estado)
+        public DataTable CantidadPedidosSolicitadosXRangoFecha(DateTime fDesde, DateTime fHasta)
         {
-            string consulta = String.Format(@"SELECT DATENAME(mm, p.fecha_solicitud) as 'Mes', COUNT(*) as 'Cantidad' 
+            string consulta = String.Format(@"SELECT DATENAME(mm, p.fecha_solicitud)+' '+DATENAME(YYYY, p.fecha_solicitud) as 'Mes y Año', COUNT(*) as 'Cantidad' 
                                 FROM pedido p 
-                                WHERE p.fecha_solicitud between '{0}' AND '{1}' AND p.id_estado={2} 
-                                GROUP BY DATENAME(mm, p.fecha_solicitud)", fDesde, fHasta, id_estado);
+                                WHERE p.fecha_solicitud between '{0}' AND '{1}'  
+                                GROUP BY DATENAME(mm, p.fecha_solicitud), DATENAME(YYYY, p.fecha_solicitud), MONTH(p.fecha_solicitud) ORDER BY MONTH(p.fecha_solicitud) ASC", fDesde, fHasta);
+            return priv_acceso_db.ejecutarConsulta(consulta);
+        }
+
+        public DataTable CantidadPedidosEntregadosXRangoFecha(DateTime fDesde, DateTime fHasta)
+        {
+            string consulta = String.Format(@"SELECT DATENAME(mm, p.fecha_entrega)+' '+DATENAME(YYYY, p.fecha_entrega) as 'Mes y Año', COUNT(*) as 'Cantidad' 
+                                FROM pedido p 
+                                WHERE p.fecha_entrega between '{0}' AND '{1}' 
+                                GROUP BY DATENAME(mm, p.fecha_entrega), DATENAME(YYYY, p.fecha_entrega)", fDesde, fHasta);
             return priv_acceso_db.ejecutarConsulta(consulta);
         }
     }

@@ -128,6 +128,7 @@ namespace TP_PAV.formularios
             btn_estFranquicias.Visible = false;
             //Activar la visibilidad de sus botones que muestran la estadistica 
             btn_EstadisticaCantPedidosPend.Visible = true;
+            btn_EstadisticaCantPedidosEnt.Visible = true;
             visibilidadFechas(true);
         }
 
@@ -147,6 +148,7 @@ namespace TP_PAV.formularios
             btn_EstadisticaVendedorPedidos.Visible = false;
             btn_productoMasVendido.Visible = false;
             btn_EstadisticaCantPedidosPend.Visible = false;
+            btn_EstadisticaCantPedidosEnt.Visible = false;
             grp_estadisticas.Visible = false;
             grp_estadisticas.Text = "";
             visibilidadFechas(false);
@@ -183,9 +185,26 @@ namespace TP_PAV.formularios
 
         private void btn_EstadisticaCantPedidosPend_Click(object sender, EventArgs e)
         {
-            llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD DE PEDIDOS PENDIENTES", "Mes y cantidad de pedidos", " ");
-        }
+            if (dtp_fechaDesde.Value.Date <= dtp_fechaHasta.Value.Date)
+            {
+                llenarGrafico(pedido.CantidadPedidosSolicitadosXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "CANTIDAD DE PEDIDOS SOLICITADOS", "Mes y cantidad de pedidos", " ");
+            }
+            else
+            {
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "No se puede seleccionar una Fecha Hasta menor a la Fecha Desde.";
+            }
+       }
 
+        private void btn_EstadisticaCantPedidosEnt_Click(object sender, EventArgs e)
+        {
+            if (validarFechas())
+            {
+                llenarGrafico(pedido.CantidadPedidosEntregadosXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "CANTIDAD DE PEDIDOS ENTREGADOS", "Mes y cantidad de pedidos", " ");
+
+            }
+
+        }
         private void btn_productoMasVendidoPeriodo_Click(object sender, EventArgs e)
         {
             if(validarFechas())
@@ -224,6 +243,8 @@ namespace TP_PAV.formularios
                 llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante","$ ");
             }
         }
+
+   
 
 
     }
