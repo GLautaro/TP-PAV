@@ -87,6 +87,7 @@ namespace TP_PAV.formularios
             btn_estFranquicias.Visible = false;
             btn_estPedidos.Visible = false;
             btn_estProductos.Visible = false;
+            btn_cantFranquiciasXVendedor.Visible = true;
             //Activar la visibilidad de sus botones que muestran la estadistica 
             btn_EstadisticaVendedorPedidos.Visible = true;
         }
@@ -100,7 +101,6 @@ namespace TP_PAV.formularios
             btn_estProductos.Visible = false;
             //Activar la visibilidad de sus botones que muestran la estadistica 
             visibilidadFechas(true);
-            
             btn_franquiciaMasPedidosEnPeriodo.Visible = true;
             btn_franquiciaMenosPedidosEnPeriodo.Visible = true;
            
@@ -143,8 +143,6 @@ namespace TP_PAV.formularios
             //abrimos otra opcion sigue quedando el boton de la opcion anterior
             btn_franquiciaMenosPedidosEnPeriodo.Visible = false;
             btn_franquiciaMasPedidosEnPeriodo.Visible = false;
-            
-
             btn_EstadisticaVendedorPedidos.Visible = false;
             btn_productoMasVendidoPeriodo.Visible = false;
             btn_productoPorFranquicia.Visible = false;
@@ -241,6 +239,11 @@ namespace TP_PAV.formularios
             {
                 llenarGrafico(producto.ProductosMasCompradoXFranquiciaXTiempo(dtp_fechaDesde.Value, dtp_fechaHasta.Value, cmb_franquicias.SelectedValue.ToString()), "PRODUCTOS MÁS COMPRADOS POR UNA FRANQUICIA EN UN PERIODO:", "Nombre del producto", " ");
             }
+        }
+
+        private void btn_cantFranquiciasXVendedor_Click(object sender, EventArgs e)
+        {
+            llenarGrafico(vendedor.CantidadFranquiciasXVendedor(), "CANTIDAD DE FRANQUICIAS POR VENDEDOR:", "Legajo del vendedor", " ");
         }
     }
 }

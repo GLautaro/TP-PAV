@@ -37,6 +37,15 @@ namespace TP_PAV.clases
 
         }
 
+        public DataTable CantidadFranquiciasXVendedor()
+        {
+            string consulta = @"SELECT F.legajo_vendedor, COUNT(*)
+                                FROM franquicia F JOIN vendedor V ON F.legajo_vendedor = V.legajo_vendedor
+                                GROUP BY F.legajo_vendedor
+                                ";
+            return db.ejecutarConsulta(consulta);
+        }
+
         public DataTable buscarVendedores(string texto)
         {
             string consulta = @"SELECT * FROM Vendedor WHERE nombre_vendedor LIKE '%" + texto + "%' OR apellido_vendedor LIKE '%" + texto + "%' OR legajo_vendedor LIKE '" + texto + "%';";
