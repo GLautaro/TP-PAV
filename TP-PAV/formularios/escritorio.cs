@@ -123,16 +123,6 @@ namespace TP_PAV
             uc_historial.BringToFront();
         }
 
-        private void btn_menuProductosPendientes_Click(object sender, EventArgs e)
-        {
-            SidePanel.Height = btn_menuProductosPendientes.Height;
-            SidePanel.Top = btn_menuProductosPendientes.Top;
-            SidePanel.Show();
-            uc_ProductosPendientes uc_pendientes = new uc_ProductosPendientes();
-            main_panel.Controls.Add(uc_pendientes);
-            uc_pendientes.Dock = DockStyle.Fill;
-            uc_pendientes.BringToFront();
-        }
 
         
 

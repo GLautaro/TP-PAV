@@ -178,17 +178,15 @@ namespace TP_PAV.clases
         }
         public DataTable recuperarPendientes()
         {
-            string query = @"SELECT PR.nombre_producto,U.nombre_u_medida,SUM(PP.cantidad) as 'cantidad_pendiente'
+            string query = @"SELECT PR.nombre_producto,SUM(PP.cantidad) as 'cantidad_pendiente'
                                 FROM pedido P
                                 JOIN pedido_x_producto PP ON PP.id_pedido=P.id_pedido
                                 JOIN producto PR ON PR.id_producto=PP.id_producto
-                                JOIN unidad_medida U ON U.id_u_medida=PR.id_u_medida
-
                                 WHERE P.id_estado=(SELECT E.id_estado FROM estado_pedido E WHERE E.nombre_estado='Solicitado') 
 		                            AND YEAR(P.fecha_solicitud)=YEAR(GETDATE()) 
 		                            AND MONTH(P.fecha_solicitud)=MONTH(GETDATE())
 		                            AND DAY(P.fecha_solicitud)=DAY(GETDATE())
-                                GROUP BY PR.nombre_producto,U.nombre_u_medida";
+                                GROUP BY PR.nombre_producto";
             return db.ejecutarConsulta(query);
         }
         

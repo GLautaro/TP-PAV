@@ -149,6 +149,12 @@ namespace TP_PAV.formularios
 
         }
 
+        private void btn_productosPendientes_Click(object sender, EventArgs e)
+        {
+            frm_ProductosPendientes pendientes = new frm_ProductosPendientes();
+            pendientes.Show();
+        }
+
      
       
     }

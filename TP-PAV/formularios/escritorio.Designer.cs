@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Escritorio));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_menuProductosPendientes = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.btn_menuHistorialPedidos = new System.Windows.Forms.Button();
             this.btn_menuEstadisticas = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.panel1.Controls.Add(this.btn_menuProductosPendientes);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.btn_menuHistorialPedidos);
             this.panel1.Controls.Add(this.btn_menuEstadisticas);
@@ -65,20 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(190, 736);
             this.panel1.TabIndex = 0;
-            // 
-            // btn_menuProductosPendientes
-            // 
-            this.btn_menuProductosPendientes.FlatAppearance.BorderSize = 0;
-            this.btn_menuProductosPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menuProductosPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_menuProductosPendientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menuProductosPendientes.Location = new System.Drawing.Point(6, 415);
-            this.btn_menuProductosPendientes.Name = "btn_menuProductosPendientes";
-            this.btn_menuProductosPendientes.Size = new System.Drawing.Size(184, 54);
-            this.btn_menuProductosPendientes.TabIndex = 9;
-            this.btn_menuProductosPendientes.Text = "Productos pendientes";
-            this.btn_menuProductosPendientes.UseVisualStyleBackColor = true;
-            this.btn_menuProductosPendientes.Click += new System.EventHandler(this.btn_menuProductosPendientes_Click);
             // 
             // SidePanel
             // 
@@ -261,7 +245,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel main_panel;
-        private System.Windows.Forms.Button btn_menuProductosPendientes;
     }
 }
 

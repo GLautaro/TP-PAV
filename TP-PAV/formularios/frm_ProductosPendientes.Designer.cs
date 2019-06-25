@@ -1,13 +1,13 @@
 ﻿namespace TP_PAV.formularios
 {
-    partial class uc_ProductosPendientes
+    partial class frm_ProductosPendientes
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -32,38 +32,77 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_mensaje = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_fechaActual = new System.Windows.Forms.Label();
             this.dgv_productosPendientes = new System.Windows.Forms.DataGridView();
             this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_u_medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad_pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_mensaje = new System.Windows.Forms.Label();
-            this.btn_recargar = new System.Windows.Forms.Button();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productosPendientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // label5
+            // lbl_mensaje
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 12);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(221, 25);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Productos pendientes";
+            this.lbl_mensaje.AutoSize = true;
+            this.lbl_mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mensaje.Location = new System.Drawing.Point(19, 503);
+            this.lbl_mensaje.Name = "lbl_mensaje";
+            this.lbl_mensaje.Size = new System.Drawing.Size(0, 16);
+            this.lbl_mensaje.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 21);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label2.Size = new System.Drawing.Size(172, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Productos pendientes";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 462);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Recargar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Pedidos de la fecha: ";
+            // 
+            // lbl_fechaActual
+            // 
+            this.lbl_fechaActual.AutoSize = true;
+            this.lbl_fechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fechaActual.Location = new System.Drawing.Point(180, 50);
+            this.lbl_fechaActual.Name = "lbl_fechaActual";
+            this.lbl_fechaActual.Size = new System.Drawing.Size(0, 16);
+            this.lbl_fechaActual.TabIndex = 6;
             // 
             // dgv_productosPendientes
             // 
             this.dgv_productosPendientes.AllowUserToAddRows = false;
             this.dgv_productosPendientes.AllowUserToDeleteRows = false;
-            this.dgv_productosPendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgv_productosPendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_productosPendientes.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_productosPendientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_productosPendientes.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -72,23 +111,23 @@
             this.dgv_productosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productosPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre_producto,
-            this.nombre_u_medida,
-            this.cantidad_pendiente});
+            this.cantidad});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_productosPendientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_productosPendientes.GridColor = System.Drawing.Color.YellowGreen;
-            this.dgv_productosPendientes.Location = new System.Drawing.Point(19, 141);
+            this.dgv_productosPendientes.Location = new System.Drawing.Point(22, 98);
+            this.dgv_productosPendientes.MultiSelect = false;
             this.dgv_productosPendientes.Name = "dgv_productosPendientes";
             this.dgv_productosPendientes.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -101,67 +140,40 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_productosPendientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_productosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_productosPendientes.Size = new System.Drawing.Size(388, 350);
-            this.dgv_productosPendientes.TabIndex = 56;
+            this.dgv_productosPendientes.Size = new System.Drawing.Size(397, 358);
+            this.dgv_productosPendientes.TabIndex = 53;
             // 
             // nombre_producto
             // 
             this.nombre_producto.DataPropertyName = "nombre_producto";
-            this.nombre_producto.HeaderText = "Nombre del producto";
+            this.nombre_producto.HeaderText = "Producto";
             this.nombre_producto.Name = "nombre_producto";
             this.nombre_producto.ReadOnly = true;
-            this.nombre_producto.Width = 135;
             // 
-            // nombre_u_medida
+            // cantidad
             // 
-            this.nombre_u_medida.DataPropertyName = "nombre_u_medida";
-            this.nombre_u_medida.HeaderText = "Unidad de medida";
-            this.nombre_u_medida.Name = "nombre_u_medida";
-            this.nombre_u_medida.ReadOnly = true;
-            this.nombre_u_medida.Width = 123;
+            this.cantidad.DataPropertyName = "cantidad_pendiente";
+            this.cantidad.HeaderText = "Cantidad Pendiente";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
             // 
-            // cantidad_pendiente
-            // 
-            this.cantidad_pendiente.DataPropertyName = "cantidad_pendiente";
-            this.cantidad_pendiente.HeaderText = "Cantidad Pendiente";
-            this.cantidad_pendiente.Name = "cantidad_pendiente";
-            this.cantidad_pendiente.ReadOnly = true;
-            this.cantidad_pendiente.Width = 128;
-            // 
-            // lbl_mensaje
-            // 
-            this.lbl_mensaje.AutoSize = true;
-            this.lbl_mensaje.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mensaje.Location = new System.Drawing.Point(14, 507);
-            this.lbl_mensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_mensaje.Name = "lbl_mensaje";
-            this.lbl_mensaje.Size = new System.Drawing.Size(0, 25);
-            this.lbl_mensaje.TabIndex = 57;
-            // 
-            // btn_recargar
-            // 
-            this.btn_recargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_recargar.Location = new System.Drawing.Point(19, 76);
-            this.btn_recargar.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_recargar.Name = "btn_recargar";
-            this.btn_recargar.Size = new System.Drawing.Size(207, 48);
-            this.btn_recargar.TabIndex = 62;
-            this.btn_recargar.TabStop = false;
-            this.btn_recargar.Text = "Recargar listado";
-            this.btn_recargar.UseVisualStyleBackColor = true;
-            this.btn_recargar.Click += new System.EventHandler(this.btn_recargar_Click);
-            // 
-            // uc_ProductosPendientes
+            // frm_ProductosPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btn_recargar);
-            this.Controls.Add(this.lbl_mensaje);
+            this.ClientSize = new System.Drawing.Size(443, 554);
             this.Controls.Add(this.dgv_productosPendientes);
-            this.Controls.Add(this.label5);
-            this.Name = "uc_ProductosPendientes";
-            this.Size = new System.Drawing.Size(670, 627);
-            this.Load += new System.EventHandler(this.uc_ProductosPendientes_Load);
+            this.Controls.Add(this.lbl_fechaActual);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_mensaje);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frm_ProductosPendientes";
+            this.ShowInTaskbar = false;
+            this.Text = "Productos Pendientes";
+            this.Load += new System.EventHandler(this.frm_ProductosPendientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productosPendientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,12 +182,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_mensaje;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_fechaActual;
         private System.Windows.Forms.DataGridView dgv_productosPendientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_u_medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_pendiente;
-        private System.Windows.Forms.Label lbl_mensaje;
-        private System.Windows.Forms.Button btn_recargar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }

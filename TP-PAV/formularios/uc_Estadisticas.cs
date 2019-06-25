@@ -39,7 +39,7 @@ namespace TP_PAV.formularios
             grafico.Series.Clear();
         }
 
-        private void llenarGrafico(DataTable tablaDatos, string titulo, string tituloLeyenda, ChartColorPalette color)
+        private void llenarGrafico(DataTable tablaDatos, string titulo, string tituloLeyenda)
         {
             if (tablaDatos.Rows.Count < 1)
             {
@@ -49,8 +49,9 @@ namespace TP_PAV.formularios
             }
             grafico.Series.Clear();
             grafico.Titles.Clear();
-            grafico.Palette = color;
+            grafico.Palette = ChartColorPalette.SeaGreen;
             grafico.Titles.Add(titulo);
+
             
             List<string> series = new List<string> { };
             List<int> puntos = new List<int> { };
@@ -100,7 +101,11 @@ namespace TP_PAV.formularios
             btn_estPedidos.Visible = false;
             btn_estProductos.Visible = false;
             //Activar la visibilidad de sus botones que muestran la estadistica 
-            btn_EstadisticaFranquiciaPedidos.Visible = true;
+            visibilidadFechas(true);
+            btn_franquiciaMasPedidosHistorico.Visible = true;
+            btn_franquiciaMasPedidosEnPeriodo.Visible = true;
+            btn_franquiciaMenosPedidosEnPeriodo.Visible = true;
+            btn_franquiciaMenosPedidosHistorico.Visible = true;
         }
 
         private void btn_estProductos_Click(object sender, EventArgs e)
@@ -137,7 +142,10 @@ namespace TP_PAV.formularios
             btn_estProductos.Visible = true;
             //Hay que sacarle la visibilidad a todos los botones del grupo si no cuando 
             //abrimos otra opcion sigue quedando el boton de la opcion anterior
-            btn_EstadisticaFranquiciaPedidos.Visible = false;
+            btn_franquiciaMenosPedidosHistorico.Visible = false;
+            btn_franquiciaMenosPedidosEnPeriodo.Visible = false;
+            btn_franquiciaMasPedidosEnPeriodo.Visible = false;
+            btn_franquiciaMasPedidosHistorico.Visible = false;
             btn_EstadisticaVendedorPedidos.Visible = false;
             btn_productoMasVendido.Visible = false;
             btn_EstadisticaCantPedidosPend.Visible = false;
@@ -167,22 +175,17 @@ namespace TP_PAV.formularios
 
         private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
         {
-            llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ","Nombre y apellido del vendedor", ChartColorPalette.SeaGreen);
-        }
-
-        private void btn_EstadisticaFranquiciaPedidos_Click(object sender, EventArgs e)
-        {
-            llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante", ChartColorPalette.SeaGreen);
+            llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ","Nombre y apellido del vendedor");
         }
 
         private void btn_productoMasVendido_Click(object sender, EventArgs e)
         {
-            llenarGrafico(producto.productosMasVendidosHistorico(), "PRODUCTOS MAS VENDIDOS", "Nombre del producto", ChartColorPalette.SeaGreen);
+            llenarGrafico(producto.productosMasVendidosHistorico(), "PRODUCTOS MAS VENDIDOS", "Nombre del producto");
         }
 
         private void btn_EstadisticaCantPedidosPend_Click(object sender, EventArgs e)
         {
-            llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD DE PEDIDOS PENDIENTES", "Mes y cantidad de pedidos", ChartColorPalette.SeaGreen);
+            llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD DE PEDIDOS PENDIENTES", "Mes y cantidad de pedidos");
         }
 
         private void btn_productoMasVendidoPeriodo_Click(object sender, EventArgs e)
@@ -191,9 +194,36 @@ namespace TP_PAV.formularios
             {
                 llenarGrafico(producto.ProductosMasVendidosXTiempo(dtp_fechaDesde.Value.Date.ToShortDateString(), 
                     dtp_fechaHasta.Value.Date.ToShortDateString()),
-                    "PRODUCTOS MAS VENDIDOS EN UN PERIODO", "Nombre del producto", ChartColorPalette.SeaGreen);
+                    "PRODUCTOS MAS VENDIDOS EN UN PERIODO", "Nombre del producto");
             }
         }
+
+        private void btn_franquiciaMasPedidosHistorico_Click(object sender, EventArgs e)
+        {
+            llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante");
+        }
+
+        private void btn_franquiciaMenosPedidosHistorico_Click(object sender, EventArgs e)
+        {
+            llenarGrafico(franquicia.PeoresFranquicias(), "PEORES FRANQUICIAS: ", "Nombre y apellido del representante");
+        }
+
+        private void btn_franquiciaMenosPedidosEnPeriodo_Click(object sender, EventArgs e)
+        {
+            if (validarFechas())
+            {
+                llenarGrafico(franquicia.PeoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "PEORES FRANQUICIAS EN PERIODO: ", "Nombre y apellido del representante");
+            }
+        }
+
+        private void btn_franquiciaMasPedidosEnPeriodo_Click(object sender, EventArgs e)
+        {
+            if (validarFechas())
+            {
+                llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante");
+            }
+        }
+
 
     }
 }

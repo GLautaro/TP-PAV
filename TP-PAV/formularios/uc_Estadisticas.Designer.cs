@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btn_EstadisticaVendedorPedidos = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_EstadisticaFranquiciaPedidos = new System.Windows.Forms.Button();
+            this.btn_franquiciaMasPedidosHistorico = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
             this.grp_estadisticas = new System.Windows.Forms.GroupBox();
-            this.btn_EstadisticaCantPedidosPend = new System.Windows.Forms.Button();
+            this.btn_franquiciaMasPedidosEnPeriodo = new System.Windows.Forms.Button();
             this.dtp_fechaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtp_fechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.btn_productoMasVendido = new System.Windows.Forms.Button();
-            this.btn_productoMasVendidoPeriodo = new System.Windows.Forms.Button();
             this.lbl_fechaHasta = new System.Windows.Forms.Label();
             this.lbl_fechaDesde = new System.Windows.Forms.Label();
             this.btn_cerrarGrupo = new System.Windows.Forms.Button();
+            this.btn_productoMasVendido = new System.Windows.Forms.Button();
+            this.btn_EstadisticaCantPedidosPend = new System.Windows.Forms.Button();
+            this.btn_productoMasVendidoPeriodo = new System.Windows.Forms.Button();
             this.btn_estVendedores = new System.Windows.Forms.Button();
             this.btn_estFranquicias = new System.Windows.Forms.Button();
             this.btn_estProductos = new System.Windows.Forms.Button();
             this.btn_estPedidos = new System.Windows.Forms.Button();
+            this.btn_franquiciaMenosPedidosHistorico = new System.Windows.Forms.Button();
+            this.btn_franquiciaMenosPedidosEnPeriodo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
             this.grp_estadisticas.SuspendLayout();
             this.SuspendLayout();
@@ -56,22 +59,22 @@
             // grafico
             // 
             this.grafico.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea1.Name = "ChartArea1";
-            this.grafico.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.grafico.Legends.Add(legend1);
+            chartArea11.Name = "ChartArea1";
+            this.grafico.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.grafico.Legends.Add(legend11);
             this.grafico.Location = new System.Drawing.Point(73, 183);
             this.grafico.Name = "grafico";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.grafico.Series.Add(series1);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.grafico.Series.Add(series11);
             this.grafico.Size = new System.Drawing.Size(651, 300);
             this.grafico.TabIndex = 68;
             // 
             // btn_EstadisticaVendedorPedidos
             // 
-            this.btn_EstadisticaVendedorPedidos.Location = new System.Drawing.Point(60, 48);
+            this.btn_EstadisticaVendedorPedidos.Location = new System.Drawing.Point(56, 36);
             this.btn_EstadisticaVendedorPedidos.Name = "btn_EstadisticaVendedorPedidos";
             this.btn_EstadisticaVendedorPedidos.Size = new System.Drawing.Size(262, 70);
             this.btn_EstadisticaVendedorPedidos.TabIndex = 67;
@@ -91,16 +94,16 @@
             this.label5.TabIndex = 66;
             this.label5.Text = "Reportes y Estadísticas";
             // 
-            // btn_EstadisticaFranquiciaPedidos
+            // btn_franquiciaMasPedidosHistorico
             // 
-            this.btn_EstadisticaFranquiciaPedidos.Location = new System.Drawing.Point(60, 48);
-            this.btn_EstadisticaFranquiciaPedidos.Name = "btn_EstadisticaFranquiciaPedidos";
-            this.btn_EstadisticaFranquiciaPedidos.Size = new System.Drawing.Size(262, 70);
-            this.btn_EstadisticaFranquiciaPedidos.TabIndex = 69;
-            this.btn_EstadisticaFranquiciaPedidos.Text = "Franquicias con mas pedidos entregados";
-            this.btn_EstadisticaFranquiciaPedidos.UseVisualStyleBackColor = true;
-            this.btn_EstadisticaFranquiciaPedidos.Visible = false;
-            this.btn_EstadisticaFranquiciaPedidos.Click += new System.EventHandler(this.btn_EstadisticaFranquiciaPedidos_Click);
+            this.btn_franquiciaMasPedidosHistorico.Location = new System.Drawing.Point(56, 112);
+            this.btn_franquiciaMasPedidosHistorico.Name = "btn_franquiciaMasPedidosHistorico";
+            this.btn_franquiciaMasPedidosHistorico.Size = new System.Drawing.Size(262, 70);
+            this.btn_franquiciaMasPedidosHistorico.TabIndex = 69;
+            this.btn_franquiciaMasPedidosHistorico.Text = "Franquicias con mas pedidos entregados";
+            this.btn_franquiciaMasPedidosHistorico.UseVisualStyleBackColor = true;
+            this.btn_franquiciaMasPedidosHistorico.Visible = false;
+            this.btn_franquiciaMasPedidosHistorico.Click += new System.EventHandler(this.btn_franquiciaMasPedidosHistorico_Click);
             // 
             // lbl_mensaje
             // 
@@ -114,16 +117,17 @@
             // 
             // grp_estadisticas
             // 
-            this.grp_estadisticas.Controls.Add(this.btn_EstadisticaCantPedidosPend);
+            this.grp_estadisticas.Controls.Add(this.btn_franquiciaMenosPedidosEnPeriodo);
+            this.grp_estadisticas.Controls.Add(this.btn_franquiciaMasPedidosEnPeriodo);
             this.grp_estadisticas.Controls.Add(this.dtp_fechaHasta);
+            this.grp_estadisticas.Controls.Add(this.btn_franquiciaMenosPedidosHistorico);
             this.grp_estadisticas.Controls.Add(this.dtp_fechaDesde);
-            this.grp_estadisticas.Controls.Add(this.btn_productoMasVendido);
-            this.grp_estadisticas.Controls.Add(this.btn_productoMasVendidoPeriodo);
             this.grp_estadisticas.Controls.Add(this.lbl_fechaHasta);
             this.grp_estadisticas.Controls.Add(this.lbl_fechaDesde);
             this.grp_estadisticas.Controls.Add(this.btn_cerrarGrupo);
+            this.grp_estadisticas.Controls.Add(this.btn_franquiciaMasPedidosHistorico);
             this.grp_estadisticas.Controls.Add(this.btn_EstadisticaVendedorPedidos);
-            this.grp_estadisticas.Controls.Add(this.btn_EstadisticaFranquiciaPedidos);
+            this.grp_estadisticas.Controls.Add(this.btn_productoMasVendido);
             this.grp_estadisticas.Location = new System.Drawing.Point(779, 46);
             this.grp_estadisticas.Name = "grp_estadisticas";
             this.grp_estadisticas.Size = new System.Drawing.Size(370, 518);
@@ -131,22 +135,21 @@
             this.grp_estadisticas.TabStop = false;
             this.grp_estadisticas.Visible = false;
             // 
-            // btn_EstadisticaCantPedidosPend
+            // btn_franquiciaMasPedidosEnPeriodo
             // 
-            this.btn_EstadisticaCantPedidosPend.Location = new System.Drawing.Point(60, 48);
-            this.btn_EstadisticaCantPedidosPend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_EstadisticaCantPedidosPend.Name = "btn_EstadisticaCantPedidosPend";
-            this.btn_EstadisticaCantPedidosPend.Size = new System.Drawing.Size(262, 70);
-            this.btn_EstadisticaCantPedidosPend.TabIndex = 80;
-            this.btn_EstadisticaCantPedidosPend.Text = "Cantidad de Pedidos Pendientes en un periodo";
-            this.btn_EstadisticaCantPedidosPend.UseVisualStyleBackColor = true;
-            this.btn_EstadisticaCantPedidosPend.Visible = false;
-            this.btn_EstadisticaCantPedidosPend.Click += new System.EventHandler(this.btn_EstadisticaCantPedidosPend_Click);
+            this.btn_franquiciaMasPedidosEnPeriodo.Location = new System.Drawing.Point(56, 264);
+            this.btn_franquiciaMasPedidosEnPeriodo.Name = "btn_franquiciaMasPedidosEnPeriodo";
+            this.btn_franquiciaMasPedidosEnPeriodo.Size = new System.Drawing.Size(262, 70);
+            this.btn_franquiciaMasPedidosEnPeriodo.TabIndex = 80;
+            this.btn_franquiciaMasPedidosEnPeriodo.Text = "Franquicias con mas pedidos entregados en un periodo";
+            this.btn_franquiciaMasPedidosEnPeriodo.UseVisualStyleBackColor = true;
+            this.btn_franquiciaMasPedidosEnPeriodo.Visible = false;
+            this.btn_franquiciaMasPedidosEnPeriodo.Click += new System.EventHandler(this.btn_franquiciaMasPedidosEnPeriodo_Click);
             // 
             // dtp_fechaHasta
             // 
             this.dtp_fechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fechaHasta.Location = new System.Drawing.Point(178, 284);
+            this.dtp_fechaHasta.Location = new System.Drawing.Point(174, 419);
             this.dtp_fechaHasta.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
             this.dtp_fechaHasta.Name = "dtp_fechaHasta";
             this.dtp_fechaHasta.Size = new System.Drawing.Size(101, 20);
@@ -156,39 +159,17 @@
             // dtp_fechaDesde
             // 
             this.dtp_fechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fechaDesde.Location = new System.Drawing.Point(178, 242);
+            this.dtp_fechaDesde.Location = new System.Drawing.Point(174, 377);
             this.dtp_fechaDesde.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
             this.dtp_fechaDesde.Name = "dtp_fechaDesde";
             this.dtp_fechaDesde.Size = new System.Drawing.Size(101, 20);
             this.dtp_fechaDesde.TabIndex = 78;
             this.dtp_fechaDesde.Visible = false;
             // 
-            // btn_productoMasVendido
-            // 
-            this.btn_productoMasVendido.Location = new System.Drawing.Point(60, 48);
-            this.btn_productoMasVendido.Name = "btn_productoMasVendido";
-            this.btn_productoMasVendido.Size = new System.Drawing.Size(262, 70);
-            this.btn_productoMasVendido.TabIndex = 77;
-            this.btn_productoMasVendido.Text = "Productos mas vendidos";
-            this.btn_productoMasVendido.UseVisualStyleBackColor = true;
-            this.btn_productoMasVendido.Visible = false;
-            this.btn_productoMasVendido.Click += new System.EventHandler(this.btn_productoMasVendido_Click);
-            // 
-            // btn_productoMasVendidoPeriodo
-            // 
-            this.btn_productoMasVendidoPeriodo.Location = new System.Drawing.Point(60, 155);
-            this.btn_productoMasVendidoPeriodo.Name = "btn_productoMasVendidoPeriodo";
-            this.btn_productoMasVendidoPeriodo.Size = new System.Drawing.Size(262, 70);
-            this.btn_productoMasVendidoPeriodo.TabIndex = 76;
-            this.btn_productoMasVendidoPeriodo.Text = "Productos mas vendidos en un periodo";
-            this.btn_productoMasVendidoPeriodo.UseVisualStyleBackColor = true;
-            this.btn_productoMasVendidoPeriodo.Visible = false;
-            this.btn_productoMasVendidoPeriodo.Click += new System.EventHandler(this.btn_productoMasVendidoPeriodo_Click);
-            // 
             // lbl_fechaHasta
             // 
             this.lbl_fechaHasta.AutoSize = true;
-            this.lbl_fechaHasta.Location = new System.Drawing.Point(94, 287);
+            this.lbl_fechaHasta.Location = new System.Drawing.Point(90, 422);
             this.lbl_fechaHasta.Name = "lbl_fechaHasta";
             this.lbl_fechaHasta.Size = new System.Drawing.Size(69, 13);
             this.lbl_fechaHasta.TabIndex = 75;
@@ -198,7 +179,7 @@
             // lbl_fechaDesde
             // 
             this.lbl_fechaDesde.AutoSize = true;
-            this.lbl_fechaDesde.Location = new System.Drawing.Point(92, 245);
+            this.lbl_fechaDesde.Location = new System.Drawing.Point(88, 380);
             this.lbl_fechaDesde.Name = "lbl_fechaDesde";
             this.lbl_fechaDesde.Size = new System.Drawing.Size(72, 13);
             this.lbl_fechaDesde.TabIndex = 74;
@@ -215,6 +196,40 @@
             this.btn_cerrarGrupo.Text = "Cerrar";
             this.btn_cerrarGrupo.UseVisualStyleBackColor = true;
             this.btn_cerrarGrupo.Click += new System.EventHandler(this.btn_cerrarGrupo_Click);
+            // 
+            // btn_productoMasVendido
+            // 
+            this.btn_productoMasVendido.Location = new System.Drawing.Point(56, 36);
+            this.btn_productoMasVendido.Name = "btn_productoMasVendido";
+            this.btn_productoMasVendido.Size = new System.Drawing.Size(262, 70);
+            this.btn_productoMasVendido.TabIndex = 77;
+            this.btn_productoMasVendido.Text = "Productos mas vendidos";
+            this.btn_productoMasVendido.UseVisualStyleBackColor = true;
+            this.btn_productoMasVendido.Visible = false;
+            this.btn_productoMasVendido.Click += new System.EventHandler(this.btn_productoMasVendido_Click);
+            // 
+            // btn_EstadisticaCantPedidosPend
+            // 
+            this.btn_EstadisticaCantPedidosPend.Location = new System.Drawing.Point(561, 82);
+            this.btn_EstadisticaCantPedidosPend.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_EstadisticaCantPedidosPend.Name = "btn_EstadisticaCantPedidosPend";
+            this.btn_EstadisticaCantPedidosPend.Size = new System.Drawing.Size(262, 70);
+            this.btn_EstadisticaCantPedidosPend.TabIndex = 80;
+            this.btn_EstadisticaCantPedidosPend.Text = "Cantidad de Pedidos Pendientes en un periodo";
+            this.btn_EstadisticaCantPedidosPend.UseVisualStyleBackColor = true;
+            this.btn_EstadisticaCantPedidosPend.Visible = false;
+            this.btn_EstadisticaCantPedidosPend.Click += new System.EventHandler(this.btn_EstadisticaCantPedidosPend_Click);
+            // 
+            // btn_productoMasVendidoPeriodo
+            // 
+            this.btn_productoMasVendidoPeriodo.Location = new System.Drawing.Point(561, 157);
+            this.btn_productoMasVendidoPeriodo.Name = "btn_productoMasVendidoPeriodo";
+            this.btn_productoMasVendidoPeriodo.Size = new System.Drawing.Size(262, 70);
+            this.btn_productoMasVendidoPeriodo.TabIndex = 76;
+            this.btn_productoMasVendidoPeriodo.Text = "Productos mas vendidos en un periodo";
+            this.btn_productoMasVendidoPeriodo.UseVisualStyleBackColor = true;
+            this.btn_productoMasVendidoPeriodo.Visible = false;
+            this.btn_productoMasVendidoPeriodo.Click += new System.EventHandler(this.btn_productoMasVendidoPeriodo_Click);
             // 
             // btn_estVendedores
             // 
@@ -260,11 +275,35 @@
             this.btn_estPedidos.UseVisualStyleBackColor = true;
             this.btn_estPedidos.Click += new System.EventHandler(this.btn_estPedidos_Click);
             // 
+            // btn_franquiciaMenosPedidosHistorico
+            // 
+            this.btn_franquiciaMenosPedidosHistorico.Location = new System.Drawing.Point(56, 36);
+            this.btn_franquiciaMenosPedidosHistorico.Name = "btn_franquiciaMenosPedidosHistorico";
+            this.btn_franquiciaMenosPedidosHistorico.Size = new System.Drawing.Size(262, 70);
+            this.btn_franquiciaMenosPedidosHistorico.TabIndex = 81;
+            this.btn_franquiciaMenosPedidosHistorico.Text = "Franquicias con menos pedidos entregados";
+            this.btn_franquiciaMenosPedidosHistorico.UseVisualStyleBackColor = true;
+            this.btn_franquiciaMenosPedidosHistorico.Visible = false;
+            this.btn_franquiciaMenosPedidosHistorico.Click += new System.EventHandler(this.btn_franquiciaMenosPedidosHistorico_Click);
+            // 
+            // btn_franquiciaMenosPedidosEnPeriodo
+            // 
+            this.btn_franquiciaMenosPedidosEnPeriodo.Location = new System.Drawing.Point(56, 188);
+            this.btn_franquiciaMenosPedidosEnPeriodo.Name = "btn_franquiciaMenosPedidosEnPeriodo";
+            this.btn_franquiciaMenosPedidosEnPeriodo.Size = new System.Drawing.Size(262, 70);
+            this.btn_franquiciaMenosPedidosEnPeriodo.TabIndex = 82;
+            this.btn_franquiciaMenosPedidosEnPeriodo.Text = "Franquicias con menos pedidos entregados en un periodo";
+            this.btn_franquiciaMenosPedidosEnPeriodo.UseVisualStyleBackColor = true;
+            this.btn_franquiciaMenosPedidosEnPeriodo.Visible = false;
+            this.btn_franquiciaMenosPedidosEnPeriodo.Click += new System.EventHandler(this.btn_franquiciaMenosPedidosEnPeriodo_Click);
+            // 
             // uc_Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_estPedidos);
+            this.Controls.Add(this.btn_productoMasVendidoPeriodo);
+            this.Controls.Add(this.btn_EstadisticaCantPedidosPend);
             this.Controls.Add(this.btn_estProductos);
             this.Controls.Add(this.btn_estFranquicias);
             this.Controls.Add(this.btn_estVendedores);
@@ -287,7 +326,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart grafico;
         private System.Windows.Forms.Button btn_EstadisticaVendedorPedidos;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_EstadisticaFranquiciaPedidos;
+        private System.Windows.Forms.Button btn_franquiciaMasPedidosHistorico;
         private System.Windows.Forms.Label lbl_mensaje;
         private System.Windows.Forms.GroupBox grp_estadisticas;
         private System.Windows.Forms.Button btn_estVendedores;
@@ -302,5 +341,8 @@
         private System.Windows.Forms.DateTimePicker dtp_fechaHasta;
         private System.Windows.Forms.DateTimePicker dtp_fechaDesde;
         private System.Windows.Forms.Button btn_EstadisticaCantPedidosPend;
+        private System.Windows.Forms.Button btn_franquiciaMasPedidosEnPeriodo;
+        private System.Windows.Forms.Button btn_franquiciaMenosPedidosHistorico;
+        private System.Windows.Forms.Button btn_franquiciaMenosPedidosEnPeriodo;
     }
 }
