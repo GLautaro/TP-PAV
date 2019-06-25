@@ -189,19 +189,6 @@ namespace TP_PAV.clases
                                 GROUP BY PR.nombre_producto";
             return db.ejecutarConsulta(query);
         }
-        
-        public DataTable productosMasVendidosHistorico()
-        {
-            string consulta = @"SELECT TOP 5 p.nombre_producto, SUM(pxp.cantidad) as 'Cantidad Vendida'
-                                FROM producto p
-                                JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
-								JOIN pedido pe ON pe.id_pedido = pxp.id_pedido
-                                WHERE pe.id_estado = 2
-                                GROUP BY p.nombre_producto
-                                ORDER BY SUM(pxp.cantidad) DESC";
-
-            return db.ejecutarConsulta(consulta);
-        }
 
         public DataTable ProductosMasVendidosXTiempo(string fecha_desde, string fecha_hasta)
         {
@@ -212,6 +199,22 @@ namespace TP_PAV.clases
                                 WHERE pe.id_estado = 2
                                 AND pe.fecha_entrega BETWEEN '"+ fecha_desde + "' AND '"+ fecha_hasta +
                                 @"' GROUP BY p.nombre_producto
+                                ORDER BY SUM(pxp.cantidad) DESC";
+
+            return db.ejecutarConsulta(consulta);
+        }
+
+        public DataTable ProductosMasCompradoXFranquiciaXTiempo(DateTime fecha_desde, DateTime fecha_hasta, string id_franquicia)
+        {
+            string consulta = @"SELECT TOP 5 p.nombre_producto, SUM(pxp.cantidad) as 'Cantidad Vendida'
+                                FROM producto p
+                                JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
+                                JOIN pedido pe ON pe.id_pedido = pxp.id_pedido
+                                JOIN franquicia f ON f.id_franquicia = pe.id_franquicia
+                                WHERE pe.id_estado = 2
+                                AND pe.fecha_entrega BETWEEN '" + fecha_desde + "' AND '" + fecha_hasta +
+                                @"' AND pe.id_franquicia = '" + id_franquicia + @"'
+                                GROUP BY p.nombre_producto
                                 ORDER BY SUM(pxp.cantidad) DESC";
 
             return db.ejecutarConsulta(consulta);
