@@ -39,7 +39,7 @@ namespace TP_PAV.formularios
             grafico.Series.Clear();
         }
 
-        private void llenarGrafico(DataTable tablaDatos, string titulo, string tituloLeyenda)
+        private void llenarGrafico(DataTable tablaDatos, string titulo, string tituloLeyenda, string separador)
         {
             if (tablaDatos.Rows.Count < 1)
             {
@@ -65,12 +65,10 @@ namespace TP_PAV.formularios
             {
                 Series serie;
                 serie = grafico.Series.Add(series[i].ToString());
-                serie.Label = "$ " + puntos[i].ToString();
+                serie.Label = separador + puntos[i].ToString();
                 serie.Points.Add(puntos[i]);
             }
-            
-            grafico.ChartAreas[0].AxisY.Minimum = 0;
-            grafico.ChartAreas[0].AxisY.Maximum = (puntos.Max() - puntos.Max() % 1000) + 1000;
+            grafico.ResetAutoValues();
       
         }
         private void visibilidadFechas(bool estado){
@@ -175,17 +173,17 @@ namespace TP_PAV.formularios
 
         private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
         {
-            llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ","Nombre y apellido del vendedor");
+            llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ", "Nombre y apellido del vendedor", " ");
         }
 
         private void btn_productoMasVendido_Click(object sender, EventArgs e)
         {
-            llenarGrafico(producto.productosMasVendidosHistorico(), "PRODUCTOS MAS VENDIDOS", "Nombre del producto");
+            llenarGrafico(producto.productosMasVendidosHistorico(), "PRODUCTOS MAS VENDIDOS", "Nombre del producto", " ");
         }
 
         private void btn_EstadisticaCantPedidosPend_Click(object sender, EventArgs e)
         {
-            llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD DE PEDIDOS PENDIENTES", "Mes y cantidad de pedidos");
+            llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD DE PEDIDOS PENDIENTES", "Mes y cantidad de pedidos", " ");
         }
 
         private void btn_productoMasVendidoPeriodo_Click(object sender, EventArgs e)
@@ -194,25 +192,28 @@ namespace TP_PAV.formularios
             {
                 llenarGrafico(producto.ProductosMasVendidosXTiempo(dtp_fechaDesde.Value.Date.ToShortDateString(), 
                     dtp_fechaHasta.Value.Date.ToShortDateString()),
-                    "PRODUCTOS MAS VENDIDOS EN UN PERIODO", "Nombre del producto");
+                    "PRODUCTOS MAS VENDIDOS EN UN PERIODO", "Nombre del producto"," ");
             }
         }
 
+        
+        
+        
         private void btn_franquiciaMasPedidosHistorico_Click(object sender, EventArgs e)
         {
-            llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante");
+            llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante","$ ");
         }
 
         private void btn_franquiciaMenosPedidosHistorico_Click(object sender, EventArgs e)
         {
-            llenarGrafico(franquicia.PeoresFranquicias(), "PEORES FRANQUICIAS: ", "Nombre y apellido del representante");
+            llenarGrafico(franquicia.PeoresFranquicias(), "PEORES FRANQUICIAS: ", "Nombre y apellido del representante","$ ");
         }
 
         private void btn_franquiciaMenosPedidosEnPeriodo_Click(object sender, EventArgs e)
         {
             if (validarFechas())
             {
-                llenarGrafico(franquicia.PeoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "PEORES FRANQUICIAS EN PERIODO: ", "Nombre y apellido del representante");
+                llenarGrafico(franquicia.PeoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "PEORES FRANQUICIAS EN PERIODO: ", "Nombre y apellido del representante","$ ");
             }
         }
 
@@ -220,7 +221,7 @@ namespace TP_PAV.formularios
         {
             if (validarFechas())
             {
-                llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante");
+                llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante","$ ");
             }
         }
 

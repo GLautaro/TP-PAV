@@ -182,7 +182,7 @@ namespace TP_PAV.clases
                                 FROM pedido P
                                 JOIN pedido_x_producto PP ON PP.id_pedido=P.id_pedido
                                 JOIN producto PR ON PR.id_producto=PP.id_producto
-                                WHERE P.id_estado=(SELECT E.id_estado FROM estado_pedido E WHERE E.nombre_estado='Solicitado') 
+                                WHERE P.id_estado=1 
 		                            AND YEAR(P.fecha_solicitud)=YEAR(GETDATE()) 
 		                            AND MONTH(P.fecha_solicitud)=MONTH(GETDATE())
 		                            AND DAY(P.fecha_solicitud)=DAY(GETDATE())
