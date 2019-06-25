@@ -37,17 +37,17 @@
             this.btn_EstadisticaFranquiciaPedidos = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
             this.grp_estadisticas = new System.Windows.Forms.GroupBox();
+            this.dtp_fechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.btn_productoMasVendido = new System.Windows.Forms.Button();
+            this.btn_productoMasVendidoPeriodo = new System.Windows.Forms.Button();
+            this.lbl_fechaHasta = new System.Windows.Forms.Label();
+            this.lbl_fechaDesde = new System.Windows.Forms.Label();
+            this.btn_cerrarGrupo = new System.Windows.Forms.Button();
             this.btn_estVendedores = new System.Windows.Forms.Button();
             this.btn_estFranquicias = new System.Windows.Forms.Button();
             this.btn_estProductos = new System.Windows.Forms.Button();
             this.btn_estPedidos = new System.Windows.Forms.Button();
-            this.btn_cerrarGrupo = new System.Windows.Forms.Button();
-            this.lbl_fechaDesde = new System.Windows.Forms.Label();
-            this.lbl_fechaHasta = new System.Windows.Forms.Label();
-            this.btn_productoMasVendidoPeriodo = new System.Windows.Forms.Button();
-            this.btn_productoMasVendido = new System.Windows.Forms.Button();
-            this.dtp_fechaDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtp_fechaHasta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.grafico)).BeginInit();
             this.grp_estadisticas.SuspendLayout();
             this.SuspendLayout();
@@ -129,6 +129,78 @@
             this.grp_estadisticas.TabStop = false;
             this.grp_estadisticas.Visible = false;
             // 
+            // dtp_fechaHasta
+            // 
+            this.dtp_fechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fechaHasta.Location = new System.Drawing.Point(178, 284);
+            this.dtp_fechaHasta.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
+            this.dtp_fechaHasta.Name = "dtp_fechaHasta";
+            this.dtp_fechaHasta.Size = new System.Drawing.Size(101, 20);
+            this.dtp_fechaHasta.TabIndex = 79;
+            this.dtp_fechaHasta.Visible = false;
+            // 
+            // dtp_fechaDesde
+            // 
+            this.dtp_fechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_fechaDesde.Location = new System.Drawing.Point(178, 242);
+            this.dtp_fechaDesde.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
+            this.dtp_fechaDesde.Name = "dtp_fechaDesde";
+            this.dtp_fechaDesde.Size = new System.Drawing.Size(101, 20);
+            this.dtp_fechaDesde.TabIndex = 78;
+            this.dtp_fechaDesde.Visible = false;
+            // 
+            // btn_productoMasVendido
+            // 
+            this.btn_productoMasVendido.Location = new System.Drawing.Point(60, 48);
+            this.btn_productoMasVendido.Name = "btn_productoMasVendido";
+            this.btn_productoMasVendido.Size = new System.Drawing.Size(262, 70);
+            this.btn_productoMasVendido.TabIndex = 77;
+            this.btn_productoMasVendido.Text = "Productos mas vendidos";
+            this.btn_productoMasVendido.UseVisualStyleBackColor = true;
+            this.btn_productoMasVendido.Visible = false;
+            this.btn_productoMasVendido.Click += new System.EventHandler(this.btn_productoMasVendido_Click);
+            // 
+            // btn_productoMasVendidoPeriodo
+            // 
+            this.btn_productoMasVendidoPeriodo.Location = new System.Drawing.Point(60, 155);
+            this.btn_productoMasVendidoPeriodo.Name = "btn_productoMasVendidoPeriodo";
+            this.btn_productoMasVendidoPeriodo.Size = new System.Drawing.Size(262, 70);
+            this.btn_productoMasVendidoPeriodo.TabIndex = 76;
+            this.btn_productoMasVendidoPeriodo.Text = "Productos mas vendidos en un periodo";
+            this.btn_productoMasVendidoPeriodo.UseVisualStyleBackColor = true;
+            this.btn_productoMasVendidoPeriodo.Visible = false;
+            // 
+            // lbl_fechaHasta
+            // 
+            this.lbl_fechaHasta.AutoSize = true;
+            this.lbl_fechaHasta.Location = new System.Drawing.Point(94, 287);
+            this.lbl_fechaHasta.Name = "lbl_fechaHasta";
+            this.lbl_fechaHasta.Size = new System.Drawing.Size(69, 13);
+            this.lbl_fechaHasta.TabIndex = 75;
+            this.lbl_fechaHasta.Text = "Fecha hasta:";
+            this.lbl_fechaHasta.Visible = false;
+            // 
+            // lbl_fechaDesde
+            // 
+            this.lbl_fechaDesde.AutoSize = true;
+            this.lbl_fechaDesde.Location = new System.Drawing.Point(92, 245);
+            this.lbl_fechaDesde.Name = "lbl_fechaDesde";
+            this.lbl_fechaDesde.Size = new System.Drawing.Size(72, 13);
+            this.lbl_fechaDesde.TabIndex = 74;
+            this.lbl_fechaDesde.Text = "Fecha desde:";
+            this.lbl_fechaDesde.Visible = false;
+            // 
+            // btn_cerrarGrupo
+            // 
+            this.btn_cerrarGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrarGrupo.Location = new System.Drawing.Point(267, 463);
+            this.btn_cerrarGrupo.Name = "btn_cerrarGrupo";
+            this.btn_cerrarGrupo.Size = new System.Drawing.Size(87, 39);
+            this.btn_cerrarGrupo.TabIndex = 70;
+            this.btn_cerrarGrupo.Text = "Cerrar";
+            this.btn_cerrarGrupo.UseVisualStyleBackColor = true;
+            this.btn_cerrarGrupo.Click += new System.EventHandler(this.btn_cerrarGrupo_Click);
+            // 
             // btn_estVendedores
             // 
             this.btn_estVendedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,77 +244,6 @@
             this.btn_estPedidos.Text = "Estadisticas de Pedidos";
             this.btn_estPedidos.UseVisualStyleBackColor = true;
             this.btn_estPedidos.Click += new System.EventHandler(this.btn_estPedidos_Click);
-            // 
-            // btn_cerrarGrupo
-            // 
-            this.btn_cerrarGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cerrarGrupo.Location = new System.Drawing.Point(267, 463);
-            this.btn_cerrarGrupo.Name = "btn_cerrarGrupo";
-            this.btn_cerrarGrupo.Size = new System.Drawing.Size(87, 39);
-            this.btn_cerrarGrupo.TabIndex = 70;
-            this.btn_cerrarGrupo.Text = "Cerrar";
-            this.btn_cerrarGrupo.UseVisualStyleBackColor = true;
-            this.btn_cerrarGrupo.Click += new System.EventHandler(this.btn_cerrarGrupo_Click);
-            // 
-            // lbl_fechaDesde
-            // 
-            this.lbl_fechaDesde.AutoSize = true;
-            this.lbl_fechaDesde.Location = new System.Drawing.Point(92, 245);
-            this.lbl_fechaDesde.Name = "lbl_fechaDesde";
-            this.lbl_fechaDesde.Size = new System.Drawing.Size(72, 13);
-            this.lbl_fechaDesde.TabIndex = 74;
-            this.lbl_fechaDesde.Text = "Fecha desde:";
-            this.lbl_fechaDesde.Visible = false;
-            // 
-            // lbl_fechaHasta
-            // 
-            this.lbl_fechaHasta.AutoSize = true;
-            this.lbl_fechaHasta.Location = new System.Drawing.Point(94, 287);
-            this.lbl_fechaHasta.Name = "lbl_fechaHasta";
-            this.lbl_fechaHasta.Size = new System.Drawing.Size(69, 13);
-            this.lbl_fechaHasta.TabIndex = 75;
-            this.lbl_fechaHasta.Text = "Fecha hasta:";
-            this.lbl_fechaHasta.Visible = false;
-            // 
-            // btn_productoMasVendidoPeriodo
-            // 
-            this.btn_productoMasVendidoPeriodo.Location = new System.Drawing.Point(60, 155);
-            this.btn_productoMasVendidoPeriodo.Name = "btn_productoMasVendidoPeriodo";
-            this.btn_productoMasVendidoPeriodo.Size = new System.Drawing.Size(262, 70);
-            this.btn_productoMasVendidoPeriodo.TabIndex = 76;
-            this.btn_productoMasVendidoPeriodo.Text = "Productos mas vendidos en un periodo";
-            this.btn_productoMasVendidoPeriodo.UseVisualStyleBackColor = true;
-            this.btn_productoMasVendidoPeriodo.Visible = false;
-            // 
-            // btn_productoMasVendido
-            // 
-            this.btn_productoMasVendido.Location = new System.Drawing.Point(60, 48);
-            this.btn_productoMasVendido.Name = "btn_productoMasVendido";
-            this.btn_productoMasVendido.Size = new System.Drawing.Size(262, 70);
-            this.btn_productoMasVendido.TabIndex = 77;
-            this.btn_productoMasVendido.Text = "Productos mas vendidos";
-            this.btn_productoMasVendido.UseVisualStyleBackColor = true;
-            this.btn_productoMasVendido.Visible = false;
-            // 
-            // dtp_fechaDesde
-            // 
-            this.dtp_fechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fechaDesde.Location = new System.Drawing.Point(178, 242);
-            this.dtp_fechaDesde.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
-            this.dtp_fechaDesde.Name = "dtp_fechaDesde";
-            this.dtp_fechaDesde.Size = new System.Drawing.Size(101, 20);
-            this.dtp_fechaDesde.TabIndex = 78;
-            this.dtp_fechaDesde.Visible = false;
-            // 
-            // dtp_fechaHasta
-            // 
-            this.dtp_fechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_fechaHasta.Location = new System.Drawing.Point(178, 284);
-            this.dtp_fechaHasta.MinDate = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
-            this.dtp_fechaHasta.Name = "dtp_fechaHasta";
-            this.dtp_fechaHasta.Size = new System.Drawing.Size(101, 20);
-            this.dtp_fechaHasta.TabIndex = 79;
-            this.dtp_fechaHasta.Visible = false;
             // 
             // uc_Estadisticas
             // 
