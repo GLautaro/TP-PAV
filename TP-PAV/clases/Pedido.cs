@@ -284,5 +284,15 @@ namespace TP_PAV.clases
             return priv_acceso_db.ejecutarConsulta(consulta);
         }
 
+
+
+        public DataTable CantidadPedidoXRangoFecha(DateTime fDesde, DateTime fHasta, int id_estado)
+        {
+            string consulta = String.Format(@"SELECT DATENAME(mm, p.fecha_solicitud) as 'Mes', COUNT(*) as 'Cantidad' 
+                                FROM pedido p 
+                                WHERE p.fecha_solicitud between '{0}' AND '{1}' AND p.id_estado={2} 
+                                GROUP BY DATENAME(mm, p.fecha_solicitud)", fDesde, fHasta, id_estado);
+            return priv_acceso_db.ejecutarConsulta(consulta);
+        }
     }
 }
