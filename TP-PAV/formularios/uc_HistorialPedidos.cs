@@ -38,6 +38,14 @@ namespace TP_PAV.formularios
             dgv_detallePedido.DataSource = "";
         }
 
+        private void dgv_pedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Pedido pedido_seleccionado = new Pedido();
+            pedido_seleccionado.pub_id_pedido = int.Parse(dgv_pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
+            DetallePedido detalle_pedido_seleccionado = new DetallePedido();
+            detalle_pedido_seleccionado.pub_pedido = pedido_seleccionado;
+            dgv_detallePedido.DataSource = detalle_pedido_seleccionado.recuperarDetalleDePedido();
+        }
         
         private void btn_busquedaAvanzadaPedido_Click(object sender, EventArgs e)
         {

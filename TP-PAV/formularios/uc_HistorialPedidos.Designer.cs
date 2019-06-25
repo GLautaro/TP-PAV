@@ -48,6 +48,13 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_pedidos = new System.Windows.Forms.DataGridView();
+            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbx_franquicia = new System.Windows.Forms.CheckBox();
@@ -69,13 +76,6 @@
             this.txt_hasta_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_franquicias = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             this.grp_busquedaAvanzadaPedido.SuspendLayout();
@@ -271,6 +271,61 @@
             this.dgv_pedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_pedidos.Size = new System.Drawing.Size(561, 221);
             this.dgv_pedidos.TabIndex = 86;
+            this.dgv_pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_pedidos_CellClick);
+            // 
+            // id_pedido
+            // 
+            this.id_pedido.DataPropertyName = "id_pedido";
+            this.id_pedido.HeaderText = "ID Pedido";
+            this.id_pedido.Name = "id_pedido";
+            this.id_pedido.ReadOnly = true;
+            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "id_franquicia";
+            this.Column3.HeaderText = "ID Franquicia";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "id_vendedor";
+            this.Column4.HeaderText = "Legajo Vendedor";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "fecha_solicitud";
+            this.Column2.HeaderText = "Fecha Solicitud";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // monto_final
+            // 
+            this.monto_final.DataPropertyName = "monto_final";
+            this.monto_final.HeaderText = "Monto Total";
+            this.monto_final.Name = "monto_final";
+            this.monto_final.ReadOnly = true;
+            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // fecha_entrega
+            // 
+            this.fecha_entrega.DataPropertyName = "fecha_entrega";
+            this.fecha_entrega.HeaderText = "Fecha entrega";
+            this.fecha_entrega.Name = "fecha_entrega";
+            this.fecha_entrega.ReadOnly = true;
+            // 
+            // nombre_estado
+            // 
+            this.nombre_estado.DataPropertyName = "nombre_estado";
+            this.nombre_estado.HeaderText = "Estado";
+            this.nombre_estado.Name = "nombre_estado";
+            this.nombre_estado.ReadOnly = true;
             // 
             // label3
             // 
@@ -527,60 +582,6 @@
             this.cmb_franquicias.Name = "cmb_franquicias";
             this.cmb_franquicias.Size = new System.Drawing.Size(167, 21);
             this.cmb_franquicias.TabIndex = 3;
-            // 
-            // id_pedido
-            // 
-            this.id_pedido.DataPropertyName = "id_pedido";
-            this.id_pedido.HeaderText = "ID Pedido";
-            this.id_pedido.Name = "id_pedido";
-            this.id_pedido.ReadOnly = true;
-            this.id_pedido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "id_franquicia";
-            this.Column3.HeaderText = "ID Franquicia";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "id_vendedor";
-            this.Column4.HeaderText = "Legajo Vendedor";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "fecha_solicitud";
-            this.Column2.HeaderText = "Fecha Solicitud";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // monto_final
-            // 
-            this.monto_final.DataPropertyName = "monto_final";
-            this.monto_final.HeaderText = "Monto Total";
-            this.monto_final.Name = "monto_final";
-            this.monto_final.ReadOnly = true;
-            this.monto_final.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // fecha_entrega
-            // 
-            this.fecha_entrega.DataPropertyName = "fecha_entrega";
-            this.fecha_entrega.HeaderText = "Fecha entrega";
-            this.fecha_entrega.Name = "fecha_entrega";
-            this.fecha_entrega.ReadOnly = true;
-            // 
-            // nombre_estado
-            // 
-            this.nombre_estado.DataPropertyName = "nombre_estado";
-            this.nombre_estado.HeaderText = "Estado";
-            this.nombre_estado.Name = "nombre_estado";
-            this.nombre_estado.ReadOnly = true;
             // 
             // uc_HistorialPedidos
             // 
