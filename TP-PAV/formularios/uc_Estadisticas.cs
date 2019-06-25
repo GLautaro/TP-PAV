@@ -103,7 +103,6 @@ namespace TP_PAV.formularios
             btn_estPedidos.Visible = false;
             btn_estFranquicias.Visible = false;
             //Activar la visibilidad de sus botones que muestran la estadistica 
-            btn_productoMasVendido.Visible = true;
         }
 
         private void btn_estPedidos_Click(object sender, EventArgs e)
@@ -127,7 +126,6 @@ namespace TP_PAV.formularios
             //abrimos otra opcion sigue quedando el boton de la opcion anterior
             btn_EstadisticaFranquiciaPedidos.Visible = false;
             btn_EstadisticaVendedorPedidos.Visible = false;
-            btn_productoMasVendido.Visible = false;
             grp_estadisticas.Visible = false;
             grp_estadisticas.Text = "";
         }
@@ -141,11 +139,6 @@ namespace TP_PAV.formularios
         private void btn_EstadisticaFranquiciaPedidos_Click(object sender, EventArgs e)
         {
             llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante", ChartColorPalette.SeaGreen);
-        }
-
-        private void btn_productoMasVendido_Click(object sender, EventArgs e)
-        {
-            llenarGrafico(producto.productosMasVendidosHistorico(), "PRODUCTOS MAS VENDIDOS HISTORICAMENTE", "Nombre de Producto", ChartColorPalette.SeaGreen);
         }
 
     }

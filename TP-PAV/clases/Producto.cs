@@ -197,8 +197,7 @@ namespace TP_PAV.clases
             string consulta = @"SELECT TOP 5 p.nombre_producto, SUM(pxp.cantidad) as 'Cantidad Vendida'
                                 FROM producto p
                                 JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
-								JOIN pedido pe ON pe.id_pedido = pxp.id_pedido
-                                WHERE pe.id_estado = 2
+                                WHERE p.id_estado = 1
                                 GROUP BY p.nombre_producto
                                 ORDER BY SUM(pxp.cantidad) DESC";
 
@@ -211,7 +210,7 @@ namespace TP_PAV.clases
                                 FROM producto p
                                 JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
                                 JOIN pedido pe ON pe.id_pedido = pxp.id_pedido
-                                WHERE p.id_estado = 2
+                                WHERE p.id_estado = 1
                                 AND pe.fecha_entrega BETWEEN "+ fecha_desde + " AND "+ fecha_hasta +
                                 @" GROUP BY p.nombre_producto
                                 ORDER BY SUM(pxp.cantidad) DESC";
