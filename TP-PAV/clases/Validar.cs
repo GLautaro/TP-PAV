@@ -23,6 +23,7 @@ namespace TP_PAV.clases
                 {
                     if (((TextBoxPersonal)item)._validable == true)
                     {
+                      
                         if (item.Text == "")
                         {
                                      

@@ -77,7 +77,7 @@ namespace TP_PAV.clases
         public Validar.estado_validacion validarPedido(Control.ControlCollection controles)
         {
             Validar validar = new Validar();
-          
+                              
             return validar.validarUC(controles, priv_pedido_label_error);
 
         }
@@ -92,7 +92,7 @@ namespace TP_PAV.clases
                                                      id_vendedor, 
                                                      monto_final,
                                                      id_estado
-                                                     FROM pedido WHERE id_estado = 1");
+                                                     FROM pedido WHERE id_estado = 1 ORDER BY id_pedido DESC");
 
         }
 
@@ -103,8 +103,8 @@ namespace TP_PAV.clases
                                                      P.id_pedido,  
                                                      P.id_franquicia, 
                                                      P.id_vendedor, 
-                                                     P.fecha_solicitud,
-                                                     P.fecha_entrega,
+                                                    CONVERT(VARCHAR(10),P.fecha_solicitud,103) as 'fecha_solicitud',
+                                                    CONVERT(VARCHAR(10),P.fecha_entrega,103) as 'fecha_entrega',
                                                      P.monto_final,
                                                      E.nombre_estado
                                                      FROM pedido P

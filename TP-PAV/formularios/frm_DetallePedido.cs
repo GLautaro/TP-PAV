@@ -76,18 +76,25 @@ namespace TP_PAV.formularios
 
         private void btn_addProductoPedido_Click(object sender, EventArgs e)
         {
-            //dgv_detallePedido.Rows.Cast<DataGridViewRow>().Any(x => int.Parse(x.Cells["id_producto"].Value.ToString()) == int.Parse(cmb_Producto.SelectedValue.ToString()))
             priv_pedido.pub_Pedido_label_error = lbl_error;
             
             DetallePedido detalle_pedido = new DetallePedido();
             detalle_pedido.pub_pedido = priv_pedido;
             if (priv_pedido.validarPedido(this.Controls) == Validar.estado_validacion.correcto) {
+                if (int.Parse(txt_cantidad.Text) > 0)
+                {
                 if (detalle_pedido.addProductoPedido(int.Parse(txt_id_pedido.Text.ToString()), int.Parse(cmb_Producto.SelectedValue.ToString()), int.Parse(txt_cantidad.Text.ToString()), int.Parse(txt_precio_unitario.Text.ToString())))
-            {
+                {
                 dgv_detallePedido.DataSource = detalle_pedido.recuperarDetalleDePedido();
                 lbl_montoTotal.Text = priv_pedido.updateMontoFinalPedido(priv_id_pedido).Rows[0]["monto_final"].ToString();
-               clearForm();
-            }
+                clearForm();
+                 }
+                }
+                else
+                {
+                    mostrarMensaje("La cantidad debe ser mayor a 0", true);
+                }
+            
             }
 
 
@@ -194,6 +201,17 @@ namespace TP_PAV.formularios
                 int result = int.Parse(((DataRowView)cmb_Producto.SelectedItem).Row["precio_unitario"].ToString());
                 txt_precio_unitario.Text = result.ToString();
             }
+        }
+
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
+            {
+                
+                //borra el caracter no permitido
+                e.Handled = true;
+            }
+       
         }
 
     }

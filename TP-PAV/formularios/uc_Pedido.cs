@@ -38,7 +38,7 @@ namespace TP_PAV.formularios
             cmb_estadoPedido.DataSource = priv_pedido.estadoPedido();
             cmb_estadoPedido.DisplayMember = "nombre_estado";
             cmb_estadoPedido.ValueMember = "id_estado";
-
+           // dt_fechaSolicitada.MinDate = DateTime.Now;
             if (dgv_pedidos.CurrentRow != null)
             {
                 cmb_estadoPedido.SelectedValue = int.Parse(dgv_pedidos.CurrentRow.Cells["id_estado"].Value.ToString());
