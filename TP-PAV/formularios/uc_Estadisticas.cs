@@ -100,10 +100,10 @@ namespace TP_PAV.formularios
             btn_estProductos.Visible = false;
             //Activar la visibilidad de sus botones que muestran la estadistica 
             visibilidadFechas(true);
-            btn_franquiciaMasPedidosHistorico.Visible = true;
+            
             btn_franquiciaMasPedidosEnPeriodo.Visible = true;
             btn_franquiciaMenosPedidosEnPeriodo.Visible = true;
-            btn_franquiciaMenosPedidosHistorico.Visible = true;
+           
         }
 
         private void btn_estProductos_Click(object sender, EventArgs e)
@@ -141,10 +141,10 @@ namespace TP_PAV.formularios
             btn_estProductos.Visible = true;
             //Hay que sacarle la visibilidad a todos los botones del grupo si no cuando 
             //abrimos otra opcion sigue quedando el boton de la opcion anterior
-            btn_franquiciaMenosPedidosHistorico.Visible = false;
             btn_franquiciaMenosPedidosEnPeriodo.Visible = false;
             btn_franquiciaMasPedidosEnPeriodo.Visible = false;
-            btn_franquiciaMasPedidosHistorico.Visible = false;
+            
+
             btn_EstadisticaVendedorPedidos.Visible = false;
             btn_productoMasVendidoPeriodo.Visible = false;
             btn_productoPorFranquicia.Visible = false;
@@ -211,15 +211,6 @@ namespace TP_PAV.formularios
                     "PRODUCTOS MAS VENDIDOS EN UN PERIODO", "Nombre del producto"," ");
             }
         }           
-        private void btn_franquiciaMasPedidosHistorico_Click(object sender, EventArgs e)
-        {
-            llenarGrafico(franquicia.MejoresFranquicias(), "MEJORES FRANQUICIAS: ", "Nombre y apellido del representante","$ ");
-        }
-
-        private void btn_franquiciaMenosPedidosHistorico_Click(object sender, EventArgs e)
-        {
-            llenarGrafico(franquicia.PeoresFranquicias(), "PEORES FRANQUICIAS: ", "Nombre y apellido del representante","$ ");
-        }
 
         private void btn_franquiciaMenosPedidosEnPeriodo_Click(object sender, EventArgs e)
         {
