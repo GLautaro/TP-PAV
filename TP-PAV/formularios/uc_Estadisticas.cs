@@ -112,6 +112,8 @@ namespace TP_PAV.formularios
             btn_estFranquicias.Visible = false;
             //Activar la visibilidad de sus botones que muestran la estadistica 
             btn_productoMasVendido.Visible = true;
+            btn_productoMasVendidoPeriodo.Visible = true;
+            visibilidadFechas(true);
         }
 
         private void btn_estPedidos_Click(object sender, EventArgs e)
@@ -145,6 +147,24 @@ namespace TP_PAV.formularios
         }
 
 
+        private bool validarFechas()
+        {
+            
+            if (dtp_fechaHasta.Value.Date < dtp_fechaDesde.Value.Date)
+            {
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "No se puede seleccionar una Fecha Hasta menor a la Fecha Desde.";
+                return false;
+            }
+            if (dtp_fechaHasta.Value.Date > DateTime.Now.Date)
+            {
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "No se puede seleccionar una Fecha Hasta mayor a la fecha actual.";
+                return false;
+            }
+            return true;
+        }
+
         private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
         {
             llenarGrafico(vendedor.MejoresVendedores(), "MEJORES VENDEDORES: ","Nombre y apellido del vendedor", ChartColorPalette.SeaGreen);
@@ -163,6 +183,16 @@ namespace TP_PAV.formularios
         private void btn_EstadisticaCantPedidosPend_Click(object sender, EventArgs e)
         {
             llenarGrafico(pedido.CantidadPedidoXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value, 1), "CANTIDAD DE PEDIDOS PENDIENTES", "Mes y cantidad de pedidos", ChartColorPalette.SeaGreen);
+        }
+
+        private void btn_productoMasVendidoPeriodo_Click(object sender, EventArgs e)
+        {
+            if(validarFechas())
+            {
+                llenarGrafico(producto.ProductosMasVendidosXTiempo(dtp_fechaDesde.Value.Date.ToShortDateString(), 
+                    dtp_fechaHasta.Value.Date.ToShortDateString()),
+                    "PRODUCTOS MAS VENDIDOS EN UN PERIODO", "Nombre del producto", ChartColorPalette.SeaGreen);
+            }
         }
 
     }

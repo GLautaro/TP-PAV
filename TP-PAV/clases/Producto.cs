@@ -212,8 +212,8 @@ namespace TP_PAV.clases
                                 JOIN pedido_x_producto pxp ON pxp.id_producto = p.id_producto
                                 JOIN pedido pe ON pe.id_pedido = pxp.id_pedido
                                 WHERE pe.id_estado = 2
-                                AND pe.fecha_entrega BETWEEN "+ fecha_desde + " AND "+ fecha_hasta +
-                                @" GROUP BY p.nombre_producto
+                                AND pe.fecha_entrega BETWEEN '"+ fecha_desde + "' AND '"+ fecha_hasta +
+                                @"' GROUP BY p.nombre_producto
                                 ORDER BY SUM(pxp.cantidad) DESC";
 
             return db.ejecutarConsulta(consulta);
