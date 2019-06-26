@@ -76,7 +76,8 @@ namespace TP_PAV.formularios
 
         private void btn_registrarProducto_Click(object sender, EventArgs e)
         {
-            this.btn_modificarProducto.Visible = false;
+            this.btn_modificarProducto.Enabled = false;
+            this.btn_activarDesactivar.Enabled = false;
             this.btn_guardarModProducto.Visible = true;
             this.btn_cancelarModProducto.Visible = true;
             this.txt_IdProducto.Enabled = false;
@@ -88,7 +89,8 @@ namespace TP_PAV.formularios
         private void btn_modificarProducto_Click(object sender, EventArgs e)
         {
 
-            this.btn_registrarProducto.Visible = false;
+            this.btn_registrarProducto.Enabled = false;
+            this.btn_activarDesactivar.Enabled = false;
             this.btn_guardarModProducto.Visible = true;
             this.btn_cancelarModProducto.Visible = true;
             this.txt_IdProducto.Enabled = false;
@@ -138,8 +140,9 @@ namespace TP_PAV.formularios
             modificarCajasDeTxt(false);
             this.btn_guardarModProducto.Visible = false;
             this.btn_cancelarModProducto.Visible = false;
-            this.btn_modificarProducto.Visible = true;
-            this.btn_registrarProducto.Visible = true;
+            this.btn_modificarProducto.Enabled = true;
+            this.btn_registrarProducto.Enabled = true;
+            this.btn_activarDesactivar.Enabled = true;
 
         }
 
@@ -149,9 +152,9 @@ namespace TP_PAV.formularios
             modificarCajasDeTxt(false);
             this.btn_guardarModProducto.Visible = false;
             this.btn_cancelarModProducto.Visible = false;
-            this.btn_modificarProducto.Visible = true;
-            this.btn_registrarProducto.Visible = true;
-
+            this.btn_modificarProducto.Enabled = true;
+            this.btn_registrarProducto.Enabled = true;
+            this.btn_activarDesactivar.Enabled = true;
         }
 
 
