@@ -56,7 +56,6 @@
             this.fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbx_franquicia = new System.Windows.Forms.CheckBox();
             this.lbl_franquicia = new System.Windows.Forms.Label();
             this.cbx_monto = new System.Windows.Forms.CheckBox();
@@ -76,6 +75,7 @@
             this.txt_hasta_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.txt_desde_monto = new TP_PAV.clases.TextBoxPersonal(this.components);
             this.cmb_franquicias = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detallePedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_pedidos)).BeginInit();
             this.grp_busquedaAvanzadaPedido.SuspendLayout();
@@ -338,17 +338,6 @@
             this.label3.TabIndex = 85;
             this.label3.Text = "Detalle Pedido";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 31);
-            this.label1.TabIndex = 86;
-            this.label1.Text = "Historial de pedidos";
-            // 
             // cbx_franquicia
             // 
             this.cbx_franquicia.AutoSize = true;
@@ -583,11 +572,23 @@
             this.cmb_franquicias.Size = new System.Drawing.Size(167, 21);
             this.cmb_franquicias.TabIndex = 3;
             // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(3, 8);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(642, 31);
+            this.titulo_estadisticas.TabIndex = 94;
+            this.titulo_estadisticas.Text = "                 HISTORIAL DE PEDIDOS                   ";
+            // 
             // uc_HistorialPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.grp_busquedaAvanzadaPedido);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.btn_busquedaAvanzadaProducto);
@@ -623,7 +624,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridView dgv_pedidos;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbx_franquicia;
         private System.Windows.Forms.Label lbl_franquicia;
         private clases.ComboBoxPersonal cmb_franquicias;
@@ -650,6 +650,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_final;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_estado;
+        private System.Windows.Forms.Label titulo_estadisticas;
 
     }
 }

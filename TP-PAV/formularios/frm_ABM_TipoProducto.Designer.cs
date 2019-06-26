@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_agregarTipoProducto = new System.Windows.Forms.Button();
             this.btn_habilitarAgregarTipoProducto = new System.Windows.Forms.Button();
             this.btn_habilitarTipoProducto = new System.Windows.Forms.Button();
@@ -43,7 +43,6 @@
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.msj_error = new System.Windows.Forms.Label();
             this.msj_registro_ok = new System.Windows.Forms.Label();
             this.msj_modificado_ok = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.id_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_tipo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoProducto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,17 +170,6 @@
             this.panel1.Size = new System.Drawing.Size(584, 32);
             this.panel1.TabIndex = 41;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(125, 45);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(306, 25);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Administrar tipos de productos";
-            // 
             // msj_error
             // 
             this.msj_error.AutoSize = true;
@@ -241,45 +230,45 @@
             this.dgv_tipoProducto.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_tipoProducto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_tipoProducto.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_tipoProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tipoProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_tipo_producto,
             this.nombre_tipo_producto,
             this.descripcion});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_tipoProducto.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_tipoProducto.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_tipoProducto.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_tipoProducto.Location = new System.Drawing.Point(40, 200);
             this.dgv_tipoProducto.Name = "dgv_tipoProducto";
             this.dgv_tipoProducto.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_tipoProducto.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_tipoProducto.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_tipoProducto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_tipoProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tipoProducto.Size = new System.Drawing.Size(500, 230);
             this.dgv_tipoProducto.TabIndex = 52;
@@ -306,17 +295,29 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(33, 45);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(525, 25);
+            this.titulo_estadisticas.TabIndex = 78;
+            this.titulo_estadisticas.Text = "       ADMINISTRAR TIPOS DE PRODUCTOS       ";
+            // 
             // frm_ABM_TipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.dgv_tipoProducto);
             this.Controls.Add(this.msj_eliminado_ok);
             this.Controls.Add(this.msj_modificado_ok);
             this.Controls.Add(this.msj_registro_ok);
             this.Controls.Add(this.msj_error);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_agregarTipoProducto);
             this.Controls.Add(this.btn_habilitarAgregarTipoProducto);
@@ -351,7 +352,6 @@
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label msj_error;
         private System.Windows.Forms.Label msj_registro_ok;
         private System.Windows.Forms.Label msj_modificado_ok;
@@ -360,5 +360,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.Label titulo_estadisticas;
     }
 }

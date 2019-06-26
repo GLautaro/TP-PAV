@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_modificarFranquicia = new System.Windows.Forms.Button();
             this.btn_cancelarModificaciones = new System.Windows.Forms.Button();
             this.btn_cancelarGuardado = new System.Windows.Forms.Button();
@@ -104,20 +103,10 @@
             this.btn_busquedaAvan = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_franquicias)).BeginInit();
             this.grp_busquedaAvanzada.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Franquicias";
             // 
             // btn_modificarFranquicia
             // 
@@ -918,10 +907,23 @@
             this.label11.TabIndex = 83;
             this.label11.Text = "Buscar:";
             // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(9, 13);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(717, 31);
+            this.titulo_estadisticas.TabIndex = 84;
+            this.titulo_estadisticas.Text = "                  ADMINISTRAR FRANQUICIAS                   ";
+            // 
             // uc_ABM_Franquicia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.grp_busquedaAvanzada);
             this.Controls.Add(this.lbl_mensaje);
@@ -952,7 +954,6 @@
             this.Controls.Add(this.btn_guardarNuevaFranquicia);
             this.Controls.Add(this.cmb_tipoFranquicia);
             this.Controls.Add(this.cmb_barrio);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "uc_ABM_Franquicia";
@@ -968,7 +969,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_modificarFranquicia;
         private System.Windows.Forms.Button btn_cancelarModificaciones;
         private System.Windows.Forms.Button btn_cancelarGuardado;
@@ -1039,5 +1039,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_minimo_compra;
+        private System.Windows.Forms.Label titulo_estadisticas;
     }
 }

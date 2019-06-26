@@ -33,13 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_mensaje = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_fechaActual = new System.Windows.Forms.Label();
             this.dgv_productosPendientes = new System.Windows.Forms.DataGridView();
             this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productosPendientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,17 +51,6 @@
             this.lbl_mensaje.Name = "lbl_mensaje";
             this.lbl_mensaje.Size = new System.Drawing.Size(0, 16);
             this.lbl_mensaje.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 21);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(172, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Productos pendientes";
             // 
             // button1
             // 
@@ -77,7 +66,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 50);
+            this.label3.Location = new System.Drawing.Point(25, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 16);
             this.label3.TabIndex = 5;
@@ -157,16 +146,28 @@
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
             // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(23, 25);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(395, 25);
+            this.titulo_estadisticas.TabIndex = 78;
+            this.titulo_estadisticas.Text = "      PRODUCTOS PENDIENTES       ";
+            // 
             // frm_ProductosPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 554);
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.dgv_productosPendientes);
             this.Controls.Add(this.lbl_fechaActual);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_mensaje);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -183,12 +184,12 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_mensaje;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_fechaActual;
         private System.Windows.Forms.DataGridView dgv_productosPendientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.Label titulo_estadisticas;
     }
 }

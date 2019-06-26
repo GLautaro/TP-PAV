@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label33 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombre_barrio = new System.Windows.Forms.TextBox();
@@ -45,52 +44,45 @@
             this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_validation = new System.Windows.Forms.Label();
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_barrio)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(12, 56);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(252, 32);
-            this.label33.TabIndex = 44;
-            this.label33.Text = "Administrar Barrios";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.YellowGreen;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 39);
+            this.panel1.Size = new System.Drawing.Size(626, 32);
             this.panel1.TabIndex = 43;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 126);
+            this.label1.Location = new System.Drawing.Point(9, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 45;
             this.label1.Text = "Nombre del Barrio:";
             // 
             // txt_nombre_barrio
             // 
             this.txt_nombre_barrio.Enabled = false;
-            this.txt_nombre_barrio.Location = new System.Drawing.Point(145, 127);
+            this.txt_nombre_barrio.Location = new System.Drawing.Point(109, 103);
+            this.txt_nombre_barrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_nombre_barrio.Name = "txt_nombre_barrio";
-            this.txt_nombre_barrio.Size = new System.Drawing.Size(119, 22);
+            this.txt_nombre_barrio.Size = new System.Drawing.Size(90, 20);
             this.txt_nombre_barrio.TabIndex = 46;
             // 
             // btn_habilitarAgregarBarrio
             // 
-            this.btn_habilitarAgregarBarrio.Location = new System.Drawing.Point(12, 419);
+            this.btn_habilitarAgregarBarrio.Location = new System.Drawing.Point(9, 340);
+            this.btn_habilitarAgregarBarrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_habilitarAgregarBarrio.Name = "btn_habilitarAgregarBarrio";
-            this.btn_habilitarAgregarBarrio.Size = new System.Drawing.Size(197, 44);
+            this.btn_habilitarAgregarBarrio.Size = new System.Drawing.Size(148, 36);
             this.btn_habilitarAgregarBarrio.TabIndex = 48;
             this.btn_habilitarAgregarBarrio.Text = "Agregar Barrio Nuevo";
             this.btn_habilitarAgregarBarrio.UseVisualStyleBackColor = true;
@@ -98,9 +90,10 @@
             // 
             // btn_habilitarModificarBarrio
             // 
-            this.btn_habilitarModificarBarrio.Location = new System.Drawing.Point(327, 419);
+            this.btn_habilitarModificarBarrio.Location = new System.Drawing.Point(245, 340);
+            this.btn_habilitarModificarBarrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_habilitarModificarBarrio.Name = "btn_habilitarModificarBarrio";
-            this.btn_habilitarModificarBarrio.Size = new System.Drawing.Size(197, 44);
+            this.btn_habilitarModificarBarrio.Size = new System.Drawing.Size(148, 36);
             this.btn_habilitarModificarBarrio.TabIndex = 49;
             this.btn_habilitarModificarBarrio.Text = "Modificar Barrio";
             this.btn_habilitarModificarBarrio.UseVisualStyleBackColor = true;
@@ -108,9 +101,10 @@
             // 
             // btn_handleStateBarrio
             // 
-            this.btn_handleStateBarrio.Location = new System.Drawing.Point(626, 419);
+            this.btn_handleStateBarrio.Location = new System.Drawing.Point(470, 340);
+            this.btn_handleStateBarrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_handleStateBarrio.Name = "btn_handleStateBarrio";
-            this.btn_handleStateBarrio.Size = new System.Drawing.Size(197, 44);
+            this.btn_handleStateBarrio.Size = new System.Drawing.Size(148, 36);
             this.btn_handleStateBarrio.TabIndex = 50;
             this.btn_handleStateBarrio.Text = "Hablilitar";
             this.btn_handleStateBarrio.UseVisualStyleBackColor = true;
@@ -119,9 +113,10 @@
             // btn_modificarBarrio
             // 
             this.btn_modificarBarrio.Enabled = false;
-            this.btn_modificarBarrio.Location = new System.Drawing.Point(270, 128);
+            this.btn_modificarBarrio.Location = new System.Drawing.Point(202, 104);
+            this.btn_modificarBarrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_modificarBarrio.Name = "btn_modificarBarrio";
-            this.btn_modificarBarrio.Size = new System.Drawing.Size(75, 23);
+            this.btn_modificarBarrio.Size = new System.Drawing.Size(56, 19);
             this.btn_modificarBarrio.TabIndex = 51;
             this.btn_modificarBarrio.Text = "Guardar";
             this.btn_modificarBarrio.UseVisualStyleBackColor = true;
@@ -130,9 +125,10 @@
             // btn_cancelar
             // 
             this.btn_cancelar.Enabled = false;
-            this.btn_cancelar.Location = new System.Drawing.Point(351, 127);
+            this.btn_cancelar.Location = new System.Drawing.Point(263, 103);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.Size = new System.Drawing.Size(56, 19);
             this.btn_cancelar.TabIndex = 52;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -140,9 +136,10 @@
             // 
             // btn_agregarBarrio
             // 
-            this.btn_agregarBarrio.Location = new System.Drawing.Point(270, 126);
+            this.btn_agregarBarrio.Location = new System.Drawing.Point(202, 102);
+            this.btn_agregarBarrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_agregarBarrio.Name = "btn_agregarBarrio";
-            this.btn_agregarBarrio.Size = new System.Drawing.Size(75, 25);
+            this.btn_agregarBarrio.Size = new System.Drawing.Size(56, 20);
             this.btn_agregarBarrio.TabIndex = 53;
             this.btn_agregarBarrio.Text = "Añadir";
             this.btn_agregarBarrio.UseVisualStyleBackColor = true;
@@ -164,14 +161,14 @@
             this.dgv_barrio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_barrio.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgv_barrio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_barrio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_barrio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_barrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_barrio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_barrio,
@@ -179,27 +176,28 @@
             this.dgv_barrio.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgv_barrio.EnableHeadersVisualStyles = false;
             this.dgv_barrio.GridColor = System.Drawing.Color.Black;
-            this.dgv_barrio.Location = new System.Drawing.Point(12, 166);
+            this.dgv_barrio.Location = new System.Drawing.Point(9, 135);
+            this.dgv_barrio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_barrio.MultiSelect = false;
             this.dgv_barrio.Name = "dgv_barrio";
             this.dgv_barrio.ReadOnly = true;
             this.dgv_barrio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_barrio.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_barrio.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_barrio.RowHeadersVisible = false;
             this.dgv_barrio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_barrio.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_barrio.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_barrio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_barrio.Size = new System.Drawing.Size(811, 235);
+            this.dgv_barrio.Size = new System.Drawing.Size(608, 191);
             this.dgv_barrio.TabIndex = 58;
             this.dgv_barrio.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_barrio_CellMouseClick);
             // 
@@ -228,16 +226,30 @@
             this.label_validation.AutoSize = true;
             this.label_validation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_validation.ForeColor = System.Drawing.Color.Red;
-            this.label_validation.Location = new System.Drawing.Point(432, 131);
+            this.label_validation.Location = new System.Drawing.Point(324, 106);
+            this.label_validation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_validation.Name = "label_validation";
-            this.label_validation.Size = new System.Drawing.Size(0, 20);
+            this.label_validation.Size = new System.Drawing.Size(0, 17);
             this.label_validation.TabIndex = 59;
+            // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(121, 46);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(378, 25);
+            this.titulo_estadisticas.TabIndex = 77;
+            this.titulo_estadisticas.Text = "       ADMINISTRAR BARRIOS        ";
             // 
             // frm_ABM_Barrio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 481);
+            this.ClientSize = new System.Drawing.Size(626, 391);
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.label_validation);
             this.Controls.Add(this.dgv_barrio);
             this.Controls.Add(this.btn_agregarBarrio);
@@ -248,8 +260,8 @@
             this.Controls.Add(this.btn_habilitarAgregarBarrio);
             this.Controls.Add(this.txt_nombre_barrio);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label33);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_ABM_Barrio";
             this.Text = "Administrar Barrios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ABM_Barrio_FormClosing);
@@ -262,7 +274,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nombre_barrio;
@@ -276,5 +287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
         private System.Windows.Forms.Label label_validation;
+        private System.Windows.Forms.Label titulo_estadisticas;
     }
 }

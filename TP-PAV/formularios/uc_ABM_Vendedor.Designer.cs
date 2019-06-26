@@ -45,7 +45,6 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_busqueda = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgv_vendedores = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +81,7 @@
             this.label_nombre = new System.Windows.Forms.Label();
             this.txt_busqAvan_nombre = new System.Windows.Forms.TextBox();
             this.btn_disponibilidad = new System.Windows.Forms.Button();
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vendedores)).BeginInit();
             this.grp_busquedaAvanzada.SuspendLayout();
             this.SuspendLayout();
@@ -217,17 +217,6 @@
             this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 47;
             this.label6.Text = "Buscar:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(243, 25);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Administrar Vendedores";
             // 
             // dgv_vendedores
             // 
@@ -657,10 +646,23 @@
             this.btn_disponibilidad.UseVisualStyleBackColor = true;
             this.btn_disponibilidad.Click += new System.EventHandler(this.btn_disponibilidad_Click);
             // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(9, 13);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(719, 31);
+            this.titulo_estadisticas.TabIndex = 85;
+            this.titulo_estadisticas.Text = "                  ADMINISTRAR VENDEDORES                   ";
+            // 
             // uc_ABM_Vendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.btn_disponibilidad);
             this.Controls.Add(this.grp_busquedaAvanzada);
             this.Controls.Add(this.cmb_habilitado);
@@ -670,7 +672,6 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.label_informacion);
             this.Controls.Add(this.dgv_vendedores);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_busqueda);
             this.Controls.Add(this.label6);
@@ -710,7 +711,6 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox txt_busqueda;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_vendedores;
         private System.Windows.Forms.Label label_informacion;
         private System.Windows.Forms.Button btn_guardar;
@@ -747,5 +747,6 @@
         private System.Windows.Forms.MaskedTextBox txt_busqAvan_comisionDesde;
         private System.Windows.Forms.MaskedTextBox txt_busqAvan_legajoHasta;
         private System.Windows.Forms.Button btn_disponibilidad;
+        private System.Windows.Forms.Label titulo_estadisticas;
     }
 }

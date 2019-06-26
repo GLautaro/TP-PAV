@@ -41,7 +41,6 @@
             this.btn_modificarTipoFranquicia = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_agregarTipoFranquicia = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_montoMinimo = new System.Windows.Forms.TextBox();
             this.txt_porcentajeDescuento = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@
             this.porcentaje_descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.habilitado_tipo_franquicia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label_validation = new System.Windows.Forms.Label();
+            this.titulo_estadisticas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tipoFranquicia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,44 +60,46 @@
             this.panel1.BackColor = System.Drawing.Color.YellowGreen;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 39);
+            this.panel1.Size = new System.Drawing.Size(520, 32);
             this.panel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 167);
+            this.label1.Location = new System.Drawing.Point(8, 136);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nombre:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 166);
+            this.label2.Location = new System.Drawing.Point(136, 135);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Monto Minimo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(343, 167);
+            this.label3.Location = new System.Drawing.Point(257, 136);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 17);
+            this.label3.Size = new System.Drawing.Size(113, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Porcentaje Descuento";
             // 
             // btn_habilitarAgregarTipoFranquicia
             // 
-            this.btn_habilitarAgregarTipoFranquicia.Location = new System.Drawing.Point(18, 112);
-            this.btn_habilitarAgregarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_habilitarAgregarTipoFranquicia.Location = new System.Drawing.Point(14, 91);
+            this.btn_habilitarAgregarTipoFranquicia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_habilitarAgregarTipoFranquicia.Name = "btn_habilitarAgregarTipoFranquicia";
-            this.btn_habilitarAgregarTipoFranquicia.Size = new System.Drawing.Size(145, 34);
+            this.btn_habilitarAgregarTipoFranquicia.Size = new System.Drawing.Size(109, 28);
             this.btn_habilitarAgregarTipoFranquicia.TabIndex = 9;
             this.btn_habilitarAgregarTipoFranquicia.Text = "Añadir Nuevo";
             this.btn_habilitarAgregarTipoFranquicia.UseVisualStyleBackColor = true;
@@ -105,10 +107,10 @@
             // 
             // btn_habilitarModificarTipoFranquicia
             // 
-            this.btn_habilitarModificarTipoFranquicia.Location = new System.Drawing.Point(262, 112);
-            this.btn_habilitarModificarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_habilitarModificarTipoFranquicia.Location = new System.Drawing.Point(196, 91);
+            this.btn_habilitarModificarTipoFranquicia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_habilitarModificarTipoFranquicia.Name = "btn_habilitarModificarTipoFranquicia";
-            this.btn_habilitarModificarTipoFranquicia.Size = new System.Drawing.Size(139, 34);
+            this.btn_habilitarModificarTipoFranquicia.Size = new System.Drawing.Size(104, 28);
             this.btn_habilitarModificarTipoFranquicia.TabIndex = 10;
             this.btn_habilitarModificarTipoFranquicia.Text = "Modificar";
             this.btn_habilitarModificarTipoFranquicia.UseVisualStyleBackColor = true;
@@ -116,10 +118,10 @@
             // 
             // btn_handleStateTipoFranquicia
             // 
-            this.btn_handleStateTipoFranquicia.Location = new System.Drawing.Point(507, 112);
-            this.btn_handleStateTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_handleStateTipoFranquicia.Location = new System.Drawing.Point(380, 91);
+            this.btn_handleStateTipoFranquicia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_handleStateTipoFranquicia.Name = "btn_handleStateTipoFranquicia";
-            this.btn_handleStateTipoFranquicia.Size = new System.Drawing.Size(165, 34);
+            this.btn_handleStateTipoFranquicia.Size = new System.Drawing.Size(124, 28);
             this.btn_handleStateTipoFranquicia.TabIndex = 11;
             this.btn_handleStateTipoFranquicia.Text = "Habilitar";
             this.btn_handleStateTipoFranquicia.UseVisualStyleBackColor = true;
@@ -128,10 +130,10 @@
             // btn_modificarTipoFranquicia
             // 
             this.btn_modificarTipoFranquicia.Enabled = false;
-            this.btn_modificarTipoFranquicia.Location = new System.Drawing.Point(514, 187);
-            this.btn_modificarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_modificarTipoFranquicia.Location = new System.Drawing.Point(386, 152);
+            this.btn_modificarTipoFranquicia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_modificarTipoFranquicia.Name = "btn_modificarTipoFranquicia";
-            this.btn_modificarTipoFranquicia.Size = new System.Drawing.Size(75, 23);
+            this.btn_modificarTipoFranquicia.Size = new System.Drawing.Size(56, 19);
             this.btn_modificarTipoFranquicia.TabIndex = 12;
             this.btn_modificarTipoFranquicia.Text = "Guardar";
             this.btn_modificarTipoFranquicia.UseVisualStyleBackColor = true;
@@ -140,10 +142,10 @@
             // btn_cancelar
             // 
             this.btn_cancelar.Enabled = false;
-            this.btn_cancelar.Location = new System.Drawing.Point(594, 188);
-            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_cancelar.Location = new System.Drawing.Point(446, 153);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.Size = new System.Drawing.Size(63, 19);
             this.btn_cancelar.TabIndex = 13;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -152,47 +154,40 @@
             // btn_agregarTipoFranquicia
             // 
             this.btn_agregarTipoFranquicia.Enabled = false;
-            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(514, 188);
-            this.btn_agregarTipoFranquicia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_agregarTipoFranquicia.Location = new System.Drawing.Point(386, 153);
+            this.btn_agregarTipoFranquicia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_agregarTipoFranquicia.Name = "btn_agregarTipoFranquicia";
-            this.btn_agregarTipoFranquicia.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregarTipoFranquicia.Size = new System.Drawing.Size(56, 19);
             this.btn_agregarTipoFranquicia.TabIndex = 14;
             this.btn_agregarTipoFranquicia.Text = "Añadir";
             this.btn_agregarTipoFranquicia.UseVisualStyleBackColor = true;
             this.btn_agregarTipoFranquicia.Visible = false;
             this.btn_agregarTipoFranquicia.Click += new System.EventHandler(this.btn_agregarTipoFranquicia_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(430, 32);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Administrar Tipos de Franquicias";
-            // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(13, 188);
+            this.txt_nombre.Location = new System.Drawing.Point(10, 153);
+            this.txt_nombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(145, 22);
+            this.txt_nombre.Size = new System.Drawing.Size(110, 20);
             this.txt_nombre.TabIndex = 16;
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // txt_montoMinimo
             // 
-            this.txt_montoMinimo.Location = new System.Drawing.Point(185, 189);
+            this.txt_montoMinimo.Location = new System.Drawing.Point(139, 154);
+            this.txt_montoMinimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_montoMinimo.Name = "txt_montoMinimo";
-            this.txt_montoMinimo.Size = new System.Drawing.Size(134, 22);
+            this.txt_montoMinimo.Size = new System.Drawing.Size(102, 20);
             this.txt_montoMinimo.TabIndex = 17;
             this.txt_montoMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_montoMinimo_KeyPress);
             // 
             // txt_porcentajeDescuento
             // 
-            this.txt_porcentajeDescuento.Location = new System.Drawing.Point(346, 189);
+            this.txt_porcentajeDescuento.Location = new System.Drawing.Point(260, 154);
+            this.txt_porcentajeDescuento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_porcentajeDescuento.Name = "txt_porcentajeDescuento";
-            this.txt_porcentajeDescuento.Size = new System.Drawing.Size(145, 22);
+            this.txt_porcentajeDescuento.Size = new System.Drawing.Size(110, 20);
             this.txt_porcentajeDescuento.TabIndex = 18;
             this.txt_porcentajeDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_porcentajeDescuento_KeyPress);
             // 
@@ -229,7 +224,8 @@
             this.dgv_tipoFranquicia.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgv_tipoFranquicia.EnableHeadersVisualStyles = false;
             this.dgv_tipoFranquicia.GridColor = System.Drawing.Color.Black;
-            this.dgv_tipoFranquicia.Location = new System.Drawing.Point(15, 248);
+            this.dgv_tipoFranquicia.Location = new System.Drawing.Point(11, 202);
+            this.dgv_tipoFranquicia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_tipoFranquicia.MultiSelect = false;
             this.dgv_tipoFranquicia.Name = "dgv_tipoFranquicia";
             this.dgv_tipoFranquicia.ReadOnly = true;
@@ -249,7 +245,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_tipoFranquicia.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_tipoFranquicia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tipoFranquicia.Size = new System.Drawing.Size(654, 219);
+            this.dgv_tipoFranquicia.Size = new System.Drawing.Size(490, 178);
             this.dgv_tipoFranquicia.TabIndex = 57;
             this.dgv_tipoFranquicia.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_tipoFranquicia_CellMouseClick);
             // 
@@ -305,18 +301,32 @@
             this.label_validation.AutoSize = true;
             this.label_validation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_validation.ForeColor = System.Drawing.Color.Red;
-            this.label_validation.Location = new System.Drawing.Point(225, 218);
+            this.label_validation.Location = new System.Drawing.Point(169, 177);
+            this.label_validation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_validation.Name = "label_validation";
-            this.label_validation.Size = new System.Drawing.Size(52, 20);
+            this.label_validation.Size = new System.Drawing.Size(45, 17);
             this.label_validation.TabIndex = 58;
             this.label_validation.Text = "Error";
             this.label_validation.Visible = false;
             // 
+            // titulo_estadisticas
+            // 
+            this.titulo_estadisticas.AutoSize = true;
+            this.titulo_estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.titulo_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
+            this.titulo_estadisticas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titulo_estadisticas.Location = new System.Drawing.Point(9, 49);
+            this.titulo_estadisticas.Name = "titulo_estadisticas";
+            this.titulo_estadisticas.Size = new System.Drawing.Size(493, 25);
+            this.titulo_estadisticas.TabIndex = 79;
+            this.titulo_estadisticas.Text = "   ADMINISTRAR TIPOS DE FRANQUICIAS     ";
+            // 
             // frm_TipoFranquicia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 479);
+            this.ClientSize = new System.Drawing.Size(520, 389);
+            this.Controls.Add(this.titulo_estadisticas);
             this.Controls.Add(this.label_validation);
             this.Controls.Add(this.btn_handleStateTipoFranquicia);
             this.Controls.Add(this.btn_habilitarAgregarTipoFranquicia);
@@ -325,7 +335,6 @@
             this.Controls.Add(this.txt_porcentajeDescuento);
             this.Controls.Add(this.txt_montoMinimo);
             this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_agregarTipoFranquicia);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_modificarTipoFranquicia);
@@ -333,7 +342,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_TipoFranquicia";
             this.Text = "frm_TipoFranquicia";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_TipoFranquicia_FormClosing);
@@ -356,7 +365,6 @@
         private System.Windows.Forms.Button btn_modificarTipoFranquicia;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_agregarTipoFranquicia;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_montoMinimo;
         private System.Windows.Forms.TextBox txt_porcentajeDescuento;
@@ -367,6 +375,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn porcentaje_descuento;
         private System.Windows.Forms.DataGridViewCheckBoxColumn habilitado_tipo_franquicia;
         private System.Windows.Forms.Label label_validation;
+        private System.Windows.Forms.Label titulo_estadisticas;
 
     }
 }
