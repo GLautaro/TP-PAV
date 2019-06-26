@@ -98,14 +98,14 @@ namespace TP_PAV.formularios
         {
 
             if(error){
-                this.label_validation.ForeColor = Color.Red;
+                label_validation.ForeColor = Color.Red;
             }
             else
             {
-                this.label_validation.ForeColor = Color.Green;
+                label_validation.ForeColor = Color.Green;
             }
-            this.label_validation.Text = mensaje;
-            this.label_validation.Visible = true;
+            label_validation.Text = mensaje;
+            label_validation.Visible = true;
         }
         private void btn_habilitarAgregarTipoFranquicia_Click(object sender, EventArgs e)
         {
@@ -122,23 +122,15 @@ namespace TP_PAV.formularios
                         {
                             if (priv_tipoFranquicia.altaTipoFranquicia(int.Parse(txt_montoMinimo.Text), int.Parse(txt_porcentajeDescuento.Text), txt_nombre.Text))
                             {
-
-                                DialogResult result = MessageBox.Show("Tipo de Franquicia cargada correctamente\n¿Desea cargar otra franquicia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                                if (result == DialogResult.No)
-                                {
+                                label_validacion_error(false, "Se agrego el Tipo Franquicia correctamente.");
                                     limpiarCajasTexto();
                                     bloquearCajasTexto();
                                     btn_agregarTipoFranquicia.Visible = false;
                                     dgv_tipoFranquicia.Enabled = true;
                                     dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
                                     desbloquearBotonesPrincipales(true);
-                                }
-                                else
-                                {
-                                    limpiarCajasTexto();
-                                    txt_nombre.Focus();
-                                    dgv_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
-                                }
+                                
+                         
                                
                             }
                             else
@@ -147,7 +139,7 @@ namespace TP_PAV.formularios
                             }
                            
                         }
-                        this.label_validation.Visible = false;
+                      
 
         }
 
@@ -278,12 +270,18 @@ namespace TP_PAV.formularios
 
         private void txt_porcentajeDescuento_KeyPress(object sender, KeyPressEventArgs e)
         {
+            this.label_validation.Visible = false;
             if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
             {
                 label_validacion_error(true, "No es un valor permitido");
                 //borra el caracter no permitido
                 e.Handled = true;
             }
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.label_validation.Visible = false;
         }
 
   
