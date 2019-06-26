@@ -46,7 +46,7 @@ namespace TP_PAV.formularios
             if (tablaDatos.Rows.Count < 1)
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "No ha sido posible recuperar los datos";
+                lbl_mensaje.Text = "No se encontraron datos.";
                 return;
             }
             grafico.Series.Clear();
@@ -180,19 +180,25 @@ namespace TP_PAV.formularios
             grafico.Titles.Clear();
         }
 
-
+        private void limpiar()
+        {
+            grafico.DataSource = null;
+            grafico.Series.Clear();
+            grafico.Titles.Clear();
+            lbl_mensaje.Text = "";
+        }
         private bool validarFechas()
         {
             if (dtp_fechaHasta.Value.Date < dtp_fechaDesde.Value.Date)
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "No se puede seleccionar una Fecha Hasta menor a la Fecha Desde.";
+                lbl_mensaje.Text = "No se puede seleccionar una fecha 'hasta' menor a la fecha 'desde'.";
                 return false;
             }
             if (dtp_fechaHasta.Value.Date > DateTime.Now.Date)
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "No se puede seleccionar una Fecha Hasta mayor a la fecha actual.";
+                lbl_mensaje.Text = "No se puede seleccionar una fecha 'hasta' mayor a la fecha actual.";
                 return false;
             }
             return true;
@@ -200,6 +206,7 @@ namespace TP_PAV.formularios
 
         private void btn_EstadisticaVendedorPedidos_Click(object sender, EventArgs e)
         {
+            limpiar();
             visibilidadFechas(true);
             if (validarFechas())
             {
@@ -209,6 +216,7 @@ namespace TP_PAV.formularios
 
         private void btn_vendedoresConMenosPedidos_Click(object sender, EventArgs e)
         {
+            limpiar();
             visibilidadFechas(true);
             if (validarFechas())
             {
@@ -218,6 +226,7 @@ namespace TP_PAV.formularios
 
         private void btn_EstadisticaCantPedidosPend_Click(object sender, EventArgs e)
         {
+            limpiar();
             if (dtp_fechaDesde.Value.Date <= dtp_fechaHasta.Value.Date)
             {
                 llenarGrafico(pedido.CantidadPedidosSolicitadosXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "CANTIDAD DE PEDIDOS SOLICITADOS", "Mes y cantidad de pedidos", " ");
@@ -225,12 +234,13 @@ namespace TP_PAV.formularios
             else
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "No se puede seleccionar una fecha 'hasta' menor a la Fecha Desde.";
+                lbl_mensaje.Text = "No se puede seleccionar una fecha 'hasta' menor a la fecha desde.";
             }
        }
 
         private void btn_EstadisticaCantPedidosEnt_Click(object sender, EventArgs e)
         {
+            limpiar();
             if (validarFechas())
             {
                 llenarGrafico(pedido.CantidadPedidosEntregadosXRangoFecha(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "CANTIDAD DE PEDIDOS ENTREGADOS", "Mes y cantidad de pedidos", " ");
@@ -240,6 +250,7 @@ namespace TP_PAV.formularios
         }
         private void btn_productoMasVendidoPeriodo_Click(object sender, EventArgs e)
         {
+            lbl_mensaje.Text = "";
             if(validarFechas())
             {
                 llenarGrafico(producto.ProductosMasVendidosXTiempo(dtp_fechaDesde.Value.Date.ToShortDateString(), 
@@ -250,6 +261,7 @@ namespace TP_PAV.formularios
 
         private void btn_productosMenosVendidos_Click(object sender, EventArgs e)
         {
+            limpiar();
             if (validarFechas())
             {
                 llenarGrafico(producto.ProductosMenosVendidosXTiempo(dtp_fechaDesde.Value.Date.ToShortDateString(),
@@ -260,6 +272,7 @@ namespace TP_PAV.formularios
 
         private void btn_franquiciaMenosPedidosEnPeriodo_Click(object sender, EventArgs e)
         {
+            limpiar();
             if (validarFechas())
             {
                 llenarGrafico(franquicia.PeoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "PEORES FRANQUICIAS EN PERIODO: ", "Nombre y apellido del representante"," ");
@@ -268,6 +281,7 @@ namespace TP_PAV.formularios
 
         private void btn_franquiciaMasPedidosEnPeriodo_Click(object sender, EventArgs e)
         {
+            limpiar();
             if (validarFechas())
             {
                 llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante"," ");
@@ -275,14 +289,25 @@ namespace TP_PAV.formularios
         }
         private void btn_productoPorFranquicia_Click(object sender, EventArgs e)
         {
-            lbl_franquicia_producto.Visible = true;
-            cmb_franquicias.Visible = true;
-            this.cmb_franquicias.cargar("franquicia", "id_franquicia", "id_franquicia");
-            this.cmb_franquicias.SelectedIndex = -1;
+            if (cmb_franquicias.Visible == false)
+            {
+                lbl_franquicia_producto.Visible = true;
+                cmb_franquicias.Visible = true;
+                this.cmb_franquicias.cargar("franquicia", "id_franquicia", "id_franquicia");
+                this.cmb_franquicias.SelectedIndex = -1;
+            }
+            else
+            {
+                if (this.cmb_franquicias.SelectedIndex == -1)
+                {
+                    lbl_mensaje.ForeColor = Color.Red;
+                    lbl_mensaje.Text = "Seleccione una franquicia";
+                }
+            }
         }
-
         private void estadistica_productoPorFranquicia(object sender, EventArgs e)
         {
+            limpiar();
             if (validarFechas())
             {
                 llenarGrafico(producto.ProductosMasCompradoXFranquiciaXTiempo(dtp_fechaDesde.Value, dtp_fechaHasta.Value, cmb_franquicias.SelectedValue.ToString()), "PRODUCTOS MÁS COMPRADOS POR UNA FRANQUICIA EN UN PERIODO:", "Nombre del producto", " ");
@@ -291,6 +316,7 @@ namespace TP_PAV.formularios
 
         private void btn_cantFranquiciasXVendedor_Click(object sender, EventArgs e)
         {
+            limpiar();
             visibilidadFechas(false);
             llenarGrafico(vendedor.CantidadFranquiciasXVendedor(), "CANTIDAD DE FRANQUICIAS POR VENDEDOR:", "Legajo del vendedor", " ");
         } 
