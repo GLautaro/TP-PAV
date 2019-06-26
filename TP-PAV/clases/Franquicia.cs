@@ -197,7 +197,8 @@ namespace TP_PAV.clases
                                                            OR f.apellido_responsable LIKE '%{1}%' 
                                                            OR f.calle LIKE '%{2}%' 
                                                            OR b.nombre_barrio LIKE '%{4}%' 
-                                                           OR t_f.nombre_tipo_franquicia LIKE '%{6}%');", text, text, text, text, text, text, text);
+                                                           OR t_f.nombre_tipo_franquicia LIKE '%{6}%'
+                                                           OR f.id_franquicia={7});", text, text, text, text, text, text, text,text);
 
             return priv_acceso_db.ejecutarConsulta(query);
         }

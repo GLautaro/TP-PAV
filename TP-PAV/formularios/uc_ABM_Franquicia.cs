@@ -15,6 +15,7 @@ namespace TP_PAV.formularios
         Franquicia priv_franquicia = new Franquicia();
         Barrio priv_barrio = new Barrio();
         TipoFranquicia priv_tipoFranquicia = new TipoFranquicia();
+        Vendedor priv_vendedor = new Vendedor();
         private static uc_ABM_Franquicia priv_instance;
 
         public ComboBox pub_cmb_tipoFranquicia
@@ -69,7 +70,7 @@ namespace TP_PAV.formularios
             if (cmb_barrio.SelectedIndex == -1)
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "No ha seleccionado una calle";
+                lbl_mensaje.Text = "No ha seleccionado un barrio";
                 return false;
             }
             if (cmb_tipoFranquicia.SelectedIndex == -1)
@@ -139,39 +140,52 @@ namespace TP_PAV.formularios
 
         private void btn_guardarNuevaFranquicia_Click(object sender, EventArgs e)
         {
-            if(!validarDatosFranquicia()){return;}      
-            
-            if (priv_franquicia.altaFranquicia(txt_nombreResponsable.Text, txt_apellidoResponsable.Text, txt_calle.Text,
+            if(!validarDatosFranquicia()){return;}
+
+            if (priv_vendedor.buscarVendedores(txt_legajoVendedor.Text).Rows.Count == 1)
+            {
+                if (priv_franquicia.altaFranquicia(txt_nombreResponsable.Text, txt_apellidoResponsable.Text, txt_calle.Text,
                                                 int.Parse(txt_nroCalle.Text), int.Parse(cmb_barrio.SelectedValue.ToString()), int.Parse(cmb_tipoFranquicia.SelectedValue.ToString()),
                                                 int.Parse(txt_legajoVendedor.Text)))
-            {
-                limpiarFormularioFranquicias();
-                dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
-                cambiarEstadoCajasTexto(false);
-                btn_cancelarGuardado.Enabled = false;
-                btn_cancelarGuardado.Visible = false;
-                btn_guardarNuevaFranquicia.Enabled = false;
-                btn_guardarNuevaFranquicia.Visible = false;
-                btn_habilitarAñadirFranquicia.Enabled = true;
-                btn_habilitarModificarFranquicia.Enabled = true;
-                btn_modificarFranquicia.Enabled = true;
-                btn_eliminarFranquicia.Enabled = true;
+                {
+                    limpiarFormularioFranquicias();
+                    dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
+                    cambiarEstadoCajasTexto(false);
+                    btn_cancelarGuardado.Enabled = false;
+                    btn_cancelarGuardado.Visible = false;
+                    btn_guardarNuevaFranquicia.Enabled = false;
+                    btn_guardarNuevaFranquicia.Visible = false;
+                    btn_habilitarAñadirFranquicia.Enabled = true;
+                    btn_habilitarModificarFranquicia.Enabled = true;
+                    btn_modificarFranquicia.Enabled = true;
+                    btn_eliminarFranquicia.Enabled = true;
+                    lbl_mensaje.ForeColor = Color.YellowGreen;
+                    lbl_mensaje.Text = "La franquicia se cargo correctamente";
 
-                
-                
+
+                }
+                else
+                {
+                    lbl_mensaje.ForeColor = Color.Red;
+                    lbl_mensaje.Text = "La franquicia no pudo ser cargada";
+                    return;
+                }
             }
             else
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "La franquicia no pudo ser cargada";
+                lbl_mensaje.Text = "No existe vendedor con el legajo ingresado";
                 return;
             }
+            
         }
 
         private void btn_modificarFranquicia_Click(object sender, EventArgs e)
         {
             if (!validarDatosFranquicia()) { return; }
-            Franquicia priv_franquiciaModificar = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()),
+            if (priv_vendedor.buscarVendedores(txt_legajoVendedor.Text).Rows.Count == 1)
+            {
+                Franquicia priv_franquiciaModificar = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()),
                                                                        txt_nombreResponsable.Text,
                                                                        txt_apellidoResponsable.Text,
                                                                        txt_calle.Text,
@@ -179,31 +193,39 @@ namespace TP_PAV.formularios
                                                                        int.Parse(cmb_barrio.SelectedValue.ToString()),
                                                                        int.Parse(txt_legajoVendedor.Text),
                                                                        int.Parse(cmb_tipoFranquicia.SelectedValue.ToString()));
-            
-            if (priv_franquiciaModificar.modificarFranquicia())
-            {
-                lbl_mensaje.ForeColor = Color.YellowGreen;
-                lbl_mensaje.Text = "Los datos han sido modificados correctamente";
 
-                dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
-                cambiarEstadoCajasTexto(false); 
-                limpiarFormularioFranquicias();
-                btn_cancelarModificaciones.Visible = false;
-                btn_cancelarModificaciones.Enabled = false;
-                btn_modificarFranquicia.Visible = false;
-                btn_modificarFranquicia.Enabled = false;
-                btn_habilitarAñadirFranquicia.Enabled = true;
-                btn_habilitarModificarFranquicia.Enabled = true;
-                btn_modificarFranquicia.Enabled = true;
-                btn_eliminarFranquicia.Enabled = true;
-                
+                if (priv_franquiciaModificar.modificarFranquicia())
+                {
+                    lbl_mensaje.ForeColor = Color.YellowGreen;
+                    lbl_mensaje.Text = "Los datos han sido modificados correctamente";
+
+                    dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
+                    cambiarEstadoCajasTexto(false);
+                    limpiarFormularioFranquicias();
+                    btn_cancelarModificaciones.Visible = false;
+                    btn_cancelarModificaciones.Enabled = false;
+                    btn_modificarFranquicia.Visible = false;
+                    btn_modificarFranquicia.Enabled = false;
+                    btn_habilitarAñadirFranquicia.Enabled = true;
+                    btn_habilitarModificarFranquicia.Enabled = true;
+                    btn_modificarFranquicia.Enabled = true;
+                    btn_eliminarFranquicia.Enabled = true;
+
+                }
+                else
+                {
+                    lbl_mensaje.ForeColor = Color.Red;
+                    lbl_mensaje.Text = "Ha ocurrido un error modificando los datos";
+                    return;
+                }
             }
             else
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "Ha ocurrido un error modificando los datos";
-
+                lbl_mensaje.Text = "No existe vendedor con el legajo ingresado";
+                return;
             }
+            
             dgv_franquicias.Enabled = true;
         }
 
@@ -499,6 +521,33 @@ namespace TP_PAV.formularios
             else
             {
                 btn_eliminarFranquicia.Text = "Activar Franquicia";
+            }
+
+        }
+
+        private void txt_legajoVendedor_TextChanged(object sender, EventArgs e)
+        {
+            int flag;
+            if (int.TryParse(txt_legajoVendedor.Text, out flag))
+            {
+                return;
+            }
+            else
+            {
+                if (txt_legajoVendedor.Text.Length == 0)
+                {
+                    txt_legajoVendedor.Text = "";
+                    txt_legajoVendedor.SelectionStart = txt_legajoVendedor.Text.Length;
+                    txt_legajoVendedor.Focus();
+                    return;
+                }
+                else
+                {
+                    txt_legajoVendedor.Text = txt_legajoVendedor.Text.Substring(0, txt_legajoVendedor.Text.Length-1);
+                    txt_legajoVendedor.SelectionStart = txt_legajoVendedor.Text.Length;
+                    txt_legajoVendedor.Focus();
+                    return;
+                }
             }
 
         }
