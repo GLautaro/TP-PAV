@@ -225,7 +225,7 @@ namespace TP_PAV.formularios
             else
             {
                 lbl_mensaje.ForeColor = Color.Red;
-                lbl_mensaje.Text = "No se puede seleccionar una Fecha Hasta menor a la Fecha Desde.";
+                lbl_mensaje.Text = "No se puede seleccionar una fecha 'hasta' menor a la Fecha Desde.";
             }
        }
 
