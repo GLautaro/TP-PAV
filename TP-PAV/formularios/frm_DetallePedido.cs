@@ -173,7 +173,7 @@ namespace TP_PAV.formularios
 
         private void cmb_tipoProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (int.Parse(cmb_Producto.SelectedIndex.ToString()) == -1)
+            if (int.Parse(cmb_tipoProducto.SelectedIndex.ToString()) == -1)
             {
                 cmb_Producto.DataSource = null;
             }
