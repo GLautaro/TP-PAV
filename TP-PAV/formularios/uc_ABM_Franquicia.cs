@@ -147,23 +147,16 @@ namespace TP_PAV.formularios
             {
                 limpiarFormularioFranquicias();
                 dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
-                DialogResult result = MessageBox.Show("Franquicia cargada correctamente\n¿Desea cargar otra franquicia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (result == DialogResult.No)
-                {
-                    cambiarEstadoCajasTexto(false);
-                    btn_cancelarGuardado.Enabled = false;
-                    btn_cancelarGuardado.Visible = false;
-                    btn_guardarNuevaFranquicia.Enabled = false;
-                    btn_guardarNuevaFranquicia.Visible = false;
-                    btn_habilitarAñadirFranquicia.Enabled = true;
-                    btn_habilitarModificarFranquicia.Enabled = true;
-                    btn_modificarFranquicia.Enabled = true;
-                    btn_eliminarFranquicia.Enabled = true;
-                }
-                else
-                {
-                    limpiarFormularioFranquicias();
-                }
+                cambiarEstadoCajasTexto(false);
+                btn_cancelarGuardado.Enabled = false;
+                btn_cancelarGuardado.Visible = false;
+                btn_guardarNuevaFranquicia.Enabled = false;
+                btn_guardarNuevaFranquicia.Visible = false;
+                btn_habilitarAñadirFranquicia.Enabled = true;
+                btn_habilitarModificarFranquicia.Enabled = true;
+                btn_modificarFranquicia.Enabled = true;
+                btn_eliminarFranquicia.Enabled = true;
+
                 
                 
             }
@@ -219,44 +212,31 @@ namespace TP_PAV.formularios
 
             if (dgv_franquicias.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                lbl_mensaje.Text = "No existen franquicias cargadas";
                 return;
             }
+            cambiarEstadoCajasTexto(true);
+            btn_habilitarAñadirFranquicia.Enabled = false;
+            btn_habilitarModificarFranquicia.Enabled = false;
+            btn_eliminarFranquicia.Enabled = false;
 
-            string mensaje = @"¿Esta seguro que desea editar la franquicia con ID: " + dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString() +
-                                ".\nA cargo de " + dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString() + " " + dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
-            DialogResult result = MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            btn_modificarFranquicia.Enabled = true;
+            btn_modificarFranquicia.Visible = true;
 
-            if (result == DialogResult.Yes)
-            {
-                cambiarEstadoCajasTexto(true);
-                btn_habilitarAñadirFranquicia.Enabled = false;
-                btn_habilitarModificarFranquicia.Enabled = false;
-                btn_eliminarFranquicia.Enabled = false;
-
-                btn_modificarFranquicia.Enabled = true;
-                btn_modificarFranquicia.Visible = true;
-
-                btn_cancelarModificaciones.Enabled = true;
-                btn_cancelarModificaciones.Visible = true;
+            btn_cancelarModificaciones.Enabled = true;
+            btn_cancelarModificaciones.Visible = true;
                                 
 
-                txt_nombreResponsable.Text = dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString();
-                txt_apellidoResponsable.Text = dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
-                txt_calle.Text = dgv_franquicias.CurrentRow.Cells["calle"].Value.ToString();
-                txt_nroCalle.Text = dgv_franquicias.CurrentRow.Cells["nro_calle"].Value.ToString();
-                txt_legajoVendedor.Text = dgv_franquicias.CurrentRow.Cells["legajo_vendedor"].Value.ToString();
+            txt_nombreResponsable.Text = dgv_franquicias.CurrentRow.Cells["nombre_responsable"].Value.ToString();
+            txt_apellidoResponsable.Text = dgv_franquicias.CurrentRow.Cells["apellido_responsable"].Value.ToString();
+            txt_calle.Text = dgv_franquicias.CurrentRow.Cells["calle"].Value.ToString();
+            txt_nroCalle.Text = dgv_franquicias.CurrentRow.Cells["nro_calle"].Value.ToString();
+            txt_legajoVendedor.Text = dgv_franquicias.CurrentRow.Cells["legajo_vendedor"].Value.ToString();
 
-                cmb_tipoFranquicia.SelectedIndex = cmb_tipoFranquicia.FindStringExact(dgv_franquicias.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString());
-                cmb_barrio.SelectedIndex = cmb_barrio.FindStringExact(dgv_franquicias.CurrentRow.Cells["nombre_barrio"].Value.ToString());
-                
-                dgv_franquicias.Enabled = false;
-            }
-            else
-            {
-                return;
-            }
-
+            cmb_tipoFranquicia.SelectedIndex = cmb_tipoFranquicia.FindStringExact(dgv_franquicias.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString());
+            cmb_barrio.SelectedIndex = cmb_barrio.FindStringExact(dgv_franquicias.CurrentRow.Cells["nombre_barrio"].Value.ToString());
+            dgv_franquicias.Enabled = false;
+            
         }
         
         private void btn_cancelarModificaciones_Click(object sender, EventArgs e)
@@ -310,33 +290,26 @@ namespace TP_PAV.formularios
         {
             if (dgv_franquicias.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "No existen franquicias cargadas";
                 return;
             }
-            DialogResult result = MessageBox.Show("¿Esta seguro que desea cambiar el estado de esta franquicia?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (result == DialogResult.Yes)
+            
+            Franquicia franquicia_cambiar_estado = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()), 
+            bool.Parse(dgv_franquicias.CurrentRow.Cells["habilitado"].Value.ToString()));
+
+            if(franquicia_cambiar_estado.modificarEstadoFranquicia())
             {
-                Franquicia franquicia_cambiar_estado = new Franquicia(int.Parse(dgv_franquicias.CurrentRow.Cells["id_franquicia"].Value.ToString()), 
-                bool.Parse(dgv_franquicias.CurrentRow.Cells["habilitado"].Value.ToString()));
-                if(franquicia_cambiar_estado.modificarEstadoFranquicia())
-                {
-                    lbl_mensaje.ForeColor = Color.YellowGreen;
-                    lbl_mensaje.Text = "Se modifico correctamente el estado";
-                    dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
-                }
-                else
-                {
-                    lbl_mensaje.ForeColor = Color.Red;
-                    lbl_mensaje.Text = "Ha ocurrido un error cambiando el estado";
-                }
+                lbl_mensaje.ForeColor = Color.YellowGreen;
+                lbl_mensaje.Text = "Se modifico correctamente el estado";
+                dgv_franquicias.DataSource = priv_franquicia.recuperarFranquicias();
             }
             else
-                return;
-            
-            
-            
-
-        }
+            {
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "Ha ocurrido un error cambiando el estado";
+            }
+            }
 
         private void btn_agregarTipoFranquicia_click(object sender, EventArgs e)
         {
@@ -515,7 +488,8 @@ namespace TP_PAV.formularios
         {
             if (dgv_franquicias.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen franquicias cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lbl_mensaje.ForeColor = Color.Red;
+                lbl_mensaje.Text = "No existen franquicias cargadas";
                 return;
             }
             if (bool.Parse(dgv_franquicias.CurrentRow.Cells["habilitado"].Value.ToString()))

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_modificarFranquicia = new System.Windows.Forms.Button();
             this.btn_cancelarModificaciones = new System.Windows.Forms.Button();
@@ -60,32 +60,11 @@
             this.txt_buscarFranquicia = new System.Windows.Forms.TextBox();
             this.btn_buscarFranquicia = new System.Windows.Forms.Button();
             this.dgv_franquicias = new System.Windows.Forms.DataGridView();
-            this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nro_calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grp_busquedaAvanzada = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_busquedaAvan_legajoHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaAvan_legajoDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaAvan_apellido = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaAvan_nombre = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaAvan_idHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.txt_busquedaAvan_idDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
-            this.cmb_busquedaAvan_tipoFranquicia = new TP_PAV.clases.ComboBoxPersonal(this.components);
-            this.cmb_busquedaAvan_barrio = new TP_PAV.clases.ComboBoxPersonal(this.components);
             this.chb_legajoVendedor = new System.Windows.Forms.CheckBox();
             this.chb_NomyApe = new System.Windows.Forms.CheckBox();
             this.chb_id = new System.Windows.Forms.CheckBox();
@@ -103,6 +82,28 @@
             this.btn_busquedaAvan = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.txt_busquedaAvan_legajoHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaAvan_legajoDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaAvan_apellido = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaAvan_nombre = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaAvan_idHasta = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.txt_busquedaAvan_idDesde = new TP_PAV.clases.TextBoxPersonal(this.components);
+            this.cmb_busquedaAvan_tipoFranquicia = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.cmb_busquedaAvan_barrio = new TP_PAV.clases.ComboBoxPersonal(this.components);
+            this.habilitado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_responsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nro_calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido_vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_tipo_franquicia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_minimo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_franquicias)).BeginInit();
             this.grp_busquedaAvanzada.SuspendLayout();
             this.SuspendLayout();
@@ -388,14 +389,14 @@
             this.dgv_franquicias.BackgroundColor = System.Drawing.Color.YellowGreen;
             this.dgv_franquicias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_franquicias.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_franquicias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_franquicias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_franquicias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_franquicias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.habilitado,
@@ -406,150 +407,42 @@
             this.nro_calle,
             this.nombre_barrio,
             this.nombre_tipo_franquicia,
+            this.legajo_vendedor,
             this.nombre_vendedor,
             this.apellido_vendedor,
-            this.legajo_vendedor,
             this.id_tipo_franquicia,
-            this.id_barrio});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_franquicias.DefaultCellStyle = dataGridViewCellStyle14;
+            this.id_barrio,
+            this.monto_minimo_compra});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_franquicias.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_franquicias.GridColor = System.Drawing.Color.YellowGreen;
             this.dgv_franquicias.Location = new System.Drawing.Point(15, 200);
             this.dgv_franquicias.Name = "dgv_franquicias";
             this.dgv_franquicias.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_franquicias.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_franquicias.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_franquicias.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.OliveDrab;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgv_franquicias.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.OliveDrab;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgv_franquicias.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_franquicias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_franquicias.Size = new System.Drawing.Size(700, 350);
             this.dgv_franquicias.TabIndex = 55;
             this.dgv_franquicias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_franquicias_CellClick);
-            // 
-            // habilitado
-            // 
-            this.habilitado.DataPropertyName = "habilitado";
-            this.habilitado.FalseValue = "false";
-            this.habilitado.HeaderText = "Habilitado";
-            this.habilitado.Name = "habilitado";
-            this.habilitado.ReadOnly = true;
-            this.habilitado.TrueValue = "true";
-            this.habilitado.Width = 69;
-            // 
-            // id_franquicia
-            // 
-            this.id_franquicia.DataPropertyName = "id_franquicia";
-            this.id_franquicia.HeaderText = "ID Franquicia";
-            this.id_franquicia.Name = "id_franquicia";
-            this.id_franquicia.ReadOnly = true;
-            this.id_franquicia.Width = 96;
-            // 
-            // nombre_responsable
-            // 
-            this.nombre_responsable.DataPropertyName = "nombre_responsable";
-            this.nombre_responsable.HeaderText = "Nombre del Responsable";
-            this.nombre_responsable.Name = "nombre_responsable";
-            this.nombre_responsable.ReadOnly = true;
-            this.nombre_responsable.Width = 158;
-            // 
-            // apellido_responsable
-            // 
-            this.apellido_responsable.DataPropertyName = "apellido_responsable";
-            this.apellido_responsable.HeaderText = "Apellido del Responsable";
-            this.apellido_responsable.Name = "apellido_responsable";
-            this.apellido_responsable.ReadOnly = true;
-            this.apellido_responsable.Width = 157;
-            // 
-            // calle
-            // 
-            this.calle.DataPropertyName = "calle";
-            this.calle.HeaderText = "Calle";
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            this.calle.Width = 60;
-            // 
-            // nro_calle
-            // 
-            this.nro_calle.DataPropertyName = "nro_calle";
-            this.nro_calle.HeaderText = "Nro Calle";
-            this.nro_calle.Name = "nro_calle";
-            this.nro_calle.ReadOnly = true;
-            this.nro_calle.Width = 77;
-            // 
-            // nombre_barrio
-            // 
-            this.nombre_barrio.DataPropertyName = "nombre_barrio";
-            this.nombre_barrio.HeaderText = "Barrio";
-            this.nombre_barrio.Name = "nombre_barrio";
-            this.nombre_barrio.ReadOnly = true;
-            this.nombre_barrio.Width = 65;
-            // 
-            // nombre_tipo_franquicia
-            // 
-            this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
-            this.nombre_tipo_franquicia.HeaderText = "Tipo de Franquicia";
-            this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
-            this.nombre_tipo_franquicia.ReadOnly = true;
-            this.nombre_tipo_franquicia.Width = 123;
-            // 
-            // nombre_vendedor
-            // 
-            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
-            this.nombre_vendedor.HeaderText = "Nombre del Vendedor";
-            this.nombre_vendedor.Name = "nombre_vendedor";
-            this.nombre_vendedor.ReadOnly = true;
-            this.nombre_vendedor.Width = 140;
-            // 
-            // apellido_vendedor
-            // 
-            this.apellido_vendedor.DataPropertyName = "apellido_vendedor";
-            this.apellido_vendedor.HeaderText = "Apellido del Vendedor";
-            this.apellido_vendedor.Name = "apellido_vendedor";
-            this.apellido_vendedor.ReadOnly = true;
-            this.apellido_vendedor.Width = 139;
-            // 
-            // legajo_vendedor
-            // 
-            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
-            this.legajo_vendedor.HeaderText = "Legajo del Vendedor";
-            this.legajo_vendedor.Name = "legajo_vendedor";
-            this.legajo_vendedor.ReadOnly = true;
-            this.legajo_vendedor.Visible = false;
-            this.legajo_vendedor.Width = 133;
-            // 
-            // id_tipo_franquicia
-            // 
-            this.id_tipo_franquicia.DataPropertyName = "id_tipo_franquicia";
-            this.id_tipo_franquicia.HeaderText = "ID Tipo Franquicia";
-            this.id_tipo_franquicia.Name = "id_tipo_franquicia";
-            this.id_tipo_franquicia.ReadOnly = true;
-            this.id_tipo_franquicia.Visible = false;
-            this.id_tipo_franquicia.Width = 121;
-            // 
-            // id_barrio
-            // 
-            this.id_barrio.DataPropertyName = "id_barrio";
-            this.id_barrio.HeaderText = "ID Barrio";
-            this.id_barrio.Name = "id_barrio";
-            this.id_barrio.ReadOnly = true;
-            this.id_barrio.Visible = false;
-            this.id_barrio.Width = 74;
             // 
             // grp_busquedaAvanzada
             // 
@@ -624,108 +517,6 @@
             this.label6.Size = new System.Drawing.Size(49, 15);
             this.label6.TabIndex = 78;
             this.label6.Text = "Desde: ";
-            // 
-            // txt_busquedaAvan_legajoHasta
-            // 
-            this.txt_busquedaAvan_legajoHasta._campo = null;
-            this.txt_busquedaAvan_legajoHasta._mensaje_error = null;
-            this.txt_busquedaAvan_legajoHasta._nombre_tabla = null;
-            this.txt_busquedaAvan_legajoHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaAvan_legajoHasta._validable = true;
-            this.txt_busquedaAvan_legajoHasta.Enabled = false;
-            this.txt_busquedaAvan_legajoHasta.Location = new System.Drawing.Point(134, 238);
-            this.txt_busquedaAvan_legajoHasta.Name = "txt_busquedaAvan_legajoHasta";
-            this.txt_busquedaAvan_legajoHasta.Size = new System.Drawing.Size(100, 21);
-            this.txt_busquedaAvan_legajoHasta.TabIndex = 77;
-            // 
-            // txt_busquedaAvan_legajoDesde
-            // 
-            this.txt_busquedaAvan_legajoDesde._campo = null;
-            this.txt_busquedaAvan_legajoDesde._mensaje_error = null;
-            this.txt_busquedaAvan_legajoDesde._nombre_tabla = null;
-            this.txt_busquedaAvan_legajoDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaAvan_legajoDesde._validable = true;
-            this.txt_busquedaAvan_legajoDesde.Enabled = false;
-            this.txt_busquedaAvan_legajoDesde.Location = new System.Drawing.Point(134, 202);
-            this.txt_busquedaAvan_legajoDesde.Name = "txt_busquedaAvan_legajoDesde";
-            this.txt_busquedaAvan_legajoDesde.Size = new System.Drawing.Size(100, 21);
-            this.txt_busquedaAvan_legajoDesde.TabIndex = 76;
-            // 
-            // txt_busquedaAvan_apellido
-            // 
-            this.txt_busquedaAvan_apellido._campo = null;
-            this.txt_busquedaAvan_apellido._mensaje_error = null;
-            this.txt_busquedaAvan_apellido._nombre_tabla = null;
-            this.txt_busquedaAvan_apellido._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaAvan_apellido._validable = true;
-            this.txt_busquedaAvan_apellido.Enabled = false;
-            this.txt_busquedaAvan_apellido.Location = new System.Drawing.Point(134, 153);
-            this.txt_busquedaAvan_apellido.Name = "txt_busquedaAvan_apellido";
-            this.txt_busquedaAvan_apellido.Size = new System.Drawing.Size(100, 21);
-            this.txt_busquedaAvan_apellido.TabIndex = 75;
-            // 
-            // txt_busquedaAvan_nombre
-            // 
-            this.txt_busquedaAvan_nombre._campo = null;
-            this.txt_busquedaAvan_nombre._mensaje_error = null;
-            this.txt_busquedaAvan_nombre._nombre_tabla = null;
-            this.txt_busquedaAvan_nombre._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaAvan_nombre._validable = true;
-            this.txt_busquedaAvan_nombre.Enabled = false;
-            this.txt_busquedaAvan_nombre.Location = new System.Drawing.Point(134, 122);
-            this.txt_busquedaAvan_nombre.Name = "txt_busquedaAvan_nombre";
-            this.txt_busquedaAvan_nombre.Size = new System.Drawing.Size(100, 21);
-            this.txt_busquedaAvan_nombre.TabIndex = 74;
-            // 
-            // txt_busquedaAvan_idHasta
-            // 
-            this.txt_busquedaAvan_idHasta._campo = null;
-            this.txt_busquedaAvan_idHasta._mensaje_error = null;
-            this.txt_busquedaAvan_idHasta._nombre_tabla = null;
-            this.txt_busquedaAvan_idHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaAvan_idHasta._validable = true;
-            this.txt_busquedaAvan_idHasta.Enabled = false;
-            this.txt_busquedaAvan_idHasta.Location = new System.Drawing.Point(134, 70);
-            this.txt_busquedaAvan_idHasta.Name = "txt_busquedaAvan_idHasta";
-            this.txt_busquedaAvan_idHasta.Size = new System.Drawing.Size(100, 21);
-            this.txt_busquedaAvan_idHasta.TabIndex = 73;
-            // 
-            // txt_busquedaAvan_idDesde
-            // 
-            this.txt_busquedaAvan_idDesde._campo = null;
-            this.txt_busquedaAvan_idDesde._mensaje_error = null;
-            this.txt_busquedaAvan_idDesde._nombre_tabla = null;
-            this.txt_busquedaAvan_idDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
-            this.txt_busquedaAvan_idDesde._validable = true;
-            this.txt_busquedaAvan_idDesde.Enabled = false;
-            this.txt_busquedaAvan_idDesde.Location = new System.Drawing.Point(134, 43);
-            this.txt_busquedaAvan_idDesde.Name = "txt_busquedaAvan_idDesde";
-            this.txt_busquedaAvan_idDesde.Size = new System.Drawing.Size(100, 21);
-            this.txt_busquedaAvan_idDesde.TabIndex = 72;
-            // 
-            // cmb_busquedaAvan_tipoFranquicia
-            // 
-            this.cmb_busquedaAvan_tipoFranquicia._campo = null;
-            this.cmb_busquedaAvan_tipoFranquicia._mensaje_error = null;
-            this.cmb_busquedaAvan_tipoFranquicia._nombre_tabla = null;
-            this.cmb_busquedaAvan_tipoFranquicia._validable = true;
-            this.cmb_busquedaAvan_tipoFranquicia.FormattingEnabled = true;
-            this.cmb_busquedaAvan_tipoFranquicia.Location = new System.Drawing.Point(134, 275);
-            this.cmb_busquedaAvan_tipoFranquicia.Name = "cmb_busquedaAvan_tipoFranquicia";
-            this.cmb_busquedaAvan_tipoFranquicia.Size = new System.Drawing.Size(192, 23);
-            this.cmb_busquedaAvan_tipoFranquicia.TabIndex = 71;
-            // 
-            // cmb_busquedaAvan_barrio
-            // 
-            this.cmb_busquedaAvan_barrio._campo = null;
-            this.cmb_busquedaAvan_barrio._mensaje_error = null;
-            this.cmb_busquedaAvan_barrio._nombre_tabla = null;
-            this.cmb_busquedaAvan_barrio._validable = true;
-            this.cmb_busquedaAvan_barrio.FormattingEnabled = true;
-            this.cmb_busquedaAvan_barrio.Location = new System.Drawing.Point(134, 309);
-            this.cmb_busquedaAvan_barrio.Name = "cmb_busquedaAvan_barrio";
-            this.cmb_busquedaAvan_barrio.Size = new System.Drawing.Size(194, 23);
-            this.cmb_busquedaAvan_barrio.TabIndex = 70;
             // 
             // chb_legajoVendedor
             // 
@@ -907,6 +698,225 @@
             this.label11.TabIndex = 83;
             this.label11.Text = "Buscar:";
             // 
+            // txt_busquedaAvan_legajoHasta
+            // 
+            this.txt_busquedaAvan_legajoHasta._campo = null;
+            this.txt_busquedaAvan_legajoHasta._mensaje_error = null;
+            this.txt_busquedaAvan_legajoHasta._nombre_tabla = null;
+            this.txt_busquedaAvan_legajoHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaAvan_legajoHasta._validable = true;
+            this.txt_busquedaAvan_legajoHasta.Enabled = false;
+            this.txt_busquedaAvan_legajoHasta.Location = new System.Drawing.Point(134, 238);
+            this.txt_busquedaAvan_legajoHasta.Name = "txt_busquedaAvan_legajoHasta";
+            this.txt_busquedaAvan_legajoHasta.Size = new System.Drawing.Size(100, 21);
+            this.txt_busquedaAvan_legajoHasta.TabIndex = 77;
+            // 
+            // txt_busquedaAvan_legajoDesde
+            // 
+            this.txt_busquedaAvan_legajoDesde._campo = null;
+            this.txt_busquedaAvan_legajoDesde._mensaje_error = null;
+            this.txt_busquedaAvan_legajoDesde._nombre_tabla = null;
+            this.txt_busquedaAvan_legajoDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaAvan_legajoDesde._validable = true;
+            this.txt_busquedaAvan_legajoDesde.Enabled = false;
+            this.txt_busquedaAvan_legajoDesde.Location = new System.Drawing.Point(134, 202);
+            this.txt_busquedaAvan_legajoDesde.Name = "txt_busquedaAvan_legajoDesde";
+            this.txt_busquedaAvan_legajoDesde.Size = new System.Drawing.Size(100, 21);
+            this.txt_busquedaAvan_legajoDesde.TabIndex = 76;
+            // 
+            // txt_busquedaAvan_apellido
+            // 
+            this.txt_busquedaAvan_apellido._campo = null;
+            this.txt_busquedaAvan_apellido._mensaje_error = null;
+            this.txt_busquedaAvan_apellido._nombre_tabla = null;
+            this.txt_busquedaAvan_apellido._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaAvan_apellido._validable = true;
+            this.txt_busquedaAvan_apellido.Enabled = false;
+            this.txt_busquedaAvan_apellido.Location = new System.Drawing.Point(134, 153);
+            this.txt_busquedaAvan_apellido.Name = "txt_busquedaAvan_apellido";
+            this.txt_busquedaAvan_apellido.Size = new System.Drawing.Size(100, 21);
+            this.txt_busquedaAvan_apellido.TabIndex = 75;
+            // 
+            // txt_busquedaAvan_nombre
+            // 
+            this.txt_busquedaAvan_nombre._campo = null;
+            this.txt_busquedaAvan_nombre._mensaje_error = null;
+            this.txt_busquedaAvan_nombre._nombre_tabla = null;
+            this.txt_busquedaAvan_nombre._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaAvan_nombre._validable = true;
+            this.txt_busquedaAvan_nombre.Enabled = false;
+            this.txt_busquedaAvan_nombre.Location = new System.Drawing.Point(134, 122);
+            this.txt_busquedaAvan_nombre.Name = "txt_busquedaAvan_nombre";
+            this.txt_busquedaAvan_nombre.Size = new System.Drawing.Size(100, 21);
+            this.txt_busquedaAvan_nombre.TabIndex = 74;
+            // 
+            // txt_busquedaAvan_idHasta
+            // 
+            this.txt_busquedaAvan_idHasta._campo = null;
+            this.txt_busquedaAvan_idHasta._mensaje_error = null;
+            this.txt_busquedaAvan_idHasta._nombre_tabla = null;
+            this.txt_busquedaAvan_idHasta._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaAvan_idHasta._validable = true;
+            this.txt_busquedaAvan_idHasta.Enabled = false;
+            this.txt_busquedaAvan_idHasta.Location = new System.Drawing.Point(134, 70);
+            this.txt_busquedaAvan_idHasta.Name = "txt_busquedaAvan_idHasta";
+            this.txt_busquedaAvan_idHasta.Size = new System.Drawing.Size(100, 21);
+            this.txt_busquedaAvan_idHasta.TabIndex = 73;
+            // 
+            // txt_busquedaAvan_idDesde
+            // 
+            this.txt_busquedaAvan_idDesde._campo = null;
+            this.txt_busquedaAvan_idDesde._mensaje_error = null;
+            this.txt_busquedaAvan_idDesde._nombre_tabla = null;
+            this.txt_busquedaAvan_idDesde._tipo = TP_PAV.clases.TextBoxPersonal.tipo_dato.texto;
+            this.txt_busquedaAvan_idDesde._validable = true;
+            this.txt_busquedaAvan_idDesde.Enabled = false;
+            this.txt_busquedaAvan_idDesde.Location = new System.Drawing.Point(134, 43);
+            this.txt_busquedaAvan_idDesde.Name = "txt_busquedaAvan_idDesde";
+            this.txt_busquedaAvan_idDesde.Size = new System.Drawing.Size(100, 21);
+            this.txt_busquedaAvan_idDesde.TabIndex = 72;
+            // 
+            // cmb_busquedaAvan_tipoFranquicia
+            // 
+            this.cmb_busquedaAvan_tipoFranquicia._campo = null;
+            this.cmb_busquedaAvan_tipoFranquicia._mensaje_error = null;
+            this.cmb_busquedaAvan_tipoFranquicia._nombre_tabla = null;
+            this.cmb_busquedaAvan_tipoFranquicia._validable = true;
+            this.cmb_busquedaAvan_tipoFranquicia.FormattingEnabled = true;
+            this.cmb_busquedaAvan_tipoFranquicia.Location = new System.Drawing.Point(134, 275);
+            this.cmb_busquedaAvan_tipoFranquicia.Name = "cmb_busquedaAvan_tipoFranquicia";
+            this.cmb_busquedaAvan_tipoFranquicia.Size = new System.Drawing.Size(192, 23);
+            this.cmb_busquedaAvan_tipoFranquicia.TabIndex = 71;
+            // 
+            // cmb_busquedaAvan_barrio
+            // 
+            this.cmb_busquedaAvan_barrio._campo = null;
+            this.cmb_busquedaAvan_barrio._mensaje_error = null;
+            this.cmb_busquedaAvan_barrio._nombre_tabla = null;
+            this.cmb_busquedaAvan_barrio._validable = true;
+            this.cmb_busquedaAvan_barrio.FormattingEnabled = true;
+            this.cmb_busquedaAvan_barrio.Location = new System.Drawing.Point(134, 309);
+            this.cmb_busquedaAvan_barrio.Name = "cmb_busquedaAvan_barrio";
+            this.cmb_busquedaAvan_barrio.Size = new System.Drawing.Size(194, 23);
+            this.cmb_busquedaAvan_barrio.TabIndex = 70;
+            // 
+            // habilitado
+            // 
+            this.habilitado.DataPropertyName = "habilitado";
+            this.habilitado.FalseValue = "false";
+            this.habilitado.HeaderText = "Habilitado";
+            this.habilitado.Name = "habilitado";
+            this.habilitado.ReadOnly = true;
+            this.habilitado.TrueValue = "true";
+            this.habilitado.Width = 69;
+            // 
+            // id_franquicia
+            // 
+            this.id_franquicia.DataPropertyName = "id_franquicia";
+            this.id_franquicia.HeaderText = "ID Franquicia";
+            this.id_franquicia.Name = "id_franquicia";
+            this.id_franquicia.ReadOnly = true;
+            this.id_franquicia.Width = 105;
+            // 
+            // nombre_responsable
+            // 
+            this.nombre_responsable.DataPropertyName = "nombre_responsable";
+            this.nombre_responsable.HeaderText = "Nombre del Responsable";
+            this.nombre_responsable.Name = "nombre_responsable";
+            this.nombre_responsable.ReadOnly = true;
+            this.nombre_responsable.Width = 158;
+            // 
+            // apellido_responsable
+            // 
+            this.apellido_responsable.DataPropertyName = "apellido_responsable";
+            this.apellido_responsable.HeaderText = "Apellido del Responsable";
+            this.apellido_responsable.Name = "apellido_responsable";
+            this.apellido_responsable.ReadOnly = true;
+            this.apellido_responsable.Width = 157;
+            // 
+            // calle
+            // 
+            this.calle.DataPropertyName = "calle";
+            this.calle.HeaderText = "Calle";
+            this.calle.Name = "calle";
+            this.calle.ReadOnly = true;
+            this.calle.Width = 60;
+            // 
+            // nro_calle
+            // 
+            this.nro_calle.DataPropertyName = "nro_calle";
+            this.nro_calle.HeaderText = "Nro Calle";
+            this.nro_calle.Name = "nro_calle";
+            this.nro_calle.ReadOnly = true;
+            this.nro_calle.Width = 77;
+            // 
+            // nombre_barrio
+            // 
+            this.nombre_barrio.DataPropertyName = "nombre_barrio";
+            this.nombre_barrio.HeaderText = "Barrio";
+            this.nombre_barrio.Name = "nombre_barrio";
+            this.nombre_barrio.ReadOnly = true;
+            this.nombre_barrio.Width = 65;
+            // 
+            // nombre_tipo_franquicia
+            // 
+            this.nombre_tipo_franquicia.DataPropertyName = "nombre_tipo_franquicia";
+            this.nombre_tipo_franquicia.HeaderText = "Tipo de Franquicia";
+            this.nombre_tipo_franquicia.Name = "nombre_tipo_franquicia";
+            this.nombre_tipo_franquicia.ReadOnly = true;
+            this.nombre_tipo_franquicia.Width = 123;
+            // 
+            // legajo_vendedor
+            // 
+            this.legajo_vendedor.DataPropertyName = "legajo_vendedor";
+            this.legajo_vendedor.HeaderText = "Legajo del Vendedor";
+            this.legajo_vendedor.Name = "legajo_vendedor";
+            this.legajo_vendedor.ReadOnly = true;
+            this.legajo_vendedor.Visible = false;
+            this.legajo_vendedor.Width = 133;
+            // 
+            // nombre_vendedor
+            // 
+            this.nombre_vendedor.DataPropertyName = "nombre_vendedor";
+            this.nombre_vendedor.HeaderText = "Nombre del Vendedor";
+            this.nombre_vendedor.Name = "nombre_vendedor";
+            this.nombre_vendedor.ReadOnly = true;
+            this.nombre_vendedor.Width = 140;
+            // 
+            // apellido_vendedor
+            // 
+            this.apellido_vendedor.DataPropertyName = "apellido_vendedor";
+            this.apellido_vendedor.HeaderText = "Apellido del Vendedor";
+            this.apellido_vendedor.Name = "apellido_vendedor";
+            this.apellido_vendedor.ReadOnly = true;
+            this.apellido_vendedor.Width = 139;
+            // 
+            // id_tipo_franquicia
+            // 
+            this.id_tipo_franquicia.DataPropertyName = "id_tipo_franquicia";
+            this.id_tipo_franquicia.HeaderText = "ID Tipo Franquicia";
+            this.id_tipo_franquicia.Name = "id_tipo_franquicia";
+            this.id_tipo_franquicia.ReadOnly = true;
+            this.id_tipo_franquicia.Visible = false;
+            this.id_tipo_franquicia.Width = 121;
+            // 
+            // id_barrio
+            // 
+            this.id_barrio.DataPropertyName = "id_barrio";
+            this.id_barrio.HeaderText = "ID Barrio";
+            this.id_barrio.Name = "id_barrio";
+            this.id_barrio.ReadOnly = true;
+            this.id_barrio.Visible = false;
+            this.id_barrio.Width = 74;
+            // 
+            // monto_minimo_compra
+            // 
+            this.monto_minimo_compra.DataPropertyName = "monto_minimo_compra";
+            this.monto_minimo_compra.HeaderText = "Monto minimo de compra";
+            this.monto_minimo_compra.Name = "monto_minimo_compra";
+            this.monto_minimo_compra.ReadOnly = true;
+            this.monto_minimo_compra.Width = 121;
+            // 
             // uc_ABM_Franquicia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1013,6 +1023,7 @@
         private clases.TextBoxPersonal txt_busquedaAvan_idHasta;
         private clases.TextBoxPersonal txt_busquedaAvan_idDesde;
         private System.Windows.Forms.Label lbl_mensaje;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn habilitado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_franquicia;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_responsable;
@@ -1021,11 +1032,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_barrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_tipo_franquicia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido_vendedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajo_vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_tipo_franquicia;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_barrio;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto_minimo_compra;
     }
 }
