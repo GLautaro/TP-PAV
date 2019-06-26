@@ -291,7 +291,7 @@ namespace TP_PAV.clases
             string consulta = String.Format(@"SELECT DATENAME(mm, p.fecha_solicitud)+' '+DATENAME(YYYY, p.fecha_solicitud) as 'Mes y Año', COUNT(*) as 'Cantidad' 
                                 FROM pedido p 
                                 WHERE p.fecha_solicitud between '{0}' AND '{1}'  
-                                GROUP BY DATENAME(mm, p.fecha_solicitud), DATENAME(YYYY, p.fecha_solicitud), MONTH(p.fecha_solicitud) ORDER BY MONTH(p.fecha_solicitud) ASC", fDesde, fHasta);
+                                GROUP BY DATENAME(mm, p.fecha_solicitud), DATENAME(YYYY, p.fecha_solicitud), MONTH(p.fecha_solicitud), YEAR(p.fecha_solicitud) ORDER BY YEAR(p.fecha_solicitud) ASC, MONTH(p.fecha_solicitud) ASC", fDesde, fHasta);
             return priv_acceso_db.ejecutarConsulta(consulta);
         }
 
