@@ -591,7 +591,7 @@
             this.grp_busquedaAvanzada.Controls.Add(this.label_disponibilidad);
             this.grp_busquedaAvanzada.Controls.Add(this.label_apellido);
             this.grp_busquedaAvanzada.Controls.Add(this.label_nombre);
-            this.grp_busquedaAvanzada.Location = new System.Drawing.Point(307, 72);
+            this.grp_busquedaAvanzada.Location = new System.Drawing.Point(741, 72);
             this.grp_busquedaAvanzada.Name = "grp_busquedaAvanzada";
             this.grp_busquedaAvanzada.Size = new System.Drawing.Size(444, 504);
             this.grp_busquedaAvanzada.TabIndex = 59;

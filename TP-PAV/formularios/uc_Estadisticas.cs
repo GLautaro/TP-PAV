@@ -262,7 +262,7 @@ namespace TP_PAV.formularios
         {
             if (validarFechas())
             {
-                llenarGrafico(franquicia.PeoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "PEORES FRANQUICIAS EN PERIODO: ", "Nombre y apellido del representante","$ ");
+                llenarGrafico(franquicia.PeoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "PEORES FRANQUICIAS EN PERIODO: ", "Nombre y apellido del representante"," ");
             }
         }
 
@@ -270,7 +270,7 @@ namespace TP_PAV.formularios
         {
             if (validarFechas())
             {
-                llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante","$ ");
+                llenarGrafico(franquicia.MejoresFranquicias(dtp_fechaDesde.Value, dtp_fechaHasta.Value), "MEJORES FRANQUICIAS EN PERIODO:", "Nombre y apellido del representante"," ");
             }
         }
         private void btn_productoPorFranquicia_Click(object sender, EventArgs e)
