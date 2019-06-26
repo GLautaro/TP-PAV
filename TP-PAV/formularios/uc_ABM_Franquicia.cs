@@ -113,12 +113,12 @@ namespace TP_PAV.formularios
         {
             //En esta seccion se inicializan los datos necesarios para el uso del ABM
             //Primero se cargan los barrio y se setean indice inicial del cmb y miembros a mostrar y el que se toma por valor
-            cmb_barrio.DataSource = priv_barrio.recuperarBarrios();
+            cmb_barrio.DataSource = priv_barrio.recuperarBarriosHabilitados();
             cmb_barrio.DisplayMember = "nombre_barrio";
             cmb_barrio.ValueMember = "id_barrio";
             cmb_barrio.SelectedIndex = -1;
             //Se realiza lo mismo para los tipos de franquicia
-            cmb_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquicia();
+            cmb_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquiciaHabilitados();
             cmb_tipoFranquicia.DisplayMember = "nombre_tipo_franquicia";
             cmb_tipoFranquicia.ValueMember = "id_tipo_franquicia";
             cmb_tipoFranquicia.SelectedIndex = -1;
@@ -339,6 +339,7 @@ namespace TP_PAV.formularios
             form_tipo_franquicia.pub_formularioPadre = this;
             form_tipo_franquicia.pub_selectedIndex = cmb_tipoFranquicia.SelectedIndex;
             form_tipo_franquicia.ShowDialog();
+            cmb_tipoFranquicia.DataSource = priv_tipoFranquicia.recuperarTiposFranquiciaHabilitados();
             
             
         }
@@ -349,6 +350,7 @@ namespace TP_PAV.formularios
             frm_barrio.pub_selectedIndex = cmb_barrio.SelectedIndex;
             frm_barrio.pub_cmb_barrios = pub_cmb_barrio;
             frm_barrio.ShowDialog();
+            cmb_barrio.DataSource = priv_barrio.recuperarBarriosHabilitados();
 
         }
 

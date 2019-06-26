@@ -45,12 +45,7 @@ namespace TP_PAV.formularios
                 txt_montoMinimo.Focus();
                 return false;
             }
-            if (txt_porcentajeDescuento.Text == "" || (int.Parse(txt_porcentajeDescuento.Text) < 0 || int.Parse(txt_porcentajeDescuento.Text) > 100))
-            {
-                label_validacion_error(true, "Error en el valor Porcentaje de Descuento");
-                txt_porcentajeDescuento.Focus();
-                return false;
-            }
+         
             return true;
         }
         private void bloquearCajasTexto()
@@ -58,7 +53,7 @@ namespace TP_PAV.formularios
             
             txt_nombre.Enabled = false;
             txt_montoMinimo.Enabled = false;
-            txt_porcentajeDescuento.Enabled = false;
+
             btn_modificarTipoFranquicia.Enabled = false;
             btn_cancelar.Enabled = false;
         }
@@ -73,14 +68,14 @@ namespace TP_PAV.formularios
         {
             txt_montoMinimo.Clear();
             txt_nombre.Clear();
-            txt_porcentajeDescuento.Clear();
+
         }
 
         private void desbloquearCajasTexto()
         {
             txt_nombre.Enabled = true;
             txt_montoMinimo.Enabled = true;
-            txt_porcentajeDescuento.Enabled = true;
+
             btn_cancelar.Enabled = true;
             btn_cancelar.Visible = true;
             
@@ -120,7 +115,7 @@ namespace TP_PAV.formularios
         {
                         if (validarDatos())
                         {
-                            if (priv_tipoFranquicia.altaTipoFranquicia(int.Parse(txt_montoMinimo.Text), int.Parse(txt_porcentajeDescuento.Text), txt_nombre.Text))
+                            if (priv_tipoFranquicia.altaTipoFranquicia(int.Parse(txt_montoMinimo.Text),txt_nombre.Text))
                             {
                                 label_validacion_error(false, "Se agrego el Tipo Franquicia correctamente.");
                                     limpiarCajasTexto();
@@ -162,7 +157,6 @@ namespace TP_PAV.formularios
             desbloquearCajasTexto();
             txt_montoMinimo.Text = dgv_tipoFranquicia.CurrentRow.Cells["monto_minimo_compra"].Value.ToString();
             txt_nombre.Text = dgv_tipoFranquicia.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString();
-            txt_porcentajeDescuento.Text = dgv_tipoFranquicia.CurrentRow.Cells["porcentaje_descuento"].Value.ToString();
             dgv_tipoFranquicia.Enabled = false;
             btn_modificarTipoFranquicia.Enabled = true;
             btn_modificarTipoFranquicia.Visible = true;
@@ -174,7 +168,6 @@ namespace TP_PAV.formularios
         {
             txt_nombre.Text = dgv_tipoFranquicia.CurrentRow.Cells["nombre_tipo_franquicia"].Value.ToString();
             txt_montoMinimo.Text = dgv_tipoFranquicia.CurrentRow.Cells["monto_minimo_compra"].Value.ToString();
-            txt_porcentajeDescuento.Text = dgv_tipoFranquicia.CurrentRow.Cells["porcentaje_descuento"].Value.ToString();
             actualizarTextBtnState();
           
         }
@@ -202,7 +195,6 @@ namespace TP_PAV.formularios
             {   
                 TipoFranquicia priv_tipoFranquiciaModificar = new TipoFranquicia();
                 priv_tipoFranquiciaModificar.pub_monto_minimo_compra = int.Parse(txt_montoMinimo.Text);
-                priv_tipoFranquiciaModificar.pub_porcentaje_descuento = int.Parse(txt_porcentajeDescuento.Text);
                 priv_tipoFranquiciaModificar.pub_nombre_tipo_franquicia = txt_nombre.Text;
                 priv_tipoFranquiciaModificar.pub_id_tipo_franquicia = int.Parse(dgv_tipoFranquicia.CurrentRow.Cells["id_tipo_franquicia"].Value.ToString());
                 if (priv_tipoFranquiciaModificar.modificarTipoFranquicia())
@@ -268,16 +260,7 @@ namespace TP_PAV.formularios
         }
 
 
-        private void txt_porcentajeDescuento_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.label_validation.Visible = false;
-            if (char.IsDigit(e.KeyChar) != true && char.IsControl(e.KeyChar) != true)
-            {
-                label_validacion_error(true, "No es un valor permitido");
-                //borra el caracter no permitido
-                e.Handled = true;
-            }
-        }
+      
 
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {

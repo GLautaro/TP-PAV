@@ -90,22 +90,17 @@ namespace TP_PAV.formularios
             {
                 if (priv_barrio.addBarrio(txt_nombre_barrio.Text))
                 {
-                    DialogResult result = MessageBox.Show("Tipo de Barrio cargado correctamente\n¿Desea cargar otro Barrio?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (result == DialogResult.No)
-                    {
+                    label_validacion_error(false, "Se agrego correctamente el barrio.");
                         resetearFormulario();
                         desbloquearBotonesPrincipales(true);
-                    }
-                    else
-                    {
-                        txt_nombre_barrio.Clear();
-                        txt_nombre_barrio.Focus();
-
-                    }
+                    
+              
                     dgv_barrio.DataSource = priv_barrio.recuperarBarrios();
                 }
                 else
                 {
+                    
+                    
                     MessageBox.Show("Error al tratar de agregar el barrio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -122,7 +117,8 @@ namespace TP_PAV.formularios
         {
             if (dgv_barrio.SelectedRows.Count < 1)
             {
-                MessageBox.Show("No existen barrios cargadas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label_validacion_error(true, "No existen barrios cargadas");
+             
                 return;
             }
             txt_nombre_barrio.Text = dgv_barrio.CurrentRow.Cells["nombre_barrio"].Value.ToString();
@@ -145,7 +141,7 @@ namespace TP_PAV.formularios
                 priv_barrioModificar.pub_id_barrio = priv_selectedCmbIndex = int.Parse(dgv_barrio.CurrentRow.Cells["id_barrio"].Value.ToString());
                 if (priv_barrioModificar.updateBarrio())
                 {
-                    MessageBox.Show("Se modificó correctamente.");
+                    label_validacion_error(false, "Se modificó correctamente");
                     dgv_barrio.DataSource = priv_barrio.recuperarBarrios();
 
                 }
@@ -190,7 +186,7 @@ namespace TP_PAV.formularios
         private void frm_ABM_Barrio_FormClosing(object sender, FormClosingEventArgs e)
         {
             priv_cmb_barrios.DataSource = priv_barrio.recuperarBarrios();
-            priv_cmb_barrios.SelectedIndex = priv_selectedCmbIndex;
+     
      
         }
 
@@ -216,6 +212,11 @@ namespace TP_PAV.formularios
             }
             actualizarTextBtnState();
 
+        }
+
+        private void txt_nombre_barrio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            label_validation.Visible = false;
         } 
 
 
