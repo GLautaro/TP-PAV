@@ -17,6 +17,11 @@ namespace TP_PAV.clases
             string query = @"SELECT * FROM tipo_producto";
             return priv_acceso_db.ejecutarConsulta(query);
         }
+        public DataTable traerTipoProductoHabilitado()
+        {
+            string query = @"SELECT * FROM tipo_producto WHERE habilitado=1";
+            return priv_acceso_db.ejecutarConsulta(query);
+        }
 
         public bool altaTipoProducto(string nombre, string descripcion)
         {

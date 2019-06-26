@@ -46,7 +46,7 @@ namespace TP_PAV.formularios
             txt_id_pedido.Text = priv_id_pedido.ToString();
             cmb_tipoProducto.DisplayMember = "nombre_tipo_producto";
             cmb_tipoProducto.ValueMember = "id_tipo_producto";
-            cmb_tipoProducto.DataSource = priv_tipo_producto.traerTipoProducto();
+            cmb_tipoProducto.DataSource = priv_tipo_producto.traerTipoProductoHabilitado();
             cmb_tipoProducto.SelectedIndex = -1;
 
             priv_pedido.pub_id_pedido = priv_id_pedido;

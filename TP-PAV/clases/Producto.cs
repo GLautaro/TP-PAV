@@ -74,6 +74,8 @@ namespace TP_PAV.clases
 
         }
 
+       
+
         public DataTable modificarEstadoProducto(string idProducto, int estado)
         {
             string consulta = @"UPDATE producto SET estado_producto = " + estado + " WHERE id_producto = " + idProducto;

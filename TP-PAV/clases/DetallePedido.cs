@@ -38,7 +38,7 @@ namespace TP_PAV.clases
 		                                                            precio_unitario 
 		                                                            FROM producto p 
 		                                                            JOIN tipo_producto t ON t.id_tipo_producto = p.id_tipo_producto
-		                                                            WHERE id_producto NOT IN (SELECT id_producto FROM pedido_x_producto WHERE id_pedido={0} ) AND t.id_tipo_producto = {1}", id_pedido, id_tipo_producto));
+		                                                            WHERE id_producto NOT IN (SELECT id_producto FROM pedido_x_producto WHERE id_pedido={0} ) AND t.id_tipo_producto = {1} AND p.estado_producto=1", id_pedido, id_tipo_producto));
 
         }
         public bool addProductoPedido(int id_pedido, int id_producto, int cantidad, int precio_unitario)
