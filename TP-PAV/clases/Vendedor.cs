@@ -55,9 +55,9 @@ namespace TP_PAV.clases
 
         public DataTable CantidadFranquiciasXVendedor()
         {
-            string consulta = @"SELECT F.legajo_vendedor, COUNT(*)
-                                FROM franquicia F JOIN vendedor V ON F.legajo_vendedor = V.legajo_vendedor
-                                GROUP BY F.legajo_vendedor
+            string consulta = @"SELECT V.nombre_vendedor, COUNT(*)
+                                FROM vendedor V JOIN franquicia F ON F.legajo_vendedor = V.legajo_vendedor
+                                GROUP BY V.nombre_vendedor
                                 ";
             return db.ejecutarConsulta(consulta);
         }
