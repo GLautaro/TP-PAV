@@ -29,9 +29,25 @@ namespace TP_PAV.clases
 
         }
 
-        public DataTable MejoresVendedores()
+        public DataTable MejoresVendedores(DateTime fDesde, DateTime fHasta)
         {
-            string consulta = @"SELECT TOP 5 V.nombre_vendedor ,SUM(p.monto_final) as suma from vendedor V join pedido P on v.legajo_vendedor = P.id_vendedor WHERE p.id_estado = 1 GROUP BY P.id_vendedor, V.nombre_vendedor ORDER BY SUM(p.monto_final) desc";
+            string consulta = @"SELECT TOP 5 V.nombre_vendedor, SUM(p.monto_final) as suma 
+                                from vendedor V join pedido P on v.legajo_vendedor = P.id_vendedor 
+                                WHERE P.id_estado = 2 AND P.fecha_entrega BETWEEN '" + fDesde + "' AND '" + fHasta +
+                                @"' GROUP BY P.id_vendedor, V.nombre_vendedor 
+                                ORDER BY SUM(p.monto_final) desc";
+
+            return db.ejecutarConsulta(consulta);
+
+        }
+
+        public DataTable PeoresVendedores(DateTime fDesde, DateTime fHasta)
+        {
+            string consulta = @"SELECT TOP 5 V.nombre_vendedor, SUM(p.monto_final) as suma 
+                                from vendedor V join pedido P on v.legajo_vendedor = P.id_vendedor 
+                                WHERE P.id_estado = 2 AND P.fecha_entrega BETWEEN '" + fDesde + "' AND '" + fHasta +
+                                @"' GROUP BY P.id_vendedor, V.nombre_vendedor 
+                                ORDER BY SUM(p.monto_final) ASC";
 
             return db.ejecutarConsulta(consulta);
 

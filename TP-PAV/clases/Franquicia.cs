@@ -372,7 +372,7 @@ namespace TP_PAV.clases
             string query = String.Format(@"SELECT TOP 5 F.nombre_responsable+' '+F.apellido_responsable as 'Nombre Responsable', SUM(p.monto_final) as suma 
                                 FROM franquicia F 
                                 JOIN pedido P ON F.id_franquicia = P.id_franquicia
-                                WHERE P.id_estado = 1 AND P.fecha_entrega BETWEEN '{0}' AND '{1}'
+                                WHERE P.id_estado = 2 AND P.fecha_entrega BETWEEN '{0}' AND '{1}'
                                 GROUP BY P.id_franquicia, F.nombre_responsable, F.apellido_responsable
                                 ORDER BY SUM(p.monto_final) DESC", fechaDesde.Date.ToString("dd/MM/yyyy"), fechaHasta.Date.ToString("dd/MM/yyyy"));
             return priv_acceso_db.ejecutarConsulta(query);
@@ -383,7 +383,7 @@ namespace TP_PAV.clases
             string query = String.Format(@"SELECT TOP 5 F.nombre_responsable+' '+F.apellido_responsable as 'Nombre Responsable', SUM(p.monto_final) as suma 
                                 FROM franquicia F 
                                 JOIN pedido P ON F.id_franquicia = P.id_franquicia
-                                WHERE P.id_estado = 1 AND P.fecha_entrega BETWEEN '{0}' AND '{1}'
+                                WHERE P.id_estado = 2 AND P.fecha_entrega BETWEEN '{0}' AND '{1}'
                                 GROUP BY P.id_franquicia, F.nombre_responsable, F.apellido_responsable
                                 ORDER BY SUM(p.monto_final) ASC", fechaDesde.Date.ToString("dd/MM/yyyy"), fechaHasta.Date.ToString("dd/MM/yyyy"));
             return priv_acceso_db.ejecutarConsulta(query);
