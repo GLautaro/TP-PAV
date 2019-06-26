@@ -76,7 +76,7 @@
             // 
             this.lbl_fechaActual.AutoSize = true;
             this.lbl_fechaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fechaActual.Location = new System.Drawing.Point(180, 50);
+            this.lbl_fechaActual.Location = new System.Drawing.Point(186, 66);
             this.lbl_fechaActual.Name = "lbl_fechaActual";
             this.lbl_fechaActual.Size = new System.Drawing.Size(0, 16);
             this.lbl_fechaActual.TabIndex = 6;
